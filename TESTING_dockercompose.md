@@ -1,7 +1,7 @@
-Docker Compose Drupal 9 Full option  - php8, nginx, mariadb, solr, redis
-========================================================================
+Docker Compose Drupal 9 simple - php7.4, nginx, mariadb
+=======================================================
 
-This is a docker-compose version of the Lagoon-example tests:
+This is a docker-compose version of the Lando example tests:
 
 Start up tests
 --------------
@@ -18,7 +18,7 @@ docker-compose down
 docker-compose build && docker-compose up -d
 
 # Ensure mariadb pod is ready to connect
-docker run --rm --net drupal9-full_default amazeeio/dockerize dockerize -wait tcp://mariadb:3306 -timeout 1m
+docker run --rm --net drupal9-mariadb_default jwilder/dockerize dockerize -wait tcp://mariadb:3306 -timeout 1m
 ```
 
 Verification commands
@@ -33,21 +33,20 @@ docker-compose exec -T cli bash -c "drush cr -y"
 docker-compose exec -T cli bash -c "drush status" | grep "Drupal bootstrap" | grep "Successful"
 
 # Should have all the services we expect
-docker ps --filter label=com.docker.compose.project=drupal9-full | grep Up | grep drupal9-full_nginx_1
-docker ps --filter label=com.docker.compose.project=drupal9-full | grep Up | grep drupal9-full_mariadb_1
-docker ps --filter label=com.docker.compose.project=drupal9-full | grep Up | grep drupal9-full_php_1
-docker ps --filter label=com.docker.compose.project=drupal9-full | grep Up | grep drupal9-full_cli_1
-docker ps --filter label=com.docker.compose.project=drupal9-full | grep Up | grep drupal9-full_solr_1
+docker ps --filter label=com.docker.compose.project=drupal9-mariadb | grep Up | grep drupal9-mariadb_nginx_1
+docker ps --filter label=com.docker.compose.project=drupal9-mariadb | grep Up | grep drupal9-mariadb_mariadb_1
+docker ps --filter label=com.docker.compose.project=drupal9-mariadb | grep Up | grep drupal9-mariadb_php_1
+docker ps --filter label=com.docker.compose.project=drupal9-mariadb | grep Up | grep drupal9-mariadb_cli_1
 
 # Should ssh against the cli container by default
 docker-compose exec -T cli bash -c "env | grep LAGOON=" | grep cli-drupal
 
 # Should have the correct environment set
-docker-compose exec -T cli bash -c "env" | grep LAGOON_ROUTE | grep drupal9-full.docker.amazee.io
+docker-compose exec -T cli bash -c "env" | grep LAGOON_ROUTE | grep drupal9-mariadb.docker.amazee.io
 docker-compose exec -T cli bash -c "env" | grep LAGOON_ENVIRONMENT_TYPE | grep development
 
-# Should be running PHP 8
-docker-compose exec -T cli bash -c "php -v" | grep "PHP 8"
+# Should be running PHP 7.4
+docker-compose exec -T cli bash -c "php -v" | grep "PHP 7.4"
 
 # Should have composer
 docker-compose exec -T cli bash -c "composer --version"
@@ -68,25 +67,7 @@ docker-compose exec -T cli bash -c "node --version"
 docker-compose exec -T cli bash -c "yarn --version"
 
 # Should have a running Drupal 9 site served by nginx on port 8080
-docker-compose exec -T cli bash -c "curl -kL http://nginx:8080" | grep "Drush Site-Install"
-
-# Should have a "drupal" Solr core
-docker-compose exec -T cli bash -c "curl solr:8983/solr/admin/cores?action=STATUS\&core=drupal"
-
-# Should be able to reload "drupal" Solr core
-docker-compose exec -T cli bash -c "curl solr:8983/solr/admin/cores?action=RELOAD\&core=drupal"
-
-# Check Solr has 8.x config in "drupal" core
-docker-compose exec -T solr bash -c "cat /var/solr/data/drupal/conf/schema.xml | grep solr-8.x"
-
-# redis-6 Should be running Redis v6.0
-docker-compose exec -T redis sh -c "redis-server --version" | grep "v=6."
-
-# redis-6 Should be able to see Redis databases
-docker-compose exec -T redis sh -c "redis-cli CONFIG GET databases"
-
-# redis-6 databases should be populated
-docker-compose exec -T redis sh -c "redis-cli dbsize" | grep -Ev "^0$"
+docker-compose exec -T cli bash -c "curl -kL http://nginx:8080" | grep "Welcome to Drush Site-Install"
 
 # Should be able to db-export and db-import the database
 docker-compose exec -T cli bash -c "drush sql-dump --result-file /app/test.sql"

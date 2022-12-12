@@ -1,4 +1,4 @@
-name: drupal9-full
+name: drupal9-mariadb
 recipe: lagoon
 config:
   flavor: drupal
