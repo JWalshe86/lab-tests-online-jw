@@ -1,4 +1,4 @@
-name: drupal9-mariadb
+name: lab-tests-online
 recipe: lagoon
 config:
   flavor: drupal
