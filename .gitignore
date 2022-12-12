@@ -3,7 +3,11 @@
 /drush/Commands/contrib/
 /drush/sites/lagoon.site.yml
 /vendor/
-/web
+/web/core
+/web/profiles/contrib
+/web/modules/contrib
+/web/themes/contrib
+
 
 # Ignore Drupal's file directory
 /web/sites/*/files/
@@ -19,3 +23,7 @@ web/sites/simpletest
 /.idea/
 /.editorconfig
 /.gitattributes
+
+# Ignore sql files
+*.sql
+*.sql.gz
