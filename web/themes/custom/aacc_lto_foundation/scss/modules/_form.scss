@@ -1,0 +1,479 @@
+// Form Styles
+
+[type='text'],
+[type='password'],
+[type='date'],
+[type='datetime'],
+[type='datetime-local'],
+[type='month'],
+[type='week'],
+[type='email'],
+[type='number'],
+[type='search'],
+[type='tel'],
+[type='time'],
+[type='url'],
+[type='color'],
+textarea {
+  &:focus  {
+    border: 1px solid darken($secondary-color, 5%);
+    box-shadow: none;
+  }
+}
+
+[type='checkbox'],
+[type='radio'] {
+  position: relative;
+  top: 2px;
+}
+
+label {
+  color: $black;
+  font-weight: 700;
+  margin-bottom: rem-calc(8px);
+}
+
+// Main Content Form Input
+.main-content-wrapper {
+  [type='text'],
+  [type='password'],
+  [type='date'],
+  [type='datetime'],
+  [type='datetime-local'],
+  [type='month'],
+  [type='week'],
+  [type='email'],
+  [type='number'],
+  [type='search'],
+  [type='tel'],
+  [type='time'],
+  [type='url'],
+  [type='color'],
+  textarea {
+    border: 1px solid $primary-color;
+    color: $black;
+    transition: border .5s ease-in-out;
+
+    &:hover,
+    &:focus {
+      border: 1px solid darken($primary-color, 10%);
+    }
+  }
+}
+
+select {
+  border: 1px solid $primary-color;
+  color: $black;
+
+  &:hover,
+  &:focus {
+    border: 1px solid darken($primary-color, 10%);
+  }
+}
+
+fieldset {
+  background: $white;
+  border: 1px solid $secondary-color;
+  margin-top: 1rem;
+  padding: 1rem;
+
+  &.fieldgroup {
+    margin-top: 0;
+  }
+}
+
+legend {
+  background: $primary-color;
+  color: $white;
+  font-weight: 700;
+  padding: 1rem 2rem;
+}
+
+.postfix {
+  margin-left: rem-calc(10px);
+  position: relative;
+  top: 12px;
+}
+
+.description {
+  color: $dark-gray;
+  font-size: rem-calc(14px);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.fieldgroup {
+  legend {
+    background: 0;
+    color: $black;
+    font-size: rem-calc(14px);
+    font-weight: 700;
+    margin-bottom: rem-calc(8px);
+    padding: 0;
+  }
+}
+
+.webform-button--submit {
+  margin-top: 1rem;
+}
+
+.captcha {
+  float: left;
+  width: 100%;
+}
+
+// Ask Lab Scientist Form
+.block-ask-us {
+  margin: 1rem 0 0;
+
+  @include breakpoint (medium up) {
+    margin: 2rem 0 0;
+  }
+
+  .ask-us-webform-hidden-more-button {
+    display: none;
+    clear: both;
+  }
+
+  .webform-submission-form {
+    padding-top: 375px;
+    position: relative;
+
+    &:before {
+      background-image: url('../../dist/images/ask_lab_scientist.jpg');
+      background-position: center 25%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      content: '';
+      display: block;
+      height: 350px;
+      left: 0;
+      margin: 0 -1rem;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    &::after {
+      clear: both;
+      content: '';
+      display: block;
+    }
+
+    @include breakpoint (medium up) {
+      padding-left: 25%;
+      padding-top: 0;
+
+      &::before {
+        content: '';
+        display: block;
+        height: 315px;
+        left: 0;
+        margin: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 22%;
+      }
+    }
+
+    @include breakpoint (large up) {
+      padding-left: 17%;
+
+      &::before {
+        height: 262px;
+        width: 15%;
+      }
+    }
+  }
+
+  .form-item {
+    @include breakpoint (medium up) {
+      float: left;
+      margin-right: 1.5%;
+      width: 48.5%;
+
+      &.form-item-subject,
+      &.fieldgroup,
+      &.form-item-message {
+        clear: both;
+        width: 100%;
+      }
+    }
+
+    &.full {
+      width: 100%;
+    }
+
+    &.js-form-type-radio {
+      display: inline-block;
+      float: none;
+      width: auto;
+    }
+  }
+
+  .fieldgroup {
+    margin: 0 0 1rem;
+  }
+
+  legend {
+    background: none;
+    color: $primary-color;
+    margin: 0 0 .5rem;
+    padding: 0;
+  }
+
+  .form-text,
+  .form-email {
+    height: auto;
+    padding: 1.1rem;
+  }
+
+  .form-textarea {
+    padding: 1.1rem;
+  }
+
+  .form-text,
+  .form-email,
+  .form-textarea {
+    &::placeholder {
+      color: $black;
+    }
+  }
+}
+
+.site--lto-us {
+  .block-ask-us {
+    @include breakpoint (medium up) {
+      margin: 2rem 0 6rem;
+
+      .form-item.full {
+        width: 98.5%;
+      }
+    }
+
+    @include breakpoint (large up) {
+      margin: 2rem 0 4rem;
+    }
+
+    .webform-submission-form {
+      &:before {
+        background-image: url('../../dist/images/ask_lab_scientist_US.jpg');
+      }
+    }
+  }
+
+  .block-askalaboratoryscientist {
+    .field-block-content--body {
+      min-height: 275px;
+      padding-top: 375px;
+      position: relative;
+
+      .contact-form-img {
+        display: none;
+      }
+
+      &::before {
+        background-image: url('../../dist/images/ask_lab_scientist_US.jpg');
+        background-position: center 25%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        content: '';
+        display: block;
+        height: 350px;
+        left: 0;
+        margin: 0 -1rem;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+
+      @include breakpoint (medium up) {
+        padding-left: 25%;
+        padding-top: 0;
+
+        &::before {
+          content: '';
+          display: block;
+          height: 315px;
+          left: 0;
+          margin: 0;
+          position: absolute;
+          right: 0;
+          top: 0;
+          width: 22%;
+        }
+      }
+
+      @include breakpoint (large up) {
+        padding-left: 17%;
+
+        &::before {
+          height: 262px;
+          width: 15%;
+        }
+      }
+    }
+  }
+}
+
+.site--lto-hu {
+  .block-ask-us {
+    .webform-submission-form {
+      &::before {
+        background-image: url('../../dist/images/ask_lab_scientist_HU.jpg');
+      }
+    }
+  }
+}
+
+.webform-toggle {
+  &.more-link {
+    clear: both;
+  }
+}
+
+.outside-subscribe {
+  display: none;
+}
+
+.site--lto-us {
+  .outside-subscribe {
+    display: block;
+  }
+}
+
+.webform-submission-ask-a-laboratory-scientist-form {
+  label {
+    &.form-required {
+      &::after {
+        bottom: 3px;
+        color: $primary-color;
+        content: '*';
+        left: 1px;
+        position: relative;
+      }
+    }
+  }
+
+  .js-form-item-privacy-policy,
+  .js-form-item-terms-of-use,
+  .js-form-item-terms-of-service {
+    width: 100%;
+  }
+
+
+  .js-form-item-terms-of-use,
+  .js-form-item-privacy-policy,
+  .js-form-type-webform-terms-of-service {
+    label {
+      &.form-required {
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.node--type-page {
+  .group-left {
+    width: 100%;
+    float: none;
+  }
+
+  .group-right {
+    width: 100%;
+    float: none;
+  }
+
+  .group-left,
+  .group-right {
+    legend {
+      margin: 1em 0;
+    }
+
+    .js-webform-checkboxes {
+      margin-bottom: 1em;
+
+      .form-item {
+        display: flex;
+      }
+    }
+
+    .alert {
+      background-color: #fff;
+      color: $primary-color;
+
+      li {
+        display: block;
+
+        a {
+          color: $primary-color;
+
+          &:visited {
+            color: $primary-color;
+          }
+        }
+      }
+    }
+
+    h2 {
+      &.webform-section-title {
+        color: #fff;
+        font-size: 1.375rem;
+      }
+    }
+
+    .form-item--error-message {
+      display: none;
+    }
+
+    .webform-submission-form {
+      color: #fff;
+
+      a {
+        color: #fff;
+
+        &:visited {
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  @include breakpoint (medium up) {
+    .group-left {
+      float: left;
+      width: 60%;
+    }
+
+    .group-right {
+      float: right;
+      width: 16rem;
+      position: relative;
+      top: -260px;
+      right: 30px;
+      margin-bottom: -200px;
+    }
+  }
+
+  @include breakpoint (large up) {
+    .group-left {
+      width: 65%;
+    }
+
+    .group-right {
+      width: 18rem;
+    }
+  }
+}
+
+.path-webform {
+  .webform-submission-licensing-interest-form {
+    #edit-webform-title {
+      display: none;
+    }
+  }
+
+}

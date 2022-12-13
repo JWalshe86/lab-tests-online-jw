@@ -1,0 +1,17 @@
+// AACC LTO Elements
+
+a {
+  color: $tertiary-color;
+
+  &:hover {
+    color: darken($tertiary-color, 10%);
+    transition: color .5s ease-in-out;
+  }
+}
+
+// Hide empty spans injected by extlink module
+span {
+  &.element-invisible {
+    display: none;
+  }
+}

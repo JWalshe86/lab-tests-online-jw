@@ -1,0 +1,21 @@
+{#
+  {% if content.field_button_link is defined and content.field_button_link is not empty %}
+    <div class="oyt-button">
+      <a
+        class="order-your-test-cta-button" 
+        href="{{ content.field_button_link[0]['#url'] }}"
+        title="{{ content.field_button_link[0]['#title'] }}"
+        target="_blank">
+        <img class="cart2-img" role="presentation" src="/themes/custom/aacc_lto_foundation/images/order-your-test/Cart2.svg" />
+        <span class="oyt-button-text">
+          {{ content.field_button_link[0]['#title'] }}
+        </span>
+        <img class="external-link-img" role="presentation" src="/themes/custom/aacc_lto_foundation/images/order-your-test/ExternalLink.svg" />  
+      </a>
+    </div>
+  {% endif %}  
+
+  <div class="oyt-button-powered-by">
+    Powered by HealthTestingCenters.com
+  </div>
+#}

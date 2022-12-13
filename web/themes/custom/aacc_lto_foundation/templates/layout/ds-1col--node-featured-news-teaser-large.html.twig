@@ -1,0 +1,21 @@
+{#
+/**
+ * @file
+ * Display Suite 1 column template.
+ *
+ * Available variables:
+ * - ds_content_wrapper: wrapper around content
+ * - attributes: content region attributes
+ * - ds_content: content region
+ */
+#}
+<{{ ds_content_wrapper }}{{ attributes.addClass('ds-1col', 'clearfix') }}>
+
+{{ title_suffix.contextual_links }}
+  {% if content.field_cover_image|render|trim is not empty %}
+    {{ ds_content }}
+  {% else %}
+    <img class="default-image" src="/themes/custom/aacc_lto_foundation/dist/images/news_teaser_default.jpg" alt="news-teaser">
+    {{ ds_content }}
+  {% endif %}
+</{{ ds_content_wrapper }}>

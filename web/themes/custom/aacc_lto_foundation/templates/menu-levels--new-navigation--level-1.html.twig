@@ -1,0 +1,60 @@
+{#
+/**
+ * @file
+ * Default theme implementation to each level of menu.
+ */
+#}
+
+{# todo: batching below does not always create four columns in sub-menu, but menu-[number]-column class is adjusted automatically #}
+{% import _self as menu %}
+{{ menu.menu_links(items, attributes, 0) }}
+
+{% macro menu_links(items, attributes, menu_level) %}
+  {# Establish arrays so they can be used outside the loop #}
+  {% set fullWidth = [] %}
+  {% set normalWidth = [] %}
+
+  {# Add items to either the full-width array or the normal array based on the display_field key #}
+  {# Sort happens to the items before they are put into normal/full arrays #}
+  {% for key, item in items if key|first != '#' %}
+    {% if item.entity.field_display.value == '1' %}
+      {% set normalWidth = normalWidth|merge([link(item.title, item.url)]) %}
+    {% elseif item.entity.field_display.value == '2' %}
+      {% set fullWidth = fullWidth|merge([link(item.title, item.url)]) %}
+    {% endif %}
+  {% endfor %}
+
+  {# To divide normal items into the four columns, we set a size for one column as chunk, then use batch #}
+  {% set chunk = (normalWidth|length / 4)|round(0, 'ceil') %}
+
+  {# We need a text representation of the number of columns for the style below #}
+  {% set colNumber = (normalWidth|length / chunk)|round(0, 'ceil') %}
+  {% if colNumber == '0' or colNumber == '1' %}
+    {% set colNumberText = 'one' %}
+  {% elseif colNumber == '2' %}
+    {% set colNumberText = 'two' %}
+  {% elseif colNumber == '3' %}
+    {% set colNumberText = 'three' %}
+  {% else %}
+    {% set colNumberText = 'four' %}
+  {% endif %}
+
+  <div class="row menu-container-row" role="presentation">
+    {# Full width menu items #}
+    {% for fkey, fitem in fullWidth %}
+      <span role="menuitem" class="menu-feature-link">{{ fitem }}</span>
+    {% endfor %}
+
+    {# Normal menu items #}
+    <div class="scroll-menu" role="presentation">
+      {% for row in normalWidth|batch(chunk,'') %}
+        <div class="columns mega-menu-column menu-{{ colNumberText }}-column" role="presentation">
+          {% for column in row %}
+            <li role="menuitem" class="is-submenu-item is-dropdown-submenu-item">{{ column }}</li>
+          {% endfor %}
+        </div>
+      {% endfor %}
+    </div>
+    <div class="clear"></div>
+  </div>
+{% endmacro %}

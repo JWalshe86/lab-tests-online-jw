@@ -1,0 +1,31 @@
+// Pager Styles
+
+.pagination {
+  .current {
+    background: none;
+    padding: 0;
+
+    a {
+      background: $primary-color;
+      color: $white;
+    }
+  }
+
+  .pager__item {
+    display: none;
+
+    &.pager__item--ellipsis {
+      display: none;
+    }
+
+    &.pager__item--next,
+    &.pager__item--previous,
+    &.is-active {
+      display: inline-block;
+    }
+
+    @include breakpoint(medium up) {
+      display: inline-block;
+    }
+  }
+}

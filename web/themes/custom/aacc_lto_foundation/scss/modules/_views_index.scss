@@ -1,0 +1,87 @@
+// Index View Pages
+
+.index-nav {
+  background: lighten($secondary-color, 5%);
+  border-bottom: 1px solid $white;
+  padding: .5rem;
+  text-align: left;
+
+  .index-nav-item {
+    border-right: 1px solid $secondary-color;
+    margin-right: rem-calc(-5px);
+
+    &:last-child {
+      border-right: 0;
+    }
+
+    a {
+      color: $primary-color;
+      font-weight: 700;
+      transition: background .5s ease-in-out;
+
+      &:hover {
+        background: $secondary-color;
+      }
+    }
+  }
+}
+
+.index-section {
+  background: $white;
+  border: 1px solid $dark-gray;
+  margin: 1rem 0;
+  min-height: 90px;
+  padding: 1rem 1rem 1rem 4.5rem;
+  position: relative;
+
+  @include breakpoint (medium up) {
+    margin: 1rem 0 2rem;
+  }
+
+  .views-field {
+    margin-bottom: .5rem;
+
+    a {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  h3 {
+    margin: 0;
+  }
+}
+
+.index-anchor {
+  position: absolute;
+  top: -48px;
+}
+
+.index-category {
+  background: $primary-color;
+  color: $white;
+  font-size: rem-calc(20px);
+  left: 0;
+  margin: 0;
+  padding: 1rem .5rem;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 50px;
+}
+
+.index-row {
+  @include breakpoint (medium up) {
+    @include flex-grid-row;
+  }
+}
+
+.index-view-column {
+  padding: .4rem .5rem;
+
+  @include breakpoint (medium up) {
+    flex: 0 0 48%;
+    max-width: 48%;
+  }
+}

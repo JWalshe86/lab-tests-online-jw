@@ -1,0 +1,38 @@
+{#
+/**
+ * @file
+ * Default theme implementation to each level of menu.
+ */
+#}
+{% import _self as menu %}
+
+{{ menu.menu_links(items, attributes, 0) }}
+
+{% macro menu_links(items, attributes, menu_level) %}
+<ul class="menu dropdown" data-dropdown-menu data-disable-hover="true" data-click-open="true" data-force-follow="false">
+  {% for key, item in items if key|first != '#' %}
+    {% set menu_item_classes = [
+      'menu-item',
+      'opens-right',
+      'is-dropdown-submenu-parent',
+      item.is_collapsed ? 'menu-item--collapsed',
+      item.in_active_trail ? 'menu-item--active-trail',
+    ] %}
+
+    <li{{ item.attributes.addClass(menu_item_classes) }} role="menuitem" aria-haspopup="true" aria-label="{{ item.title }}" data-is-click>
+      {# this logic allows top-level items to be a link, but does not check if there are sub-items first #}
+      {% if item.url|render|trim is not empty %}
+        {% set item_link = link(item.title, item.url) %}
+      {% else %}
+        {# The code that makes the menu expects all top-level items to have a link #}
+        {% set item_link = '<a>' ~ item.title ~ '</a>' %}
+      {% endif %}
+      {{ item_link|raw }}
+      {% set rendered_content = item.content|without('') %}
+      {% if rendered_content|render %}
+        {{ rendered_content }}
+      {% endif %}
+    </li>
+  {% endfor %}
+  </ul>
+{% endmacro %}

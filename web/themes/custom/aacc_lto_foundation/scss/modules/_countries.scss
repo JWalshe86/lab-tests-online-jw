@@ -1,0 +1,20 @@
+.site--lto-es {
+  .header {
+    .mobile-search-container {
+      @include breakpoint (large up) {
+        max-width: 370px;
+        width: calc((100vw - 800px) - 18px);
+      }
+    }
+  }
+}
+
+.site--lto-us {
+  .header {
+    .mobile-search-container {
+      @include breakpoint (large up) {
+        max-width: 270px;
+      }
+    }
+  }
+}

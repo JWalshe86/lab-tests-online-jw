@@ -1,0 +1,143 @@
+// Advertisement Styles
+.ad-region-top {
+  padding: 1rem 0;
+}
+
+.ad-region-bottom {
+  @include breakpoint (xxlarge up) {
+    display: none;
+  }
+}
+
+.ad-right-container {
+  @include breakpoint (xlarge up) {
+    display: block;
+    position: absolute;
+    right: -11rem;
+    top: 50px;
+    width: 160px;
+  }
+
+  @include breakpoint (xxlarge up) {
+    right: -12rem;
+  }
+}
+
+.ad-block {
+  background: $white;
+  padding: 1rem;
+  text-align: center;
+
+  a {
+    color: lighten($black, 20%);
+    display: inline-block;
+    font-size: rem-calc(12px);
+    margin-top: .5rem;
+    text-decoration: underline;
+    text-transform: uppercase;
+  }
+
+  img {
+    height: auto;
+    max-width: 100%;
+  }
+}
+
+// House Ad
+.house-ad {
+  text-align: center;
+
+  @include breakpoint (large up) {
+    float: right;
+    padding-left: 2rem;
+    text-align: right;
+    width: 30%;
+  }
+
+  .field-name-body {
+    padding-right: 0;
+  }
+}
+
+// Page Sponsor
+.block-stakeholderdisplay {
+  margin: 1rem 0;
+  z-index: 1;
+
+  @include breakpoint (medium up) {
+    float: right;
+    width: 224px;
+    margin: 0 0 1rem 1rem;
+  }
+
+  @include breakpoint (large up) {
+    width: 202px;
+  }
+
+  h4 {
+    background: $primary-color;
+    color: $white;
+    font-size: rem-calc(15px);
+    font-weight: 100;
+    margin: 0;
+    padding: .5rem .2rem;
+    text-align: center;
+  }
+
+  .field-name-field-logo {
+    border:  1px  solid $dark-gray;
+    padding: 1rem 2rem;
+    text-align: center;
+
+    a {
+      display: block;
+    }
+  }
+
+  .views-row {
+    border:  1px  solid $dark-gray;
+    margin: 0;
+    padding: 1rem;
+
+    &:last-of-type {
+      border-bottom: 1px  solid $dark-gray;
+    }
+  }
+}
+
+.ad-info-link {
+  display: block;
+  text-align: center;
+}
+
+// Ads (above content)
+#ad-top-ad,
+#ad-bottom-ad {
+  margin: 0 auto;
+  max-width: 320px;
+
+  @include breakpoint (medium up) {
+    max-width: 728px;
+  }
+}
+
+#ad-bottom-ad {
+  margin: 0 auto 1rem;
+}
+
+#ad-homepage {
+  display: none;
+  text-align: center;
+
+  @include breakpoint (large up) {
+    display: block;
+    float: left;
+    padding-left: 2rem;
+    text-align: right;
+    width: 30%;
+  }
+
+  .field-name-body {
+    padding-right: 0;
+  }
+}

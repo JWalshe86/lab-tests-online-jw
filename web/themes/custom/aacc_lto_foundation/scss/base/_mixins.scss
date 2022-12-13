@@ -1,0 +1,14 @@
+// Base Theme Mixins
+
+// Transparent Colors
+@mixin alpha-background-color($color, $background) {
+  $percent: alpha($color) * 100%;
+  $opaque: opacify($color, 1);
+  $solid-color: mix($opaque, $background, $percent);
+  background-color: $solid-color;
+}
+
+// Background Opacity
+@mixin background-opacity($color, $opacity: .7) {
+  background: rgba($color, $opacity);
+}

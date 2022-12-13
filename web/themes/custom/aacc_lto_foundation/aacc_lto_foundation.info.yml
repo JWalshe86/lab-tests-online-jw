@@ -1,0 +1,48 @@
+name: AACC LTO Foundation
+description: "Custom sub-theme, inherits from the Zurb Foundation base theme"
+core: 8.x
+core_version_requirement: ^8 || ^9
+type: theme
+base theme: zurb_foundation
+screenshot: images/screenshot.jpg
+
+libraries:
+ - aacc_lto_foundation/global
+
+regions:
+  meta_header: 'Meta Header'
+  header_first: 'Header First'
+  header_second: 'Header Second'
+  main_navigation: 'Main Navigation'
+  search: 'Header Search'
+  language: 'Language'
+  language_nav: 'Language Main Navigation'
+  help: 'Help'
+  page_top: 'Page Top'
+  page_bottom: 'Page Bottom'
+  highlighted: 'Highlighted'
+  content_top: 'Content Top'
+  content: 'Content'
+  content_bottom: 'Content Bottom'
+  sidebar_first: 'Left Sidebar'
+  sidebar_second: 'Right Sidebar'
+  footer_section_one:  'Footer Section One'
+  footer_section_two:  'Footer Section Two'
+  footer_section_three: 'Footer Section Three'
+  left_off_canvas: 'Left Off Canvas'
+  right_off_canvas: 'Right Off Canvas'
+  ad_banner_top: 'Ad Banner Top'
+  ad_banner_right: 'Ad Banner Right'
+  ad_banner_bottom: 'Ad Banner Bottom'
+  content_footer: 'Content Footer'
+regions_hidden:
+  page_top: 'Page Top'
+  page_bottom: 'Page Bottom'
+
+features:
+  - logo
+  - name
+  - slogan
+  - favicon
+  - comment_user_picture
+  - node_user_picture

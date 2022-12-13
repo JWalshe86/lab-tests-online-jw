@@ -1,0 +1,52 @@
+{#
+/**
+ * @file
+ * Theme override to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ */
+#}
+
+{% if view.total_rows > 12 %}
+  {% set columns = 4 %}
+  {% set column_class = 'menu-four-column' %}
+{% else %}
+  {% set columns = 1 %}
+  {% set column_class = 'menu-single-column' %}
+{% endif %}
+
+<a>{{ view.title }}</a>
+<ul class="menu vertical">
+    <div class="row menu-container-row" role="presentation">
+      {% if index_path %}
+        <span class='menu-feature-link index-link'><a href='/{{ index_path }}'>{{ index_title }}</a></span>
+      {% endif %}
+      <span class='menu-feature-link not-listed-link not-listed-test'><a href='/test-not-listed'>{% trans %}Not Listed?{% endtrans %}</a></span>
+      <span class='menu-feature-link not-listed-link not-listed-condition'><a href='/condition-not-listed'>{% trans %}Not Listed?{% endtrans %}</a></span>
+      <div class="scroll-menu" role="presentation">
+        {% for subrows in rows|batch(view.total_rows / columns) %}
+          <div class="columns mega-menu-column {{ column_class }}" role="presentation">
+            {% for row in subrows %}
+              <li role="menuitem" class="is-submenu-item is-dropdown-submenu-item">
+                {% if loop.parent.loop.first and loop.first %}
+                  {{ row|raw }}
+                {% else %}
+                  {{ row.content }}
+                {% endif %}
+              </li>
+            {% endfor %}
+          </div>
+        {% endfor %}
+        </div>
+      <div class="clear"></div>
+    </div>
+</ul>

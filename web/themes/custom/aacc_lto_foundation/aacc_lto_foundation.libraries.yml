@@ -1,0 +1,88 @@
+global:
+  version: VERSION
+  css:
+    base:
+      dist/css/aacc_lto_foundation.min.css: {}
+  js:
+    dist/js/aacc_lto_foundation.js: {}
+
+default:
+  css:
+    base:
+      dist/css/default.min.css: {}
+
+blue:
+  css:
+    base:
+      dist/css/blue.min.css: {}
+
+foundation-reveal:
+  js:
+    dist/js/foundation_reveal_shift_fix.js: {}
+  dependencies:
+    - core/jquery
+
+owl-carousel:
+  version: 2.0
+  css:
+    theme:
+      bower_components/owl.carousel/dist/assets/owl.carousel.css: {}
+  js:
+    bower_components/owl.carousel/dist/owl.carousel.min.js: {}
+  dependencies:
+    - core/jquery
+
+collaborating-partners:
+  js:
+    dist/js/owl-carousel/collaborating-partners.js: {}
+  dependencies:
+    - aacc_lto_foundation/owl-carousel
+    - core/jquery
+
+corporate-sponsors:
+  js:
+    dist/js/owl-carousel/corporate-sponsors.js: {}
+  dependencies:
+    - core/jquery
+    - aacc_lto_foundation/owl-carousel
+
+foundation_magellan:
+  js:
+    dist/js/magellan_menu.js: {}
+
+accordion-toggle:
+  js:
+    dist/js/accordion-toggle.js: {}
+  dependencies:
+    - core/jquery
+
+jquery-expander:
+  js:
+    bower_components/jquery-expander/jquery.expander.min.js: {}
+    dist/js/jquery-expander.js: {}
+  dependencies:
+    - core/jquery
+
+webform-toggle:
+  js:
+    dist/js/webform-toggle.js: {}
+  dependencies:
+    - core/jquery
+
+expandable-button:
+  js:
+    dist/js/expandable-button.js: {}
+  dependencies:
+    - core/jquery
+
+# trendmd:
+#   js:
+#     dist/js/trendmd.js: {}
+#   dependencies:
+#     - core/jquery
+
+order-your-test-sticky:
+  js:
+    dist/js/order-your-test-sticky.js: {}
+  dependencies:
+    - core/jquery

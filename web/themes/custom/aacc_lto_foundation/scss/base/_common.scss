@@ -1,0 +1,19 @@
+// Common Elements: Fonts, Colors, etc.
+
+// Font & Icon Imports
+@font-face {
+  font-family: 'aacc-icons';
+  src:  url('../fonts/aacc-icons.eot?uqcinu#iefix') format('embedded-opentype'),
+  url('../fonts/aacc-icons.woff?uqcinu') format('woff'),
+  url('../fonts/aacc-icons.ttf?uqcinu') format('truetype'),
+  url('../fonts/aacc-icons.svg?uqcinu#aacc-icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$aacc-icon: 'aacc-icons';
+
+// Key Theme Colors
+$gold: $warning-color;
+$green: $success-color;
+$tertiary-color: get-color(tertiary);

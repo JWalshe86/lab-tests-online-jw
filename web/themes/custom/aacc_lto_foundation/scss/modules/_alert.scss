@@ -1,0 +1,75 @@
+// Alert Styles
+
+.callout,
+.alert-box {
+  background: $white;
+  border: 1px solid $black;
+  color: $black;
+  margin: 0 0 1rem;
+  padding: 1rem;
+  position: relative;
+
+  .close {
+    background: $white;
+    color: $black;
+    display: block;
+    font-size: rem-calc(25px);
+    line-height: rem-calc(20px);
+    padding: .5rem;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    text-align: center;
+    width: 35px;
+  }
+
+  &.success {
+    @include alpha-background-color(rgba($green, .25), $white);
+    border: 1px solid $green;
+  }
+
+  &.warning {
+    @include alpha-background-color(rgba($gold, .25), $white);
+    border: 1px solid $gold;
+  }
+
+  &.error,
+  &.secondary {
+    @include alpha-background-color(rgba($primary-color, .25), $white);
+    border: 1px solid $primary-color;
+  }
+}
+
+// Cookie Consent
+
+.cc_banner {
+  border: 1px solid $black-off;
+  color: $black-off;
+  font-family: Arial, Helvetica, sans-serif;
+
+  .cc_btn {
+    background-color: $primary-color;
+    border-radius: 0;
+    color: $white !important;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+}
+
+// Sitewide Alert Styles
+
+.sitewide-alert {
+
+  a {
+    color: $white;
+    text-decoration: underline;
+  }
+
+  &.alert-primary {
+    background-color: #b11f24;
+    color: $white;
+    padding: 20px 45px 15px 15px;
+  }
+}

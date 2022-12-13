@@ -1,0 +1,39 @@
+{#
+/**
+ * @file
+ * Theme override for unformatted summary links.
+ *
+ * Available variables:
+ * - rows: The rows contained in this view.
+ *   - url: The URL to this row's content.
+ *   - count: The number of items this summary item represents.
+ *   - separator: A separator between each row.
+ *   - attributes: HTML attributes for a row.
+ *   - active: A flag indicating whether the row is active.
+ * - options: Flags indicating how each row should be displayed. This contains:
+ *   - count: A flag indicating whether the row's 'count' should be displayed.
+ *   - inline: A flag indicating whether the item should be wrapped in an inline
+ *     or block level HTML element.
+ *
+ * @see template_preprocess_views_view_summary_unformatted()
+ */
+#}
+{% set first = rows|first %}
+{% set last = rows|last %}
+{{ test }}
+<div data-sticky-container class="sticky-container">
+  <div class="sticky sticky-nav" id="index-nav" {{ data_sticky }}data-options="marginTop:0;" style="width:100%" data-top-anchor="block-mainpagecontent">
+    <nav data-magellan data-bar-offset="65">
+      <ul class="index-nav horizontal menu">
+        {% for row in rows  %}
+        {% if row.separator -%}
+          {{ row.separator }}
+        {%- endif %}
+          <li class="index-nav-item">
+            <a href="#index-{{ row.link|lower }}"{{ row.attributes.addClass(row.active ? 'is-active')|without('href') }}>{{ row.link }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</div>

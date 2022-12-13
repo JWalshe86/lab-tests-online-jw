@@ -1,0 +1,35 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a linkicon item.
+ *
+ * Available variables:
+ * - title: The link text or title, already sanitized at viewElements.
+ * - title_only: The link text or title only without spans. 
+ * - position: The icon placement relative to link text.
+ * - icon_bundle: The icon bundle, integration with icon.module.
+ * - icon_name: The icon name, e.g.: twitter, facebook, etc.
+ * - attributes: An associative array of attributes to be placed in the span
+ *   tag.
+ *
+ * @see template_preprocess_linkicon_item()
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set title_classes = [
+    icon ? 'linkicon-text' : 'linkicon-noicon',
+  ]
+%}
+{% if title_only %}
+  {{ title|raw }}
+{% else %}
+  {% if position in ['bottom', 'right'] %}
+    <div{{ title_attributes.addClass(title_classes) }}>{{ title|raw }}</div>
+    {{ icon }}
+  {% else %}
+    {{ icon }}
+    <div{{ title_attributes.addClass(title_classes) }} data-equalizer-watch="linkicon">{{ title|raw }}</div>
+  {% endif %}
+{% endif %}

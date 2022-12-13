@@ -1,0 +1,54 @@
+//This is your _settings.scss file where you can override foundation variables.
+@import 'settings';
+
+// Core
+@import 'foundation';
+@import 'motion-ui';
+
+// Set flex to true to enable the new Foundation 6 flex grid.
+$flex: false;
+@include foundation-everything($flex);
+
+@include motion-ui-transitions;
+@include motion-ui-animations;
+
+// Base
+@import 'base/common';
+@import 'base/drupal';
+@import 'base/elements';
+@import 'base/icons';
+@import 'base/mixins';
+@import 'base/type';
+
+// Layout
+@import 'layout/header';
+@import 'layout/main';
+@import 'layout/aside';
+@import 'layout/footer';
+
+// Modules
+@import 'modules/aacc_print';
+@import 'modules/accordion';
+@import 'modules/advertisement';
+@import 'modules/alert';
+@import 'modules/articles';
+@import 'modules/basic_page';
+@import 'modules/block';
+@import 'modules/button';
+@import 'modules/countries';
+@import 'modules/fields';
+@import 'modules/form';
+@import 'modules/gallery';
+@import 'modules/menu';
+@import 'modules/menu_magellan';
+@import 'modules/pager';
+@import 'modules/paragraph';
+@import 'modules/screening_test';
+@import 'modules/search';
+@import 'modules/share_tools';
+@import 'modules/sponsors';
+@import 'modules/table';
+@import 'modules/views';
+@import 'modules/views_index';
+@import 'modules/ads';
+@import 'modules/order_your_test';

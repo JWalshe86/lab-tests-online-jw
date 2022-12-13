@@ -1,0 +1,101 @@
+// Magellan Menu Styles
+
+.block-menu-magellan {
+  margin-bottom: 1rem;
+
+  @include breakpoint (medium up) {
+    display: inline-block;
+    float: right;
+    margin-top: 1rem;
+    margin-left: 2rem;
+  }
+
+  @include breakpoint (large up) {
+    margin-top: .7rem;
+  }
+}
+
+.menu-magellan {
+  position: relative;
+
+  .active {
+    background: $tab-background-active;
+  }
+
+  .ask-us {
+    list-style-type: none;
+    margin: 0;
+
+    a {
+      padding: .4rem 1rem;
+    }
+  }
+}
+
+.menu-magellan-body {
+  border-left: 1px solid $dark-gray;
+  border-right: 1px solid $dark-gray;
+  position: absolute;
+  text-align: left;
+  width: 100%;
+  z-index: 2;
+}
+
+.menu-magellan-title {
+  border: 1px solid $dark-gray;
+  display: block;
+  font-size: rem-calc(18px);
+  padding: .3rem 1.5rem;
+  text-align: center;
+
+  @include breakpoint(medium up) {
+    display: inline-block;
+    min-width: rem-calc(224px);
+  }
+
+  @include breakpoint (large up) {
+    min-width: rem-calc(202px);
+  }
+
+  &.block-title {
+    margin-bottom: 0;
+  }
+
+  &::after {
+    content: '+';
+    margin-left: 3px;
+    position: absolute;
+  }
+
+  &.open::after {
+    content: '-';
+  }
+}
+
+.ask-us,
+.magellan-link-field {
+  a {
+    background: $white;
+    border-bottom: 1px solid $dark-gray;
+    color: $black;
+    display: none !important;
+    font-size: rem-calc(14px);
+    font-weight: 700;
+
+    &:hover,
+    &:active {
+      color: $primary-color;
+      background: lighten($secondary-color, 5%);
+    }
+
+    &[href^='#'] {
+      display: block !important;
+    }
+  }
+
+  &.menu {
+    a {
+      padding: .7rem 1rem;
+    }
+  }
+}

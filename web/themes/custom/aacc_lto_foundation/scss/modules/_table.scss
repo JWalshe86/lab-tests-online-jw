@@ -1,0 +1,59 @@
+// Table Styles
+table {
+  @include table-scroll;
+  border-collapse: collapse;
+  border-spacing: 0;
+
+  tbody,
+  tfoot,
+  thead {
+    background: $white;
+    border: 1px solid $primary-color;
+  }
+
+  thead {
+    background: $primary-color;
+
+    th,
+    td {
+      background: $primary-color;
+      color: $white;
+      padding: 1rem .6rem .8rem;
+      text-transform: uppercase;
+    }
+  }
+
+  th {
+    background: $primary-color;
+    color: $white;
+    padding: 1rem 1rem .8rem;
+    text-transform: uppercase;
+
+    a {
+      color: $white;
+    }
+  }
+
+  tbody {
+    td {
+      border: 1px solid $secondary-color;
+    }
+
+    tr {
+      background: $secondary-color;
+
+      &:nth-child(even) {
+        background: lighten($secondary-color, 5);
+
+        td {
+          border: 1px solid lighten($secondary-color, 5);
+        }
+      }
+    }
+  }
+
+  img {
+    max-width: 100%;
+    width: 100%;
+  }
+}

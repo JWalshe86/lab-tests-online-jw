@@ -1,0 +1,27 @@
+// Screening Tests field on Screenings
+
+.field-node--field-screening-tests {
+  border-top: 1px solid $dark-gray;
+  margin-top: 1rem;
+
+  @include breakpoint (medium up) {
+    margin-top: 2rem;
+  }
+
+  .field-label {
+    color: $primary-color;
+    font-size: rem-calc(18px);
+    font-weight: 700;
+    margin-bottom: rem-calc(8px);
+    margin-top: 1rem;
+
+    @include breakpoint (medium up) {
+      font-size: rem-calc(30px);
+      margin-top: 2rem;
+    }
+  }
+
+  .accordion {
+    margin: 0;
+  }
+}

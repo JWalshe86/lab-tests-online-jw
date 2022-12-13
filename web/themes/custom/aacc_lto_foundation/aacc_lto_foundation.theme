@@ -1,0 +1,578 @@
+<?php
+
+/**
+ * @file
+ * Override theme functions here.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
+use Drupal\node\Entity\Node;
+use Drupal\node\NodeInterface;
+use Drupal\paragraphs\ParagraphInterface;
+use Drupal\views\Plugin\views\cache\CachePluginBase;
+use Drupal\views\ViewExecutable;
+use Drupal\views\Views;
+use Drupal\webform\Entity\Webform;
+use Drupal\Core\Url;
+use Drupal\aacc_admin\AaccLtoFoundationIp2CountryCallback;
+use Sympfony\Component\Intl\Collator;
+
+/**
+ * Implements hook_preprocess_html().
+ */
+function aacc_lto_foundation_preprocess_html(&$variables) {
+  // If the color has been set in the theme settings, attach the color library.
+  $color_scheme = !empty(theme_get_setting('color_scheme')) ? theme_get_setting('color_scheme') : 'default';
+  $variables['#attached']['library'][] = "aacc_lto_foundation/$color_scheme";
+
+  // Get site name for use in HTML template.
+  $variables['head_title_name'] = \Drupal::config('system.site')->get('name');
+
+}
+
+/**
+ * Implements template_preprocess_page().
+ */
+function aacc_lto_foundation_preprocess_page(&$variables) {
+  if (isset($variables['node'])) {
+    $magellan_menu_content_types = ['test', 'condition', 'screening'];
+    if ($variables['node'] instanceof NodeInterface) {
+      $node = $variables['node'];
+    }
+    else {
+      $node = Node::load($variables['node']);
+    }
+
+    if (in_array($node->getType(), $magellan_menu_content_types)) {
+      $variables['#attached']['library'][] = 'aacc_lto_foundation/foundation_magellan';
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function aacc_lto_foundation_preprocess_paragraph__three_column_call_to_action_lg(&$variables) {
+  $uri = $variables['paragraph']->get('field_button_link')[0]->getValue('uri')['uri'];
+  $uri = Url::fromUri($uri)->toString();
+  $title = $variables['paragraph']->get('field_button_link')[0]->getValue('title')['title'];
+  $layout = $variables['paragraph']->get('field_order_layout')->getValue('field_order_layout');
+  $layout = $layout ? $layout[0]['value'] : 'large';
+
+  $variables['order_your_test_component_lazy_builder'] = [
+    '#create_placeholder' => TRUE,
+    '#lazy_builder' => [
+      AaccLtoFoundationIp2CountryCallback::class . '::preRender',
+      [$uri, $title, $layout],
+    ],
+  ];
+
+  $variables['#attached']['library'][] = 'aacc_lto_foundation/order-your-test-sticky';
+}
+
+/**
+ * Implements hook_preprocess_paragraph().
+ *
+ * @throws \Drupal\Core\TypedData\Exception\MissingDataException
+ */
+function aacc_lto_foundation_preprocess_paragraph(&$variables) {
+  /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
+  $paragraph = $variables['elements']['#paragraph'];
+  $paragraphType = $paragraph->getType();
+  if ($paragraphType == 'accordion') {
+    $variables['isUSsite'] = FALSE;
+    if (strpos(\Drupal::service('site.path'), 'aacc-lto.us') !== FALSE) {
+      $variables['isUSsite'] = TRUE;
+    }
+  }
+  if ($paragraphType == 'call_to_action') {
+    if ($paragraph->__isset('field_color')) {
+      $hexColor = str_replace('#', '', $paragraph->field_color->color);
+      $variables['attributes']['class'][] = 'color-' . $hexColor;
+    }
+  }
+  if ($paragraphType == 'section_navigation_item') {
+    if ($paragraph->__isset('field_color')) {
+      $hexColor = str_replace('#', '', $paragraph->field_color->color);
+      $variables['attributes']['class'][] = 'color-' . $hexColor;
+    }
+    if ($paragraph->__isset('field_secondary_label') && $paragraph->field_secondary_label->value != '') {
+      $variables['content']['field_link']['#items'][0]['#title']['#title'] .= '<span class="second-label">' . $paragraph->field_secondary_label->value . '</span>';
+    }
+  }
+
+  if ($paragraphType == 'text_area') {
+    $site_name = \Drupal::config('aacc_multisite.config')->get('site.class');
+    if ($site_name == 'lto-us') {
+      $variables['attributes']['class'][] = 'medium-12 columns lto-us';
+    }
+    else {
+      if ($paragraph->field_width->value == 50) {
+        $variables['attributes']['class'][] = 'medium-6 columns';
+      }
+      else {
+        $variables['attributes']['class'][] = 'medium-12 columns';
+      }
+    }
+
+  }
+
+  if ($paragraphType == 'column') {
+    $count = $paragraph->_referringItem->getParent()->count();
+    if ($count) {
+      $variables['attributes']['class'][] = 'columns';
+      $variables['attributes']['class'][] = 'large-' . (12 / $count);
+    }
+  }
+
+  $variables['subcontent_show_all'] = ($paragraph->hasField('field_expand_show_all')
+    && (bool) $paragraph->get('field_expand_show_all')->value);
+
+  if ($paragraphType == 'expandable') {
+    if ($paragraph->field_hide_teaser->value) {
+      $variables['attributes']['class'][] = 'no-teaser';
+    }
+    if ($paragraph->field_expand_show_all->value == 1) {
+      $variables['expand_show_all'] = 1;
+    }
+  }
+
+  if ($paragraphType == 'expandable_button') {
+    if ($paragraph->__isset('field_color')) {
+      $hexColor = str_replace('#', '', $paragraph->field_color->color);
+      $variables['attributes']['class'][] = 'color-' . $hexColor;
+    }
+    if ($paragraph->__isset('field_icon')) {
+      $variables['icon'] = 'icon-' . $paragraph->field_icon->value;
+    }
+    if ($paragraph->__isset('field_default_content')) {
+
+      // Load the set default_value as the button_content.
+      switch ($paragraph->field_default_content->value) {
+        case 'test_results':
+          $variables['button_label'] = $variables['content']['field_default_test_result_conten']['#title'];
+          $variables['button_content'] = $variables['content']['field_default_test_result_conten'];
+          $variables['button_content'][0]['#text'] = $paragraph->getFieldDefinition('field_default_test_result_conten')->getDefaultValue($paragraph)[0]['value'];
+          break;
+
+        case 'reference_ranges':
+          $variables['button_label'] = $variables['content']['field_default_reference_range_co']['#title'];
+          $variables['button_content'] = $variables['content']['field_default_reference_range_co'];
+          $variables['button_content'][0]['#text'] = $paragraph->getFieldDefinition('field_default_reference_range_co')->getDefaultValue($paragraph)[0]['value'];
+          break;
+      }
+
+      // Override button label if one is manunally set.
+      if (isset($paragraph->field_label->value)) {
+        $variables['button_label'] = $variables['content']['field_label'];
+      }
+
+    }
+  }
+}
+
+/**
+ * Implements template_preprocess_views_view().
+ */
+function aacc_lto_foundation_preprocess_views_view(&$variables) {
+  if ($variables['view']->id() === 'stakeholders') {
+    $vars['#cache']['contexts'][] = 'route';
+    $variables['#attached']['library'][] = 'aacc_lto_foundation/collaborating-partners';
+    $variables['#attached']['library'][] = 'aacc_lto_foundation/corporate-sponsors';
+  }
+}
+
+/**
+ * Implements template_preprocess_views_view().
+ */
+function aacc_lto_foundation_preprocess_views_view_unformatted__indexes(&$variables) {
+  $variables['#attached']['library'][] = 'aacc_lto_foundation/foundation_magellan';
+}
+
+/**
+ * Implements template_preprocess_views_view().
+ */
+function aacc_lto_foundation_preprocess_views_view_summary_unformatted__indexes(&$variables) {
+  // Prevent Index Summary from being sticky on Korea and China sites.
+  global $base_url;
+  $subsite = substr($base_url, strrpos($base_url, '.') + 1);
+  $variables['data_sticky'] = (in_array($subsite, ['kr', 'cn'])) ? '' : 'data-sticky ';
+}
+
+/**
+ * Implements template_preprocess_views_view().
+ */
+function aacc_lto_foundation_preprocess_views_view_fields__indexes__definitions(&$variables) {
+  $node = $variables['row']->_entity;
+  $variables['id'] = 'term-' . str_replace(' ', '-', strtolower($node->title->value));
+}
+
+/**
+ * Implements hook_preprocess_field().
+ */
+function aacc_lto_foundation_preprocess_field(&$variables, $hook) {
+  if ($variables['field_name'] == 'field_accordion_items') {
+    $sitePath = \Drupal::service('site.path');
+    $variables['isUSsite'] = FALSE;
+    if (strpos($sitePath, 'aacc-lto.us') !== FALSE) {
+      $variables['isUSsite'] = TRUE;
+    }
+  }
+  if ($variables['field_name'] === 'field_screening_test_item') {
+    /** @var \Drupal\paragraphs\ParagraphInterface $paragraph */
+    $paragraph = $variables['element']['#object'];
+
+    if (!$paragraph instanceof ParagraphInterface) {
+      return;
+    }
+
+    $variables['subcontent_show_all'] = ($paragraph->hasField('field_expand_show_all')
+      && (bool) $paragraph->get('field_expand_show_all')->value);
+  }
+
+  switch ($variables['element']['#field_name']) {
+    case 'field_formal_name':
+    case 'title':
+      foreach ($variables['items'] as $key => $item) {
+        $variables['items'][$key]['html'] = $variables['items'][$key]['content']['#context']['value'];
+      }
+      break;
+  }
+}
+
+/**
+ * Implements hook_preprocess_field__HOOK().
+ */
+function aacc_lto_foundation_preprocess_field__field_reviewed(&$variables) {
+  if (!empty($variables['items'][0]['content']['#text'])) {
+    $variables['items'][0]['content']['#text'] = $variables['items'][0]['content']['#text'] . '.';
+  }
+}
+
+/**
+ * Implements template_preprocess_field__node_title().
+ */
+function aacc_lto_foundation_preprocess_field__node_title(&$variables) {
+  foreach ($variables['items'] as $key => $item) {
+    if (isset($item['content'][0]['#template'])) {
+      // Reformat title to render HTML.
+      $variables['items'][$key]['content'][0]['#context']['output'] = [
+        '#type' => 'inline_template',
+        '#template' => '{{ output|raw }}',
+        '#context' => ['output' => $item['content'][0]['#context']['output']],
+      ];
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_select().
+ */
+function aacc_lto_foundation_preprocess_select(&$variables) {
+  if ($variables['attributes']['name'] === 'country[country_code]') {
+    $variables['options'][0]['label'] = new TranslatableMarkup('- Select -');
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function aacc_lto_foundation_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if (isset($form['#webform_id']) && $form['#webform_id'] == 'licensing_interest') {
+    $webform = Webform::load('licensing_interest');
+    $title = [
+      'webform_title' => [
+        '#type' => 'webform_section',
+        '#title' => $webform->label(),
+        '#title_tag' => 'h2',
+      ],
+    ];
+    array_unshift($form['elements'], $title);
+  }
+
+  switch ($form_id) {
+    case 'search_api_page_block_form':
+      $form['keys']['#placeholder'] = 'Search';
+      break;
+
+    case 'webform_submission_ask_a_laboratory_scientist_add_form':
+      $form['elements']['hidden_elements']['country']['#attributes']['placeholder'] = 'Select';
+      break;
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function aacc_lto_foundation_form_system_theme_settings_alter(&$form, FormStateInterface &$form_state, $form_id = NULL) {
+  // Work-around for a core bug affecting admin themes. See issue #943212.
+  if (isset($form_id)) {
+    return;
+  }
+
+  $dir_of_color_schemes = DRUPAL_ROOT . '/' . drupal_get_path('theme', 'aacc_lto_foundation') . '/scss/color_schemes';
+  $color_scheme_files = array_diff(scandir($dir_of_color_schemes), ['..', '.']);
+  $color_schemes = [];
+
+  foreach ($color_scheme_files as $color_scheme_file) {
+    $file_name = substr($color_scheme_file, 0, -5);
+    $color_schemes[$file_name] = $file_name;
+  }
+
+  $form['theme_config'] = [
+    '#type' => 'fieldset',
+    '#title' => 'Theme Configuration',
+    '#weight' => -11,
+  ];
+
+  $form['theme_config']['color_scheme'] = [
+    '#type' => 'select',
+    '#title' => t('Color Scheme'),
+    '#options' => $color_schemes,
+    '#default_value' => theme_get_setting('color_scheme') ? theme_get_setting('color_scheme') : 'default',
+  ];
+
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function aacc_lto_foundation_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+  // Block suggestions for custom block bundles.
+  if (isset($variables['elements']['content']['#block_content'])) {
+    array_splice($suggestions, 1, 0, 'block__bundle__' . $variables['elements']['content']['#block_content']->bundle());
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_field_alter().
+ */
+function aacc_lto_foundation_theme_suggestions_field_alter(&$suggestions, $variables) {
+  $suggestions[] = 'field__' . $variables['element']['#field_name'] . '__' . $variables['element']['#view_mode'];
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function aacc_lto_foundation_theme_suggestions_image_formatter_alter(array &$suggestions, array $variables) {
+  $entity = $variables['item']->getEntity();
+  $field_name = $variables['item']->getParent()->getName();
+  $suggestions[] = 'image_formatter__' . $entity->getEntityTypeId() . '__' . $entity->bundle() . '__' . $field_name;
+}
+
+/**
+ * Implements hook_views_post_render().
+ */
+function aacc_lto_foundation_views_post_render(ViewExecutable $view, &$output, CachePluginBase $cache) {
+  if ($view->id() == 'indexes') {
+    $current_display = $view->current_display;
+
+    if ($current_display == 'tests_glossary') {
+
+      // Combine glossary from tests_glossary_formal view display.
+      $view_to_combine = Views::getView('indexes');
+      $view_to_combine->setDisplay($current_display . '_formal');
+      $view_to_combine->preExecute();
+      $view_to_combine->execute();
+      $view_to_combine = $view_to_combine->render($current_display . '_formal');
+      aacc_lto_foundation_merge_glossary_views($output, $view_to_combine, 'field_formal_name_value_truncated');
+
+      // Combine glossary from tests_glossary_aka view display.
+      $view_to_combine = Views::getView('indexes');
+      $view_to_combine->setDisplay($current_display . '_aka');
+      $view_to_combine->preExecute();
+      $view_to_combine->execute();
+      $view_to_combine = $view_to_combine->render($current_display . '_aka');
+      aacc_lto_foundation_merge_glossary_views($output, $view_to_combine, 'field_test_synonyms_value_truncated');
+
+    }
+
+    if ($current_display == 'conditions_glossary') {
+      // Combine glossary from conditions_glossary_aka.
+      $view_to_combine = Views::getView('indexes');
+      $view_to_combine->setDisplay($current_display . '_aka');
+      $view_to_combine->preExecute();
+      $view_to_combine->execute();
+      $view_to_combine = $view_to_combine->render($current_display . '_aka');
+      aacc_lto_foundation_merge_glossary_views($output, $view_to_combine, 'field_condition_synonyms_value_truncated');
+    }
+
+    if ($current_display == 'definitions_glossary') {
+      $view_to_combine = Views::getView('indexes');
+      $view_to_combine->setDisplay($current_display . '_aka');
+      $view_to_combine->preExecute();
+      $view_to_combine->execute();
+      $view_to_combine = $view_to_combine->render($current_display . '_aka');
+      aacc_lto_foundation_merge_glossary_views($output, $view_to_combine, 'field_field_definition_synonyms_value_truncated');
+    }
+
+    if ($current_display == 'tests') {
+      aacc_lto_foundation_label_grouped_views_output($output);
+
+      // Combine formal_name fields from the tests_formal view_display.
+      $view_to_combine = Views::getView('indexes');
+      $view_to_combine->setDisplay($current_display . '_formal');
+      $view_to_combine->preExecute();
+      $view_to_combine->execute();
+      $view_to_combine = $view_to_combine->render($current_display . '_formal');
+      aacc_lto_foundation_merge_grouped_views($output, $view_to_combine, 'field_formal_name');
+
+      // Combine field_test_synonym fields from the tests_aka view_display.
+      $view_to_combine = Views::getView('indexes');
+      $view_to_combine->setDisplay($current_display . '_aka');
+      $view_to_combine->preExecute();
+      $view_to_combine->execute();
+      $view_to_combine = $view_to_combine->render($current_display . '_aka');
+      aacc_lto_foundation_merge_grouped_views($output, $view_to_combine, 'node__field_test_synonyms_field_test_synonyms_value');
+
+      // Resort the view since new items have been added.
+      aacc_lto_foundation_sort_grouped_view($output);
+    }
+
+    if ($current_display == 'conditions') {
+      aacc_lto_foundation_label_grouped_views_output($output);
+
+      // Combine field_condition_synonym fields from the tests_aka view_display.
+      $view_to_combine = Views::getView('indexes');
+      $view_to_combine->setDisplay($current_display . '_aka');
+      $view_to_combine->preExecute();
+      $view_to_combine->execute();
+      $view_to_combine = $view_to_combine->render($current_display . '_aka');
+      aacc_lto_foundation_merge_grouped_views($output, $view_to_combine, 'node__field_condition_synonyms_field_condition_synonyms_valu');
+
+      // Resort the view since new items have been added.
+      aacc_lto_foundation_sort_grouped_view($output);
+    }
+
+    if ($current_display == 'definitions') {
+      aacc_lto_foundation_label_grouped_views_output($output);
+
+      // Combine the fields from the tests_aka view_display.
+      $view_to_combine = Views::getView('indexes');
+      $view_to_combine->setDisplay($current_display . '_aka');
+      $view_to_combine->preExecute();
+      $view_to_combine->execute();
+      $view_to_combine = $view_to_combine->render($current_display . '_aka');
+      aacc_lto_foundation_merge_grouped_views($output, $view_to_combine, 'node__field_field_definition_synonyms_field_field_definition');
+
+      // Resort the view since new items have been added.
+      aacc_lto_foundation_sort_grouped_view($output);
+    }
+  }
+
+}
+
+/**
+ * Helper function to Label each views-row for sorting in the future.
+ */
+function aacc_lto_foundation_label_grouped_views_output(&$output) {
+  foreach ($output['#rows'] as $section_key => $section) {
+    foreach ($section['#rows'] as $row_key => $row) {
+      $output['#rows'][$section_key]['#rows'][$row_key]['output_value'] = strip_tags($row['#row']->_entity->title->value);
+    }
+  }
+}
+
+/**
+ * Helper function to merge two grouped views.
+ */
+function aacc_lto_foundation_merge_grouped_views(&$output, &$view_to_combine, $field_name) {
+  $output_alphabet = [];
+  $view_to_combine_alphabet = [];
+  foreach ($output['#rows'] as $i => $group) {
+    $first_group_item = reset($group['#rows']);
+    $group_letter = mb_strtolower(mb_substr($first_group_item['output_value'], 0, 1));
+    $output_alphabet[$group_letter] = $group;
+  }
+  foreach ($view_to_combine['#rows'] as $i => $group) {
+    $first_group_item = reset($group['#rows']);
+    $str = (isset($first_group_item['#row']->$field_name)) ? $first_group_item['#row']->$field_name : $first_group_item['#row']->_entity->$field_name->value;
+    if (!isset($str)) {
+      continue;
+    }
+
+    // Label each views-row for sorting in the future.
+    foreach ($group['#rows'] as $row_id => $row) {
+      $output_value = (isset($row['#row']->$field_name)) ? $row['#row']->$field_name : $row['#row']->_entity->$field_name->value;
+      $group['#rows'][$row_id]['output_value'] = strip_tags($output_value);
+    }
+
+    $group_letter = mb_strtolower(mb_substr(strip_tags($str), 0, 1));
+    $view_to_combine_alphabet[$group_letter] = $group;
+  }
+  foreach ($view_to_combine_alphabet as $letter => $group) {
+    if (isset($output_alphabet[$letter])) {
+      $output_alphabet[$letter]['#rows'] = array_merge($output_alphabet[$letter]['#rows'], $group['#rows']);
+    }
+    else {
+      $output_alphabet[$letter] = $group;
+    }
+  }
+  unset($output_alphabet['[']);
+  unset($output_alphabet['<']);
+  unset($output_alphabet['"']);
+  uksort($output_alphabet, 'strcasecmp');
+  $output['#rows'] = array_values($output_alphabet);
+}
+
+/**
+ * Helper function to merge two glossary views.
+ */
+function aacc_lto_foundation_merge_glossary_views(&$output, &$view_to_combine, $field_name) {
+  $output_alphabet = [];
+  $view_to_combine_alphabet = [];
+  if (isset($output['#rows']['#rows'])) {
+    foreach ($output['#rows']['#rows'] as $i => $group) {
+      $output_alphabet[strtoupper($group->title_truncated)] = $group;
+    }
+  }
+  if (isset($view_to_combine['#rows']['#rows'])) {
+    foreach ($view_to_combine['#rows']['#rows'] as $i => $group) {
+      if (isset($group->$field_name)) {
+        $view_to_combine_alphabet[$group->$field_name] = $group;
+      }
+      else {
+        continue;
+      }
+    }
+  }
+  foreach ($view_to_combine_alphabet as $letter_key => $group) {
+    $letter = strtoupper($letter_key);
+
+    if (!isset($output_alphabet[$letter])) {
+      $group->title_truncated = $group->$field_name;
+      $output_alphabet[$letter] = $group;
+    }
+  }
+  unset($output_alphabet['[']);
+  unset($output_alphabet['<']);
+  unset($output_alphabet['"']);
+  uksort($output_alphabet, 'strcasecmp');
+  $output['#rows']['#rows'] = array_values($output_alphabet);
+}
+
+/**
+ * Helper function to sort grouped views.
+ */
+function aacc_lto_foundation_sort_grouped_view(&$output) {
+  $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  $collator = \Collator::create($language);
+
+  foreach ($output['#rows'] as $section_key => $section) {
+    $titles = [];
+    $rows_sorted = [];
+
+    foreach ($section['#rows'] as $row_key => $row) {
+      $titles[$row['output_value']] = $row_key;
+    }
+    $titles = array_flip($titles);
+    $collator->asort($titles);
+    foreach ($titles as $sorted_row_key => $title) {
+      unset($section['#rows'][$sorted_row_key]['output_value']);
+      $rows_sorted[$sorted_row_key] = $section['#rows'][$sorted_row_key];
+    }
+
+    $output['#rows'][$section_key]['#rows'] = $rows_sorted;
+  }
+}

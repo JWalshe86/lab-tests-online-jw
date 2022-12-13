@@ -1,0 +1,628 @@
+// Header Layout Styles
+
+.header {
+  border-bottom: 4px solid $primary-color;
+  background: $white;
+  padding: 0;
+  position: relative;
+  z-index: 3;
+
+  @include breakpoint (medium up) {
+    border-bottom: 0;
+    padding: 1rem 0;
+  }
+
+  @include breakpoint (large up) {
+    padding: 2rem 0;
+  }
+}
+
+.header-top-wrapper {
+  position: relative;
+
+  @include breakpoint (medium up) {
+    float: none;
+
+    .row {
+      position: relative;
+    }
+
+    .langauge-container {
+      position: absolute;
+
+      @include breakpoint (medium up) {
+        top: -8px;
+        right: 10px;
+      }
+
+      @include breakpoint (large up) {
+        top: -11px;
+      }
+    }
+  }
+
+  .field-name-field-partner-logo {
+    .field-item  {
+      display: none;
+
+      &:first-of-type {
+        display: block;
+      }
+    }
+  }
+
+  .row {
+    &::before,
+    &::after {
+      display: none;
+
+      @include breakpoint (medium up) {
+        display: table;
+      }
+    }
+  }
+}
+
+.mobile-toggle-buttons {
+  width: 38%;
+
+  .button {
+    color: $primary-color;
+    display: inline-block;
+    font-size: rem-calc(20px);
+    height: 67px;
+    line-height: rem-calc(57px);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+
+    @include breakpoint (xsmall up) {
+      height: 69px;
+      line-height: rem-calc(65px);
+    }
+
+    @include breakpoint (medium up) {
+      height: 62px;
+      width: 65px;
+    }
+
+    &:hover,
+    &:focus {
+      background: $secondary-color;
+      color: $primary-color;
+      outline: none;
+    }
+
+    &.is-open {
+      .icon-bars {
+        .icon-bar {
+          background: $white;
+        }
+      }
+    }
+
+    .icon-close {
+      display: none;
+    }
+  }
+
+  .icon-search {
+
+    &::before {
+      position: relative;
+      top: 2px;
+
+      @include breakpoint (medium up) {
+        top: 0;
+      }
+    }
+
+    .icon-close {
+      display: none;
+    }
+  }
+
+  @include breakpoint (medium up) {
+    float: right;
+    position: relative;
+    width: auto;
+
+    .icon-search {
+      &.is-open {
+        .icon-close {
+          display: block;
+        }
+
+        background-size: 20px 20px;
+        color: $primary-color;
+
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
+
+  @include breakpoint (large up) {
+    display: none;
+  }
+
+  .menu-button {
+    @include breakpoint (medium up) {
+      display: none;
+    }
+  }
+}
+
+.header-bottom-wrapper {
+  @include breakpoint (medium up) {
+    background: $secondary-color;
+    border-bottom: 0;
+    border-top: 4px solid $primary-color;
+    margin-top: 1.8rem;
+    position: relative;
+    width: 100%;
+  }
+}
+
+.block-sitebranding {
+  @include breakpoint (medium up) {
+    float: left;
+  }
+}
+
+.logo {
+  width: 165px;
+
+  @include breakpoint (xsmall up) {
+    width: 217px;
+  }
+
+  @include breakpoint (medium up) {
+    padding: .4rem 0 1rem;
+    width: 350px;
+  }
+
+  @include breakpoint (large up) {
+    padding: .5rem 0 2rem;
+    width: 610px;
+  }
+
+  img {
+    height: auto;
+    width: 100%;
+  }
+}
+
+// Main Menu Layout
+.main-nav-container {
+  @include breakpoint (medium up) {
+    display: block !important;
+    float: left;
+  }
+}
+
+// Header Search
+.search-container {
+  background: $secondary-color;
+  padding: 1rem;
+
+  @include breakpoint (medium up) {
+    left: 15px;
+    padding: .8rem 0;
+    position: absolute;
+    top: 0;
+    width: 92%;
+  }
+
+  @include breakpoint (large up) {
+    float: right;
+    left: 0;
+    padding: 1rem 0;
+    position: relative;
+    width: 35%;
+  }
+}
+
+.header-search {
+  position: relative;
+
+  .form-search {
+    margin: 0;
+
+    &::placeholder {
+      color: $black;
+    }
+  }
+
+  .icon-search {
+    background-color: $white;
+    background-size: 20px 20px;
+    color: $primary-color;
+    height: 37px;
+    font-size: rem-calc(21px);
+    padding: 0;
+    position: absolute;
+    right: 1px;
+    top: 1px;
+    width: 50px;
+
+    &:hover,
+    &:focus {
+      background-size: 20px 20px;
+      color: $primary-color;
+      outline: none;
+    }
+
+    .search-text {
+      font-size: 0;
+      text-indent: -9000px;
+    }
+  }
+}
+
+// Language Switcher
+.language-button {
+  border: 0;
+  color: $white;
+  display: block;
+  outline: 0;
+  padding: 1.5rem 1em;
+  position: relative;
+  text-align: left;
+  width: 100%;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &::after {
+    color: $white;
+    content: '+';
+    font-size: rem-calc(20px);
+    margin-top: -.5rem;
+    position: absolute;
+    right: .8rem;
+    top: 42%;
+  }
+
+  &.is-open {
+    background: darken($primary-color, 10%);
+
+    &::after {
+      background: $white;
+      content: '';
+      display: block;
+      height: 2px;
+      top: 60%;
+      width: 12px;
+    }
+
+    @include breakpoint (medium up) {
+      background: $white;
+    }
+  }
+
+  &.hover {
+    border-color: darken($primary-color, 10%);
+
+    &::after {
+      background: $white;
+      content: '';
+      display: block;
+      height: 2px;
+      top: 60%;
+      width: 12px;
+    }
+  }
+
+  .icon {
+    margin-right: rem-calc(4px);
+  }
+
+  @include breakpoint (medium up) {
+    border: 1px solid $white;
+    color: $black;
+    display: inline-block;
+    font-size: rem-calc(12px);
+    padding: .5rem 1rem;
+    width: auto;
+
+    &::after {
+      display: none;
+    }
+
+    &.hover {
+      border-color: $secondary-color;
+      border-width: 1px 1px 0;
+
+      &::after {
+        display: none;
+      }
+    }
+
+    .icon {
+      margin-right: 0;
+    }
+  }
+
+  @include breakpoint (large up) {
+    font-size: rem-calc(18px);
+  }
+}
+
+.langauge-container {
+  background: $primary-color;
+  color: $white;
+
+  .icon-language {
+    color: $white;
+    position: relative;
+    top: 2px;
+  }
+
+  .dropdown-pane {
+    padding: 0;
+  }
+
+  .links {
+    background: $white;
+    margin: 0;
+    text-align: left;
+
+    li {
+      display: block;
+      margin: 0;
+
+      a {
+        font-size: rem-calc(14px);
+        font-weight: 700;
+        padding: 1rem;
+
+        &:hover {
+          background: lighten($secondary-color, 10%);
+          text-decoration: underline;
+        }
+
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+
+  @include breakpoint (medium up) {
+    background: none;
+    color: $black;
+    font-size: rem-calc(18px);
+    float: right;
+    padding: 0;
+
+    .menu-title {
+      color: $black;
+    }
+
+    .icon {
+      color: $primary-color;
+      font-size: rem-calc(21px);
+      margin-left: .5rem;
+      position: relative;
+
+      @include breakpoint (medium only) {
+        font-size: rem-calc(12px);
+      }
+    }
+
+    .dropdown-pane {
+      border-color: $secondary-color;
+      border-width: 0 1px 1px;
+      width: 157px;
+    }
+
+    .links {
+      li {
+        a {
+          padding: .5rem 1rem;
+        }
+      }
+    }
+  }
+}
+
+.global-sites {
+  @include breakpoint (medium up) {
+    position: absolute;
+    right: 0;
+    top: -8px;
+  }
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
+
+  .button {
+    display: block;
+    font-size: 1rem;
+    margin: 0;
+    padding: 1.5rem 1rem;
+    text-align: left;
+
+    @include breakpoint (medium up) {
+      background: none;
+      color: $black;
+      float: right;
+      padding: .5rem 1rem;
+    }
+
+    @include breakpoint (large up) {
+      font-size: rem-calc(18px);
+    }
+
+    .icon {
+      float: left;
+      margin-right: rem-calc(4px);
+
+      @include breakpoint (medium up) {
+        color: $primary-color;
+        float: none;
+        margin-left: .5rem;
+        position: relative;
+        top: rem-calc(1px);
+      }
+    }
+  }
+}
+
+// Fix global-sites button padding on page nodes
+.node--type-page .global-sites .field-name-body {
+  padding-right: 0;
+}
+
+// International sites
+.primary-header-logo {
+  // border-right: 1px solid $dark-gray;
+  display: inline-block;
+  float: left;
+  max-width: 188px;
+  padding-right: 1rem;
+  vertical-align: middle;
+  width: 60%;
+
+  @include breakpoint (medium up) {
+    float: left;
+    max-width: none;
+  }
+
+  @include breakpoint (large up) {
+    width: 45%;
+  }
+
+  .field-name-field-partner-logo {
+    .paragraph  {
+      float: left;
+      padding: 0;
+
+      img {
+        max-width: 188px;
+        width: 100%;
+
+        @include breakpoint (medium up) {
+          max-width: none;
+        }
+      }
+    }
+  }
+}
+
+.secondary-header-logo {
+  display: inline-block;
+  margin-left: .2rem;
+  vertical-align: middle;
+  width: 35%;
+
+  @include breakpoint (medium up) {
+    margin-left: 0;
+    padding-left: 1rem;
+  }
+
+  .field-name-field-partner-logo {
+    .paragraph  {
+      line-height: 100%;
+      padding: 0;
+
+
+      img {
+        display: inline-block;
+        float: none;
+        max-height: 22px;
+        max-width: none;
+        padding: 0;
+        width: auto;
+
+        @include breakpoint (medium up) {
+          max-height: none;
+          max-width: 70%;
+        }
+
+        @include breakpoint (large up) {
+          max-height: 45px;
+          max-width: none;
+          padding: .1rem 0;
+        }
+      }
+    }
+  }
+
+  .partnership-logo {
+    display: inline-block;
+    max-width: 14px;
+    vertical-align: middle;
+
+
+    @include breakpoint (xsmall up) {
+      max-width: 24px;
+    }
+
+    @include breakpoint (large up) {
+      max-width: 55px;
+    }
+  }
+
+  .field-name-field-text-below-logo {
+
+    .field-item {
+      font-size: 4px;
+
+      @include breakpoint (medium up) {
+        font-size: 10px;
+      }
+    }
+  }
+}
+
+.header-first {
+  display: table;
+  float: right;
+  height: 65px;
+  padding: 0 .5rem;
+  width: 62%;
+
+  @include breakpoint (medium up) {
+    float: left;
+    padding-top: 0;
+  }
+
+  .vertical-center {
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
+
+.partnership-text {
+  margin-top: -8px;
+
+  @include breakpoint (medium up) {
+    margin-top: 0;
+  }
+}
+
+.site--lto-us {
+  .primary-header-logo {
+    float: none;
+  }
+
+  .secondary-header-logo {
+    .field-name-field-partner-logo {
+      .paragraph {
+        img {
+          @include breakpoint(medium up) {
+            max-height: none;
+            max-width: 85%;
+          }
+        }
+      }
+    }
+  }
+}

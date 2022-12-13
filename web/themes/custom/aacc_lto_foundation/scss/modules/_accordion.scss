@@ -1,0 +1,377 @@
+// Accordions
+
+.accordion {
+  background: $white;
+  border: 1px solid $dark-gray;
+  margin: 1rem 0;
+
+  @include breakpoint (medium up) {
+    margin: 2rem 0;
+  }
+}
+
+.accordion-title {
+  background: $white;
+  border-color: $dark-gray !important;
+  border-style: solid;
+  border-width: 0 0 1px;
+  color: $black;
+  font-size: rem-calc(18px);
+  font-weight: 700;
+  padding: 1.25rem 1.8rem 1.25rem 1rem;
+  transition: background .5s, color .5s ease-in-out;
+
+  &::before {
+    color: $primary-color;
+    font-size: rem-calc(25px);
+    right: 1rem;
+    top: 42%;
+  }
+
+  &::before,
+  &::after {
+    font-weight: 700;
+  }
+
+  &:hover,
+  &:focus {
+    background: $white;
+  }
+
+  @include breakpoint (medium up) {
+    padding: 1.25rem 2rem 1.25rem 1rem;
+  }
+}
+
+.accordion-content {
+  border: 0;
+
+  &::after {
+    clear: both;
+    content: '';
+    display: block;
+  }
+}
+
+:last-child {
+  .accordion-content {
+    &:last-child {
+      border: 0;
+    }
+  }
+}
+
+.accordion-hidden {
+  display: none;
+}
+
+.show-all-accordions {
+  .accordion-hidden {
+    display: block;
+  }
+}
+
+// Active States
+.is-active {
+  .accordion-title {
+    border: 0;
+
+    &::before {
+      background: $primary-color;
+      content: '';
+      display: block;
+      height: 4px;
+      right: 1.1rem;
+      top: 58%;
+      width: 12px;
+    }
+
+    &::after {
+      color: $black;
+    }
+  }
+}
+
+// Red Style
+.accordion-red {
+  .accordion-title {
+    background: $primary-color;
+    border-color: $white;
+    color: $white;
+
+    &::before {
+      color: $white;
+    }
+  }
+
+  .is-active {
+    .accordion-title {
+      background: $white;
+      color: $black;
+    }
+  }
+}
+
+// Top Content Accordion
+.top-content-list {
+  font-size: rem-calc(18px);
+  list-style: none;
+  margin: 0;
+  text-align: center;
+
+  li {
+    margin: 0 0 .5rem;
+  }
+
+  a {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  @include breakpoint (medium up) {
+    margin-left: 1.25rem;
+    text-align: left;
+
+    a {
+      color: $white;
+    }
+  }
+}
+
+.top-content-accordion {
+  .accordion {
+    @include breakpoint (medium up) {
+      background: $white;
+      max-height: 300px;
+      min-height: 300px;
+      overflow: hidden;
+      padding: 0 0 0 40.15%;
+      position: relative;
+    }
+  }
+
+  .accordion-title {
+    padding-left: 4rem;
+
+    &::after {
+      color: $white;
+      display: block;
+      font-family: $aacc-icon;
+      font-size: rem-calc(22px);
+      left: rem-calc(15px);
+      position: absolute;
+      top: 35%;
+    }
+
+    @include breakpoint (medium up) {
+      background: $white;
+      color: $black;
+      font-size: rem-calc(16px);
+      left: 0;
+      height: 87px;
+      line-height: rem-calc(42px);
+      overflow: hidden;
+      position: absolute;
+      padding-right: .4rem;
+      width: 40.2%;
+
+      &::before {
+        display: none;
+      }
+
+      &::after {
+        color: $black;
+        font-size: rem-calc(28px);
+        left: rem-calc(20px);
+        top: 26%;
+      }
+    }
+  }
+
+  .accordion-item {
+    &:nth-child(1) {
+      .accordion-title {
+        &::after {
+          content: '\e916';
+          left: rem-calc(20px);
+
+          @include breakpoint (medium up) {
+            left: rem-calc(24px);
+          }
+
+          @include breakpoint (large up) {
+            left: rem-calc(25px);
+          }
+        }
+      }
+    }
+
+    &:nth-child(2) {
+      .accordion-title {
+        &::after {
+          content: '\e914';
+        }
+      }
+    }
+
+    &:nth-child(3) {
+      .accordion-title {
+        &::after {
+          content: '\e915';
+          font-size: rem-calc(21px);
+        }
+      }
+    }
+
+    @include breakpoint (medium up) {
+      &:nth-child(1) {
+        .accordion-title {
+          top: 0;
+        }
+      }
+
+      &:nth-child(2) {
+        .accordion-title {
+          top: 87px;
+        }
+      }
+
+      &:nth-child(3) {
+        .accordion-title {
+          border-bottom: 0;
+          top: 173px;
+        }
+      }
+    }
+  }
+
+  .is-active {
+    .accordion-title {
+      background: $primary-color;
+      color: $white;
+
+      &::before {
+        background: $white;
+      }
+
+      &::after {
+        color: $white;
+      }
+    }
+  }
+
+  .accordion-content {
+    background: none;
+    position: relative;
+
+    @include breakpoint (medium up) {
+      background: $primary-color;
+      min-height: 298px;
+    }
+  }
+
+  .more-link {
+    margin: 1rem -1rem -1rem;
+
+    @include breakpoint (medium up) {
+      bottom: 0;
+      left: 0;
+      margin: 0;
+      position: absolute;
+      right: 0;
+    }
+  }
+}
+
+// Accordion Paragraph
+.field-node--field-subcontent {
+  .accordion {
+    .paragraph--view-mode--default {
+      margin: 0;
+    }
+
+    .field-paragraph--field-label {
+      color: $black;
+      font-size: rem-calc(18px);
+      margin: 0;
+    }
+  }
+}
+
+.paragraph--type--accordion {
+  .accordion {
+    border-bottom: 0;
+    margin: 0;
+  }
+
+  .field-paragraph--field-accordion-title {
+    color: $primary-color;
+    font-size: rem-calc(18px);
+    font-weight: 700;
+    margin-bottom: rem-calc(8px);
+
+    @include breakpoint (medium up) {
+      font-size: rem-calc(30px);
+    }
+  }
+
+  .accordion-content {
+    border-bottom: 1px solid $dark-gray !important;
+    padding: 0 1rem 1rem;
+  }
+}
+
+// Glossary Accordion
+.glossary-accordion {
+  &:last-child {
+    &:not(.is-active) {
+      .accordion-title {
+        border-bottom: 0;
+      }
+    }
+  }
+
+  &.accordion {
+    border: 0;
+  }
+
+  .accordion-title {
+    border: 0;
+    padding: .5rem;
+
+    .field-content {
+      max-width: 375px;
+      display: inline-block;
+    }
+  }
+}
+
+// Hide Top Screenings for CN Site
+
+.site--lto-cn {
+
+  .top-content-accordion {
+
+    .accordion-item:last-of-type {
+      display: none;
+    }
+  }
+}
+
+.accordion-label {
+  @extend .label;
+
+  margin-bottom: .5rem;
+}
+
+#block-allsponsors {
+  .tabs-panel {
+    display: none;
+    padding: 1rem;
+
+    &.is-active {
+      display: block;
+    }
+  }
+}

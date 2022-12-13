@@ -1,0 +1,13 @@
+.field-label-inline {
+  .field-label {
+    display: inline-block;
+
+    &::after {
+      content: ':';
+    }
+  }
+
+  .field-items {
+    display: inline;
+  }
+}

@@ -1,0 +1,113 @@
+// Main Content Layout Styles
+
+.off-canvas-wrapper {
+  width: 100%;
+}
+
+.content-top {
+  @include breakpoint (medium up) {
+    text-align: right;
+  }
+}
+
+.content-top,
+.content-bottom {
+  &::after {
+    clear: both;
+    content: '';
+    display: block;
+  }
+}
+
+.main-content-wrapper {
+  background: $white;
+  padding: 1rem 0;
+
+  @include breakpoint (medium up) {
+    padding: 2rem 0;
+    position: relative;
+  }
+
+  @include breakpoint (xlarge up) {
+    margin: 0 16% 0 auto;
+    max-width: 64rem;
+    min-height: 700px;
+  }
+
+  @include breakpoint (xxlarge up) {
+    margin: 0 auto;
+  }
+}
+
+.path-frontpage {
+
+  .main-content-wrapper {
+    margin: 0 auto !important;
+    max-width: none !important;
+    min-height: 0 !important;
+  }
+}
+
+// Body Content Alignment
+.field-node--body {
+  .align-left,
+  .align-center,
+  .align-right {
+    padding-bottom: 1rem;
+  }
+
+  @include breakpoint (small up) {
+    .align-right {
+      padding-left: 1rem;
+    }
+
+    .align-left {
+      padding-right: 1rem;
+    }
+  }
+}
+
+// Body Content Indented Wrap
+.node--type-stakeholder.node--view-mode-full {
+  .field-type-text-with-summary {
+    width: 70%;
+    margin-left: 30%;
+  }
+
+  .field-revision-date {
+    display: inherit;
+    width: 70%;
+    margin-left: 30%;
+  }
+}
+
+.node--type-stakeholder.node--view-mode-teaser {
+  .field-type-text-with-summary {
+    width: 80%;
+    margin-left: 20%;
+  }
+}
+
+// Fixed Toolbar
+.toolbar-fixed {
+  .toolbar-oriented {
+    z-index: 2000;
+  }
+}
+
+// Latest Drafts
+.user-logged-in {
+  main {
+    &.draft-latest {
+      background-color: rgba($primary-color, .1);
+
+      &::before {
+        content: 'You are reviewing a draft of unpublished changes.';
+        display: block;
+        font-weight: 700;
+        padding: 15px;
+        text-align: center;
+      }
+    }
+  }
+}

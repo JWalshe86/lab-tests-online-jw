@@ -1,0 +1,282 @@
+// Footer Layout Styles
+
+.footer {
+  background: $secondary-color;
+  border-top: 4px solid $primary-color;
+  padding: 1rem 0;
+  position: relative;
+
+  @include breakpoint (medium up) {
+    padding: 2rem 0;
+  }
+
+  a {
+    color: $primary-color;
+
+    &:hover {
+      color: darken($primary-color, 10%);
+    }
+  }
+
+  .first {
+    margin-bottom: .5rem;
+
+    .columns {
+      padding: 0;
+    }
+  }
+
+  .second {
+    margin-bottom: .5rem;
+
+    @include breakpoint (medium up) {
+      padding-right: 0;
+    }
+  }
+
+  .third {
+
+    @include breakpoint (medium up) {
+      padding-left: 0;
+      position: relative;
+    }
+  }
+}
+
+.bottom-bar {
+  background: $primary-color;
+  color: $white;
+  padding: 1rem 0;
+  text-align: center;
+  display: none;
+
+  @include breakpoint (medium up) {
+    padding: 2rem 0;
+  }
+}
+
+.footer-branding,
+.footer-certifications,
+.footer-social,
+.mobile-app-block {
+  p {
+    color: $black-off;
+    font-weight: 700;
+    margin-bottom: 0;
+  }
+
+  ul {
+    list-style: none;
+    margin: .5rem 0;
+    padding: 0;
+
+    li {
+      display: inline-block;
+      margin-right: .5rem;
+      vertical-align: middle;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.footer-social {
+  .icon {
+    font-size: rem-calc(30px);
+  }
+}
+
+.footer-logo {
+  img {
+    max-width: 180px;
+  }
+}
+
+.footer-certifications {
+  ul {
+    margin-top: 1.5rem;
+  }
+
+  li {
+    &:first-child {
+      margin-right: 1rem;
+      max-width: 50%;
+
+      @include breakpoint (large up) {
+        max-width: 20%;
+      }
+    }
+
+    &:last-child {
+      max-width: 50%;
+
+      @include breakpoint (large up) {
+        max-width: 60%;
+      }
+    }
+  }
+}
+
+.mobile-app-block {
+  a {
+    display: block;
+  }
+
+  ul {
+    li {
+      margin-bottom: rem-calc(10px);
+      vertical-align: top;
+    }
+  }
+
+  img {
+    max-height: 32px;
+    max-width: 115px;
+
+    @include breakpoint (medium up) {
+      max-width: 100px;
+    }
+  }
+}
+
+.block-footerbranding {
+  .field-name-body {
+    padding-right: 0;
+  }
+}
+
+.footer-credits {
+  margin: 1rem 0 0;
+
+  .partnership-text {
+    margin: 0;
+  }
+
+  .partnership-logo {
+    display: inline-block;
+    padding-left: 1px;
+    width: 30px;
+
+    @include breakpoint (large up) {
+      width: 45px;
+    }
+  }
+
+  .field-name-field-partner-logo {
+    &::after {
+      clear: both;
+      content: '';
+      display: table;
+    }
+
+    img {
+      max-width: 100px;
+      width: auto;
+    }
+
+    .paragraph  {
+      float: left;
+      width: 50%;
+
+      @include breakpoint (medium up) {
+        float: none;
+        width: 100%;
+      }
+    }
+  }
+
+  .field-name-field-text-below-logo {
+    .field-item {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+}
+
+.field-name-field-text-above-logo {
+  font-size: 6px;
+  font-weight: 600;
+
+  @include breakpoint (medium up) {
+    font-size: 10px;
+  }
+}
+
+.field-name-field-text-below-logo {
+  clear: both;
+  display: inline-block;
+  vertical-align: middle;
+
+  .field-item {
+    font-size: 6px;
+
+    @include breakpoint (medium up) {
+      font-size: 10px;
+    }
+
+    @include breakpoint (large up) {
+      font-size: 12px;
+    }
+  }
+}
+
+.footer-logo,
+.footer-certifications {
+  display: inline-block;
+  width: 150px;
+
+  @include breakpoint (medium up) {
+    width: 125px;
+  }
+}
+
+.aacc-logo-footer,
+.hon-code {
+  display: inline-block;
+  height: 50px;
+  margin-right: 1rem;
+  width: auto;
+}
+
+.block-footerbranding,
+.block-footerproducedbylogos {
+
+  @include breakpoint (medium up) {
+    display: inline-block;
+    width: 49%;
+  }
+}
+
+.block-footerproducedbylogos {
+
+  @include breakpoint (medium up) {
+    margin: 0;
+    position: absolute;
+    top: 5px;
+  }
+}
+
+.site--lto-us {
+
+  .footer-logo,
+  .footer-certifications {
+    display: block;
+    width: auto;
+  }
+
+  .aacc-logo-footer {
+    display: block;
+    height: auto;
+    margin: 0;
+    width: 175px;
+  }
+
+  .board-approved {
+    display: inline-block;
+    height: 40px;
+    margin-right: 1rem;
+    width: auto;
+  }
+}

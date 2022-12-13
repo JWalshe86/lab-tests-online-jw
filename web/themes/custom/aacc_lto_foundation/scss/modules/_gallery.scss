@@ -1,0 +1,104 @@
+// Image and Video Galleries
+
+.field-paragraph--field-media-gallery-items {
+  border-bottom: 1px solid $dark-gray;
+  padding-bottom: 2rem;
+  text-align: center;
+
+  @include breakpoint (medium up) {
+    text-align: left;
+  }
+
+  .field-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @include breakpoint (medium up) {
+      justify-content: center;
+      margin: 0 -1%;
+    }
+  }
+
+  .field-item {
+    display: inline-block;
+    padding: 1rem 0 .5rem;
+    width: 47.5%;
+
+    @include breakpoint (medium up) {
+      margin: 0 1%;
+      padding: 0 0 1rem;
+      width: 31%;
+    }
+
+    @include breakpoint (large up) {
+      width: 14.6%;
+    }
+
+    img {
+      height: auto;
+      width: 100%;
+    }
+  }
+
+  .field-name-thumbnail {
+    .field-item {
+      width: 100%;
+    }
+  }
+}
+
+.reveal {
+  border: 0;
+  outline: none;
+
+  .close-button {
+    background: $primary-color;
+    color: $white;
+    padding: .5rem 1rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+
+.media {
+  position: relative;
+
+  &:hover {
+    .view-more {
+      background: rgba($primary-color, .8);
+      color: $white;
+      cursor: pointer;
+      display: block;
+      height: 100%;
+      line-height: 1rem;
+      opacity: 1;
+      padding: 48% 0;
+      text-align: center;
+      text-transform: uppercase;
+      top: 0;
+      width: 100%;
+    }
+  }
+
+  .view-more {
+    opacity: 0;
+    position: absolute;
+    transition: background .5s ease-in-out;
+  }
+
+  .view-modal {
+    position: absolute;
+    top: 0;
+    color: $white;
+    text-align: center;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.field-name-field-cap-ack {
+  padding: 1rem 0;
+}

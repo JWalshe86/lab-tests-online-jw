@@ -1,0 +1,69 @@
+// Global Button Styles
+
+.button {
+  outline: 0;
+
+  &.success {
+    color: $white;
+
+    &:hover,
+    &:focus {
+      background: darken($green, 10%);
+      color: $white;
+    }
+  }
+
+  &.info {
+    background: $white;
+    border: 1px solid $black;
+    color: $black;
+
+    &:hover,
+    &:focus {
+      background: $black;
+      color: $white;
+    }
+  }
+
+  // Submit Button
+  &.webform-button--submit,
+  &.form-submit {
+    background-color: $primary-color;
+    color: $white;
+    font-size: rem-calc(18px);
+    padding: 1.4rem 2.5rem;
+    width: 100%;
+
+    &:hover,
+    &:focus {
+      background-color: darken($primary-color, 10%);
+    }
+
+    @include breakpoint (medium up) {
+      min-width: 18%;
+      width: auto;
+    }
+  }
+}
+
+// Link Underline
+.field-node--body,
+.field-name-body {
+  p {
+    a {
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
+
+      &.button {
+        text-decoration: none;
+
+        &:hover,
+        &:focus {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

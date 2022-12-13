@@ -1,0 +1,1123 @@
+// Content Paragraph Styles
+
+// Link Blocks
+.featurette-wrapper {
+  margin-top: 0;
+
+  .field-item {
+    border: 0;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    text-align: center;
+    transition: background .5s ease-in-out;
+
+    .paragraph {
+      padding: 1px;
+      position: relative;
+    }
+
+    @include breakpoint (medium up) {
+      margin-bottom: 0;
+    }
+  }
+
+  .icon {
+    background: $white;
+    display: block;
+    float: left;
+    font-size: rem-calc(32px);
+    height: calc(100% - 2px);
+    left: 1px;
+    margin: 0;
+    min-width: 50px;
+    padding: .65rem;
+    position: absolute;
+    top: 1px;
+
+    &.icon-none {
+      display: none;
+    }
+
+    &::before {
+      left: 10px;
+      position: absolute;
+      top: calc(50% - 1rem);
+
+      @include breakpoint (medium up) {
+        left: 0;
+        position: relative;
+        top: 0;
+      }
+    }
+
+    @include breakpoint (medium up) {
+      float: none;
+      font-size: rem-calc(80px);
+      height: auto;
+      left: 0;
+      min-height: 165px;
+      min-width: none;
+      padding: 2rem;
+      position: relative;
+      top: 0;
+    }
+
+    &.icon-award {
+      &::before {
+        text-indent: 5px;
+
+        @include breakpoint (medium up) {
+          text-indent: 0;
+        }
+      }
+    }
+
+    &.icon-document {
+      @include breakpoint (medium up) {
+        min-height: 165px;
+      }
+    }
+
+    &.icon-video {
+      &::before {
+        text-indent: -5px;
+
+        @include breakpoint (medium up) {
+          text-indent: 0;
+        }
+      }
+    }
+  }
+
+  .linkicon-text {
+    color: $white;
+    display: block;
+    font-size: rem-calc(14px);
+    font-weight: 700;
+    margin: 0;
+    padding: 1rem .4rem 1rem 56.5px;
+
+    .second-label {
+      display: block;
+      font-weight: 400;
+
+      &::before {
+        background: $white;
+        content: '';
+        display: flex;
+        height: 1px;
+        margin: .5rem auto;
+        width: 80px;
+      }
+    }
+
+    @include breakpoint (medium up) {
+      padding: 1rem .4rem;
+    }
+
+    @include breakpoint (large up) {
+      font-size: rem-calc(19px);
+    }
+  }
+
+  // Icon Color Variations
+  &.columns,
+  .columns {
+    .color-B12025 {
+      background: $primary-color;
+      border-color: $primary-color;
+
+      &:hover {
+        background: darken($primary-color, 10%);
+        border-color: darken($primary-color, 10%);
+      }
+
+      a {
+        color: $primary-color;
+      }
+
+      .dropdown-pane {
+        border: 1px solid $primary-color;
+      }
+
+      [class^='icon-'],
+      [class*=' icon-'] {
+        background: $white;
+        color: $primary-color;
+      }
+
+      .button {
+        background: $primary-color;
+        border-color: $primary-color;
+
+        &:hover {
+          background: darken($primary-color, 10%);
+          border-color: darken($primary-color, 10%);
+        }
+
+        a {
+          color: $primary-color;
+        }
+
+        .dropdown-pane {
+          border: 1px solid $primary-color;
+        }
+
+        [class^='icon-'],
+        [class*=' icon-'] {
+          background: $white;
+          color: $primary-color;
+        }
+      }
+    }
+
+    .color-80A29C {
+      background: $green;
+      border-color: $green;
+
+      &:hover {
+        background: darken($green, 10%);
+        border-color: darken($green, 10%);
+      }
+
+      a {
+        color: $green;
+      }
+
+      .dropdown-pane {
+        border: 1px solid $green;
+      }
+
+      [class^='icon-'],
+      [class*=' icon-'] {
+        background: $white;
+        color: $green;
+      }
+    }
+
+    .color-D99E56 {
+      background: $gold;
+      border-color: $gold;
+
+      &:hover {
+        background: darken($gold, 10%);
+        border-color: darken($gold, 10%);
+      }
+
+      a {
+        color: $gold;
+      }
+
+      .dropdown-pane {
+        border: 1px solid $gold;
+      }
+
+      [class^='icon-'],
+      [class*=' icon-'] {
+        background: $white;
+        color: $gold;
+      }
+    }
+  }
+
+  &.looking-for-buttons {
+    position: relative;
+
+    @include breakpoint (large up) {
+      padding-top: 113px;
+    }
+
+    .paragraph {
+      position: inherit;
+    }
+
+    .last {
+      .button {
+        @include breakpoint (large up) {
+          overflow: hidden;
+          left: auto;
+          right: 0;
+          top: 0;
+        }
+      }
+
+      .button-content {
+
+        @include breakpoint (large up) {
+          bottom: 17px;
+          left: auto !important;
+          right: -1px;
+        }
+      }
+    }
+
+    .button {
+      background-color: transparent;
+      border: 2px solid transparent;
+      margin-bottom: 0;
+      overflow: hidden;
+      padding: 0;
+      position: relative;
+      text-align: left;
+      width: 100%;
+
+      @include breakpoint (large up) {
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 49%;
+      }
+    }
+
+    .button-title {
+      font-size: rem-calc(18px);
+      position: relative;
+      text-align: center;
+      top: 35px;
+
+      @include breakpoint (large up) {
+        font-size: rem-calc(22px);
+      }
+    }
+
+    [class^='icon-'],
+    [class*=' icon-'] {
+      background: $white;
+      float: left;
+      font-size: 4rem;
+      margin-bottom: -4px;
+      padding: 1rem 1.8rem;
+    }
+
+    .paragraph {
+      margin-top: -1px;
+      text-align: left;
+    }
+
+    .color-wrapper {
+      margin-bottom: 1rem;
+
+      .block-content-wrapper {
+        position: relative;
+
+        @include breakpoint (medium up) {
+          position: inherit;
+        }
+      }
+
+      @include breakpoint (large up) {
+
+        .button-content {
+          left: -1px;
+        }
+      }
+
+      .color-80A29C {
+        background: transparent;
+
+        .button {
+          background: $green;
+          border-color: $green;
+
+          &:hover {
+            background: darken($green, 10%);
+            border-color: darken($green, 10%);
+          }
+
+          a {
+            color: $green;
+          }
+
+          [class^='icon-'],
+          [class*=' icon-'] {
+            color: $green;
+          }
+        }
+
+        .button-title {
+
+          .field-item {
+            color: $white;
+          }
+        }
+
+        .button-content {
+          border: 2px solid $green;
+          border-top: 0;
+
+          @include breakpoint (large up) {
+            border-top: 2px solid $green;
+          }
+        }
+
+        .expandable-button {
+
+          .field-wrapper {
+            margin: 0;
+          }
+
+          .field-item {
+            color: $white;
+            font-weight: normal;
+            font-size: 1.375rem;
+          }
+        }
+
+        .is-active .button-title {
+
+          &::after {
+            display: none;
+          }
+        }
+      }
+
+      .color-D99E56 {
+        background: transparent;
+
+        .button {
+          background: $gold;
+          border-color: $gold;
+
+          &:hover {
+            background: darken($gold, 10%);
+            border-color: darken($gold, 10%);
+          }
+
+          a {
+            color: $gold;
+          }
+
+          [class^='icon-'],
+          [class*=' icon-'] {
+            background: $white;
+            color: $gold;
+          }
+        }
+
+        .button-title {
+
+          .field-item {
+            color: $white;
+          }
+        }
+
+        .button-content {
+          border: 2px solid $gold;
+          border-top: 0;
+
+          @include breakpoint (large up) {
+            border-top: 2px solid $gold;
+          }
+        }
+
+        .expandable-button {
+
+          .field-wrapper {
+            margin: 0;
+          }
+
+          .field-item {
+            color: $white;
+            font-weight: normal;
+            font-size: 1.375rem;
+          }
+        }
+
+        .is-active .button-title {
+
+          &::after {
+            display: none;
+          }
+        }
+      }
+
+      .color-B12025 {
+        background: transparent;
+
+        .button {
+          background: $primary-color;
+          border-color: $primary-color;
+
+          &:hover {
+            background: darken($primary-color, 10%);
+            border-color: darken($primary-color, 10%);
+          }
+
+          a {
+            color: $primary-color;
+          }
+
+          [class^='icon-'],
+          [class*=' icon-'] {
+            background: $white;
+            color: $primary-color;
+          }
+
+          .button-title {
+
+            .field-item {
+              color: $white;
+            }
+          }
+        }
+
+        .button-content {
+          border: 2px solid $primary-color;
+          border-top: 0;
+
+          @include breakpoint (large up) {
+            border-top: 2px solid $primary-color;
+          }
+        }
+
+        .expandable-button {
+
+          .field-wrapper {
+            margin: 0;
+          }
+
+          .field-item {
+            color: $white;
+            font-weight: normal;
+            font-size: 1.375rem;
+          }
+        }
+
+        .is-active .button-title {
+
+          &::after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.path-frontpage {
+  .field-name-field-navigation-items {
+    .columns {
+      @include breakpoint (medium only) {
+        margin: 1rem 0;
+
+        &:last-child {
+          &:not(:first-child) {
+            float: left;
+          }
+        }
+      }
+    }
+  }
+
+  .corporate-sponsors {
+    @include breakpoint (medium only) {
+      margin: 1rem 0;
+    }
+  }
+
+  .featurette-wrapper {
+    &:last-of-type {
+      @include breakpoint (large up) {
+        float: left;
+      }
+    }
+  }
+}
+
+.frontpage-group-links {
+  margin-bottom: 1rem;
+  position: relative;
+
+  @include breakpoint (medium up) {
+    border-bottom: 1px solid $black;
+  }
+
+  @include breakpoint (large up) {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+
+// Test Subcontent Link Blocks
+.node--type-test {
+  .paragraph--type--section-navigation-item {
+    overflow: hidden;
+  }
+
+  .featurette-wrapper {
+    margin-top: 0;
+
+    .icon {
+      float: left;
+      font-size: rem-calc(60px);
+      line-height: 42px;
+      min-height: 80px;
+      padding: 1.8rem 1rem;
+      width: 25%;
+    }
+
+    .linkicon-text {
+      margin: 0;
+      padding-left: 28%;
+    }
+  }
+}
+
+// Subcontent Styles
+.field-node--field-subcontent {
+  border-top: 1px solid $dark-gray;
+  clear: both;
+  margin-top: 1rem;
+
+  @include breakpoint (medium up) {
+    margin-top: 2rem;
+  }
+
+  .paragraph {
+    margin-top: 1rem;
+
+    @include breakpoint (medium up) {
+      margin-top: 2rem;
+
+      &.paragraph--type--section-navigation-item {
+        margin-top: 1.2rem;
+      }
+    }
+
+    .field-paragraph--field-body {
+      ul {
+        margin-bottom: rem-calc(16px);
+      }
+    }
+  }
+
+  .field-paragraph--field-label {
+    color: $primary-color;
+    font-size: rem-calc(18px);
+    font-weight: 700;
+    margin-bottom: rem-calc(8px);
+
+    @include breakpoint (medium up) {
+      font-size: rem-calc(30px);
+    }
+  }
+
+  // Text Area Styles
+  .field-paragraph--field-text-areas {
+    margin: 0 -.5rem;
+
+    &::after {
+      clear: both;
+      content: '';
+      display: block;
+    }
+
+    .paragraph--type--text-area {
+      margin-top: 1rem;
+
+      &.lto-us {
+        .grid-wrapper {
+          border-left: none;
+          border-top: none;
+          border-right: none;
+          padding-left: 0;
+        }
+      }
+
+      .grid-wrapper {
+        border: 1px solid $dark-gray;
+        margin: 0;
+        padding: 1rem;
+      }
+
+      .field-paragraph--field-label {
+        color: $black;
+        font-size: rem-calc(16px);
+
+        @include breakpoint (medium up) {
+          font-size: rem-calc(18px);
+        }
+      }
+    }
+  }
+
+  // Column Styles
+  .paragraph--type--columns {
+
+    .field-paragraph--field-column {
+      border: 1px solid $dark-gray;
+      overflow: hidden;
+      padding: 1rem;
+
+      .paragraph {
+        margin-top: 0;
+      }
+
+      .field-paragraph--field-label {
+        color: $black;
+        font-size: rem-calc(16px);
+
+        @include breakpoint (medium up) {
+          font-size: rem-calc(18px);
+        }
+      }
+    }
+  }
+
+  .paragraph--type--screening-tests {
+    .accordion {
+      margin: 0;
+    }
+  }
+
+  // Related Content Styles
+  .paragraph--type--related-content {
+    .related-content-wrapper {
+      border: 1px solid $dark-gray;
+      overflow: hidden;
+      padding: 1rem;
+
+      h3 {
+        margin-top: 1rem;
+
+        @include breakpoint (large up) {
+          margin-top: 0;
+        }
+      }
+
+      .field-name-field-reviewed {
+        &::before {
+          display: none;
+        }
+      }
+
+      .clearfix {
+        &::before,
+        &::after {
+          display: none;
+        }
+      }
+
+      .field-name-node-title {
+        display: inline;
+      }
+
+      .field-label-inline {
+        font-weight: 700;
+      }
+
+      .field-items {
+        display: block;
+        font-weight: 400;
+        padding-left: .5rem;
+
+        .field-item {
+          display: block;
+        }
+
+        .field-items {
+          padding-left: 0;
+        }
+      }
+
+      .field-name-field-related-screening-group {
+        padding-left: .5rem;
+      }
+
+      .field-paragraph--field-related-screening-group,
+      .field-paragraph--field-related-conditions,
+      .field-paragraph--field-related-screenings,
+      .field-paragraph--field-related-news-items,
+      .field-paragraph--field-related-tests {
+        display: block;
+        padding-bottom: .5rem;
+      }
+
+      .field-name-field-related-news-items {
+        .field-item {
+          display: inline;
+
+          .field-items {
+            display: inline;
+          }
+        }
+      }
+
+      .field-name-field-elsewhere-on-the-web {
+        .field-items {
+          padding-left: 0;
+        }
+      }
+    }
+
+    .rc-label {
+      color: $primary-color;
+      font-size: rem-calc(18px);
+      font-weight: 700;
+      margin-bottom: rem-calc(8px);
+
+      @include breakpoint (medium up) {
+        font-size: rem-calc(30px);
+      }
+    }
+
+    .rc-body {
+      border: 1px solid $dark-gray;
+      overflow: hidden;
+      padding: 1rem;
+
+      .paragraph {
+        margin-top: 0;
+      }
+    }
+
+    .rc-section-label,
+    .field-paragraph--field-elsewhere-on-the-web .field-label {
+      color: $black;
+      font-size: rem-calc(16px);
+      font-weight: 700;
+      margin-bottom: rem-calc(8px);
+
+      @include breakpoint (medium up) {
+        font-size: rem-calc(18px);
+      }
+    }
+
+    .paragraph--type--related-screening-item,
+    .field-paragraph--field-related-screening-group,
+    .field-paragraph--field-name-of-screening-test,
+    .field-paragraph--field-related-conditions .field-item,
+    .field-paragraph--field-related-screenings .field-item,
+    .field-paragraph--field-related-news-items .field-item,
+    .field-paragraph--field-related-tests .field-item {
+      display: inline;
+    }
+  }
+}
+
+// Looking For Buttons
+
+.button-content {
+  background: $white;
+  display: none;
+  padding: 1rem;
+
+  .field-item {
+    text-align: left;
+  }
+}
+
+.button-wrapper {
+  position: absolute;
+  top: 0;
+  width: 50%;
+
+  &:last-of-type {
+    right: 0;
+  }
+}
+
+.field-paragraph--field-looking-for-buttons {
+  padding: 0 rem-calc(8px);
+}
+
+.looking-for-buttons {
+  .block-content-wrapper {
+    &.is-active {
+      .expandable-button {
+        span {
+          position: relative;
+          z-index: 3;
+        }
+      }
+
+      .button-content {
+        display: block;
+        position: relative;
+        z-index: 1;
+      }
+
+      @include breakpoint (large up) {
+
+        [class^='icon-'],
+        [class*=' icon-'] {
+          padding: 1rem 1.8rem 37px;
+        }
+      }
+    }
+  }
+
+  .field-item {
+    margin: 0;
+    overflow: initial;
+  }
+}
+
+.paragraph--view-mode--section-nav-test {
+  .field-paragraph--field-body {
+    a > span {
+      display: none;
+    }
+  }
+}
+
+.field-node--field-subcontent {
+  .paragraph--type--cta {
+    @include breakpoint (medium up) {
+      margin-top: -110px;
+    }
+
+    .field-paragraph--field-call-to-action {
+      .medium-5 {
+        &.columns {
+          float: left;
+        }
+      }
+    }
+  }
+}
+
+.paragraph--type--cta {
+  .field-paragraph--field-call-to-action {
+
+    @include breakpoint (small up) {
+      .medium-6 {
+        padding: 0 1rem;
+      }
+    }
+
+    @include breakpoint (medium up) {
+      .medium-6 {
+        padding: 0 2em;
+      }
+    }
+  }
+}
+
+.paragraph--type--call-to-action {
+
+  .field-paragraph--field-label {
+    color: $white;
+    font-size: rem-calc(16px);
+    padding-top: 20px;
+  }
+
+  .field-paragraph--field-secondary-label {
+    font-size: rem-calc(13px);
+    color: $white;
+    margin-bottom: 1em;
+  }
+
+  .field-paragraph--field-logo-img {
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.section-lab-locator-resources {
+
+  .paragraph--type--section-navigation-item {
+
+    @include breakpoint (medium up) {
+      min-width: 310px;
+    }
+  }
+
+  .field-node--field-subcontent {
+    border: none;
+
+    .paragraph {
+      margin-top: 0;
+    }
+
+    .field-item {
+      margin-top: 0;
+    }
+
+    @include breakpoint (medium up) {
+
+      .paragraph {
+        margin-top: 2em;
+
+        &.paragraph--type--cta {
+          margin-top: -110px;
+        }
+      }
+    }
+  }
+}
+
+.paragraph--type--columns-background {
+  .paragraph--type--column {
+    border: 1px solid #000;
+    padding: 30px;
+    background: $dark-gray;
+    color: $white;
+    margin-bottom: 30px;
+
+    .field-paragraph--field-label {
+      color: $white;
+      font-size: rem-calc(20px);
+    }
+
+    .field-paragraph--field-body {
+      font-size: rem-calc(15px);
+    }
+  }
+}
+
+.paragraph--type--buttons {
+  border: 1px solid $black;
+  padding: 1.5em;
+
+  .featurette-wrapper {
+
+    .linkicon-text {
+      font-size: rem-calc(14px);
+      padding: 1rem .4rem;
+    }
+  }
+
+  .paragraph--type-navigation {
+    margin: 0;
+
+    @include breakpoint (medium up) {
+      .medium-4 {
+        width: 50%;
+      }
+    }
+
+    .columns {
+      float: left;
+    }
+
+    .paragraph--type--section-navigation-item {
+
+      @include breakpoint (medium up) {
+        min-width: 310px;
+      }
+    }
+  }
+
+  .field-paragraph--field-label {
+    color: $black;
+    font-size: rem-calc(18px);
+  }
+}
+
+.paragraph--type--columns {
+  .paragraph--type-navigation {
+    .featurette-wrapper {
+
+      @include breakpoint (medium up) {
+        .medium-4 {
+          width: 50%;
+        }
+      }
+
+      .columns {
+
+        a {
+          display: block;
+          padding: 0 3em;
+        }
+      }
+
+      .linkicon-text {
+        font-size: rem-calc(14px);
+        padding: 1rem .4rem;
+      }
+    }
+  }
+
+  @include breakpoint (medium up) {
+    .field-paragraph--field-column {
+      .paragraph--type--section-navigation-item {
+        min-width: 275px;
+      }
+    }
+  }
+
+  @include breakpoint (large up) {
+
+    .field-paragraph--field-column {
+      position: relative;
+
+      .paragraph--type--section-navigation-item {
+        position: absolute;
+        bottom: 1.5em;
+        right: 1.5em;
+      }
+    }
+  }
+}
+
+.node--type-page {
+  &.ds-2col-stacked-fluid {
+    position: relative;
+  }
+}
+
+.paragraph--type--embed-form {
+  background-color: $primary-color;
+
+  #edit-webform-title {
+    .webform-section-title {
+      color: $white;
+      font-size: rem-calc(22px);
+    }
+  }
+
+  #edit-intro {
+    .webform-section-title,
+    .webform-element-description {
+      color: $white;
+      font-size: rem-calc(14px);
+      font-weight: normal;
+    }
+  }
+
+  form {
+    padding: 20px;
+
+    input {
+      &[type='text'],
+      &[type='email'] {
+        border: 1px solid $black;
+      }
+    }
+
+    label {
+      color: $white;
+    }
+
+    fieldset {
+      background-color: transparent;
+
+      .fieldset-legend {
+        color: $white;
+      }
+    }
+  }
+
+  .g-recaptcha {
+    @include breakpoint (medium up) {
+      transform: scale(.72);
+      transform-origin: 0 0;
+    }
+
+    @include breakpoint (large up) {
+      transform: scale(.82);
+      transform-origin: 0 0;
+    }
+  }
+
+  .webform-button--submit {
+    width: 100%;
+    background-color: $white;
+    color: $black;
+  }
+}

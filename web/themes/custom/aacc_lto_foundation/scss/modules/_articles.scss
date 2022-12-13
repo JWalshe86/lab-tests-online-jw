@@ -1,0 +1,139 @@
+// News
+.node--type-news-item {
+  &.node--view-mode-full {
+    .field-label {
+      font-size: rem-calc(20px);
+      padding: 1rem 0;
+    }
+
+    .field-name-node-post-date {
+      color: $dark-gray;
+      font-weight: 700;
+      padding: .5rem 0;
+    }
+  }
+
+  &.node--view-mode-teaser {
+    .field-name-field-head-date {
+      color: $dark-gray;
+      margin: 1rem 0;
+    }
+  }
+}
+
+// Reviewed and Modified fields
+.field-name-field-reviewed,
+.field-revision-date {
+  display: inline;
+
+  .field-items {
+    display: inline-block;
+  }
+
+  .has-tip {
+    margin-left: 4px;
+  }
+}
+
+.field-name-field-reviewed {
+
+  time {
+    margin-right: -3x;
+  }
+}
+
+.site--lto-us {
+  .field-name-field-reviewed {
+    &::before {
+      background: url('../../dist/images/board_approved.svg') no-repeat;
+      content: '';
+      display: block;
+      height: 35px;
+      margin: 1rem 0;
+      width: 50%;
+
+      @include breakpoint(medium up) {
+        display: inline-block;
+        float: left;
+        height: 25px;
+        margin: 0 1rem 0 0;
+        position: relative;
+        top: 4px;
+        width: 100px;
+      }
+    }
+  }
+}
+
+.site--lto-it {
+  &.node--type-page {
+    .field-name-field-reviewed {
+      display: block;
+      margin: 0 0 15px;
+    }
+  }
+}
+
+.review-info {
+  font-size: rem-calc(14px);
+  margin: 1rem 0 1.5rem;
+
+  @include breakpoint(medium up) {
+    margin: 1.5rem 0 3rem;
+  }
+}
+
+// Conditions and Tests
+.node--type-condition,
+.node--type-test {
+  &.node--view-mode-full {
+    .field-node--field-test-synonyms,
+    .field-name-field-formal-name,
+    .field-name-field-condition-synonyms {
+      &.field-label-inline {
+        .field-label {
+          font-weight: 700;
+        }
+
+        .field-item {
+          display: inline;
+
+          &::after {
+            content: ',';
+          }
+
+          &:last-of-type {
+            &::after {
+              content: '';
+            }
+          }
+        }
+      }
+
+      &.clearfix {
+        &::before,
+        &::after {
+          clear: none;
+        }
+      }
+    }
+  }
+}
+
+.field-name-field-formal-name {
+  margin-top: .5rem;
+}
+
+.taxonomy-term--type-disclaimer {
+  font-style: italic;
+}
+
+// Articles
+.field-name-field-image-caption {
+  font-size: rem-calc(14px);
+  font-style: italic;
+}
+
+.default-image {
+  margin-bottom: 1rem;
+}

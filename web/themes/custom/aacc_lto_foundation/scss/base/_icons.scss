@@ -1,0 +1,180 @@
+// AACC Base Icon Classes
+
+[class^='icon-'],
+[class*=' icon-'] {
+  font-family: $aacc-icon;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  &::before {
+    font-family: $aacc-icon;
+    font-weight: 400;
+  }
+}
+
+.icon- {
+  font-family: $aacc-icon;
+
+  &arrow-1 {
+    &::before {
+      content: '\e900';
+    }
+  }
+
+  &arrow-2 {
+    &::before {
+      content: '\e901';
+    }
+  }
+
+  &award {
+    &::before {
+      content: '\e921';
+    }
+  }
+
+  &book {
+    &::before {
+      content: '\e902';
+    }
+  }
+
+  &close {
+    &::before {
+      content: '\e920';
+    }
+  }
+
+  &data {
+    &::before {
+      content: '\e903';
+    }
+  }
+
+  &diploma {
+    &::before {
+      content: '\e904';
+    }
+  }
+
+  &document {
+    &::before {
+      content: '\e905';
+    }
+  }
+
+  &facebook {
+    &::before {
+      content: '\e906';
+    }
+  }
+
+  &globe {
+    &::before {
+      content: '\e907';
+    }
+  }
+
+  &globe-2 {
+    &::before {
+      content: '\e908';
+    }
+  }
+
+  &google-plus {
+    &::before {
+      content: '\e909';
+    }
+  }
+
+  &health-chart {
+    &::before {
+      content: '\e90a';
+    }
+  }
+
+  &info {
+    &::before {
+      content: '\e90b';
+    }
+  }
+
+  &language {
+    &::before {
+      content: '\e90c';
+    }
+  }
+
+  &mail {
+    &::before {
+      content: '\e90d';
+    }
+  }
+
+  &plus-1 {
+    &::before {
+      content: '\e90e';
+    }
+  }
+
+  &plus-2 {
+    &::before {
+      content: '\e90f';
+    }
+  }
+
+  &print {
+    &::before {
+      content: '\e910';
+    }
+  }
+
+  &search {
+    &::before {
+      content: '\e911';
+    }
+  }
+
+  &share {
+    &::before {
+      content: '\e912';
+    }
+  }
+
+  &twitter {
+    &::before {
+      content: '\e913';
+    }
+  }
+
+  &condition {
+    &::before {
+      content: '\e914';
+    }
+  }
+
+  &health {
+    &::before {
+      content: '\e915';
+    }
+  }
+
+  &test {
+    &::before {
+      content: '\e916';
+    }
+  }
+
+  &video {
+    &::before {
+      content: '\e922';
+    }
+  }
+
+  &none {
+    display: none;
+  }
+}

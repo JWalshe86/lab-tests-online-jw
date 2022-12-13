@@ -1,0 +1,354 @@
+{#
+/**
+ * @file
+ * Theme override to display a single Drupal page while offline.
+ *
+ * All available variables are mirrored in page.html.twig.
+ * Some may be blank but they are provided for consistency.
+ *
+ * @see template_preprocess_maintenance_page()
+ */
+#}
+
+<style>
+
+  body, html {
+    height: 100%;
+  }
+
+  header {
+    height: 40%;
+  }
+
+  .main-content-wrapper {
+    position: relative;
+    min-height: 60%;
+    height: 60%;
+  }
+
+  .dialog-off-canvas-main-canvas {
+    height: 100%;
+  }
+
+  footer {
+    text-align: center;
+    bottom: 0;
+  }
+
+  .footer-row {
+    position: absolute;
+    width: 100%;
+    margin: 0;
+    max-width: inherit;
+    bottom: 0;
+  }
+
+  .footer-row .footer .row {
+    max-width: 75rem;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  @media screen and (min-width: 75em) {
+    .main-content-wrapper {
+      margin: inherit;
+      max-width: inherit;
+      min-height: inherit;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    header {
+      height: 15%;
+      padding-top: 1.5rem;
+    }
+
+    .main-content-wrapper {
+      position: relative;
+      min-height: 60%;
+      height: 85%;
+    }
+
+    .header-first {
+      margin-top: 1rem;
+      text-align: center;
+      width: 100%;
+    }
+
+    main {
+      margin-top: 2rem;
+    }
+
+    #footer-first {
+     text-align: center;
+    }
+
+    #footer-third {
+      text-align: center;
+    }
+
+    .secondary-header-logo .field-name-field-partner-logo .paragraph img {
+      max-height: 50px;
+    }
+  }
+
+</style>
+
+<header class="header" role="banner" aria-label="Site header">
+
+  <div class="header-top-wrapper">
+    <div class="row">
+      <div class="header-first">
+        <div class="vertical-center">
+          <div>
+            <section id="block-globalsiteslink" class="global-sites show-for-medium hide-for-print contextual-region block-globalsiteslink">
+
+
+              <div data-contextual-id="block:block=globalsiteslink:langcode=en|block_content:block_content=8:changed=1499279014&amp;ds_bundle=basic&amp;ds_view_mode=default&amp;langcode=en" data-contextual-token="sbWVTsZZKBidTOfz0ZSfg67a2YTzWqaIzJOKdy3nopE" class="contextual" role="form"><button class="trigger visually-hidden focusable" type="button" aria-pressed="false">Open  configuration options</button><ul class="contextual-links" hidden=""><li class="block-configure"><a href="/admin/structure/block/manage/globalsiteslink?destination=/node/1">Configure block</a></li><li class="config-translationcontextual-linksentityblockconfig-translation-overview"><a href="/admin/structure/block/manage/globalsiteslink/translate?destination=/node/1">Translate block</a></li><li class="block-contentblock-edit"><a href="/block/8?destination=/node/1">Edit</a></li></ul></div>
+
+
+              <div class="block-content-wrapper">
+                <div class="body field field-block-content--body field-name-body field-type-text-with-summary field-label-hidden">
+                  <div class="field-items">
+                    <div class="field-item"><p><a class="button" href="/global-sites">Global Sites <span class="icon icon-globe">&nbsp;</span></a></p>
+
+                      <p>&nbsp;</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+
+            </section>
+            <section id="block-mainheaderlogo" class="primary-header-logo contextual-region block-mainheaderlogo">
+
+
+              <div data-contextual-id="block:block=mainheaderlogo:langcode=en|block_content:block_content=18:changed=1499788648&amp;ds_bundle=logo_block&amp;ds_view_mode=default&amp;langcode=en" data-contextual-token="Sc6e2dSC4341z8l0Kpy5xcybt7LlbPJhx0Smy_aw0cw" class="contextual" role="form"><button class="trigger visually-hidden focusable" type="button" aria-pressed="false">Open  configuration options</button><ul class="contextual-links" hidden=""><li class="block-configure"><a href="/admin/structure/block/manage/mainheaderlogo?destination=/node/1">Configure block</a></li><li class="config-translationcontextual-linksentityblockconfig-translation-overview"><a href="/admin/structure/block/manage/mainheaderlogo/translate?destination=/node/1">Translate block</a></li><li class="block-contentblock-edit"><a href="/block/18?destination=/node/1">Edit</a></li></ul></div>
+
+
+              <div class="block-content-wrapper">
+
+                <div class="field-wrapper field field-block-content--field-partner-logo field-name-field-partner-logo field-type-entity-reference-revisions field-label-hidden">
+                  <div class="field-items">
+                    <div class="field-item">
+                      <div class="paragraph paragraph--type--logo paragraph--view-mode--default">
+                        <a href="/">
+                          <div class="field-wrapper field field-paragraph--field-logo-img field-name-field-logo-img field-type-image field-label-hidden">
+                            <div class="field-items">
+                              <div class="field-item">  <img src="/sites/aacc-lto.us/files/partner-logos/header-logo.PNG" width="576" height="151" alt="logo" typeof="foaf:Image">
+
+                              </div>
+                            </div>
+                          </div>
+
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+
+            </section>
+            <section id="block-secondaryheaderlogo" class="secondary-header-logo contextual-region block-secondaryheaderlogo">
+
+
+              <div data-contextual-id="block:block=secondaryheaderlogo:langcode=en|block_content:block_content=19:changed=1499788786&amp;ds_bundle=logo_block&amp;ds_view_mode=default&amp;langcode=en" data-contextual-token="nTywSxYfL2JBhpFc5p37zDjokgs1iEZZeoxabrnaStI" class="contextual" role="form"><button class="trigger visually-hidden focusable" type="button" aria-pressed="false">Open  configuration options</button><ul class="contextual-links" hidden=""><li class="block-configure"><a href="/admin/structure/block/manage/secondaryheaderlogo?destination=/node/1">Configure block</a></li><li class="config-translationcontextual-linksentityblockconfig-translation-overview"><a href="/admin/structure/block/manage/secondaryheaderlogo/translate?destination=/node/1">Translate block</a></li><li class="block-contentblock-edit"><a href="/block/19?destination=/node/1">Edit</a></li></ul></div>
+
+
+              <div class="block-content-wrapper">
+
+                <div class="field-wrapper field field-block-content--field-partner-logo field-name-field-partner-logo field-type-entity-reference-revisions field-label-hidden">
+                  <div class="field-items">
+                    <div class="field-item">
+                      <div class="paragraph paragraph--type--logo paragraph--view-mode--default">
+                        <a href="/">
+                          <div class="field-wrapper field field-paragraph--field-logo-img field-name-field-logo-img field-type-image field-label-hidden">
+                            <div class="field-items">
+                              <div class="field-item">  <img src="/sites/aacc-lto.us/files/partner-logos/aacc.PNG" width="271" height="90" alt="secondary logo" typeof="foaf:Image">
+
+                              </div>
+                            </div>
+                          </div>
+
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+
+            </section>
+
+          </div>
+
+        </div>
+      </div>
+
+      <div class="header-second">
+        <div>
+          <nav role="navigation" aria-labelledby="block-toplinks-menu" id="block-toplinks" class="top-links show-for-medium hide-for-print contextual-region block-toplinks">
+
+            <h2 class="block-title visually-hidden" id="block-toplinks-menu">User Top Links</h2>
+            <div data-contextual-id="block:block=toplinks:langcode=en|menu:menu=account:langcode=en" data-contextual-token="2xU9aJvF255lAV_BZ5hfw8x3IruHV0Fkmr80pGb5YQs" class="contextual" role="form"><button class="trigger visually-hidden focusable" type="button" aria-pressed="false">Open User Top Links configuration options</button><ul class="contextual-links" hidden=""><li class="block-configure"><a href="/admin/structure/block/manage/toplinks?destination=/node/1">Configure block</a></li><li class="config-translationcontextual-linksentityblockconfig-translation-overview"><a href="/admin/structure/block/manage/toplinks/translate?destination=/node/1">Translate block</a></li><li class="config-translationcontextual-linksentitymenuconfig-translation-overview"><a href="/admin/structure/menu/manage/account/translate?destination=/node/1">Translate menu</a></li><li class="entitymenuedit-form"><a href="/admin/structure/menu/manage/account?destination=/node/1">Edit menu</a></li></ul></div>
+
+
+            <ul class="menu">
+              <li>
+                <a href="/patient-resources" data-drupal-link-system-path="node/55">Patient Resources</a>
+              </li>
+              <li>
+                <a href="/for-health-professionals" data-drupal-link-system-path="node/73">For Health Professionals</a>
+              </li>
+            </ul>
+
+
+
+          </nav>
+
+        </div>
+
+      </div>
+
+
+    </div>
+  </div>
+
+  <div class="header-bottom-wrapper hide-for-print">
+    <div class="mobile-toggle-buttons">
+      <div class="menu-title-bar menu-button" data-hide-for="medium" data-responsive-toggle="menu-nav-container" style="display: none;">
+          &nbsp;
+      </div>
+      <div class="search-title-bar menu-button" data-hide-for="large" data-responsive-toggle="mobile-search-container" style="display: none;">
+          &nbsp;
+      </div>
+    </div>
+    <div class="row">
+      <div class="medium-10 large-12 columns navigation">
+        <div id="menu-nav-container" class="main-nav-container" data-toggler="wbiri0-toggler" aria-expanded="true">
+          &nbsp;
+        </div>
+
+        <div id="mobile-search-container" class="row mobile-search-container search-container" data-toggler="tecbqb-toggler" aria-expanded="true">
+          <div class="large-12 columns">
+            &nbsp;
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<div class="row">
+</div>
+
+<div class="main-content-wrapper">
+  <div class="row">
+    <main id="main" class="large-12 columns" role="main">
+      <section>
+        <div style="min-height: 100%; width: 100%; text-align: center;">
+          <h1>{{ title }}</h1>
+          {{ page.content }}
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="row footer-row">
+    <footer class="footer hide-for-print">
+      <div class="row">
+        <div id="footer-first" class="small-12 medium-12 large-4 columns first">
+          <div>
+            <section id="block-socialmedialinks" class="footer-block footer-social contextual-region block-socialmedialinks columns small-12 medium-6 large-12">
+
+
+              <div data-contextual-id="block:block=socialmedialinks:langcode=en|block_content:block_content=12:changed=1555073684&amp;ds_bundle=basic&amp;ds_view_mode=default&amp;langcode=en" data-contextual-token="1H8mUw34PYuWk7tt0W2WNjuLd-P8QTvOaLFeA3t57Zs" class="contextual" role="form"><button class="trigger focusable visually-hidden" type="button" aria-pressed="false">Open  configuration options</button><ul class="contextual-links" hidden=""><li class="block-configure"><a href="/admin/structure/block/manage/socialmedialinks?destination=/node/1">Configure block</a></li><li class="config-translationcontextual-linksentityblockconfig-translation-overview"><a href="/admin/structure/block/manage/socialmedialinks/translate?destination=/node/1">Translate block</a></li><li class="block-contentblock-edit"><a href="/block/12?destination=/node/1">Edit</a></li></ul></div>
+
+
+              <div class="block-content-wrapper">
+                <div class="body field field-block-content--body field-name-body field-type-text-with-summary field-label-hidden">
+                  <div class="field-items">
+                    <div class="field-item"><p>Find Us On Social Media:</p>
+
+                      <ul><li><a href="https://www.facebook.com/LabTestsOnline" title="Follow us on Facebook" target="_blank" rel="noopener noreferrer"><span class="icon icon-facebook">&nbsp;</span><span class="hidden">Facebook</span></a></li>
+                        <li><a href="https://twitter.com/LabTestsOnline" title="Follow us on Twitter" target="_blank" rel="noopener noreferrer"><span class="icon icon-twitter">&nbsp;</span><span class="hidden">Twitter</span></a></li>
+                      </ul><p><a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="4c40b17b-3d68-4f89-baef-f36f518f5405" href="/partner-us"><img alt="partner with us button" data-entity-type="file" data-entity-uuid="24759ae3-560d-4ccd-97e2-edd5bfe792b1" height="57" src="/sites/aacc-lto.us/files/inline-images/Partner-With-Us.png" width="171"></a></p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+
+            </section>
+            <section id="block-mobileapplinks" class="footer-block mobile-app-block contextual-region block-mobileapplinks columns small-12 medium-6 large-12">
+
+
+              <div data-contextual-id="block:block=mobileapplinks:langcode=en|block_content:block_content=11:changed=1519829343&amp;ds_bundle=basic&amp;ds_view_mode=default&amp;langcode=en" data-contextual-token="y1jb3SZZZ06jufwIjGHq-x7hDWXp84fAAbxTMxSFk7Q" class="contextual" role="form"><button class="trigger visually-hidden focusable" type="button" aria-pressed="false">Open  configuration options</button><ul class="contextual-links" hidden=""><li class="block-configure"><a href="/admin/structure/block/manage/mobileapplinks?destination=/node/1">Configure block</a></li><li class="config-translationcontextual-linksentityblockconfig-translation-overview"><a href="/admin/structure/block/manage/mobileapplinks/translate?destination=/node/1">Translate block</a></li><li class="block-contentblock-edit"><a href="/block/11?destination=/node/1">Edit</a></li></ul></div>
+
+
+              <div class="block-content-wrapper">
+
+              </div>
+
+
+            </section>
+
+          </div>
+
+        </div>
+        <div id="footer-second" class="small-12 medium-6 large-4 columns second">
+          <div>
+            &nbsp;
+          </div>
+
+        </div>
+        <div id="footer-third" class="small-12 medium-6 large-4 columns third">
+          <div>
+            <section id="block-footerbranding" class="footer-branding contextual-region block-footerbranding">
+
+
+              <div data-contextual-id="block:block=footerbranding:langcode=en|block_content:block_content=9:changed=1507143900&amp;ds_bundle=basic&amp;ds_view_mode=default&amp;langcode=en" data-contextual-token="fHjqPYDvt9GoIIkTLeKmUfq-Iu1MXRY4u9AZ9XOHsHc" class="contextual" role="form"><button class="trigger focusable visually-hidden" type="button" aria-pressed="false">Open  configuration options</button><ul class="contextual-links" hidden=""><li class="block-configure"><a href="/admin/structure/block/manage/footerbranding?destination=/node/1">Configure block</a></li><li class="config-translationcontextual-linksentityblockconfig-translation-overview"><a href="/admin/structure/block/manage/footerbranding/translate?destination=/node/1">Translate block</a></li><li class="block-contentblock-edit"><a href="/block/9?destination=/node/1">Edit</a></li></ul></div>
+
+
+              <div class="block-content-wrapper">
+                <div class="body field field-block-content--body field-name-body field-type-text-with-summary field-label-hidden">
+                  <div class="field-items">
+                    <div class="field-item"><p>Program of:</p>
+
+                      <div class="footer-logo">
+                        <ul><li><a href="https://www.aacc.org/" target="_blank" title="American Association for Clinical Chemistry" rel="noopener noreferrer"><img alt="AACC Logo" class="aacc-logo-footer" src="/sites/default/files/inline-images/aacc_logo.png"></a></li>
+                        </ul></div>
+
+                      <div class="footer-certifications">
+                        <ul><li><a href="https://www.healthonnet.org/HONcode/Conduct.html?HONConduct253967" target="_blank" title="HON Code Certified" rel="noopener noreferrer"><img alt="HON Code Certified" class="hon-code" src="/sites/default/files/inline-images/honcode-239x300.jpg"></a></li>
+                          <li><a href="/editorial-review-board"><img alt="Board Approved" class="board-approved" src="/sites/default/files/inline-images/board_approved.png"></a></li>
+                        </ul></div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+
+            </section>
+
+          </div>
+
+        </div>
+      </div>
+    </footer>
+    <div class="bottom-bar panel">
+      <div class="row">
+        <div class="large-12 columns">
+          © 2001-2019 by American Association for Clinical Chemistry
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
