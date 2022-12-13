@@ -67,6 +67,7 @@
         "drupal/pathauto": "1.8.0",
         "drupal/profile_switcher": "1.0.0-alpha5",
         "drupal/radioactivity": "3.0.0",
+        "drupal/raven": "^2.37",
         "drupal/recaptcha": "3.0.0",
         "drupal/redirect": "1.6.0",
         "drupal/redis": "1.5.0",
@@ -130,6 +131,29 @@
             "locations": {
                 "web-root": "web/"
             }
-        }
+        },
+        "patches": {
+            "drupal/core": {
+              "Need update path for deleted core actions": "https://www.drupal.org/files/issues/2021-09-07/3229700-9-node_publish_action_d9.patch"
+            },
+            "drupal/default_content": {
+              "Do not reimport existing content drupal.org/node/2698425": "https://www.drupal.org/files/issues/do_not_reimport-2698425-64.patch"
+            },
+            "drupal/ds": {
+              "Missing config schema (path)": "https://www.drupal.org/files/issues/2946327-2.patch"
+            },
+            "drupal/search_api_exclude_entity": {
+              "Missing config schema": "https://www.drupal.org/files/issues/2946328-2.patch"
+            },
+            "drupal/field_group": {
+              "Field Group Label are not translating": "https://www.drupal.org/files/issues/2021-08-10/field_group_fix-translations_label_description_2021-08-10.patch"
+            },
+            "drupal/recaptcha": {
+              "Ajax support / Use behaviors for 2.x": "https://www.drupal.org/files/issues/2021-06-04/recaptcha-ajax-support-2493183-228.patch"
+            },
+            "drupal/webform": {
+              "3252331: Block source entity caching": "https://git.drupalcode.org/issue/webform-3252331/-/commit/99767c6f71806194ba92184856df8da2baed9964.patch"
+            }
+          }
     }
 }
