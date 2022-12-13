@@ -1,0 +1,7 @@
+services:
+  hreflang_multisite.manager:
+    class: Drupal\hreflang_multisite\HreflangManager
+    arguments: ['@hreflang_multisite.manager_storage']
+  hreflang_multisite.manager_storage:
+    class: Drupal\hreflang_multisite\HreflangStorage
+    arguments: ['@database']

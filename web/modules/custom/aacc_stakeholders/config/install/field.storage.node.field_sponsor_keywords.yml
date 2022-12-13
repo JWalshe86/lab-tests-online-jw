@@ -1,0 +1,20 @@
+uuid: 99697ca6-de09-40d4-b380-1a969cf22c37
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_sponsor_keywords
+field_name: field_sponsor_keywords
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

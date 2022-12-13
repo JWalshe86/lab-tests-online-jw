@@ -1,0 +1,58 @@
+id: news_item
+label: AACC news_item migration
+migration_group: aacc
+source:
+  plugin: aacc_news_item
+destination:
+  plugin: entity:node
+  node_type: news_item
+process:
+  type:
+    plugin: default_value
+    default_value: news_item
+  uid:
+    plugin: default_value
+    default_value: 1
+  langcode: language
+  title: Title
+  'body/value':
+    plugin: linkit_replace
+    source: Content
+  'body/format':
+    plugin: default_value
+    default_value: full_html
+  'body/summary': NewsSummary
+  status:
+    plugin: static_map
+    source: Status
+    map:
+      Published: 1
+      Unpublished: 0
+    default_value: 1
+  field_oldpath: old_path
+  field_meta_tags: metatags
+  field_news_type: news_type
+  field_head_date: HeadDate
+  field_subcontent: subcontent
+  field_reviewed: IncDate
+  'field_legacy_thissite/value': ThisSite
+  'field_legacy_thissite/format':
+    plugin: default_value
+    default_value: full_html
+  'field_legacy_website/value': WebSite
+  'field_legacy_website/format':
+    plugin: default_value
+    default_value: full_html
+  field_keywords:
+    plugin: migration
+    migration: keyword
+    source: keywords
+  'path/pathauto':
+    plugin: default_value
+    default_value: 0
+  'path/alias': alias
+
+dependencies:
+  enforced:
+    module:
+      - aacc_migrate

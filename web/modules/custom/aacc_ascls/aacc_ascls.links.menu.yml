@@ -1,0 +1,5 @@
+aacc_ascls.settings.settings:
+  title: ASCLS API Settings
+  description: 'Configure ASCLS API Endpoints'
+  route_name: aacc_ascls.settings
+  parent: system.admin_config

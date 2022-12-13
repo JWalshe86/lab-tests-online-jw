@@ -1,0 +1,10 @@
+aacc_ads.ad_options:
+  path: '/admin/config/aacc-ads/ad-options'
+  defaults:
+    _form: '\Drupal\aacc_ads\Form\AdsOptions'
+    _title: 'AdsOptions'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE
+

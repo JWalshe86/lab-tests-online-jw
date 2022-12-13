@@ -1,0 +1,135 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/aacc-lto.us\/block\/20?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/block_content\/logo_block"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/logo_block\/content_translation_uid": [
+            {
+                "href": "http:\/\/aacc-lto.us\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": 20
+        }
+    ],
+    "uuid": [
+        {
+            "value": "9eb5b44b-8cab-480c-9d58-83d31afc674a"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 20
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "logo_block"
+        }
+    ],
+    "info": [
+        {
+            "value": "Footer Produced By Logos",
+            "lang": "en"
+        }
+    ],
+    "changed": [
+        {
+            "value": 1497540763,
+            "lang": "en"
+        }
+    ],
+    "revision_created": [
+        {
+            "value": 1496938704
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "content_translation_source": [
+        {
+            "value": "und",
+            "lang": "en"
+        }
+    ],
+    "content_translation_outdated": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/logo_block\/content_translation_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/aacc-lto.us\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "6a5e8b73-34ae-4fa2-a878-6dae8a784245"
+                    }
+                ],
+                "lang": "en"
+            }
+        ]
+    },
+    "content_translation_status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "content_translation_created": [
+        {
+            "value": 1496938704,
+            "lang": "en"
+        }
+    ],
+    "field_aacc_logo_left_of_text_": [
+        {
+            "value": 0,
+            "lang": "en"
+        }
+    ],
+    "field_text_above_logo": [
+        {
+            "value": "Produced by",
+            "format": "basic_html",
+            "lang": "en"
+        }
+    ],
+    "field_text_below_logo": [
+        {
+            "value": "In partnership with",
+            "format": "basic_html",
+            "lang": "en"
+        }
+    ]
+}

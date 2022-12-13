@@ -1,0 +1,76 @@
+<?php
+
+/**
+ * @file
+ * Contains install and update functions for AACC Ads.
+ */
+
+use Drupal\block\Entity\Block;
+
+/**
+ * Programmatically placed the TapNative Ad block.
+ */
+function aacc_ads_update_8001() {
+  /** @var \Drupal\Core\Config\Config $config */
+  $config = \Drupal::service('config.factory')->getEditable('config_split.config_split.aacc_us');
+  $config_id = $config->get('id') ?? FALSE;
+
+  // Check the config sync for the site to only place on US site.
+  if (!$config_id || $config_id !== 'aacc_us') {
+    return t('The TapNative block was not placed since a non-US site.');
+  }
+
+  /** @var \Drupal\block\Entity\Block $placed_block */
+  $placed_block = Block::create([
+    'id' => 'tapnativewidgetblock',
+    'theme' => 'aacc_lto_foundation',
+    'weight' => 0,
+    'status' => TRUE,
+    'region' => 'content',
+    'langcode' => 'en',
+    'plugin' => 'tap_native_widget_block',
+    'settings' => [
+      'id' => 'tap_native_widget_block',
+      'label' => 'Tap native widget block',
+      'provider' => 'aacc_ads',
+      'label_display' => '0',
+    ],
+    'visibility' => [
+      'node_type' => [
+        'id' => 'node_type',
+        'bundles' => [
+          'test' => 'test',
+        ],
+        'negate' => FALSE,
+        'context_mapping' => [
+          'node' => '@node.node_route_context:node',
+        ],
+      ],
+      'entity_bundle:node' => [
+        'id' => 'entity_bundle:node',
+        'bundles' => [
+          'test' => 'test',
+        ],
+        'negate' => FALSE,
+        'context_mapping' => [
+          'node' => '@node.node_route_context:node',
+        ],
+      ],
+    ],
+  ]);
+
+  // Place the block via code since blocks are excluded via CIM.
+  $placed_block->save();
+
+  return t('The TapNative block was placed the US site.');
+}
+
+/**
+ * Fixing the aacc_ehs_ads module is missing messages.
+ */
+function aacc_ads_update_8002() {
+  $db = Drupal::database();
+  $db->query('DELETE FROM key_value WHERE collection=\'system.schema\' AND name=\'aacc_ehs_ads\';')->execute();
+
+  return t('Reference to aacc_ehs_ads mdoule has been removed from system.schema table.');
+}

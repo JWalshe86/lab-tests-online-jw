@@ -1,0 +1,22 @@
+uuid: 7b62961f-bcfe-494e-8fb4-f39e5341c709
+langcode: en
+status: true
+dependencies:
+  module:
+    - aacc_feeds
+    - taxonomy
+_core:
+  default_config_hash: oMtsGW5rzgIZormPvaLEiaI7idjFPNVjqE9UX0Txx60
+id: aacc_feeds_feed.field_screening_sub_content
+field_name: field_screening_sub_content
+entity_type: aacc_feeds_feed
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

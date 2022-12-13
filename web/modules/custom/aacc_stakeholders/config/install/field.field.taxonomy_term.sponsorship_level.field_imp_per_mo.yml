@@ -1,0 +1,23 @@
+uuid: 01e68ca1-92b0-46ce-91af-b8a14c6348ad
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_imp_per_mo
+    - taxonomy.vocabulary.sponsorship_level
+id: taxonomy_term.sponsorship_level.field_imp_per_mo
+field_name: field_imp_per_mo
+entity_type: taxonomy_term
+bundle: sponsorship_level
+label: 'Impressions Per Month'
+description: 'The maximum number of impressions per keyword per month for this sponsor.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -1,0 +1,9 @@
+uuid: 1211ee2c-65a5-4270-a40e-21608fc4d0f2
+langcode: en
+status: true
+dependencies: {  }
+name: 'Stakeholder Type'
+vid: stakeholder_type
+description: ''
+hierarchy: 0
+weight: 0

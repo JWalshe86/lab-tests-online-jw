@@ -1,0 +1,6 @@
+aacc_feeds.feed_add:
+  route_name: aacc_feeds.feed_add
+  title: 'Add Feed'
+  appears_on:
+  - entity.aacc_feeds_feed.collection
+  - entity.aac_feeds_feed.canonical

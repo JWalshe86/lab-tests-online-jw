@@ -1,0 +1,6 @@
+type: module
+name: Custom Multisite Redirects
+description: 'Redirect users as needed with custom redirects.'
+package: Custom Redirects
+core: 8.x
+core_version_requirement: ^8 || ^9

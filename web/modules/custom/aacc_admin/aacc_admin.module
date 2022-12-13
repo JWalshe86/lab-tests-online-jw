@@ -1,0 +1,109 @@
+<?php
+
+/**
+ * @file
+ * Module for adding styles to admin theme.
+ */
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Render\Markup;
+use Drupal\Component\Render\MarkupInterface;
+use Drupal\node\Entity\Node;
+
+/**
+ * Implements hook_preprocess_hook().
+ */
+function aacc_admin_preprocess_html(&$variables) {
+  $route = \Drupal::routeMatch()->getRouteObject();
+  $is_admin = \Drupal::service('router.admin_context')->isAdminRoute($route);
+  if ($is_admin) {
+    $library = [
+      '#attached' => [
+        'library' => [
+          'aacc_admin/aacc_admin',
+        ],
+      ],
+    ];
+    \Drupal::service('renderer')->render($library);
+  }
+}
+
+/**
+ * Implements hook_entity_type_alter().
+ *
+ * Remove the constraint check for non-translatable fields
+ * for paragraph as the accordion reference to accordion items
+ * is throwing an error when saving.
+ *
+ * @see https://www.drupal.org/node/2938191
+ * @see https://www.drupal.org/project/drupal/issues/2955321
+ * @see https://www.drupal.org/node/2735121
+ */
+function aacc_admin_entity_type_alter(array &$entity_types) {
+  if (!isset($entity_types['paragraph'])) {
+    return;
+  }
+
+  $constraints = $entity_types['paragraph']->getConstraints();
+  unset($constraints['EntityUntranslatableFields']);
+  $entity_types['paragraph']->setConstraints($constraints);
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function aacc_admin_preprocess_status_messages(&$variables) {
+  // Ask a Lab webform titles contain () with links in them. Remove the
+  // content in the parentheses to update .
+  if (isset($variables['message_list']['error'])) {
+    $status_messages = $variables['message_list']['error'];
+
+    foreach ($status_messages as $delta => &$message) {
+      if ($message instanceof MarkupInterface) {
+        /** @var \Drupal\Component\Render\MarkupInterface $msg */
+        $msg = html_entity_decode((string) $variables['message_list']['error'][0]);
+
+        $variables['message_list']['error'][$delta] = Markup::create(trim(preg_replace("/\([^)]+\)/", '', $msg)));
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_presave().
+ *
+ * @inheritDoc
+ */
+function aacc_admin_node_presave(EntityInterface $entity) {
+  if (!$entity instanceof Node) {
+    return NULL;
+  }
+
+  /** @var \Drupal\Core\Session\AccountInterface $user */
+  $user = \Drupal::currentUser();
+
+  $nid = $entity->id();
+
+  $log_data = [
+    'nid' => $nid,
+    'uid' => $user->id(),
+    'type' => $entity->getEntityTypeId(),
+    'changed time' => date("M,d,Y h:i:s A", $entity->getChangedTime()),
+    'current time' => date("M,d,Y h:i:s A"),
+  ];
+
+  $log_msg = sprintf('Node update %d by uid %d <pre>%s</pre>', $nid, $user->id(), print_r($log_data, TRUE));
+  \Drupal::logger('aacc_debug')->debug($log_msg);
+}
+
+/**
+ * Implements hook_field_widget_WIDGET_TYPE_form_alter().
+ */
+function aacc_admin_field_widget_entity_reference_paragraphs_form_alter(&$element, &$form_state, $context) {
+  if ($element['#paragraph_type'] == 'text_area') {
+    $site_name = \Drupal::config('aacc_multisite.config')->get('site.class');
+    if ($site_name == 'lto-us') {
+      $element['subform']['field_width']['#access'] = FALSE;
+    }
+  }
+}

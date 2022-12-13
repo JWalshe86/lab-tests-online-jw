@@ -1,0 +1,22 @@
+{#
+/**
+ * @file screening_test.html.twig
+ * Default theme implementation to present Screening Test data.
+ *
+ * This template is used when viewing Screening Test pages.
+ *
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_screening_test()
+ *
+ * @ingroup themeable
+ */
+#}
+<div{{ attributes.addClass('screening_test') }}>
+  {% if content %}
+    {{- content -}}
+  {% endif %}
+</div>

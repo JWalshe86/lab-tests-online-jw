@@ -1,0 +1,23 @@
+uuid: 22b17318-4057-4e55-b8c6-2ef281cfdb9f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.aacc_feeds_feed.field_log_limit
+  module:
+    - aacc_feeds
+    - options
+id: aacc_feeds_feed.aacc_feeds_feed.field_log_limit
+field_name: field_log_limit
+entity_type: aacc_feeds_feed
+bundle: aacc_feeds_feed
+label: 'Limit Log Entries'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 1000
+default_value_callback: ''
+settings: {  }
+field_type: list_integer

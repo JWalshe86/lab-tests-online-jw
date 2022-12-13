@@ -1,0 +1,6 @@
+name: AACC Jumplist Menu Migration
+description: Populate new top menu
+core: 8.x
+core_version_requirement: ^8 || ^9
+type: module
+package: AACC

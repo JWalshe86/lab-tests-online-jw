@@ -1,0 +1,32 @@
+<?php
+
+/**
+ * @file
+ * Contains .module..
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function sponsor_views_theme($existing, $type, $theme, $path) {
+  return [
+    'sponsors' => [
+      'variables' => [
+        'ChampionPartners' => NULL,
+        'CollaboratingPartners' => NULL,
+        'InternationalPartners' => NULL,
+        'InternationalSponsors' => NULL,
+        'Sponsors' => NULL,
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function sponsor_views_theme_suggestions_container_alter(array &$suggestions, array $variables) {
+  if (isset($variables['element']['#type'], $variables['element']['#name']) && $variables['element']['#type'] == 'view' && $variables['element']['#name'] == 'stakeholders') {
+    $suggestions[] = 'container__' . $variables['element']['#name'];
+  }
+}

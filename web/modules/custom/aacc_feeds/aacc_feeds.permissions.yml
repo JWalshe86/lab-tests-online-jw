@@ -1,0 +1,11 @@
+view feed entity:
+  title: 'View Feed entity'
+add feed entity:
+  title: 'Add Feed entity'
+edit feed entity:
+  title: 'Edit Feed Entity'
+delete feed entity:
+  title: 'Delete Feed entity'
+administer feed entity:
+  title: 'Administer Feed entity'
+  restrict access: TRUE

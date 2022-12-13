@@ -1,0 +1,14 @@
+# Ad Key Value type menu items definition
+entity.ads_type.collection:
+  title: 'Ad Key Value type'
+  route_name: entity.ads_type.collection
+  description: 'List of Ad Key Values'
+  parent: system.admin_structure
+  weight: 99
+
+aacc_ads.ad_options:
+  title: 'EHS Ad Options'
+  route_name: aacc_ads.ad_options
+  description: 'Global options for the EHS Ads'
+  parent: system.admin_config
+  weight: 99

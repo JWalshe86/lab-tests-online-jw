@@ -1,0 +1,143 @@
+uuid: 186e6853-c910-45e9-9a3b-aa72df8918d1
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.stakeholder.body
+    - field.field.node.stakeholder.field_exclude_from_search
+    - field.field.node.stakeholder.field_links
+    - field.field.node.stakeholder.field_logo
+    - field.field.node.stakeholder.field_meta_tags
+    - field.field.node.stakeholder.field_migration_notes
+    - field.field.node.stakeholder.field_migration_status
+    - field.field.node.stakeholder.field_oldpath
+    - field.field.node.stakeholder.field_reviewed
+    - field.field.node.stakeholder.field_sponsor_imps
+    - field.field.node.stakeholder.field_sponsor_keywords
+    - field.field.node.stakeholder.field_sponsor_level
+    - field.field.node.stakeholder.field_sponsor_type
+    - field.field.node.stakeholder.field_sponsor_users
+    - field.field.node.stakeholder.field_stakeholder_type
+    - node.type.stakeholder
+  module:
+    - aacc_foundation_magellan_field_format
+    - datetime
+    - ds
+    - image
+    - text
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - field_logo
+        - body
+        - field_reviewed
+        - node_changed_date
+    fields:
+      node_changed_date:
+        plugin_id: node_changed_date
+        weight: 3
+        label: hidden
+        formatter: ds_post_date_month_day_year
+id: node.stakeholder.full
+targetEntityType: node
+bundle: stakeholder
+mode: full
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: ds_content
+  field_logo:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings:
+      aacc_foundation_magellan_field_format:
+        magellan_target_label: ''
+        magellan_target_clean: true
+      ds:
+        ft:
+          id: expert
+          settings:
+            lb: ''
+            prefix: ''
+            lbw-el: ''
+            lbw-cl: ''
+            lbw-at: ''
+            ow-el: ''
+            ow-cl: ''
+            ow-at: ''
+            fis-el: ''
+            fis-cl: ''
+            fis-at: ''
+            fi: true
+            fi-el: a
+            fi-cl: logo
+            fi-at: 'href="[node:field_links:0:uri]" target="_blank"'
+            fi-def-at: true
+            suffix: ''
+            lbw: false
+            lb-col: false
+            ow: false
+            ow-def-at: false
+            ow-def-cl: false
+            fis: false
+            fis-def-at: false
+    type: image
+    region: ds_content
+  field_reviewed:
+    type: datetime_default
+    weight: 2
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: month_day_year
+    third_party_settings:
+      aacc_foundation_magellan_field_format:
+        magellan_target_label: ''
+        magellan_target_clean: true
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    region: ds_content
+hidden:
+  field_exclude_from_search: true
+  field_links: true
+  field_meta_tags: true
+  field_migration_notes: true
+  field_migration_status: true
+  field_oldpath: true
+  field_sponsor_imps: true
+  field_sponsor_keywords: true
+  field_sponsor_level: true
+  field_sponsor_type: true
+  field_sponsor_users: true
+  field_stakeholder_type: true
+  langcode: true
+  links: true

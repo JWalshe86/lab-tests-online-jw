@@ -1,0 +1,7 @@
+uuid: f334ce2d-1670-4f13-883b-56ecda65bfa9
+langcode: en
+status: true
+dependencies: {  }
+id: sponsor_keyword
+label: 'Sponsor Keyword'
+behavior_plugins: {  }

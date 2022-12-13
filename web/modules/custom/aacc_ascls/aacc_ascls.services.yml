@@ -1,0 +1,3 @@
+services:
+  aacc_ascls.transmit_question:
+    class: Drupal\aacc_ascls\TransmitQuestion

@@ -1,0 +1,153 @@
+<?php
+
+/**
+ * @file
+ * Contains install and update functions for Hreflang.
+ */
+
+use Drupal\node\Entity\Node;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
+
+/**
+ * Implements hook_schema().
+ *
+ * Defines the database tables used by this module.
+ *
+ * @see hook_schema()
+ *
+ * @ingroup hreflang_multisite
+ */
+function hreflang_multisite_schema() {
+  $schema['hreflang_multisite'] = [
+    'description' => 'Holds href lang data.',
+    'fields' => [
+      'nid' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'length' => 10,
+        'not null' => TRUE,
+      ],
+      'href_lang_data' => [
+        'description' => 'Contains all hreflang data for the node.',
+        'type' => 'text',
+        'size' => 'big',
+        'not null' => TRUE,
+      ],
+      'referenced_country' => [
+        'description' => 'The current country.',
+        'type' => 'varchar',
+        'length' => 10,
+        'not null' => TRUE,
+      ],
+      'base_nid' => [
+        'description' => 'The base node ID.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'length' => 10,
+        'not null' => TRUE,
+      ],
+    ],
+    'primary key' => ['nid'],
+  ];
+
+  return $schema;
+}
+
+/**
+ * Re-saves all nodes.
+ */
+function hreflang_multisite_update_8001(array &$sandbox) {
+  // Get the current language of the site that the update is running on.
+  $default_language = \Drupal::languageManager()->getDefaultLanguage()->getId();
+
+  // Database connection to run queries on.
+  $connection = \Drupal::database();
+
+  // Set the Sandbox configs if first time running.
+  if (!isset($sandbox['progress'])) {
+    // Count for nodes visited so far.
+    $sandbox['progress'] = 0;
+
+    $sandbox['max'] = $connection->query('SELECT COUNT(nid) FROM {node}')
+      ->fetchField();
+
+    // Container to store messages.
+    $sandbox['messages'] = [];
+    $sandbox['updated_language_nodes'] = [];
+
+    // Last node read via query.
+    $sandbox['current_node'] = -1;
+  }
+
+  $limit = 25;
+
+  // Retrieve the next group of nids.
+  /** @var \Drupal\Core\Database\Query\SelectInterface $query */
+  $query = $connection->select('node', 'n');
+  $query->fields('n', ['nid']);
+
+  /** @var \Drupal\Core\Database\StatementInterface $result */
+  $result = $query
+    ->where('n.nid > :nid', [
+      ':nid' => $sandbox['current_node'],
+    ])
+    ->range(0, $limit)
+    ->orderBy('n.nid', 'ASC')
+    ->execute();
+
+  $nids = $result->fetchAllKeyed(0, 0);
+  $nodes = ($nids && count($nids)) ? Node::loadMultiple($nids) : [];
+
+  /** @var \Drupal\node\Entity\Node $node */
+  foreach ($nodes as $node) {
+    if ($node && $node->isPublished()) {
+      $node_language = $node->language()->getId();
+
+      try {
+        // Confirm if the node's default language is properly set to the
+        // language that the node resides in. If not, update the language and
+        // set message. This issue only applies to Korean and Chinese sites.
+        if ($node_language !== $default_language && in_array($default_language, [
+          'zh-hans',
+          'ko',
+        ])) {
+          $node->get('langcode')->value = $default_language;
+          $sandbox['updated_language_nodes'][] = sprintf('%d [%s to %s]', $node->id(), $node_language, $default_language);
+        }
+
+        $node->save();
+      }
+      catch (Exception $e) {
+        $sandbox['messages'][] = sprintf('Node ID %d was not re-saved: %s', $node->id(), $e->getMessage());
+      }
+    }
+
+    $sandbox['progress']++;
+    $sandbox['current_node'] = $node->id();
+  }
+
+  $sandbox['#finished'] = ($sandbox['progress'] / $sandbox['max']);
+  $sandbox_status = $sandbox;
+  unset($sandbox_status['messages']);
+
+  // If sandbox is finished, display a final message.
+  if ($sandbox['#finished'] < 1) {
+    return new TranslatableMarkup('@total_left remaining to re-save.', [
+      '@total_left' => number_format($sandbox['max'] - $sandbox['progress'], 0, ',', ','),
+    ]);
+  }
+  else {
+    if (count($sandbox['updated_language_nodes'])) {
+      $sandbox['message'][] = sprintf('The following nodes had invalid languages updated: %s', implode(',', $sandbox['updated_language_nodes']));
+    }
+
+    if (count($sandbox['messages'])) {
+      $messages = '<ul><li>' . implode('</li><li>', $sandbox['messages']) . "</li></ul>";
+    }
+
+    return new TranslatableMarkup('@total nodes were loaded and re-saved for the hreflang feature. @messages', [
+      '@total' => number_format($sandbox['max'], 0, ',', ','),
+      '@messages' => $messages ?? '',
+    ]);
+  }
+}

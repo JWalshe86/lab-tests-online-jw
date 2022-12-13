@@ -1,0 +1,37 @@
+id: engitel_definition
+label: AACC definition migration(MSSQL)
+migration_group: aacc_engitel
+source:
+  plugin: engitel_aacc_definition
+destination:
+  plugin: entity:node
+  node_type: definition
+process:
+  type:
+    plugin: default_value
+    default_value: definition
+  uid:
+    plugin: default_value
+    default_value: 1
+  title: cntTitle
+  'body/value': cntBody
+  'body/format':
+    plugin: default_value
+    default_value: full_html
+  status:
+    plugin: static_map
+    source: cntPublished
+    map:
+      2: 1
+    default_value: 0
+  field_oldpath: cntUrl
+  field_meta_tags: metatags
+  field_keywords:
+    plugin: migration
+    migration: engitel_keyword
+    source: keywords
+
+dependencies:
+  enforced:
+    module:
+      - aacc_migrate_engitel

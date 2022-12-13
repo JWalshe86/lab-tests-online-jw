@@ -1,0 +1,51 @@
+id: engitel_test
+label: AACC test migration(MSSQL)
+migration_group: aacc_engitel
+source:
+  plugin: engitel_aacc_test
+destination:
+  plugin: entity:node
+  node_type: test
+process:
+  type:
+    plugin: default_value
+    default_value: test
+  uid:
+    plugin: default_value
+    default_value: 1
+  title: cntTitle
+  'field_legacy_content/value': cntBody
+  'field_legacy_content/format':
+    plugin: default_value
+    default_value: full_html
+  status:
+    plugin: static_map
+    source: cntPublished
+    map:
+      2: 1
+    default_value: 0
+  field_oldpath: cntUrl
+  field_meta_tags: metatags
+  field_formal_name: testFormalName
+  field_test_synonyms: testAliasName
+  field_reviewed: cntLastPubOp
+  field_subcontent: subcontent
+  'field_legacy_commonq/value': testCommonQ
+  'field_legacy_commonq/format':
+    plugin: default_value
+    default_value: full_html
+  field_legacy_links: testLinks
+  field_legacy_mean: testMean
+  field_keywords:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: keywords
+    -
+      plugin: migration
+      migration: engitel_keyword
+
+dependencies:
+  enforced:
+    module:
+      - aacc_migrate_engitel

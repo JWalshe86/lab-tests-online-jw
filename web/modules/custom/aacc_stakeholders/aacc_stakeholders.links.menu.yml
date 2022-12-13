@@ -1,0 +1,6 @@
+aacc_stakeholders.sponsor_imp_form:
+  title: 'Sponsor Impressions'
+  description: 'View Sponsor Impressions report.'
+  parent: system.admin_reports
+  route_name: aacc_stakeholders.sponsor_imp_form
+  weight: 100

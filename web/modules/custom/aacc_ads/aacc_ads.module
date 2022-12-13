@@ -1,0 +1,119 @@
+<?php
+
+/**
+ * @file
+ * Contains aacc_ads.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\node\Entity\Node;
+use Drupal\node\NodeInterface;
+
+/**
+ * Implements hook_help().
+ */
+function aacc_ads_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the aacc_ads module.
+    case 'help.page.aacc_ads':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Custom module to handle AACC EHS Ads') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function aacc_ads_page_attachments(array &$attachments) {
+  // Inlcude assets because blockgroup module doesn't support rendering assets.
+  $attachments['#attached']['library'][] = 'aacc_ads/aacc_ads';
+  $config = \Drupal::config('aacc_ads.adoptions');
+  $attachments['#attached']['drupalSettings']['aacc_ads'] = [
+    'aacc_ads' => [
+      'noAdDomains' => $config->get('ad_free_domains'),
+      'noAdSubDomains' => $config->get('ad_free_exclusion_domains'),
+    ],
+  ];
+
+}
+
+/**
+ * Implements hook_preprocess_block().
+ */
+function aacc_ads_preprocess_block(&$variables) {
+  if ($variables['plugin_id'] !== 'aacc_ads_interstitial') {
+    return;
+  }
+
+  $node = \Drupal::routeMatch()->getParameter('node');
+
+  if ($node) {
+    if (!$node instanceof NodeInterface) {
+      $node = Node::load($node);
+    }
+
+    if ($node->hasField('field_legacy_istargethcp') && $node->get('field_legacy_istargethcp')->value === '1') {
+      $variables['content']['#site'] = 'ehs.pro.labtest.labtest';
+    }
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function aacc_ads_theme() {
+  $theme = [];
+  $theme['aacc_ads'] = [
+    'variables' => [
+      'adId' => '',
+      'ehsSite' => '',
+      'verticalPosition' => '',
+      'adParams' => '',
+    ],
+  ];
+
+  $theme['tapnative_widget'] = [
+    'variables' => [],
+  ];
+
+  $theme['ads'] = [
+    'render element' => 'elements',
+    'file' => 'ads.page.inc',
+    'template' => 'ads',
+  ];
+
+  $theme['ads_content_add_list'] = [
+    'render element' => 'content',
+    'variables' => ['content' => NULL],
+    'file' => 'ads.page.inc',
+  ];
+
+  $theme['aacc_interstitial_ad'] = [
+    'variables' => [
+      'div_id' => '',
+      'site' => '',
+    ],
+  ];
+
+  return $theme;
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK().
+ */
+function aacc_ads_theme_suggestions_ads(array $variables) {
+  $suggestions = [];
+  $entity = $variables['elements']['#ads'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+
+  $suggestions[] = 'ads__' . $sanitized_view_mode;
+  $suggestions[] = 'ads__' . $entity->bundle();
+  $suggestions[] = 'ads__' . $entity->bundle() . '__' . $sanitized_view_mode;
+  $suggestions[] = 'ads__' . $entity->id();
+  $suggestions[] = 'ads__' . $entity->id() . '__' . $sanitized_view_mode;
+  return $suggestions;
+}

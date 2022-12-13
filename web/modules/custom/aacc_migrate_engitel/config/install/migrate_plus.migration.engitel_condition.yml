@@ -1,0 +1,35 @@
+id: engitel_condition
+label: AACC condition migration(MSSQL)
+migration_group: aacc_engitel
+source:
+  plugin: engitel_aacc_condition
+destination:
+  plugin: entity:node
+  node_type: condition
+process:
+  type:
+    plugin: default_value
+    default_value: condition
+  uid:
+    plugin: default_value
+    default_value: 1
+  title: cntTitle
+  status:
+    plugin: static_map
+    source: cntPublished
+    map:
+      2: 1
+    default_value: 0
+  field_oldpath: cntUrl
+  field_meta_tags: metatags
+  field_keywords:
+    plugin: migration
+    migration: engitel_keyword
+    source: keywords
+  field_reviewed: cntLastPubOp
+  field_subcontent: subcontent
+
+dependencies:
+  enforced:
+    module:
+      - aacc_migrate_engitel

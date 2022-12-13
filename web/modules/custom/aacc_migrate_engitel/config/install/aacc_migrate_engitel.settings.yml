@@ -1,0 +1,8 @@
+databases:
+  source:
+    servername: ''
+    username: 'SA'
+    password: ''
+    driver: 'SQLSRV'
+    database: ''
+language: ''

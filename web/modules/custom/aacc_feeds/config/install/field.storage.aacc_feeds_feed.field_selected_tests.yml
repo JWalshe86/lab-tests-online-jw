@@ -1,0 +1,22 @@
+uuid: 0624f042-cf70-42b2-add5-6774a9c6b3d9
+langcode: en
+status: true
+dependencies:
+  module:
+    - aacc_feeds
+    - node
+_core:
+  default_config_hash: C6113V5Tui0wc6ejmWzgZLg8LHmVVhxxZ834i4K0sH4
+id: aacc_feeds_feed.field_selected_tests
+field_name: field_selected_tests
+entity_type: aacc_feeds_feed
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

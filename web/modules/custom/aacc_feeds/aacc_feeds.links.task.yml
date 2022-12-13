@@ -1,0 +1,25 @@
+feed.settings_tab:
+  route_name: aacc_feeds.feed_settings
+  title: Settings
+  base_route: aacc_feeds.feed_settings
+
+feed.view:
+  route_name: entity.aacc_feeds_feed.canonical
+  base_route: entity.aacc_feeds_feed.canonical
+  title: View
+
+feed.page_edit:
+  route_name: entity.aacc_feeds_feed.edit_form
+  base_route: entity.aacc_feeds_feed.canonical
+  title: Edit
+
+feed.delete_confirm:
+  route_name: entity.aacc_feeds_feed.delete_form
+  base_route: entity.aacc_feeds_feed.canonical
+  title: Delete
+  weight: 10
+
+feed.log:
+  route_name: entity.aacc_feeds_feed.log
+  base_route: entity.aacc_feeds_feed.canonical
+  title: Access Logs

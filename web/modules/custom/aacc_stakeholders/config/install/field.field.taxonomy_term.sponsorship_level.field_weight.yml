@@ -1,0 +1,23 @@
+uuid: 3d0174b0-cc9b-41a9-b922-1e10cf76e1d0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_weight
+    - taxonomy.vocabulary.sponsorship_level
+id: taxonomy_term.sponsorship_level.field_weight
+field_name: field_weight
+entity_type: taxonomy_term
+bundle: sponsorship_level
+label: Weight
+description: 'The weight of this sponsor, relative to other sponsors.  This value is used to heavily favor higher levels.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

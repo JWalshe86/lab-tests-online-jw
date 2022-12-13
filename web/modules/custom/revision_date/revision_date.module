@@ -1,0 +1,60 @@
+<?php
+
+/**
+ * @file
+ * Contains revision_date.module.
+ */
+
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\revision_date\EntityOperations;
+use Drupal\revision_date\EntityTypeInfo;
+
+/**
+ * Implements hook_help().
+ */
+function revision_date_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the revision_date module.
+    case 'help.page.revision_date':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Adds a revision date field within manage display.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function revision_date_theme($existing, $type, $theme, $path) {
+  return [
+    'revision_date' => [
+      'variables' => [
+        'date' => '',
+        'timestamp' => 0,
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_entity_extra_field_info().
+ */
+function revision_date_entity_extra_field_info() {
+  return \Drupal::service('class_resolver')
+    ->getInstanceFromDefinition(EntityTypeInfo::class)
+    ->entityExtraFieldInfo();
+}
+
+/**
+ * Implements hook_entity_view().
+ */
+function revision_date_entity_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+  return \Drupal::service('class_resolver')
+    ->getInstanceFromDefinition(EntityOperations::class)
+    ->entityView($build, $entity, $display, $view_mode);
+}

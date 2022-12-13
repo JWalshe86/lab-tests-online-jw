@@ -1,0 +1,7 @@
+id: aacc
+label: AACC Migrations
+description: Migrations for AACC project.
+dependencies:
+  enforced:
+    module:
+      - aacc_migrate

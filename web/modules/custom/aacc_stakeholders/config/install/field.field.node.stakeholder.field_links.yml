@@ -1,0 +1,24 @@
+uuid: 93e2d611-f761-466b-978a-faf0380cb294
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_links
+    - node.type.stakeholder
+  module:
+    - link
+id: node.stakeholder.field_links
+field_name: field_links
+entity_type: node
+bundle: stakeholder
+label: Links
+description: 'The links for this organization.  The first link will be used as the primary link for things like sponsor/partner lists.  Other links like Facebook and Twitter can be added, not just an organization''s website.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+  title_predefined: ''
+field_type: link

@@ -1,0 +1,32 @@
+uuid: e556d67b-98ef-48ef-bbdd-6547baa63d14
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.aacc_feeds_feed.field_selected_conditions
+    - node.type.condition
+  module:
+    - aacc_feeds
+_core:
+  default_config_hash: 801PGfA-PV3KYWJ1Agx4J5s1F5NlN92yDDJV1Q966VE
+id: aacc_feeds_feed.aacc_feeds_feed.field_selected_conditions
+field_name: field_selected_conditions
+entity_type: aacc_feeds_feed
+bundle: aacc_feeds_feed
+label: 'Selected Conditions'
+description: 'Hold CTRL key while selecting multiple options.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      condition: condition
+    sort:
+      field: title
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

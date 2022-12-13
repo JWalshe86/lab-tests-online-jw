@@ -1,0 +1,61 @@
+<?php
+
+/**
+ * @file
+ * Contains install and update functions for AACC Stakeholders.
+ */
+
+/**
+ * Implements hook_schema().
+ *
+ * Defines the database tables used by this module.
+ *
+ * @see hook_schema()
+ *
+ * @ingroup aacc_stakeholders
+ */
+function aacc_stakeholders_schema() {
+  $schema['sponsor_impressions'] = [
+    'description' => 'Stores sponsors impressions for previous months',
+    'fields' => [
+      'sponsor_nid' => [
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'Sponsor NID',
+      ],
+      'keyword_tid' => [
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'Keyword TID',
+      ],
+      'impressions' => [
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'Impression total',
+      ],
+      'date' => [
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'Time of impressions',
+      ],
+    ],
+    'primary key' => ['sponsor_nid', 'keyword_tid', 'date'],
+  ];
+
+  return $schema;
+}
+
+/**
+ * Set 'day of month to run' config variable if not already set.
+ */
+function aacc_stakeholders_update_8001() {
+  $config = \Drupal::configFactory()->getEditable('aacc_stakeholders.settings');
+  if (!$config->get('sponsored_keywords.impression_report_day_of_month')) {
+    $config->set('sponsored_keywords.impression_report_day_of_month', 1)
+      ->save();
+  }
+}

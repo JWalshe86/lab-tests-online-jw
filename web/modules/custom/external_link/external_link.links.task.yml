@@ -1,0 +1,27 @@
+# External Link routing definition
+external_link.settings_tab:
+  route_name: external_link.settings
+  title: 'Settings'
+  base_route: external_link.settings
+
+entity.external_link.canonical:
+  route_name: entity.external_link.canonical
+  base_route: entity.external_link.canonical
+  title: 'View'
+
+entity.external_link.edit_form:
+  route_name: entity.external_link.edit_form
+  base_route: entity.external_link.canonical
+  title: 'Edit'
+
+entity.external_link.version_history:
+  route_name: entity.external_link.version_history
+  base_route: entity.external_link.canonical
+  title: 'Revisions'
+
+entity.external_link.delete_form:
+  route_name:  entity.external_link.delete_form
+  base_route:  entity.external_link.canonical
+  title: Delete
+  weight: 10
+

@@ -1,0 +1,32 @@
+uuid: 270854fc-edd9-4d61-a786-51a54082091a
+langcode: en
+status: true
+dependencies:
+  module:
+    - aacc_feeds
+    - options
+_core:
+  default_config_hash: WZ1pj8dJI7a_OLWNDNBtsdH30m11JK4II14GJRYvTj8
+id: aacc_feeds_feed.field_notification_interval
+field_name: field_notification_interval
+entity_type: aacc_feeds_feed
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: Daily
+      label: Daily
+    -
+      value: Weekly
+      label: Weekly
+    -
+      value: Monthly
+      label: Monthly
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,28 @@
+uuid: f5620bb6-7813-437f-b68a-6718c493281d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_stakeholder_type
+    - node.type.stakeholder
+    - taxonomy.vocabulary.stakeholder_type
+id: node.stakeholder.field_stakeholder_type
+field_name: field_stakeholder_type
+entity_type: node
+bundle: stakeholder
+label: 'Stakeholder Type'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      stakeholder_type: stakeholder_type
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,23 @@
+uuid: a7757bef-6ee0-474e-8403-84b105faa31a
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: taxonomy_sponsorship_level
+label: 'Taxonomy: Sponsorship Level'
+type: 'canonical_entities:taxonomy_term'
+pattern: '/sponsorship-levels/[term:name]'
+selection_criteria:
+  31a59187-6905-4096-bc63-b6407d306481:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      sponsorship_level: sponsorship_level
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: 31a59187-6905-4096-bc63-b6407d306481
+selection_logic: and
+weight: -5
+relationships: {  }

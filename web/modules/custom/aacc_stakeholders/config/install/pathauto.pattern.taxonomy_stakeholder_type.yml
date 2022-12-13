@@ -1,0 +1,23 @@
+uuid: e5bf29bc-3e48-4a5c-bede-c95a89f65e2c
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: taxonomy_stakeholder_type
+label: 'Taxonomy: Stakeholder Type'
+type: 'canonical_entities:taxonomy_term'
+pattern: '/stakeholder-types/[term:name]'
+selection_criteria:
+  3e15bc8e-5757-4201-b4ac-e44f56448dc8:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      stakeholder_type: stakeholder_type
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: 3e15bc8e-5757-4201-b4ac-e44f56448dc8
+selection_logic: and
+weight: -5
+relationships: {  }

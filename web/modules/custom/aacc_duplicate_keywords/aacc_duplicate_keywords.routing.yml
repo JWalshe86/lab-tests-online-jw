@@ -1,0 +1,6 @@
+aacc_duplicate_keywords.duplicate_keywords:
+  path: /admin/duplicate-keywords
+  defaults:
+    _form: \Drupal\aacc_duplicate_keywords\Form\DuplicateKeywordsForm
+  requirements:
+    _permission: 'access content'

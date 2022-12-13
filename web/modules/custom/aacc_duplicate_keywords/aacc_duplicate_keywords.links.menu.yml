@@ -1,0 +1,6 @@
+aacc_duplicate_keywords.duplicate_keywords_form:
+  title: 'Duplicate Keywords'
+  parent: 'system.admin_content'
+  description: 'Find content referencing duplicate keywords.'
+  route_name: 'aacc_duplicate_keywords.duplicate_keywords'
+  weight: 100

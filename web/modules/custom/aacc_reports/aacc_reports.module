@@ -1,0 +1,48 @@
+<?php
+
+/**
+ * @file
+ * Contains aacc_reports.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_help().
+ */
+function aacc_reports_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the aacc_reports module.
+    case 'help.page.aacc_reports':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Reporting views and pages for administrative use.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function aacc_reports_form_views_exposed_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if ($form_id === 'views_exposed_form'
+    && isset($form['#id'])
+    && $form['#id'] === 'views-exposed-form-form-submission-report-page-1') {
+    $form['date_filter_options'] = [
+      '#type' => 'select',
+      '#default_value' => $form_state->getValue('date_filter_options') ?? 'date_range',
+      '#options' => [
+        'custom' => 'Custom',
+        'last_month' => 'Last Calendar Month',
+        'calendar_year_to_date' => 'Calendar Year to Date',
+        'calendar_year_last' => 'Last Calendar Year',
+      ],
+      '#weight' => -10,
+    ];
+
+    $form['#attached']['library'][] = 'aacc_reports/webform-submissions';
+  }
+}

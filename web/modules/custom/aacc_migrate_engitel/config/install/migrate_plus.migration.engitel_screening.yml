@@ -1,0 +1,37 @@
+id: engitel_screening
+label: AACC screening migration(MSSQL)
+migration_group: aacc_engitel
+source:
+  plugin: engitel_aacc_screening
+destination:
+  plugin: entity:node
+  node_type: screening
+process:
+  type:
+    plugin: default_value
+    default_value: screening
+  uid:
+    plugin: default_value
+    default_value: 1
+  title: 
+    plugin: callback
+    callback: html_entity_decode
+    source: cntTitle
+  status:
+    plugin: static_map
+    source: cntPublished
+    map:
+      2: 1
+    default_value: 0
+  field_oldpath: cntUrl
+  field_subcontent: subcontent
+  field_meta_tags: metatags
+  field_keywords:
+    plugin: migration
+    migration: engitel_keyword
+    source: keywords
+
+dependencies:
+  enforced:
+    module:
+      - aacc_migrate_engitel

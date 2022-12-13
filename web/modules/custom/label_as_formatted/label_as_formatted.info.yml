@@ -1,0 +1,6 @@
+name: Label as Formatted
+type: module
+description: This module adds the ability to sort entity Labels that have embedded html.
+core: 8.x
+core_version_requirement: ^8 || ^9
+package: Other

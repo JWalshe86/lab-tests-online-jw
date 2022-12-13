@@ -1,0 +1,6 @@
+services:
+  aacc_anchors.twig.extension:
+    class: Drupal\aacc_anchors\TwigExtension\AnchorsTwigExtension
+    arguments: ['@renderer']
+    tags:
+      - { name: twig.extension }

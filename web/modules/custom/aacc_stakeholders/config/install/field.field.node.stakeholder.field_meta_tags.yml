@@ -1,0 +1,23 @@
+uuid: 930ec68a-b1fd-45e5-b6d0-3d1a9f9b9bfd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_meta_tags
+    - node.type.stakeholder
+  module:
+    - metatag
+id: node.stakeholder.field_meta_tags
+field_name: field_meta_tags
+entity_type: node
+bundle: stakeholder
+label: 'Meta Tags'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 'a:0:{}'
+default_value_callback: ''
+settings: {  }
+field_type: metatag

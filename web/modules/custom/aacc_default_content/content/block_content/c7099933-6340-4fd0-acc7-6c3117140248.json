@@ -1,0 +1,122 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/block\/8?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/block_content\/basic"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/basic\/content_translation_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "und"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": 8
+        }
+    ],
+    "uuid": [
+        {
+            "value": "c7099933-6340-4fd0-acc7-6c3117140248"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 8
+        }
+    ],
+    "langcode": [
+        {
+            "value": "und",
+            "lang": "und"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "basic"
+        }
+    ],
+    "info": [
+        {
+            "value": "Global Sites Link",
+            "lang": "und"
+        }
+    ],
+    "changed": [
+        {
+            "value": 1494455708
+        }
+    ],
+    "revision_created": [
+        {
+            "value": 1494349524
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "und"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "und"
+        }
+    ],
+    "content_translation_source": [
+        {
+            "value": "und",
+            "lang": "und"
+        }
+    ],
+    "content_translation_outdated": [
+        {
+            "value": false,
+            "lang": "und"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/basic\/content_translation_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "6a5e8b73-34ae-4fa2-a878-6dae8a784245"
+                    }
+                ],
+                "lang": "und"
+            }
+        ]
+    },
+    "content_translation_status": [
+        {
+            "value": true,
+            "lang": "und"
+        }
+    ],
+    "content_translation_created": [
+        {
+            "value": 1494349524,
+            "lang": "und"
+        }
+    ],
+    "body": [
+        {
+            "value": "<p><a class=\"button\" href=\"\/global-sites\">Global Sites <span class=\"icon icon-globe\">&nbsp;<\/span><\/a><\/p>\r\n",
+            "format": "full_html",
+            "summary": "",
+            "lang": "und"
+        }
+    ]
+}

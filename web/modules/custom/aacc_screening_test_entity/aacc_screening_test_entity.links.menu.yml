@@ -1,0 +1,14 @@
+
+# Screening Test menu items definition
+entity.screening_test.collection:
+  title: 'Screening Tests'
+  route_name: entity.screening_test.collection
+  description: 'List Screening Test entities'
+  parent: system.admin_content
+  weight: 100
+
+screening_test.admin.structure.settings:
+  title: Screening Test Settings
+  description: 'Configure Screening Test entities'
+  route_name: screening_test.settings
+  parent: system.admin_structure

@@ -1,0 +1,45 @@
+<ul class="tabs" data-deep-link="true" data-deep-link-smudge="true" data-responsive-accordion-tabs="tabs small-accordion medium-tabs" id="sponsor-tabs" data-allow-all-closed="true" data-update-history="true">
+  {% if Sponsors is defined and Sponsors|render|striptags|trim %}
+    <li class="tabs-title"><a href="#panel1">{% trans %}Sponsors{% endtrans %}</a></li>
+  {% endif %}
+  {% if CollaboratingPartners is defined and CollaboratingPartners|render|striptags|trim %}
+    <li class="tabs-title"><a href="#panel2">{% trans %}Collaborating Partners{% endtrans %}</a></li>
+  {% endif %}
+  {% if ChampionPartners is defined and ChampionPartners|render|striptags|trim %}
+    <li class="tabs-title"><a href="#panel3">{% trans %}Champion Partners{% endtrans %}</a></li>
+  {% endif %}
+  {% if InternationalPartners is defined and InternationalPartners|render|striptags|trim %}
+    <li class="tabs-title"><a href="#panel4">{% trans %}International Partners{% endtrans %}</a></li>
+  {% endif %}
+  {% if InternationalSponsors is defined and InternationalSponsors|render|striptags|trim %}
+   <li class="tabs-title"><a href="#panel5">{% trans %}International Sponsors{% endtrans %}</a></li>
+  {% endif %}
+</ul>
+
+<div class="tabs-content" data-tabs-content="sponsor-tabs">
+  {% if Sponsors is defined and Sponsors|render|striptags|trim %}
+  <div class="tabs-panel" id="panel1">
+    {{ Sponsors }}
+  </div>
+  {% endif %}
+  {% if CollaboratingPartners is defined and CollaboratingPartners|render|striptags|trim %}
+  <div class="tabs-panel" id="panel2">
+    {{ CollaboratingPartners }}
+  </div>
+  {% endif %}
+  {% if ChampionPartners is defined and ChampionPartners|render|striptags|trim %}
+  <div class="tabs-panel" id="panel3">
+    {{ ChampionPartners }}
+  </div>
+  {% endif %}
+  {% if InternationalPartners is defined and InternationalPartners|render|striptags|trim %}
+  <div class="tabs-panel" id="panel4">
+    {{ InternationalPartners }}
+  </div>
+  {% endif %}
+  {% if InternationalSponsors is defined and InternationalSponsors|render|striptags|trim %}
+  <div class="tabs-panel" id="panel5">
+    {{ InternationalSponsors }}
+  </div>
+  {% endif %}
+</div>

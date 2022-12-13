@@ -1,0 +1,9 @@
+aacc_webform.blacklist_form:
+  path: '/admin/config/aacc_webform/blacklist'
+  defaults:
+    _form: '\Drupal\aacc_webform\Form\BlacklistForm'
+    _title: 'Webform Subject Line Blocking'
+  requirements:
+    _permission: 'administer webform subject blocking'
+  options:
+    _admin_route: TRUE

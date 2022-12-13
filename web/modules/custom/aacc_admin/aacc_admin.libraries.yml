@@ -1,0 +1,5 @@
+aacc_admin:
+  css:
+    theme:
+      scss/admin.css?cache=1234: {}
+      https://fonts.googleapis.com/css?family=Open+Sans:400,700: { type: external, minified: true }

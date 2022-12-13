@@ -1,0 +1,96 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/block\/7?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/block_content\/basic"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/basic\/revision_user": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": 7
+        }
+    ],
+    "uuid": [
+        {
+            "value": "fdee0a39-9eba-4754-977e-cde891ad9551"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 7
+        }
+    ],
+    "langcode": [
+        {
+            "value": "und",
+            "lang": "und"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "basic"
+        }
+    ],
+    "info": [
+        {
+            "value": "House Ad",
+            "lang": "und"
+        }
+    ],
+    "changed": [
+        {
+            "value": 1494455702
+        }
+    ],
+    "revision_created": [
+        {
+            "value": 1491592689
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/basic\/revision_user": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "6a5e8b73-34ae-4fa2-a878-6dae8a784245"
+                    }
+                ]
+            }
+        ]
+    },
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "und"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "und"
+        }
+    ],
+    "body": [
+        {
+            "value": "<p><img alt=\"image\" data-entity-type=\"file\" data-entity-uuid=\"578596e4-5553-41f8-bc83-825c2990a5fe\" src=\"\/sites\/default\/files\/inline-images\/-text.png\" \/><\/p>\r\n",
+            "format": "basic_html",
+            "summary": "",
+            "lang": "und"
+        }
+    ]
+}

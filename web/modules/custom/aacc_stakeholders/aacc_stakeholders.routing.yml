@@ -1,0 +1,15 @@
+aacc_stakeholders.stakeholder_display:
+  path: '/stakeholders/display/{nid}'
+  defaults:
+    _controller: '\Drupal\aacc_stakeholders\Controller\StakeholderDisplay::display'
+    _title: 'display'
+  requirements:
+    _permission: 'access content'
+
+aacc_stakeholders.sponsor_imp_form:
+  path: '/admin/reports/sponsor_impressions'
+  defaults:
+    _form: '\Drupal\aacc_stakeholders\Form\SponsorImpForm'
+    _title: 'Sponsor Impressions'
+  requirements:
+    _permission: 'access administration pages'

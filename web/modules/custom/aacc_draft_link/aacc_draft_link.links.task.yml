@@ -1,0 +1,5 @@
+aacc_draft_link.mytask:
+  title: Drafts
+  route_name: view.drafts.drafts
+  base_route: system.admin_content
+  weight: -10

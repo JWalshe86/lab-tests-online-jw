@@ -1,0 +1,6 @@
+name: AACC ASCLS
+type: module
+description: Custom module for Ask a Laboratory Technician Feature
+core: 8.x
+core_version_requirement: ^8 || ^9
+package: AACC

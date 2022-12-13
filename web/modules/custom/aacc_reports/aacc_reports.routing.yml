@@ -1,0 +1,7 @@
+aacc_reports.content_type_usage:
+  path: '/admin/reports/content_type_usage'
+  defaults:
+    _form: '\Drupal\aacc_reports\Form\ContentTypeUsageForm'
+    _title: 'Content Type Usage'
+  requirements:
+    _permission: 'administer nodes'

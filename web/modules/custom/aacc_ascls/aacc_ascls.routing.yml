@@ -1,0 +1,7 @@
+aacc_ascls.settings:
+  path: '/admin/config/aacc_ascls'
+  defaults:
+    _form: '\Drupal\aacc_ascls\Form\SettingsForm'
+    _title: 'ASCLS Settings'
+  requirements:
+    _role: 'administrator'

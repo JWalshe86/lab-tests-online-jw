@@ -1,0 +1,484 @@
+<?php
+
+/**
+ * @file
+ * Contains various hook implementations.
+ */
+
+use Drupal\aacc_feeds\Controller\FeedController;
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Field\FieldDefinitionInterface;
+use Drupal\Core\Field\FieldItemListInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Url;
+use Symfony\Component\HttpFoundation\Response;
+use Drupal\aacc_feeds\Entity\Feed;
+
+/**
+ * Implements hook_mail().
+ */
+function aacc_feeds_mail($key, &$message, $params) {
+  $options = [
+    'langcode' => $message['langcode'],
+  ];
+
+  $tokens = [
+    '@feed_title' => $params['feed_title'],
+    '@feed_url' => $params['feed_url'],
+    '@client_email' => $params['client_email'],
+    '@client_name' => $params['client_name'],
+  ];
+
+  if (isset($params['summary'])) {
+    $tokens['@summary'] = $params['summary'];
+    $tokens['@content_type'] = $params['content_type'];
+  }
+
+  if (isset($params['feed_content'])) {
+    $tokens['@feed_content'] = $params['feed_content'];
+    $tokens['@content_type'] = $params['content_type'];
+  }
+
+  $config = \Drupal::config('aacc_feeds.notifications');
+
+  $subject = (!empty($config->get($key . '_subject'))) ? $config->get($key . '_subject') : t('Feed created: @feed_title', $tokens, $options);
+  $body = (!empty($config->get($key . '_body'))) ? $config->get($key . '_body') : t('Hello @client_name!', $tokens, $options);
+  if (isset($params['cc'])) {
+    $message['headers']['Cc'] = $params['cc'];
+  }
+  $message['from'] = \Drupal::config('system.site')->get('mail');
+  $message['subject'] = $subject;
+  $message['body'][] = $body;
+
+}
+
+/**
+ * Returns the Client entity related to the Feed.
+ *
+ * @param object $entity
+ *   Feed Entity.
+ *
+ * @return object
+ *   Client Entity
+ */
+function _aacc_feeds_get_feed_client($entity) {
+  $clients = $entity->get('field_client')->referencedEntities();
+  return array_pop($clients);
+}
+
+/**
+ * Builds and returns the Mail Params array.
+ *
+ * @param \Drupal\Core\Entity\EntityInterface $entity
+ *   Feed object.
+ * @param object $client
+ *   Client user object.
+ * @param string $json
+ *   Feed JSON string.
+ * @param string $content_type
+ *   API content type as requested.
+ * @param string $timestamp
+ *   An optional Unix timestamp.
+ *
+ * @return array
+ *   Mail params array.
+ */
+function _aacc_feeds_get_mail_params(EntityInterface $entity, $client, $json = '', $content_type = '', string $timestamp = '') {
+  $params = [
+    'feed_title' => $entity->label(),
+    'client_email' => $client->getEmail(),
+    'client_name' => $client->label(),
+    'summary' => _aacc_feeds_get_mail_param_summary($json),
+    'feed_content' => $json,
+    'feed_url' => _aacc_feeds_get_mail_param_feed_url($entity, $content_type, $timestamp),
+    'content_type' => $content_type,
+  ];
+  if ($entity->get('field_feed_emails')->getValue()) {
+    $emails = explode(PHP_EOL, $entity->get('field_feed_emails')->getValue()[0]['value']);
+    $cc_emails = [];
+    foreach ($emails as $email) {
+      $cc_emails[] = trim($email);
+    }
+    $params['cc'] = implode(',', $cc_emails);
+  }
+  return $params;
+}
+
+/**
+ * Generate a the feed URL.
+ *
+ * @param \Drupal\Core\Entity\EntityInterface $entity
+ *   A feed entity.
+ * @param string $content_type
+ *   A string of the content type being processed.
+ * @param string $timestamp
+ *   An Unix timestamp.
+ *
+ * @return string
+ *   A generated url for a feed.
+ */
+function _aacc_feeds_get_mail_param_feed_url(EntityInterface $entity, string $content_type, string $timestamp = '') {
+  if (!$entity instanceof Feed) {
+    return '';
+  }
+
+  // If no timestamp is set, output a generic timestamp in URL from month ago.
+  if ($timestamp === '') {
+    $timestamp = _aacc_feeds_timestamp_adjustment('Monthly');
+  }
+
+  $base = Url::fromRoute('<front>', [], ['absolute' => TRUE])->toString();
+  $id = (int) $entity->id();
+
+  return ($id && $base !== '')
+    ? sprintf('%sapi/v2/feed/%d/%s?since=%s&deleted=exclude&_format=json', $base, $id, $content_type, $timestamp)
+    : '';
+}
+
+/**
+ * Get content titles the feed JSON string.
+ *
+ * @param string $json
+ *   A json string of the feed.
+ *
+ * @return string
+ *   A formatted string of the content titles.
+ */
+function _aacc_feeds_get_mail_param_summary($json) {
+  // Assure that $json is a string or a Symfony Response.
+  if ($json instanceof Response) {
+    /** @var \Symfony\Component\HttpFoundation\Response $json */
+    $json = $json->getContent();
+  }
+
+  if ($json === '') {
+    return 'There are currently no updated items for this feed.';
+  }
+
+  $data = json_decode($json);
+
+  if (!isset($data->items)) {
+    return 'There are currently no updated items for this feed.';
+  }
+
+  $titles = [];
+  foreach ($data->items as $row) {
+    $titles[] = $row->title;
+  }
+
+  return (count($titles)) ? implode("\r\n", $titles) : 'There are currently no updated items for this feed.';
+}
+
+/**
+ * Implements hook_entity_insert().
+ */
+function aacc_feeds_aacc_feeds_feed_insert(EntityInterface $entity) {
+  // Evaluate if 'Feed Detail' field is checked.
+  if ($entity->get('field_feed_details')->getString()) {
+    // Set up the various variables.
+    $mailManager = \Drupal::service('plugin.manager.mail');
+    $module = 'aacc_feeds';
+    $key = 'create_feed';
+    $client = _aacc_feeds_get_feed_client($entity);
+    $to = $client->getEmail();
+    $langcode = $client->getPreferredLangcode();
+    $send = TRUE;
+    $params = _aacc_feeds_get_mail_params($entity, $client);
+    $result = $mailManager->mail($module, $key, $to, $langcode, $params, NULL, $send);
+    $args['@client'] = $to;
+    if (isset($params['cc'])) {
+      $args['@cc_emails'] = ' cc. ( ' . $params['cc'] . ' )';
+    }
+    else {
+      $args['@cc_emails'] = '';
+    }
+    if ($result['result'] !== TRUE) {
+      $message = t('There was a problem sending the Feed Creation message to @client and it was not sent.@cc_emails', $args);
+      \Drupal::messenger()->addMessage($message, 'error');
+    }
+    else {
+      $message = t('Your Feed Creation message was sent to @client successfully.@cc_emails', $args);
+      \Drupal::messenger()->addMessage($message);
+      $message = 'New Feed Created message has been sent to @client.@cc_emails';
+      \Drupal::logger('aacc_feeds_entity_insert')->info($message, $args);
+    }
+  }
+}
+
+/**
+ * Implements hook_entity_update().
+ */
+function aacc_feeds_aacc_feeds_feed_update(EntityInterface $entity) {
+  // Evaluate if 'Feed Detail' field is checked.
+  if ($entity->get('field_feed_details')->getString()) {
+    // Set up the various variables.
+    $mailManager = \Drupal::service('plugin.manager.mail');
+    $module = 'aacc_feeds';
+    $key = 'edit_feed';
+    $client = _aacc_feeds_get_feed_client($entity);
+    $to = $client->getEmail();
+    $langcode = $client->getPreferredLangcode();
+    $send = TRUE;
+    $params = _aacc_feeds_get_mail_params($entity, $client);
+    $result = $mailManager->mail($module, $key, $to, $langcode, $params, NULL, $send);
+    $args['@client'] = $to;
+    if (isset($params['cc'])) {
+      $args['@cc_emails'] = ' cc. ( ' . $params['cc'] . ' )';
+    }
+    else {
+      $args['@cc_emails'] = '';
+    }
+    if ($result['result'] !== TRUE) {
+      $message = t('There was a problem sending the Feed Edited message to @client and it was not sent.@cc_emails', $args);
+      \Drupal::messenger()->addMessage($message, 'error');
+    }
+    else {
+      $message = t('Your Feed Edited message was sent to @client successfully.@cc_emails', $args);
+      \Drupal::messenger()->addMessage($message);
+      $message = 'Feed Edited message has been sent to @client.@cc_emails';
+      \Drupal::logger('aacc_feeds_entity_edited')->info($message, $args);
+    }
+  }
+}
+
+/**
+ * Implements hook_entity_delete().
+ */
+function aacc_feeds_aacc_feeds_feed_delete(EntityInterface $entity) {
+  // Remove related logs when a Feed is deleted.
+  $storage_handler = \Drupal::entityTypeManager()->getStorage("node");
+  $ids = \Drupal::entityQuery('node')
+    ->condition('type', 'access_log_')
+    ->condition('field_feed_access_id', $entity->id(), '=')
+    ->execute();
+  $logs = $storage_handler
+    ->loadMultiple($ids);
+  $storage_handler->delete($logs);
+
+  // Evaluate if 'Feed Detail' field is checked.
+  if ($entity->get('field_feed_details')->getString()) {
+    // Set up the various variables.
+    $mailManager = \Drupal::service('plugin.manager.mail');
+    $module = 'aacc_feeds';
+    $key = 'delete_feed';
+    $client = _aacc_feeds_get_feed_client($entity);
+    $to = $client->getEmail();
+    $langcode = $client->getPreferredLangcode();
+    $send = TRUE;
+    $params = _aacc_feeds_get_mail_params($entity, $client);
+    $result = $mailManager->mail($module, $key, $to, $langcode, $params, NULL, $send);
+    $args['@client'] = $to;
+    if (isset($params['cc'])) {
+      $args['@cc_emails'] = ' cc. ( ' . $params['cc'] . ' )';
+    }
+    else {
+      $args['@cc_emails'] = '';
+    }
+    if ($result['result'] !== TRUE) {
+      $message = t('There was a problem sending the Feed Deletion message to @client and it was not sent.@cc_emails', $args);
+      \Drupal::messenger()->addMessage($message, 'error');
+    }
+    else {
+      $message = t('Your Feed Deletion message was sent to @client successfully.@cc_emails', $args);
+      \Drupal::messenger()->addMessage($message, 'error');
+      $message = 'Feed Deletion message has been sent to @client.@cc_emails';
+      \Drupal::logger('aacc_feeds_entity_delete')->info($message, $args);
+    }
+  }
+}
+
+/**
+ * Returns a past timestamp adjusted to reflect the supplied interval string.
+ *
+ * @param string $interval
+ *   String representing the requested interval.
+ *
+ * @return bool|false|int
+ *   The adjusted timestamp or FALSE.
+ */
+function _aacc_feeds_timestamp_adjustment($interval) {
+  $current = time();
+  switch ($interval) {
+    case 'Daily':
+      $timestamp = mktime(date('H'), date('i'), date('s'), date("m"), date("d") - 1, date("Y"));
+      break;
+
+    case 'Weekly':
+      $timestamp = mktime(date('H'), date('i'), date('s'), date("m"), date("d") - 7, date("Y"));
+      break;
+
+    case 'Monthly':
+      $timestamp = mktime(date('H'), date('i'), date('s'), date("m") - 1, date("d"), date("Y"));
+      break;
+
+    default:
+      $timestamp = FALSE;
+      break;
+  }
+  return $timestamp;
+}
+
+/**
+ * Preps and processes the content_change_summary mail for the passed arguments.
+ *
+ * @param array $feeds
+ *   Array of feed objects that should generate an email.
+ * @param int $adjustedTimestamp
+ *   Timestamp.
+ * @param mixed $email
+ *   An optional email to send to for testing purposes.
+ *
+ * @return bool
+ *   Simple boolean.
+ *
+ * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+ * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+ */
+function aacc_feeds_content_change_summary_mail(array $feeds, $adjustedTimestamp, $email = FALSE) {
+
+  /** @var \Drupal\Core\Entity\EntityInterface $feed */
+  foreach ($feeds as $feed) {
+    $contentTypes = ['condition', 'screening', 'test'];
+    foreach ($contentTypes as $content_type) {
+      // Pull the API for this feed since the last $interval.
+      $feedController = new FeedController();
+      $feedController->setFeedOptions([
+        'since' => $adjustedTimestamp,
+        'deleted' => 'exclude',
+        '_format' => 'json',
+      ]);
+
+      // Capture the JSON output.
+      $json = $feedController->getFeed($feed->id(), $content_type);
+
+      // Set up the various mail variables.
+      $mailManager = \Drupal::service('plugin.manager.mail');
+      $module = 'aacc_feeds';
+      $key = 'content_change_summary';
+      $client = _aacc_feeds_get_feed_client($feed);
+      $to = (!$email) ? $client->getEmail() : $email;
+      $langcode = $client->getPreferredLangcode();
+      $send = TRUE;
+
+      // Add it to the mail params as the @summary
+      $params = _aacc_feeds_get_mail_params($feed, $client, $json, $content_type, $adjustedTimestamp);
+
+      if ($feed->get('field_feed_content_updates')->getString() === '1') {
+        // Send the email.
+        $result = $mailManager->mail($module, $key, $to, $langcode, $params, NULL, $send);
+        // Return a useful message.
+        if ($result['result'] !== TRUE) {
+          \Drupal::messenger()->addMessage(t('There was a problem sending the Content Change Summary message for "@content_type" to @client and it was not sent.',
+              ['@client' => $to, '@content_type' => $content_type]
+            ), 'error');
+        }
+        else {
+          \Drupal::messenger()->addMessage(t('The Content Change Summary message "@content_type" was sent to @client successfully.',
+              ['@client' => $to, '@content_type' => $content_type]));
+        }
+
+        // Log it just in case!
+        \Drupal::logger('aacc_feeds_entity_content_summary')->info(
+          'Content Change Summary message for "@content_type" has been sent to @client.',
+          ['@client' => $to, '@content_type' => $content_type]);
+      }
+    }
+  }
+  return TRUE;
+}
+
+/**
+ * Ultimate Cron callback for daily content change summary email.
+ *
+ * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+ * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+ */
+function aacc_feeds_daily_feed_mail_cron_job() {
+  $interval = 'Daily';
+  $feeds = \Drupal::entityTypeManager()->getStorage('aacc_feeds_feed')->loadByProperties([
+    'field_notification_interval' => $interval,
+  ]);
+  $adjustedTimestamp = _aacc_feeds_timestamp_adjustment($interval);
+
+  aacc_feeds_content_change_summary_mail($feeds, $adjustedTimestamp);
+}
+
+/**
+ * Ultimate Cron callback for weekly content change summary email.
+ *
+ * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+ * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+ */
+function aacc_feeds_weekly_feed_mail_cron_job() {
+  $interval = 'Weekly';
+  $feeds = \Drupal::entityTypeManager()->getStorage('aacc_feeds_feed')->loadByProperties([
+    'field_notification_interval' => $interval,
+  ]);
+  $adjustedTimestamp = _aacc_feeds_timestamp_adjustment($interval);
+
+  aacc_feeds_content_change_summary_mail($feeds, $adjustedTimestamp);
+}
+
+/**
+ * Ultimate Cron callback for monthly content change summary email.
+ *
+ * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+ * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+ */
+function aacc_feeds_monthly_feed_mail_cron_job() {
+  $interval = 'Monthly';
+  $feeds = \Drupal::entityTypeManager()->getStorage('aacc_feeds_feed')->loadByProperties([
+    'field_notification_interval' => $interval,
+  ]);
+  $adjustedTimestamp = _aacc_feeds_timestamp_adjustment($interval);
+
+  aacc_feeds_content_change_summary_mail($feeds, $adjustedTimestamp);
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function aacc_feeds_form_alter(&$form, FormStateInterface &$form_state, $form_id) {
+  // Add the feeds JS to feed form pages. There is no frontend functionality.
+  if (strpos($form_id, 'aacc_feeds_feed') !== FALSE) {
+    $form['#attached']['library'][] = 'aacc_feeds/aacc.feeds';
+  }
+  switch ($form_id) {
+    case 'aacc_feeds_feed_add_form':
+    case 'aacc_feeds_feed_edit_form':
+      $form['#validate'][] = '_aacc_feeds_email_validate';
+      break;
+  }
+}
+
+/**
+ * Implements validation for Feed Emails.
+ */
+function _aacc_feeds_email_validate($form, FormStateInterface $form_state) {
+  $feed_emails = trim($form_state->getValue('field_feed_emails')[0]['value']);
+  if ($feed_emails) {
+    $emails = explode(PHP_EOL, $form_state->getValue('field_feed_emails')[0]['value']);
+    $invalid_emails = [];
+    foreach ($emails as $email) {
+      if (!\Drupal::service('email.validator')->isValid(trim($email))) {
+        $invalid_emails[] = trim($email);
+      }
+    }
+    if (!empty($invalid_emails)) {
+      $form_state->setErrorByName('field_feed_emails', t('Invalid Emails: @mails', ['@mails' => implode(',', $invalid_emails)]));
+    }
+  }
+}
+
+/**
+ * Implements hook_entity_field_access().
+ */
+function aacc_feeds_entity_field_access($operation, FieldDefinitionInterface $field_definition, $account, FieldItemListInterface $items = NULL) {
+  if ($operation == 'edit') {
+    if ($field_definition->getName() == 'field_sub_content_type' && !in_array('administrator', $account->getRoles())) {
+      return AccessResult::forbidden();
+    }
+  }
+  return AccessResult::neutral();
+}

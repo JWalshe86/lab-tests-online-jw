@@ -1,0 +1,6 @@
+name: aacc_screening_test_entity
+type: module
+description: This module creates a custom entity for Screening Tests.
+core: 8.x
+core_version_requirement: ^8 || ^9
+package: AACC

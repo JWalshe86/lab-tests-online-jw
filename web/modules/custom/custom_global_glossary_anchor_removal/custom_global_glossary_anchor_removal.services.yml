@@ -1,0 +1,9 @@
+services:
+  custom_global_glossary_anchor_removal_node_updater.commands:
+    class: \Drupal\custom_global_glossary_anchor_removal\Commands\GlossaryAnchorsRemovalNodeUpdater
+    tags:
+      - { name: drush.command }
+  custom_global_glossary_anchor_removal_dataset_generator.commands:
+    class: \Drupal\custom_global_glossary_anchor_removal\Commands\GlossaryAnchorsRemovalDatasetGenerator
+    tags:
+      - { name: drush.command }

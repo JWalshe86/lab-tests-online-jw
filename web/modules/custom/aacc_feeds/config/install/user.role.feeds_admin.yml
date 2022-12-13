@@ -1,0 +1,19 @@
+uuid: ff01b3d7-a653-4897-aac5-0bf714b7263d
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - aacc_feeds
+_core:
+  default_config_hash: 0hq0GjgVh3Mox-rk8KnJxN0hCe9oV-3AW4CTZlfkmEo
+id: feeds_admin
+label: 'Feeds Admin'
+weight: 3
+is_admin: false
+permissions:
+  - 'add feed entity'
+  - 'administer feed entity'
+  - 'delete feed entity'
+  - 'edit feed entity'
+  - 'view feed entity'

@@ -1,0 +1,28 @@
+uuid: 04fe553a-4508-427a-ab10-e6cf192ad529
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_sponsor_keyword
+    - paragraphs.paragraphs_type.sponsor_keyword
+    - taxonomy.vocabulary.keyword
+id: paragraph.sponsor_keyword.field_sponsor_keyword
+field_name: field_sponsor_keyword
+entity_type: paragraph
+bundle: sponsor_keyword
+label: 'Sponsor Keyword'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      keyword: keyword
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

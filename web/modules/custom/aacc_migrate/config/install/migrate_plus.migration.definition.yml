@@ -1,0 +1,45 @@
+id: definition
+label: AACC definition migration
+migration_group: aacc
+source:
+  plugin: aacc_definition
+destination:
+  plugin: entity:node
+  node_type: definition
+process:
+  type:
+    plugin: default_value
+    default_value: definition
+  uid:
+    plugin: default_value
+    default_value: 1
+  title: Title
+  'body/value':
+    plugin: linkit_replace
+    source: Content
+  'body/format':
+    plugin: default_value
+    default_value: full_html
+  status:
+    plugin: static_map
+    source: Status
+    map:
+      Published: 1
+    default_value: 0
+  field_oldpath: old_path
+  field_meta_tags: metatags
+  field_reviewed: IncDate
+  field_keywords:
+    plugin: migration
+    migration: keyword
+    source: keywords
+  field_definition_synonyms: aka
+  'path/pathauto':
+    plugin: default_value
+    default_value: 0
+  'path/alias': alias
+
+dependencies:
+  enforced:
+    module:
+      - aacc_migrate

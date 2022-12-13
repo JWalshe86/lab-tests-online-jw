@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * @file
+ * Contains label_as_formatted.module.
+ */
+
+/**
+ * Implements hook_views_data_alter().
+ */
+function label_as_formatted_views_data_alter(array &$data) {
+  $data['node_field_data']['label_as_formatted'] = [
+    'title' => t('Label as Formatted'),
+    'group' => t('Content'),
+    'help' => t('Sort entity Labels that have embedded html.'),
+    'sort' => [
+      'field' => 'title',
+      'id' => 'label_as_formatted',
+    ],
+  ];
+}

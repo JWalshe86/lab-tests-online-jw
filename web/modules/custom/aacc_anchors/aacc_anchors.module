@@ -1,0 +1,52 @@
+<?php
+
+/**
+ * @file
+ * Contains aacc_anchors.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\paragraphs\Entity\Paragraph;
+
+/**
+ * Implements hook_help().
+ */
+function aacc_anchors_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the aacc_anchors module.
+    case 'help.page.aacc_anchors':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Paragraph anchor tags') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Generate the anchor id for the Paragraph item.
+ *
+ * @param \Drupal\paragraphs\Entity\Paragraph $paragraph
+ *   The paragraph entity.
+ *
+ * @return string
+ *   Returns an anchor id.
+ */
+function aacc_anchors_generate_anchor_id(Paragraph $paragraph) {
+  return 'accordion-' . $paragraph->id();
+}
+
+/**
+ * Generate the anchor tag for the Paragraph item.
+ *
+ * @param \Drupal\paragraphs\Entity\Paragraph $paragraph
+ *   The paragraph entity.
+ *
+ * @return string
+ *   A string of for the anchor tag.
+ */
+function aacc_anchors_generate_anchor_tag(Paragraph $paragraph) {
+  $anchor_id = aacc_anchors_generate_anchor_id($paragraph);
+  return sprintf('<a href="#" id="%s" class="anchor-id"></a>', $anchor_id);
+}

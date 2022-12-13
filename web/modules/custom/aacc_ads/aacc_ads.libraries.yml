@@ -1,0 +1,6 @@
+aacc_ads:
+  header: true
+  js:
+    js/aacc-ads.js: {}
+  dependencies:
+    - core/drupalSettings

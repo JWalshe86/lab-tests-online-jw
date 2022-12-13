@@ -1,0 +1,6 @@
+name: Custom Batch Anchor Content Updater
+type: module
+description: Provides an admin form interface where users can update in-content anchor hrefs en masse.
+package: Custom Batch Content Updating
+core: 8.x
+core_version_requirement: ^8 || ^9

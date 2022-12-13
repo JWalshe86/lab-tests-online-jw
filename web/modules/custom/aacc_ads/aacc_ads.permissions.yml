@@ -1,0 +1,22 @@
+add ad key value entities:
+  title: 'Create new Ad Key Value entities'
+
+administer ad key value entities:
+  title: 'Administer Ad Key Value entities'
+  description: 'Allow to access the administration form to configure Ad Key Value entities.'
+  restrict access: true
+
+delete ad key value entities:
+  title: 'Delete Ad Key Value entities'
+
+edit ad key value entities:
+  title: 'Edit Ad Key Value entities'
+
+access ad key value overview:
+  title: 'Access the Ad Key Value overview page'
+
+view published ad key value entities:
+  title: 'View published Ad Key Value entities'
+
+view unpublished ad key value entities:
+  title: 'View unpublished Ad Key Value entities'

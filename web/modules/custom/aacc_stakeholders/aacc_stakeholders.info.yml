@@ -1,0 +1,31 @@
+name: AACC Stakeholders
+type: module
+description: Custom functionality for AACC Stakeholders
+core: 8.x
+core_version_requirement: ^8 || ^9
+package: AACC
+
+dependencies:
+  - aacc_foundation_magellan_field_format
+  - address
+  - block
+  - block_class
+  - content_translation
+  - ctools
+  - entity_reference_revisions
+  - datetime
+  - ds
+  - field
+  - image
+  - link
+  - metatag
+  - menu_ui
+  - node
+  - paragraphs
+  - path
+  - pathauto
+  - search_api_exclude_entity
+  - scheduler
+  - taxonomy
+  - telephone
+  - text

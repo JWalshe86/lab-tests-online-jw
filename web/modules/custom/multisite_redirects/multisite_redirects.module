@@ -1,0 +1,61 @@
+<?php
+
+/**
+ * @file
+ * Contains multisite_redirects.module.
+ */
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Drupal\Core\Url;
+
+/**
+ * Implements hook_entity_view().
+ */
+function multisite_redirects_node_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+  // Current User.
+  $user = \Drupal::currentUser();
+
+  // Get multisite name.
+  $site_path = \Drupal::service('site.path');
+  $site_path = explode('/', $site_path);
+  $site_name = $site_path[1];
+
+  // Get bundle type.
+  $node_bundle = NULL;
+  if ($node = \Drupal::routeMatch()->getParameter('node')) {
+    $node_bundle = $node->bundle();
+  }
+
+  // US-Site Redirects.
+  if (strpos($site_name, '.us') !== FALSE) {
+
+    // Only affect Definition Content Type Nodes on VIEW.
+    if ($node_bundle === 'definition') {
+
+      $build['#cache'] = [
+        'contexts' => [
+          'user.roles:anonymous',
+        ],
+        'max-age' => 0,
+      ];
+
+      // Set by whether anonymous or authenticated.
+      if (!\Drupal::currentUser()->isAnonymous()) {
+        $current_uri = \Drupal::request()->getRequestUri();
+        \Drupal::messenger()->addMessage("Since you are logged in, you were not redirected. However, all traffic to this page ({$current_uri}), except for logged in users, is being redirected to the /glossary page because the multisite_redirects module is enabled on the site.");
+        return $build;
+      }
+      else {
+        \Drupal::service('page_cache_kill_switch')->trigger();
+        $response = new RedirectResponse(Url::fromUri('internal:/glossary')->toString(), 301);
+        $response->send();
+      }
+    }
+  }
+
+  // Add more multisite specific redirects as needed.
+  // If make it to this point, just return the $build.
+  return $build;
+}

@@ -1,0 +1,6 @@
+name: AACC Duplicate Keywords
+type: module
+description: Custom module that assists with merging duplicate keyword taxonomy terms
+core: 8.x
+core_version_requirement: ^8 || ^9
+package: AACC

@@ -1,0 +1,122 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/block\/11?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/block_content\/basic"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/basic\/content_translation_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "und"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": 11
+        }
+    ],
+    "uuid": [
+        {
+            "value": "80714ec3-601b-4fb3-9a16-dc6986c53c1e"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 11
+        }
+    ],
+    "langcode": [
+        {
+            "value": "und",
+            "lang": "und"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "basic"
+        }
+    ],
+    "info": [
+        {
+            "value": "Mobile App Links",
+            "lang": "und"
+        }
+    ],
+    "changed": [
+        {
+            "value": 1494455714
+        }
+    ],
+    "revision_created": [
+        {
+            "value": 1494349863
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "und"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "und"
+        }
+    ],
+    "content_translation_source": [
+        {
+            "value": "und",
+            "lang": "und"
+        }
+    ],
+    "content_translation_outdated": [
+        {
+            "value": false,
+            "lang": "und"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/basic\/content_translation_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "6a5e8b73-34ae-4fa2-a878-6dae8a784245"
+                    }
+                ],
+                "lang": "und"
+            }
+        ]
+    },
+    "content_translation_status": [
+        {
+            "value": true,
+            "lang": "und"
+        }
+    ],
+    "content_translation_created": [
+        {
+            "value": 1494349863,
+            "lang": "und"
+        }
+    ],
+    "body": [
+        {
+            "value": "<p>Get the Mobile App:<\/p>\r\n\r\n<ul>\r\n\t<li><a href=\"http:\/\/itunes.apple.com\/us\/app\/labtestsonline-m\/id447858911\"><img alt=\"Apple App Store\" src=\"\/sites\/default\/files\/inline-images\/appstorebutton.png\" \/><\/a><\/li>\r\n\t<li><a href=\"https:\/\/play.google.com\/store\/apps\/details?id=com.livewirekiosk.lwk.labtestsonline\"><img alt=\"Google Play Store\" src=\"\/sites\/default\/files\/inline-images\/google_play_button.png\" \/><\/a><\/li>\r\n\t<li><a href=\"http:\/\/www.amazon.com\/American-Association-for-Clinical-Chemistry\/dp\/B006P6AJJ0\"><img alt=\"Amazon Kindle Store\" src=\"\/sites\/default\/files\/inline-images\/kindle-button.png\" \/><\/a><\/li>\r\n<\/ul>\r\n",
+            "format": "full_html",
+            "summary": "",
+            "lang": "und"
+        }
+    ]
+}

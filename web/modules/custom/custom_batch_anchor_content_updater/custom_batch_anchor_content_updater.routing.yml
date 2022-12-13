@@ -1,0 +1,16 @@
+mass_editing.form:
+  path: '/admin/mass-content-link-editing-standard'
+  defaults:
+    _form: '\Drupal\custom_batch_anchor_content_updater\Form\BatchAnchorUpdateForm'
+    _title: 'Mass Content Link Editing Form (processed in batch)'
+  requirements:
+    _permission: 'access content'
+    _role: 'authenticated'
+mass-editing_404.form:
+  path: '/admin/mass-content-link-editing-404'
+  defaults:
+    _form: '\Drupal\custom_batch_anchor_content_updater\Form\BatchAnchorUpdateForm'
+    _title: 'Mass Content Link Editing Form (processed in batch)'
+  requirements:
+    _permission: 'access content'
+    _role: 'authenticated'

@@ -1,0 +1,96 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/block\/4?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/block_content\/basic"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/basic\/revision_user": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": 4
+        }
+    ],
+    "uuid": [
+        {
+            "value": "05e82bcd-b6ce-4109-9b80-a51f6c40630d"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 4
+        }
+    ],
+    "langcode": [
+        {
+            "value": "und",
+            "lang": "und"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "basic"
+        }
+    ],
+    "info": [
+        {
+            "value": "Sample Top Banner Ad",
+            "lang": "und"
+        }
+    ],
+    "changed": [
+        {
+            "value": 1494455683
+        }
+    ],
+    "revision_created": [
+        {
+            "value": 1491407926
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/basic\/revision_user": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "6a5e8b73-34ae-4fa2-a878-6dae8a784245"
+                    }
+                ]
+            }
+        ]
+    },
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "und"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "und"
+        }
+    ],
+    "body": [
+        {
+            "value": "<p><img alt=\"Sample Top Banner\" data-entity-type=\"file\" data-entity-uuid=\"46b4bfe8-7c2f-4c7b-b5d9-77c358a2da1e\" src=\"\/sites\/default\/files\/inline-images\/sample_top_banner_ad.png\" \/><\/p>\r\n\r\n<p><a href=\"#\">Advertise With Us<\/a><\/p>\r\n",
+            "format": "basic_html",
+            "summary": "",
+            "lang": "und"
+        }
+    ]
+}

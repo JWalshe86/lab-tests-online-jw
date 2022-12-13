@@ -1,0 +1,10 @@
+stakeholder-ajax:
+  js:
+    js/stakeholder_ajax.js: {}
+  dependencies:
+    - core/drupalSettings
+    - core/jquery.once
+    - core/jquery
+    - core/jquery.form
+    - core/drupal.ajax
+    - core/drupal

@@ -1,0 +1,6 @@
+webform-submissions:
+  css:
+    theme:
+      css/aacc-reports.css: {}
+  js:
+    js/aacc-reports.js: {}

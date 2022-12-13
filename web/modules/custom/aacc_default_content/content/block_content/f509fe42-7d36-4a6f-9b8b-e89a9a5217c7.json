@@ -1,0 +1,122 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/block\/12?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/block_content\/basic"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/basic\/content_translation_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "und"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": 12
+        }
+    ],
+    "uuid": [
+        {
+            "value": "f509fe42-7d36-4a6f-9b8b-e89a9a5217c7"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 12
+        }
+    ],
+    "langcode": [
+        {
+            "value": "und",
+            "lang": "und"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "basic"
+        }
+    ],
+    "info": [
+        {
+            "value": "Social Media Links",
+            "lang": "und"
+        }
+    ],
+    "changed": [
+        {
+            "value": 1494455720
+        }
+    ],
+    "revision_created": [
+        {
+            "value": 1494353600
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "und"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "und"
+        }
+    ],
+    "content_translation_source": [
+        {
+            "value": "und",
+            "lang": "und"
+        }
+    ],
+    "content_translation_outdated": [
+        {
+            "value": false,
+            "lang": "und"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/basic\/content_translation_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "6a5e8b73-34ae-4fa2-a878-6dae8a784245"
+                    }
+                ],
+                "lang": "und"
+            }
+        ]
+    },
+    "content_translation_status": [
+        {
+            "value": true,
+            "lang": "und"
+        }
+    ],
+    "content_translation_created": [
+        {
+            "value": 1494353600,
+            "lang": "und"
+        }
+    ],
+    "body": [
+        {
+            "value": "<p>Find Us On Social Media:<\/p>\r\n\r\n<ul>\r\n\t<li><a href=\"https:\/\/www.facebook.com\/LabTestsOnline\" title=\"Follow us on Facebook\"><span class=\"icon icon-facebook\">&nbsp;<\/span><span class=\"hidden\">Facebook<\/span><\/a><\/li>\r\n\t<li><a href=\"https:\/\/twitter.com\/LabTestsOnline\" title=\"Follow us on Twitter\"><span class=\"icon icon-twitter\">&nbsp;<\/span><span class=\"hidden\">Twitter<\/span><\/a><\/li>\r\n\t<li><a href=\"https:\/\/plus.google.com\/108618580363700141471\" title=\"Follow us on Google+\"><span class=\"icon icon-google-plus\">&nbsp;<\/span><span class=\"hidden\">Google Plus<\/span><\/a><\/li>\r\n\t<li><a href=\"https:\/\/labtestsonline.org\/subscribe\" title=\"Subscribe to our newsletter\"><span class=\"icon icon-mail\">&nbsp;<\/span><span class=\"hidden\">Newsletter<\/span><\/a><\/li>\r\n<\/ul>\r\n",
+            "format": "full_html",
+            "summary": "",
+            "lang": "und"
+        }
+    ]
+}

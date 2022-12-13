@@ -1,0 +1,11 @@
+aacc_stakeholders.settings:
+  type: config_object
+  label: AACC Stakeholders module settings
+  mapping:
+    sponsored_keywords:
+      type: mapping
+      label: Sponsored Keywords settings
+      mapping:
+        impression_report_day_of_month:
+          type: integer
+          label: Day of month to generate impression reports

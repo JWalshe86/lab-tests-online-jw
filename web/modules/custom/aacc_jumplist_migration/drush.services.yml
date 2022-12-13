@@ -1,0 +1,5 @@
+services:
+  aacc_jumplist_migration.commands:
+    class: \Drupal\aacc_jumplist_migration\Commands\AACCJumplistMigration
+    tags:
+      - { name: drush.command }

@@ -1,0 +1,6 @@
+name: Custom Global Glossary Anchor Updater (One Time Run Script per tw-23433385).
+description: Drush command for running the one-time job for removing anchors across the site per tw-23433385.
+core: 8.x
+core_version_requirement: ^8 || ^9
+type: module
+package: One Time Jobs

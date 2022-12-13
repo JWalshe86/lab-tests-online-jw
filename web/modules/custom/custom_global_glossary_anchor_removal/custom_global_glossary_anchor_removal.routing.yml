@@ -1,0 +1,7 @@
+batch_example.form:
+  path: '/batch-anchor-update'
+  defaults:
+    _title: 'Batch Anchor Updater'
+    _form: '\Drupal\custom_global_glossary_anchor_removal\Form\BatchGetNodes'
+  requirements:
+    _permission: 'access content'

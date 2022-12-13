@@ -1,0 +1,11 @@
+entity.ads.add_form:
+  route_name: 'entity.ads.add_page'
+  title: 'Add Ad Key Value'
+  appears_on:
+    - entity.ads.collection
+entity.ads_type.add_form:
+  route_name: 'entity.ads_type.add_form'
+  title: 'Add Ad Key Value type'
+  appears_on:
+    - entity.ads_type.collection
+

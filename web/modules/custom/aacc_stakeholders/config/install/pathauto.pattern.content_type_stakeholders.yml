@@ -1,0 +1,22 @@
+uuid: 0fb7155b-5255-41c5-b0df-16ab853aa820
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: content_type_stakeholders
+label: 'Content Type: Stakeholders'
+type: 'canonical_entities:node'
+pattern: '/stakeholders/[node:title]'
+selection_criteria:
+  0844222c-b0b7-4f8d-b2ae-d64b90aaf62d:
+    id: node_type
+    bundles:
+      stakeholder: stakeholder
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 0844222c-b0b7-4f8d-b2ae-d64b90aaf62d
+selection_logic: and
+weight: -5
+relationships: {  }

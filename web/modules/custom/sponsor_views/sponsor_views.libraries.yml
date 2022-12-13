@@ -1,0 +1,6 @@
+sponsors-mobile-accordion:
+  js:
+    js/sponsor_views.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once

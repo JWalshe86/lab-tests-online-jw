@@ -1,0 +1,6 @@
+name: 'aacc_anchors'
+type: module
+description: 'Paragraph anchor tags'
+core: 8.x
+core_version_requirement: ^8 || ^9
+package: 'AACC'

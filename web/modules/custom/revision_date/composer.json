@@ -1,0 +1,14 @@
+{
+  "name": "drupal/revision_date",
+  "type": "drupal-module",
+  "description": "Adds a revision date field within manage display.",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/revision_date",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/revision_date",
+    "source": "http://cgit.drupalcode.org/revision_date"
+  },
+  "require": { }
+}

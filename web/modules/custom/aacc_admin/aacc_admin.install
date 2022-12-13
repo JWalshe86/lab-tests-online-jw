@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Contains install and update functions for AACC Admin.
+ */
+
+use Drupal\redirect\Entity\Redirect;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
+
+/**
+ * Programmatically add wildcard redirects for taxonomy pages.
+ *
+ * @throws \Drupal\Core\Entity\EntityStorageException
+ */
+function aacc_admin_update_8002() {
+  Redirect::create([
+    'redirect_source' => 'taxonomy/term/*',
+    'redirect_redirect' => 'internal:/',
+    'language' => 'und',
+    'status_code' => '301',
+  ])->save();
+
+  return new TranslatableMarkup('Wildcard redirect added for taxonomy pages.');
+}
+
+/**
+ * Remove unused block config causing CIM error after Core/contrib upgrade.
+ */
+function aacc_admin_update_8003() {
+  $db = Drupal::database();
+  $db->query("DELETE FROM config WHERE name = 'block.block.footer_menu';");
+
+  return new TranslatableMarkup('Config for unused block.block.footer_menu removed.');
+}

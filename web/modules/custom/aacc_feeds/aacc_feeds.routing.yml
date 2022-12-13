@@ -1,0 +1,67 @@
+entity.aacc_feeds_feed.canonical:
+  path: '/aacc_feeds_feed/{aacc_feeds_feed}'
+  defaults:
+    _entity_view: 'aacc_feeds_feed'
+    _title: 'Feed Content'
+  requirements:
+    _entity_access: 'aacc_feeds_feed.view'
+
+entity.aacc_feeds_feed.log:
+  path: '/aacc_feeds_feed/{aacc_feeds_feed}/log'
+  defaults:
+    _entity_view: 'feed_log_entries'
+    _title: 'Access Logs'
+  requirements:
+    _entity_access: 'aacc_feeds_feed.log'
+
+entity.aacc_feeds_feed.collection:
+  path: 'admin/content/aacc_feeds_feed/list'
+  defaults:
+    _entity_list: 'aacc_feeds_feed'
+    _title: 'Feed List'
+  requirements:
+    _permission: 'administer feed entity'
+
+aacc_feeds.feed_add:
+  path: '/aacc_feeds_feed/add'
+  defaults:
+    _entity_form: aacc_feeds_feed.add
+    _title: 'Add Feed'
+  requirements:
+    _entity_create_access: 'aacc_feeds_feed'
+
+entity.aacc_feeds_feed.edit_form:
+  path: '/aacc_feeds_feed/{aacc_feeds_feed}/edit'
+  defaults:
+    _entity_form: aacc_feeds_feed.edit
+    _title: 'Edit Feed'
+  requirements:
+    _entity_access: 'aacc_feeds_feed.edit'
+
+entity.aacc_feeds_feed.delete_form:
+  path: '/feed/{aacc_feeds_feed}/delete'
+  defaults:
+    _entity_form: aacc_feeds_feed.delete
+    _title: 'Delete Feed'
+  requirements:
+    _entity_access: 'aacc_feeds_feed.delete'
+
+aacc_feeds.feed_settings:
+  path: 'admin/structure/aacc_feeds_feed_settings'
+  defaults:
+    _form: '\Drupal\aacc_feeds\Form\FeedSettingsForm'
+    _title: 'Feed Settings'
+  requirements:
+    _permission: 'administer feed entity'
+
+aacc_feeds.feed_url:
+  path: '/api/v2/feed/{aacc_feeds_feed}/{content_type}'
+  method: [GET]
+  defaults:
+    _controller: '\Drupal\aacc_feeds\Controller\FeedController::getFeed'
+    _title: 'AACC Content Feed'
+    content_type: 'test'
+  requirements:
+      _custom_access: '\Drupal\aacc_feeds\Controller\FeedController::access'
+  options:
+    _auth: ['basic_auth', 'cookie']

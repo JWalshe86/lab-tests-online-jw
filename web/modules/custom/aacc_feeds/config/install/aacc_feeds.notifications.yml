@@ -1,0 +1,8 @@
+create_feed_subject: Feed created @title
+create_feed_body: Hello @client_name! Your new feed has been created and is called '@feed_title'.
+edit_feed_subject: Feed Edited @title
+edit_feed_body: Hello @client_name! Your feed has been edited and is called '@feed_title'.
+delete_feed_subject: Feed Deleted @title
+delete_feed_body: Hello @client_name! Your feed '@feed_title' has been deleted.
+content_change_summary_subject: Feed Change Summary for @content_type content
+content_change_summary_body: Hello @client_name! Your @content_type feed content may have changed.  Any updated content will be listed below under items. @summary

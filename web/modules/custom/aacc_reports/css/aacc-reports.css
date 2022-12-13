@@ -1,0 +1,8 @@
+#views-exposed-form-form-submission-report-page-1 input[disabled] {
+  color: #b8b8b8;
+}
+
+.form-item-date-filter-options {
+  display: block;
+  width: 100%;
+}

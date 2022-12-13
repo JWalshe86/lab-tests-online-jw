@@ -1,0 +1,60 @@
+uuid: 29844e1a-f274-4d7e-ba6c-44f5ed124211
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sponsor_imps
+    - node.type.stakeholder
+    - paragraphs.paragraphs_type.sponsor_keyword
+  module:
+    - entity_reference_revisions
+id: node.stakeholder.field_sponsor_imps
+field_name: field_sponsor_imps
+entity_type: node
+bundle: stakeholder
+label: 'Sponsorship Impressions'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      sponsor_keyword: sponsor_keyword
+    target_bundles_drag_drop:
+      sponsor_keyword:
+        enabled: true
+        weight: 12
+      accordion:
+        weight: 13
+        enabled: false
+      accordion_item:
+        weight: 14
+        enabled: false
+      column:
+        weight: 15
+        enabled: false
+      columns:
+        weight: 16
+        enabled: false
+      expandable:
+        weight: 17
+        enabled: false
+      grid:
+        weight: 18
+        enabled: false
+      media_gallery:
+        weight: 19
+        enabled: false
+      navigation:
+        weight: 20
+        enabled: false
+      section_navigation_item:
+        weight: 21
+        enabled: false
+      text_area:
+        weight: 22
+        enabled: false
+field_type: entity_reference_revisions

@@ -1,0 +1,4 @@
+administer webform subject blocking:
+  title: 'Administer webform subject blocking'
+  description: 'Aminister the terms and error message for the webform subject blocking functionality'
+  restrict access: true

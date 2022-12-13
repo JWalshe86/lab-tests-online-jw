@@ -1,0 +1,19 @@
+<div class="jumplist-menu">
+  <ul class="menu dropdown" data-dropdown-menu data-disable-hover="true" data-click-open="true" data-force-follow="false">
+    {% if Tests %}
+      <li class="test is-dropdown-submenu-parent">
+        {{ Tests }}
+      </li>
+    {% endif %}
+    {% if Conditions %}
+      <li class="condition is-dropdown-submenu-parent">
+        {{ Conditions }}
+      </li>
+    {% endif %}
+    {% if Screenings %}
+      <li class="screening is-dropdown-submenu-parent">
+        {{ Screenings }}
+      </li>
+    {% endif %}
+  </ul>
+</div>

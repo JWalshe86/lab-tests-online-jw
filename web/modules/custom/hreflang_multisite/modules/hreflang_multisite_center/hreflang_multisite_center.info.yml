@@ -1,0 +1,5 @@
+name: Hreflang Sites Center
+type: module
+description: This module enables functionality for a central site that controls href relationships between sites
+core: 8.x
+core_version_requirement: ^8 || ^9

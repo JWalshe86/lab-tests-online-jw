@@ -1,0 +1,122 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/block\/16?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/block_content\/basic"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/basic\/content_translation_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "und"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": 16
+        }
+    ],
+    "uuid": [
+        {
+            "value": "59e93d08-ac7f-42ac-a9a5-ceb4b72f9566"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 16
+        }
+    ],
+    "langcode": [
+        {
+            "value": "und",
+            "lang": "und"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "basic"
+        }
+    ],
+    "info": [
+        {
+            "value": "Ask a Laboratory Scientist",
+            "lang": "und"
+        }
+    ],
+    "changed": [
+        {
+            "value": 1495464178
+        }
+    ],
+    "revision_created": [
+        {
+            "value": 1495464178
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "und"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "und"
+        }
+    ],
+    "content_translation_source": [
+        {
+            "value": "und",
+            "lang": "und"
+        }
+    ],
+    "content_translation_outdated": [
+        {
+            "value": false,
+            "lang": "und"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/basic\/content_translation_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "6a5e8b73-34ae-4fa2-a878-6dae8a784245"
+                    }
+                ],
+                "lang": "und"
+            }
+        ]
+    },
+    "content_translation_status": [
+        {
+            "value": true,
+            "lang": "und"
+        }
+    ],
+    "content_translation_created": [
+        {
+            "value": 1495464178,
+            "lang": "und"
+        }
+    ],
+    "body": [
+        {
+            "value": "<div class=\"contact-form-img\"><img alt=\"scientist\" data-entity-type=\"file\" data-entity-uuid=\"2dfab430-0114-4c68-a7aa-e6d5f99d16e9\" src=\"\/sites\/default\/files\/inline-images\/ask_lab_scientist.jpg\" \/><\/div>\r\n\r\n<p>This form enables you to ask specific questions about lab tests. Your questions will be answered by a laboratory scientist as part of a voluntary service provided by one of our partners, American Society for Clinical Laboratory Science. If your question relates to this web site and not to a specific lab test, please submit it via our&nbsp;<a href=\"https:\/\/labtestsonline.org\/contact\">Contact Us<\/a>&nbsp;form instead. Thank you.<\/p>\r\n\r\n<p><a class=\"button\" href=\"\/\">Contact A Scientist<\/a><\/p>\r\n",
+            "format": "full_html",
+            "summary": "",
+            "lang": "und"
+        }
+    ]
+}

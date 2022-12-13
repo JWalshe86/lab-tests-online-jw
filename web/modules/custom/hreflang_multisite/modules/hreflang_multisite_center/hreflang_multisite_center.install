@@ -1,0 +1,70 @@
+<?php
+
+/**
+ * @file
+ * Contains install and update functions for Hreflang.
+ */
+
+/**
+ * Implements hook_schema().
+ *
+ * Defines the database tables used by this module.
+ *
+ * @see hook_schema()
+ *
+ * @ingroup hreflang_multisite_center
+ */
+function hreflang_multisite_center_schema() {
+  $schema['hreflang_multisite_center_ref'] = [
+    'description' => 'Holds href lang references.',
+    'fields' => [
+      'id' => [
+        'description' => 'The [base nid]-[language code]-[country code]',
+        'type' => 'varchar',
+        'not null' => TRUE,
+        'length' => 40,
+      ],
+      'base_nid' => [
+        'description' => 'The base node ID.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'length' => 10,
+        'not null' => TRUE,
+      ],
+      'referenced_nid' => [
+        'description' => 'The referenced node ID.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'length' => 10,
+        'not null' => TRUE,
+      ],
+      'referenced_url' => [
+        'description' => 'The referenced URL.',
+        'type' => 'varchar',
+        'length' => 500,
+        'not null' => TRUE,
+      ],
+      'referenced_language' => [
+        'description' => 'The referenced language.',
+        'type' => 'varchar',
+        'length' => 10,
+        'not null' => TRUE,
+      ],
+      'referenced_country' => [
+        'description' => 'The referenced country.',
+        'type' => 'varchar',
+        'length' => 10,
+        'not null' => TRUE,
+      ],
+    ],
+    'indexes' => [
+      'base_nid' => ['base_nid'],
+      'referenced_nid' => ['referenced_nid'],
+      'referenced_language' => ['referenced_language'],
+      'referenced_country' => ['referenced_country'],
+    ],
+    'primary key' => ['id'],
+  ];
+
+  return $schema;
+}

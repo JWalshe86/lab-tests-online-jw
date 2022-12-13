@@ -1,0 +1,8 @@
+name: AACC Search
+type: module
+description: Custom module for AACC search items.
+core: 8.x
+core_version_requirement: ^8 || ^9
+package: AACC
+dependencies:
+  - search_api_solr

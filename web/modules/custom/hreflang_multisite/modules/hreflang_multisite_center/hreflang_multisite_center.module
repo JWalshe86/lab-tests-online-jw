@@ -1,0 +1,58 @@
+<?php
+
+/**
+ * @file
+ * Hreflang_multisite_center.module file.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\node\NodeForm;
+
+/**
+ * Implements hook_help().
+ */
+function hreflang_multisite_center_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the hreflang_multisite_center module.
+    case 'help.page.hreflang_multisite_center':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Href Lang Center functionality') . '</p>';
+
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function hreflang_multisite_center_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // We currently only want to add hreflang relationships to nodes.
+  if (!$form_state->getFormObject() instanceof NodeForm) {
+    return;
+  }
+
+  $hreflangCenterManager = \Drupal::service('hreflang_multisite_center.manager');
+  $hreflangCenterManager->attachNodeFields($form, $form_state);
+  $hreflangCenterManager->attachNodeSubmitHandlers($form, $form_state);
+}
+
+/**
+ * Implements hook_node_delete().
+ */
+function hreflang_multisite_center_node_delete(EntityInterface $node) {
+  $hreflangCenterStorage = \Drupal::service('hreflang_multisite_center.manager_storage');
+
+  $nodeId = $node->Id();
+  $siteHreflangs = $hreflangCenterStorage->getReferencesByCenterNode($nodeId);
+  $referencedSites = $hreflangCenterStorage->getReferencedSites($siteHreflangs);
+  foreach ($referencedSites as $referencedSite) {
+    $siteConnection = $hreflangCenterStorage->getSiteConnection($referencedSite);
+    $hreflangCenterStorage->deleteSiteHreflangByBaseNodeId($nodeId, $siteConnection);
+  }
+  $hreflangCenterStorage->deleteByBase($node->Id());
+}

@@ -1,0 +1,20 @@
+uuid: c0ebcfb1-42f4-45df-9881-753f28e86efc
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_impressions
+field_name: field_impressions
+entity_type: paragraph
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,21 @@
+id: engitel_keyword
+label: AACC keyword migration(MSSQL)
+migration_group: aacc_engitel
+source:
+  plugin: engitel_aacc_keyword
+destination:
+  plugin: entity:taxonomy_term
+process:
+  vid:
+    plugin: default_value
+    default_value: keyword
+  name: 
+    plugin: skip_on_empty
+    source: keyValue
+    method: row
+  description: keyDescr
+
+dependencies:
+  enforced:
+    module:
+      - aacc_migrate_engitel

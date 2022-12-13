@@ -1,0 +1,6 @@
+name: External Link
+type: module
+description: This module creates and registers the External Link entity type.
+core: 8.x
+core_version_requirement: ^8 || ^9
+package: Custom

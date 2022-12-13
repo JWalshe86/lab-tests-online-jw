@@ -1,0 +1,22 @@
+uuid: a43028a5-227f-46c5-8aee-0982739b7ec1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.stakeholder
+  module:
+    - text
+id: node.stakeholder.body
+field_name: body
+entity_type: node
+bundle: stakeholder
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

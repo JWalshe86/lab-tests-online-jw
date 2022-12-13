@@ -1,0 +1,87 @@
+<?php
+
+/**
+ * @file
+ * Contains hreflang_multisite.module.
+ */
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\node\NodeForm;
+use Drupal\node\NodeInterface;
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function hreflang_multisite_page_attachments_alter(array &$attachments) {
+  $route = \Drupal::routeMatch()->getRouteObject();
+  $is_admin = \Drupal::service('router.admin_context')->isAdminRoute($route);
+
+  if ($is_admin) {
+    return;
+  }
+
+  // No need to add hreflang tags for 404/403 pages.
+  if (\Drupal::request()->attributes->has('exception')) {
+    return;
+  }
+  if (!$node = \Drupal::routeMatch()->getParameter('node')) {
+    return;
+  }
+
+  // All core hreflangs are incorrect because they do NOT contain the region.
+  if (isset($attachments['#attached']['html_head_link'])) {
+    foreach ($attachments['#attached']['html_head_link'] as $key => $links) {
+      foreach ($links as $link) {
+        if (isset($link['hreflang'])) {
+          unset($attachments['#attached']['html_head_link'][$key]);
+        }
+      }
+    }
+  }
+
+  $hreflangStorage = \Drupal::service('hreflang_multisite.manager_storage');
+  if ($node instanceof NodeInterface) {
+    $hreflangs = $hreflangStorage->getReferenceDataByNode($node->id());
+  }
+
+  if (empty($hreflangs)) {
+    return;
+  }
+
+  foreach ($hreflangs as $hreflang) {
+    // Fix issue where Drupal uses the wrong langcode than expected.
+    if ($hreflang['referenced_language'] == 'pt-br') {
+      $hreflang['referenced_language'] = 'pt';
+    }
+    $attachments['#attached']['html_head_link'][] = [
+      [
+        'rel' => 'alternate',
+        'hreflang' => $hreflang['referenced_language'] . '-' . $hreflang['referenced_country'],
+        'href' => $hreflang['referenced_url'],
+      ],
+      TRUE,
+    ];
+  }
+}
+
+/**
+ * Implements hook_node_delete().
+ */
+function hreflang_multisite_node_delete(EntityInterface $entity) {
+  $hreflangManager = \Drupal::service('hreflang_multisite.manager');
+  $hreflangManager->hreflangRestDeleteResource($entity);
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function hreflang_multisite_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // We currently only add hreflang hreflangs to nodes.
+  if (!$form_state->getFormObject() instanceof NodeForm) {
+    return;
+  }
+
+  $hreflangManager = \Drupal::service('hreflang_multisite.manager');
+  $hreflangManager->attachNodeSubmitHandlers($form, $form_state);
+}

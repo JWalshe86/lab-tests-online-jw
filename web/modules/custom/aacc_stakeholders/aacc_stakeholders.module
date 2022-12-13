@@ -1,0 +1,243 @@
+<?php
+
+/**
+ * @file
+ * Contains aacc_stakeholders.module.
+ */
+
+use Drupal\Core\Datetime\DrupalDateTime;
+use Drupal\Core\Form\FormStateInterface;
+
+const SPONSOR_TID = 12;
+
+/**
+ * Implements hook_form_alter().
+ */
+function aacc_stakeholders_form_node_stakeholder_edit_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $form['#validate'][] = '_aacc_stakeholders_keyword_validate';
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function aacc_stakeholders_form_node_stakeholder_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $form['#validate'][] = '_aacc_stakeholders_keyword_validate';
+}
+
+/**
+ * Implements hook_paragraph_presave().
+ */
+function aacc_stakeholders_paragraph_presave($paragraph) {
+  if ($paragraph->getType() == 'sponsor_keyword') {
+    if (!isset($paragraph->field_impressions->value)) {
+      $paragraph->field_impressions->value = 0;
+    }
+  }
+}
+
+/**
+ * Implements validation for stakeholder nodes.
+ */
+function _aacc_stakeholders_keyword_validate($form, FormStateInterface $form_state) {
+  if ($form_state->getValue('field_sponsor_level')) {
+    $sponsor_level = \Drupal::entityTypeManager()
+      ->getStorage('taxonomy_term')
+      ->load($form_state->getValue('field_sponsor_level')[0]['target_id']);
+    if ((count($form_state->getValue('field_sponsor_imps')) - 1) > $sponsor_level->field_keyword_max->value) {
+      $form_state->setErrorByName(
+        'field_sponsor_imps',
+        t('Too many keywords have been entered for the sponsorship level chosen. The @level_name sponsorship level only allows @keyword_max keyword(s).', [
+          '@level_name' => $sponsor_level->name->value,
+          '@keyword_max' => $sponsor_level->field_keyword_max->value,
+        ])
+      );
+    }
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function aacc_stakeholders_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  switch ($form_id) {
+    // Do not allow keywords to be deleted while in use by sponsors.
+    case 'taxonomy_term_keyword_delete_form':
+      $entity = $form_state->getBuildInfo()['callback_object']->getEntity();
+      $entity_type_manager = \Drupal::entityTypeManager();
+      $usage_count = $entity_type_manager->getStorage('paragraph')
+        ->getQuery()
+        ->condition('type', 'sponsor_keyword')
+        ->condition('field_sponsor_keyword', $entity->id())
+        ->count()
+        ->execute();
+      if ($usage_count) {
+        $caption = '<p>' . \Drupal::translation()->formatPlural($usage_count,
+          '%keyword is used by 1 %entity on your site. You cannot remove this %entity_type until you have removed all usages from %entities.',
+          '%keyword is used by @count %entities on your site. You cannot remove this %entity_type until you have removed all usages from %entities.',
+          [
+            '%keyword' => $entity->label(),
+            '%entity' => 'sponsor',
+            '%entities' => 'sponsors',
+            '%entity_type' => 'taxonomy term',
+          ]) . '</p>';
+        $form['description'] = [
+          '#markup' => $caption,
+        ];
+        return $form;
+      }
+      break;
+  }
+}
+
+/**
+ * Implements hook_cron().
+ */
+function aacc_stakeholders_cron() {
+  $last_run = new DrupalDateTime();
+  if ($last_run_timestamp = \Drupal::state()->get('aacc_stakeholders.last_run')) {
+    $last_run->setTimestamp($last_run_timestamp);
+  }
+  $last_run_year = $last_run->format('Y');
+  $last_run_month = $last_run->format('n');
+
+  $today = new DrupalDateTime();
+  $year = $today->format('Y');
+  $month = $today->format('n');
+  $day_of_month = $today->format('j');
+  $days_in_this_month = $today->format('t');
+
+  $day_to_run = \Drupal::config('aacc_stakeholders.settings')
+    ->get('sponsored_keywords.impression_report_day_of_month') ?: 1;
+
+  $first_run = !(\Drupal::state()->get('aacc_stakeholders.first_run'));
+
+  // Use 28th if 'day of month to run' is 31st.
+  if ($day_to_run > $days_in_this_month) {
+    $day_to_run = $days_in_this_month;
+  }
+
+  // Do not run until the day of the month.
+  if ($day_of_month < $day_to_run) {
+    return;
+  }
+
+  // Do not run if still within the month of the last run.
+  if (!$first_run && $month == $last_run_month && $year == $last_run_year) {
+    return;
+  }
+
+  $reporting_date = new DrupalDateTime();
+  $reporting_date->setDate($year, $month, $day_to_run);
+  $reporting_date->setTime(0, 0, 0);
+  $reporting_period_timestamp = $reporting_date->getTimestamp() - 1;
+
+  $query = \Drupal::entityTypeManager()
+    ->getStorage('node')
+    ->getQuery()
+    ->condition('type', 'stakeholder', '=')
+    ->condition('status', 1, '=')
+    ->condition('field_stakeholder_type', SPONSOR_TID, '=');
+  $result = $query->execute();
+  if ($result) {
+    foreach (array_values($result) as $id) {
+      $stakeholder = \Drupal::entityTypeManager()
+        ->getStorage('node')
+        ->load($id);
+      if ($stakeholder->field_sponsor_imps) {
+        foreach ($stakeholder->field_sponsor_imps as $item) {
+          $keyword = \Drupal::entityTypeManager()
+            ->getStorage('paragraph')
+            ->load($item->target_id);
+          $db = \Drupal::database();
+          // Do not try to insert records that already exist.
+          $existing = $db->select('sponsor_impressions', 's')
+            ->fields('s')
+            ->condition('sponsor_nid', $id)
+            ->condition('keyword_tid', $keyword->field_sponsor_keyword->target_id)
+            ->condition('date', $reporting_period_timestamp)
+            ->execute();
+          if ($existing_rows = $existing->fetchAll()) {
+            continue;
+          }
+          // Allow keyword tid to be empty, in case a term has been deleted.
+          $result = $db->insert('sponsor_impressions')
+            ->fields([
+              'sponsor_nid',
+              'keyword_tid',
+              'impressions',
+              'date',
+            ])
+            ->values([
+              $stakeholder->id(),
+              $keyword->field_sponsor_keyword->target_id ?: 0,
+              $keyword->field_impressions->value,
+              $reporting_period_timestamp,
+            ])
+            ->execute();
+          $keyword->field_impressions->value = 0;
+          $keyword->save();
+        }
+      }
+    }
+  }
+  if ($first_run) {
+    \Drupal::state()->set('aacc_stakeholders.first_run', '1');
+  }
+  \Drupal::state()->set('aacc_stakeholders.last_run', $today->getTimestamp());
+}
+
+/**
+ * Implements a callback for retrieving sponsor impressions.
+ */
+function aacc_stakeholder_impression_callback($form, $form_state) {
+  $elements['table_wrapper']['current_data_table'] = $form['table_wrapper']['current_data_table'];
+  $elements['table_wrapper']['data_table'] = $form['table_wrapper']['data_table'];
+  $results = \Drupal::database()->select('sponsor_impressions', 's')
+    ->fields('s', ['date', 'keyword_tid', 'impressions'])
+    ->condition('sponsor_nid', $form_state->getValue('sponsor'), '=')
+    ->execute();
+  if ($results) {
+    $data = [];
+    foreach ($results as $item) {
+      $data[$item->date][$item->keyword_tid] = $item->impressions;
+    }
+    ksort($data);
+    foreach ($data as $date => $keywords) {
+      $elements['table_wrapper']['data_table'][$date]['date'] = [
+        '#plain_text' => date('F Y', $date),
+      ];
+      $impressions = '<ul>';
+      foreach ($keywords as $keyword_id => $imp) {
+        $keyword = \Drupal::entityTypeManager()
+          ->getStorage('taxonomy_term')
+          ->load($keyword_id);
+        if ($keyword) {
+          $impressions .= '<li>' . $keyword->name->value . ': ' . $imp . '</li>';
+        }
+      }
+      $impressions .= '</ul>';
+      $elements['table_wrapper']['data_table'][$date]['impressions'] = [
+        '#markup' => $impressions,
+      ];
+    }
+    $stakeholder = \Drupal::entityTypeManager()
+      ->getStorage('node')
+      ->load($form_state->getValue('sponsor'));
+    $sponsor_level = \Drupal::entityTypeManager()
+      ->getStorage('taxonomy_term')
+      ->load($stakeholder->field_sponsor_level->target_id);
+    foreach ($stakeholder->field_sponsor_imps as $item) {
+      $keyword_impressions = \Drupal::entityTypeManager()
+        ->getStorage('paragraph')
+        ->load($item->target_id);
+      $keyword = \Drupal::entityTypeManager()
+        ->getStorage('taxonomy_term')
+        ->load($keyword_impressions->field_sponsor_keyword->target_id);
+      $elements['table_wrapper']['current_data_table'][$keyword->name->value]['keyword']['#plain_text'] = $keyword->name->value;
+      $elements['table_wrapper']['current_data_table'][$keyword->name->value]['impressions_limit']['#plain_text'] = $sponsor_level->field_imp_per_mo->value;
+      $elements['table_wrapper']['current_data_table'][$keyword->name->value]['impressions']['#markup'] = 'Used: ' . $keyword_impressions->field_impressions->value . '<br/>Remaining: ' . ($sponsor_level->field_imp_per_mo->value - $keyword_impressions->field_impressions->value);
+    }
+  }
+
+  return $elements;
+}

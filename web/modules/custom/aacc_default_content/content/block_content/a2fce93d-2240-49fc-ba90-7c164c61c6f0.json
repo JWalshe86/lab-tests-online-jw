@@ -1,0 +1,96 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/block\/3?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/block_content\/basic"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/basic\/revision_user": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": 3
+        }
+    ],
+    "uuid": [
+        {
+            "value": "a2fce93d-2240-49fc-ba90-7c164c61c6f0"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 3
+        }
+    ],
+    "langcode": [
+        {
+            "value": "und",
+            "lang": "und"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "basic"
+        }
+    ],
+    "info": [
+        {
+            "value": "About Lab Tests Online",
+            "lang": "und"
+        }
+    ],
+    "changed": [
+        {
+            "value": 1494455674
+        }
+    ],
+    "revision_created": [
+        {
+            "value": 1491335597
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/basic\/revision_user": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "6a5e8b73-34ae-4fa2-a878-6dae8a784245"
+                    }
+                ]
+            }
+        ]
+    },
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "und"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "und"
+        }
+    ],
+    "body": [
+        {
+            "value": "<p>Lab Tests Online is an award-winning health information web resource designed to help understand the many lab tests that are a vital part of medical care.<\/p>\r\n\r\n<blockquote>\r\n<p>Thanks for providing this valuable patient resource. I didn't know what the doctor was talking about today (and knew he had no time to explain it) so I came here, and poof! Question answered!<\/p>\r\n<\/blockquote>\r\n\r\n<p class=\"text-align-right more-link\"><a href=\"\/\">Learn More<\/a><\/p>\r\n",
+            "format": "full_html",
+            "summary": "",
+            "lang": "und"
+        }
+    ]
+}

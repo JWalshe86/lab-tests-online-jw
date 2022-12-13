@@ -1,0 +1,12 @@
+aacc_ads.ads_type.*:
+  type: config_entity
+  label: 'Ad Key Value type config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    uuid:
+      type: string

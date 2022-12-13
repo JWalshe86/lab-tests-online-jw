@@ -1,0 +1,90 @@
+<?php
+
+/**
+ * @file
+ * Provides ids and magellan targets to existing field formatters.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Field\FieldDefinitionInterface;
+use Drupal\Core\Field\FormatterInterface;
+use Drupal\Core\Entity\Entity\EntityViewDisplay;
+use Drupal\Component\Utility\Xss;
+use Drupal\aacc_foundation_magellan_field_format\Plugin\Field\FieldFormatter\MagellanLinkFieldFormatter;
+
+/**
+ * Implements hook_field_formatter_settings_summary_alter().
+ */
+function aacc_foundation_magellan_field_format_field_formatter_settings_summary_alter(&$summary, $context) {
+
+  $setting = $context['formatter']->getThirdPartySetting('aacc_foundation_magellan_field_format', 'magellan_target_label');
+
+  if (!empty($setting)) {
+    $summary[] = t('Magellan Section Label: @label', ['@label' => Xss::filter($setting, [])]);
+  }
+}
+
+/**
+ * Implements hook_field_formatter_third_party_settings_form().
+ *
+ * Adds a 'class' textfield to all formatters.
+ */
+function aacc_foundation_magellan_field_format_field_formatter_third_party_settings_form(FormatterInterface $plugin, FieldDefinitionInterface $field_definition, $view_mode, $form, FormStateInterface $form_state) {
+
+  $element['magellan_target_label'] = [
+    '#type' => 'select',
+    '#title' => t('Magellan Section Label'),
+    '#options' => MagellanLinkFieldFormatter::getMagellanFieldLabelOptions($field_definition),
+    '#default_value' => $plugin->getThirdPartySetting('aacc_foundation_magellan_field_format', 'magellan_target_label', ''),
+    '#empty_option' => t('- N/A -'),
+    '#empty_value' => '',
+    '#description' => t('This will be used for the anchor name (after modification). The label used here should be the same used for the links.'),
+  ];
+
+  $element['magellan_target_clean'] = [
+    '#title' => t('Clean Magellan Anchor Name'),
+    '#type' => 'checkbox',
+    '#default_value' => $plugin->getThirdPartySetting('aacc_foundation_magellan_field_format', 'magellan_target_clean', TRUE),
+    '#description' => t('If selected the label is cleaned when used as the anchor name. This is helpful if the label could have spaces or other characters that may not be suitable for an anchor name'),
+  ];
+  return $element;
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for field templates.
+ *
+ * Adds a custom class to the field's class attribute
+ * according to the field formatter settings.
+ */
+function aacc_foundation_magellan_field_format_preprocess_field(&$variables) {
+
+  // Get a few convenient handles.
+  $entity     = $variables['element']['#object'];
+  $field_name = $variables['element']['#field_name'];
+  $view_mode  = $variables['element']['#view_mode'];
+
+  // Drill down to field formatter settings.
+  $render_display = EntityViewDisplay::collectRenderDisplay($entity, $view_mode);
+  $field_display = $render_display->getComponent($field_name);
+
+  // Add class for whole field.
+  if (isset($field_display['third_party_settings']['aacc_foundation_magellan_field_format'])
+    && !empty($field_display['third_party_settings']['aacc_foundation_magellan_field_format']['magellan_target_label'])) {
+    foreach ($variables['element']['#items'] as $delta => &$item) {
+
+      if ($field_display['third_party_settings']['aacc_foundation_magellan_field_format']['magellan_target_label'] == 'label' && $item->entity->hasField('field_label') == FALSE) {
+        continue;
+      }
+      [$magellanAnchor, $magellanLabel] = MagellanLinkFieldFormatter::createMagellanAnchorLabel(
+        $field_display['third_party_settings']['aacc_foundation_magellan_field_format']['magellan_target_label'],
+          $item->entity,
+          ($field_display['third_party_settings']['aacc_foundation_magellan_field_format']['magellan_target_clean']));
+
+      /** @var \Drupal\Core\Template\Attribute $variables['items'][$delta]['attributes'] */
+      $variables['items'][$delta]['attributes']->setAttribute('data-magellan-target', $magellanAnchor);
+      $variables['items'][$delta]['attributes']->setAttribute('id', $magellanAnchor);
+
+    }
+    // $variables['attributes']['class'][] = Html::escape($field_display['third_party_settings']['aacc_foundation_magellan_field_format']['class']);.
+  }
+}

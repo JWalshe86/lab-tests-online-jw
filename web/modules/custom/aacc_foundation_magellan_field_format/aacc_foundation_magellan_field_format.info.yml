@@ -1,0 +1,6 @@
+name: AACC Foundation Magellan Field Formatters
+type: module
+description: AACC's implmentation of the Foundation Magellan Field Formatter Module.
+core: 8.x
+core_version_requirement: ^8 || ^9
+package: AACC

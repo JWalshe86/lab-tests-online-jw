@@ -1,0 +1,6 @@
+name: AACC Ads
+type: module
+description: Custom module to handle AACC EHS Ads
+core: 8.x
+core_version_requirement: ^8 || ^9
+package: AACC

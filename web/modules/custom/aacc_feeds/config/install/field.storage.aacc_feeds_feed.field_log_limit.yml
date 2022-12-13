@@ -1,0 +1,30 @@
+uuid: 6f1347dd-b0b2-4b4a-a10a-6edd055cb120
+langcode: en
+status: true
+dependencies:
+  module:
+    - aacc_feeds
+    - options
+id: aacc_feeds_feed.field_log_limit
+field_name: field_log_limit
+entity_type: aacc_feeds_feed
+type: list_integer
+settings:
+  allowed_values:
+    -
+      value: 1000
+      label: '1000'
+    -
+      value: 10000
+      label: '10000'
+    -
+      value: 100000
+      label: '100000'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

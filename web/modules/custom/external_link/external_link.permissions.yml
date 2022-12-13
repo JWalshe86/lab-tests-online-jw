@@ -1,0 +1,33 @@
+add external link entities:
+  title: 'Create new External Link entities'
+
+administer external link entities:
+  title: 'Administer External Link entities'
+  description: 'Allow to access the administration form to configure External Link entities.'
+  restrict access: true
+
+delete external link entities:
+  title: 'Delete External Link entities'
+
+edit external link entities:
+  title: 'Edit External Link entities'
+
+access external link overview:
+  title: 'Access the External Link overview page'
+
+view published external link entities:
+  title: 'View published External Link entities'
+
+view unpublished external link entities:
+  title: 'View unpublished External Link entities'
+
+view all external link revisions:
+  title: 'View all External Link revisions'
+
+revert all external link revisions:
+  title: 'Revert all External Link revisions'
+  description: 'Role requires permission <em>view External Link revisions</em> and <em>edit rights</em> for external link entities in question or <em>administer external link entities</em>.'
+
+delete all external link revisions:
+  title: 'Delete all revisions'
+  description: 'Role requires permission to <em>view External Link revisions</em> and <em>delete rights</em> for external link entities in question or <em>administer external link entities</em>.'

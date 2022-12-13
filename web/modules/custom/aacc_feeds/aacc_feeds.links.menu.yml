@@ -1,0 +1,11 @@
+entity.aacc_feeds_feed.collection:
+  title: 'Feeds'
+  route_name: entity.aacc_feeds_feed.collection
+  description: 'List Feeds'
+  parent: system.admin_content
+  weight: 10
+aacc_feeds_feed.admin.structure.settings:
+  title: Feed Settings
+  description: 'Configure Feed entity'
+  route_name: aacc_feeds.feed_settings
+  parent: system.admin_structure

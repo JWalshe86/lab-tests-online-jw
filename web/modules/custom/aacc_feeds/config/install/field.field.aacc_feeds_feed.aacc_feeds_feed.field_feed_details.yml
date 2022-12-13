@@ -1,0 +1,26 @@
+uuid: 0f60a711-81cb-4929-b8e7-36db59a65590
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.aacc_feeds_feed.field_feed_details
+  module:
+    - aacc_feeds
+_core:
+  default_config_hash: IOMb2JQtfNF9t-_QAOOkQdRlC9YiA7DJ7fJnkb53jIA
+id: aacc_feeds_feed.aacc_feeds_feed.field_feed_details
+field_name: field_feed_details
+entity_type: aacc_feeds_feed
+bundle: aacc_feeds_feed
+label: 'Feed Details'
+description: 'Notify client of creation, deletion, or edits to their Feed details.'
+required: true
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

@@ -1,0 +1,17 @@
+id: keyword
+label: AACC keyword migration
+migration_group: aacc
+source:
+  plugin: aacc_keyword
+destination:
+  plugin: entity:taxonomy_term
+process:
+  vid:
+    plugin: default_value
+    default_value: keyword
+  name: title
+
+dependencies:
+  enforced:
+    module:
+      - aacc_migrate

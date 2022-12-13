@@ -1,0 +1,66 @@
+<div id="ad-{{ adId }}">
+</div>
+<script language="javascript" type="text/javascript">
+  var isShowAds = getIsShowAds();
+  var screen_width =((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) ? screen.width : window.innerWidth;
+  var showForScreenWidth = true;
+
+  {% if adId == 'skyscraper-ad' or adId == 'skyscraper-ad-2' %}
+    if (screen_width <= 1200) {
+      showForScreenWidth = false;
+    }
+  {% endif %}
+
+  {% if adId == 'bottom-ad' %}
+    if (screen_width >= 1200) {
+      showForScreenWidth = false;
+    }
+  {% endif %}
+
+  {% if adId == 'homepage' %}
+  if (screen_width < 1024) {
+    showForScreenWidth = false;
+  }
+  {% endif %}
+
+  if (isShowAds && showForScreenWidth) {
+    var aTag = document.createElement('a');
+    aTag.setAttribute("href", "http://www.ehealthcaresolutions.com/contact-us/");
+    aTag.setAttribute("target", "_blank");
+    aTag.setAttribute("class", "ad-info-link");
+    aTag.innerHTML = "Advertisement";
+    var ad_wrapper = document.getElementById("ad-{{ adId }}").closest('.block-content-wrapper');
+    ad_wrapper.insertBefore(aTag, ad_wrapper.firstChild);
+    var a="",b=[
+    "adid=ad-{{ adId }}",
+    "site={{ ehsSite }}",
+    "vpos={{ verticalPosition }}",
+    "hpos=l",
+    "zone="
+    ];
+
+    {% if adId == 'skyscraper-ad' %}
+      b.push("size=160x600");
+    {% elseif adId == 'skyscraper-ad-2' %}
+      b.push("size=160x217");
+    {% elseif adId == 'top-ad' or adId == 'bottom-ad' %}
+      if (screen_width >= 728) {
+        b.push("size=728x90");
+      } else {
+        b.push("size=320x50");
+      }
+    {% elseif adId == 'homepage' %}
+      b.push("size=300x250");
+    {% endif %}
+
+    {% for adParam in adParams %}
+      b.push("{{ adParam }}");
+    {% endfor %}
+
+    for (var c=0;c<b.length;++c){a+=b[c]+"&";}a+="r="+Math.random()*1e16+"&url="+encodeURIComponent(window.location.href);
+    var x="https://ads.ehealthcaresolutions.com/a/?"+a;
+    var y=document.createElement("script");y.type="text/javascript";y.async=true;y.src=x;
+    var z=document.getElementsByTagName("script")[0];
+    z.parentNode.insertBefore(y, z);
+  }
+</script>

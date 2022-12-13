@@ -1,0 +1,10 @@
+field.formatter.third_party.aacc_foundation_magellan_field_format:
+  type: mapping
+  label: 'Foundation Magellan Field Formatters entity display settings'
+  mapping:
+    magellan_target_label:
+      type: string
+      label: 'Magellan Target Label'
+    magellan_target_clean:
+      type: boolean
+      label: 'Magellan Target clean'

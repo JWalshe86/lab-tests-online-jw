@@ -1,0 +1,5 @@
+services:
+  aacc_feeds.commands:
+    class: Drupal\aacc_feeds\Commands\FeedCommands
+    tags:
+      -  { name: drush.command }

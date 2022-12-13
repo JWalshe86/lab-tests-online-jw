@@ -1,0 +1,63 @@
+<?php
+
+/**
+ * @file
+ * Contains aacc_jumplist_menu.module..
+ */
+
+use Drupal\views\Views;
+
+/**
+ * Implements hook_theme().
+ */
+function aacc_jumplist_menu_theme($existing, $type, $theme, $path) {
+  return [
+    'jumplist_menu' => [
+      'variables' => [
+        'Tests' => NULL,
+        'Conditions' => NULL,
+        'Screenings' => NULL,
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function aacc_jumplist_menu_theme_suggestions_container_alter(array &$suggestions, array $variables) {
+  if (isset($variables['element']['#type'], $variables['element']['#name']) && $variables['element']['#type'] == 'view' && $variables['element']['#name'] == 'jumplists') {
+    $suggestions[] = 'container__' . $variables['element']['#name'];
+  }
+}
+
+/**
+ * Implements template_preprocess_HOOK().
+ */
+function aacc_jumplist_menu_preprocess_views_view_unformatted__jumplists(&$variables) {
+  if ($variables['view']->id() == 'jumplists') {
+    $view = Views::getView('indexes');
+
+    switch ($variables['view']->current_display) {
+      case 'jumplist_tests':
+        $view->setDisplay('tests');
+        break;
+
+      case 'jumplist_conditions':
+        $view->setDisplay('conditions');
+        break;
+
+      case 'jumplist_screenings':
+        $view->setDisplay('screenings');
+        break;
+    }
+    $variables['index_title'] = $view->getTitle();
+    $variables['index_path'] = $view->display_handler->getPath();
+
+    // Unset 'attributes' key which isn't renderable.
+    // @todo Find out why this is being set to begin with.
+    foreach ($variables['rows'] as $id => $row) {
+      unset($variables['rows'][$id]['attributes']);
+    }
+  }
+}

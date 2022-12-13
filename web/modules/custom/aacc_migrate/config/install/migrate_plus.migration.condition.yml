@@ -1,0 +1,41 @@
+id: condition
+label: AACC condition migration
+migration_group: aacc
+source:
+  plugin: aacc_condition
+destination:
+  plugin: entity:node
+  node_type: condition
+process:
+  type:
+    plugin: default_value
+    default_value: condition
+  uid:
+    plugin: default_value
+    default_value: 1
+  title: Title
+  status:
+    plugin: static_map
+    source: Status
+    map:
+      Published: 1
+    default_value: 0
+  field_oldpath: old_path
+  field_subcontent: subcontent
+  field_meta_tags: metatags
+  field_condition_synonyms: Common
+  field_reviewed: IncDate
+  field_legacy_istargethcp: IsTargetHCP
+  field_keywords:
+    plugin: migration
+    migration: keyword
+    source: keywords
+  'path/pathauto':
+    plugin: default_value
+    default_value: 0
+  'path/alias': alias
+
+dependencies:
+  enforced:
+    module:
+      - aacc_migrate

@@ -1,0 +1,115 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/aacc-lto.us\/block\/19?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/block_content\/logo_block"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/logo_block\/content_translation_uid": [
+            {
+                "href": "http:\/\/aacc-lto.us\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": 19
+        }
+    ],
+    "uuid": [
+        {
+            "value": "e6aec3b8-d22b-4f86-b7a2-789be8ec2bec"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 19
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "logo_block"
+        }
+    ],
+    "info": [
+        {
+            "value": "Secondary Header Logo",
+            "lang": "en"
+        }
+    ],
+    "changed": [
+        {
+            "value": 1497540774,
+            "lang": "en"
+        }
+    ],
+    "revision_created": [
+        {
+            "value": 1496933624
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "content_translation_source": [
+        {
+            "value": "und",
+            "lang": "en"
+        }
+    ],
+    "content_translation_outdated": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/logo_block\/content_translation_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/aacc-lto.us\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "6a5e8b73-34ae-4fa2-a878-6dae8a784245"
+                    }
+                ],
+                "lang": "en"
+            }
+        ]
+    },
+    "content_translation_status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "content_translation_created": [
+        {
+            "value": 1496933624,
+            "lang": "en"
+        }
+    ]
+}

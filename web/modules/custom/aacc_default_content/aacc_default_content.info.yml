@@ -1,0 +1,8 @@
+name: aacc_default_content
+type: module
+description: Custom module to hold default content configuration
+core: 8.x
+core_version_requirement: ^8 || ^9
+package: AACC
+dependencies:
+  - default_content

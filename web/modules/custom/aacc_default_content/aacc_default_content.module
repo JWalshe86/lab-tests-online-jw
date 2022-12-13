@@ -1,0 +1,28 @@
+<?php
+
+/**
+ * @file
+ * Contains aacc_default_content.module.
+ */
+
+use Drupal\node\Entity\Node;
+
+/**
+ * Creates a basic page with the alias /in-the-news.
+ */
+function aacc_default_content_update_8001() {
+  $node = Node::create([
+    'type' => 'page',
+    'langcode' => \Drupal::languageManager()->getDefaultLanguage()->getId(),
+    'created' => Drupal::time()->getRequestTime(),
+    'changed' => Drupal::time()->getRequestTime(),
+    'uid' => 1,
+    'title' => 'In The News',
+    'path' => [
+      'alias' => '/in-the-news',
+      'pathauto' => FALSE,
+    ],
+    'field_legacy_istargethcp' => 1,
+  ]);
+  $node->save();
+}

@@ -1,0 +1,37 @@
+uuid: 7487dfbd-0f9a-44bb-97af-8ba85693b51d
+langcode: en
+status: true
+dependencies:
+  module:
+    - aacc_stakeholders
+    - block_class
+    - node
+    - system
+third_party_settings:
+  block_class:
+    classes: hide-for-print
+id: stakeholderdisplay
+region: content
+weight: -18
+provider: null
+plugin: stakeholder_display
+settings:
+  id: stakeholder_display
+  label: 'Stakeholder display'
+  provider: aacc_stakeholders
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: true
+    context_mapping: {  }
+  node_type:
+    id: node_type
+    bundles:
+      condition: condition
+      screening: screening
+      test: test
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

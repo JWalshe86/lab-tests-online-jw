@@ -1,0 +1,19 @@
+uuid: f9f311af-ec88-4833-bacd-ac3d19e19f3e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_oldpath
+    - node.type.stakeholder
+id: node.stakeholder.field_oldpath
+field_name: field_oldpath
+entity_type: node
+bundle: stakeholder
+label: 'Old URL Path'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

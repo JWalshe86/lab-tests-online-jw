@@ -1,0 +1,53 @@
+id: test
+label: AACC test migration
+migration_group: aacc
+source:
+  plugin: aacc_test
+destination:
+  plugin: entity:node
+  node_type: screening
+process:
+  type:
+    plugin: default_value
+    default_value: test
+  uid:
+    plugin: default_value
+    default_value: 1
+  title: Title
+  'body/value':
+    plugin: linkit_replace
+    source: Content
+  'body/format':
+    plugin: default_value
+    default_value: full_html
+  status:
+    plugin: static_map
+    source: Status
+    map:
+      Published: 1
+    default_value: 0
+  field_oldpath: old_path
+  field_formal_name: Formal
+  field_test_synonyms: Common
+  field_reviewed: IncDate
+  field_subcontent: subcontent
+  field_meta_tags: metatags
+  field_cptcode: CPTCode
+  field_icd9code: ICD9Code
+  field_meshcode: MeSHCode
+  field_legacy_thislink: ThisLink
+  field_legacy_othersite: OtherSite
+  field_legacy_istargethcp: IsTargetHCP
+  field_keywords:
+    plugin: migration
+    migration: keyword
+    source: keywords
+  'path/pathauto':
+    plugin: default_value
+    default_value: 0
+  'path/alias': alias
+
+dependencies:
+  enforced:
+    module:
+      - aacc_migrate

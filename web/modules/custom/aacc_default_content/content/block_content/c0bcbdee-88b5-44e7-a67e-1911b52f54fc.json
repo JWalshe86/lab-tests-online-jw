@@ -1,0 +1,128 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/aacc-lto.dev\/block\/15?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/block_content\/dropdown_button"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/dropdown_button\/content_translation_uid": [
+            {
+                "href": "http:\/\/aacc-lto.dev\/user\/1?_format=hal_json",
+                "lang": "und"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": 15
+        }
+    ],
+    "uuid": [
+        {
+            "value": "c0bcbdee-88b5-44e7-a67e-1911b52f54fc"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 15
+        }
+    ],
+    "langcode": [
+        {
+            "value": "und",
+            "lang": "und"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "dropdown_button"
+        }
+    ],
+    "info": [
+        {
+            "value": "What are Screening Tests?",
+            "lang": "und"
+        }
+    ],
+    "changed": [
+        {
+            "value": 1494625155
+        }
+    ],
+    "revision_created": [
+        {
+            "value": 1494625155
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "und"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "und"
+        }
+    ],
+    "content_translation_source": [
+        {
+            "value": "und",
+            "lang": "und"
+        }
+    ],
+    "content_translation_outdated": [
+        {
+            "value": false,
+            "lang": "und"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/dropdown_button\/content_translation_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/aacc-lto.dev\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "6a5e8b73-34ae-4fa2-a878-6dae8a784245"
+                    }
+                ],
+                "lang": "und"
+            }
+        ]
+    },
+    "content_translation_status": [
+        {
+            "value": true,
+            "lang": "und"
+        }
+    ],
+    "content_translation_created": [
+        {
+            "value": 1494625155,
+            "lang": "und"
+        }
+    ],
+    "body": [
+        {
+            "value": "<p>Screening tests are laboratory tests that help to identify people with increased risk for a condition or disease before they have symptoms or even realize they may be at risk so that preventive measures can be taken. They are an important part of preventive health care.<\/p>\r\n\r\n<p>Screening tests help detect disease in its earliest and most treatable stages. Therefore, they are most valuable when they are used to screen for diseases that are both serious and treatable, so that there is a benefit to detecting the disease before symptoms begin.<\/p>\r\n\r\n<p>They should be sensitive - that is, able to correctly identify those individuals who have a given disease. Many routine tests performed at regular health exams are screening tests. Cholesterol testing and Pap smears for women are examples. Newborns are screened for a variety of conditions at birth.<\/p>\r\n\r\n<p>A positive screening test often requires further testing with a more specific test. This is important in order to correctly exclude those individuals who do not have the given disease or to confirm a diagnosis.<\/p>\r\n\r\n<p>A diagnostic test may be used for screening purposes, but a diagnostic test is generally used to confirm a diagnosis in someone who has signs, symptoms, or other evidence of a particular disease.<\/p>\r\n",
+            "format": "basic_html",
+            "summary": "",
+            "lang": "und"
+        }
+    ],
+    "field_button_label": [
+        {
+            "value": "What are Screening Tests?",
+            "lang": "und"
+        }
+    ]
+}

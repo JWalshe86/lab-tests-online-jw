@@ -1,0 +1,41 @@
+id: engitel_news_item
+label: AACC news item migration(MSSQL)
+migration_group: aacc_engitel
+source:
+  plugin: engitel_aacc_news_item
+destination:
+  plugin: entity:node
+  node_type: news_item
+process:
+  type:
+    plugin: default_value
+    default_value: news_item
+  uid:
+    plugin: default_value
+    default_value: 1
+  title: 
+    plugin: skip_on_empty
+    source: cntTitle
+    method: row
+  'body/value': cntBody
+  'body/format':
+    plugin: default_value
+    default_value: full_html
+  status:
+    plugin: static_map
+    source: cntPublished
+    map:
+      2: 1
+    default_value: 0
+  field_oldpath: cntUrl
+  field_meta_tags: metatags
+  field_news_type: news_type
+  field_keywords:
+    plugin: migration
+    migration: engitel_keyword
+    source: keywords
+
+dependencies:
+  enforced:
+    module:
+      - aacc_migrate_engitel

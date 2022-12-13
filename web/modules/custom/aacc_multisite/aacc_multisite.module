@@ -1,0 +1,33 @@
+<?php
+
+/**
+ * @file
+ * AACC Multisite module file.
+ */
+
+use Drupal\Component\Utility\Html;
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_preprocess_html().
+ */
+function aacc_multisite_preprocess_html(&$variables) {
+  $site_name = \Drupal::config('aacc_multisite.config')->get('site.class');
+  $site_class = Html::getClass('site--' . $site_name);
+  $variables['attributes']['class'][] = $site_class;
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function aacc_multisite_form_alter(&$form, FormStateInterface &$form_state, $form_id) {
+  switch ($form_id) {
+    case 'node_test_form':
+      $site_name = \Drupal::config('aacc_multisite.config')->get('site.class');
+      if ($site_name != 'lto-us') {
+        $form['field_subcontent']['widget']['add_more']['add_more_button_three_column_call_to_action_lg']['#access'] = FALSE;
+        $form['field_order_your_test']['#access'] = FALSE;
+      }
+      break;
+  }
+}

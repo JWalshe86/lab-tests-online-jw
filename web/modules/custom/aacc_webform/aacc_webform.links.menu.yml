@@ -1,0 +1,6 @@
+aacc_webform.blacklist_form:
+  title: 'Webform subject line blocking'
+  description: 'Blacklist terms from being submitted on select webforms.'
+  route_name: aacc_webform.blacklist_form
+  parent: system.admin_config_system
+  weight: 99

@@ -1,0 +1,5 @@
+entity.screening_test.add_form:
+  route_name: entity.screening_test.add_form
+  title: 'Add Screening Test'
+  appears_on:
+    - entity.screening_test.collection

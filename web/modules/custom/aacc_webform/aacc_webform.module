@@ -1,0 +1,34 @@
+<?php
+
+/**
+ * @file
+ * Contains aacc_webform.module.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_webform_element_alter().
+ *
+ * Alter the Constraints for the webform. The options are altered
+ * in the aacc_lto_foundation.theme.
+ */
+function aacc_webform_webform_element_alter(array &$element, FormStateInterface $form_state, array $context) {
+  if (isset($element['#webform_id'])) {
+    switch ($element['#webform_id']) {
+      case 'ask_a_laboratory_scientist--subject':
+        $element['#element_validate'][] = [
+          'Drupal\aacc_webform\Validate\BlacklistConstraint',
+          'validate',
+        ];
+        break;
+
+      case 'ask_a_laboratory_scientist--country':
+        $element['#element_validate'][] = [
+          'Drupal\aacc_webform\Validate\CountryConstraint',
+          'validate',
+        ];
+        break;
+    }
+  }
+}

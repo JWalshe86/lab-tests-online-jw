@@ -1,0 +1,22 @@
+uuid: 95c0a8f1-804b-43bb-a71b-6dce5cdbc18b
+langcode: en
+status: true
+dependencies:
+  module:
+    - aacc_feeds
+    - user
+_core:
+  default_config_hash: UCSfXXdNzKjf9IL7uahdaUNn4M1GR_yJxSw3bVcn3yc
+id: aacc_feeds_feed.field_client
+field_name: field_client
+entity_type: aacc_feeds_feed
+type: entity_reference
+settings:
+  target_type: user
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

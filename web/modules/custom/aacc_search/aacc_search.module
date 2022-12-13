@@ -1,0 +1,74 @@
+<?php
+
+/**
+ * @file
+ * Contains aacc_search.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_help().
+ */
+function aacc_search_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the aacc_search module.
+    case 'help.page.aacc_search':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Custom module for AACC search items.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function aacc_search_theme($existing, $type, $theme, $path) {
+  return [
+    'search_header' => [
+      'variables' => [],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function aacc_search_form_views_exposed_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if (!isset($form['#id']) || $form['#id'] != 'views-exposed-form-search-main-search') {
+    return;
+  }
+  if ($form['sort_by']) {
+    $form['sort_by']['#type'] = 'hidden';
+    $label = t('Sort By');
+    $sorts = '<div class="sort-group">' . '<span class="sort-header">' . $label . ':</span>';
+    foreach ($form['sort_by']['#options'] as $key => $sort) {
+      $sorts .= '<a class="search-sort" search="' . $key . '" href="javascript:void(0)">' . $sort . '</a>';
+    }
+    $sorts .= '</div>';
+    $form['sorts'] = [
+      '#type' => 'markup',
+      '#markup' => $sorts,
+    ];
+  }
+  if ($form['type']) {
+    $form['type']['#type'] = 'hidden';
+    $label = t('Section');
+    $types = '<div class="sort-group">' . '<span class="filter-header">' . $label . ':</span>';
+    foreach ($form['type']['#options'] as $key => $type) {
+      $types .= '<a class="search-filter" search="' . $key . '" href="javascript:void(0)">' . ($key == 'All' ? t('All') : $type) . '</a>';
+    }
+    $types .= '</div>';
+    $form['filters'] = [
+      '#type' => 'markup',
+      '#markup' => $types,
+    ];
+  }
+  if ($form['sort_by'] || $form['type']) {
+    $form['#attached']['library'][] = 'aacc_search/advanced-links';
+  }
+}

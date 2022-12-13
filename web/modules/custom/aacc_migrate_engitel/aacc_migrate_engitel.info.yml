@@ -1,0 +1,11 @@
+name: AACC migrations
+type: module
+description: Defines custom migrations for Engitel CMS AACC project.
+core: 8.x
+core_version_requirement: ^8 || ^9
+package: Custom
+dependencies:
+  - drupal:migrate_source_mssql
+  - drupal:migrate
+  - drupal:migrate_plus
+  - drupal:migrate_tools

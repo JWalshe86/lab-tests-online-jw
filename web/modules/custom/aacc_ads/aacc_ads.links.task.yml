@@ -1,0 +1,18 @@
+# Ad Key Value routing definition
+
+entity.ads.canonical:
+  route_name: entity.ads.canonical
+  base_route: entity.ads.canonical
+  title: 'View'
+
+entity.ads.edit_form:
+  route_name: entity.ads.edit_form
+  base_route: entity.ads.canonical
+  title: 'Edit'
+
+entity.ads.delete_form:
+  route_name:  entity.ads.delete_form
+  base_route:  entity.ads.canonical
+  title: Delete
+  weight: 10
+

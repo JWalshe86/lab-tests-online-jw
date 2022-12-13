@@ -1,0 +1,7 @@
+id: aacc_engitel
+label: AACC Migrations from Engitel
+description: Migrations for AACC project.
+dependencies:
+  enforced:
+    module:
+      - aacc_migrate_engitel

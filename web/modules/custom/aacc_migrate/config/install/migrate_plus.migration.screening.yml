@@ -1,0 +1,45 @@
+id: screening
+label: AACC screening migration
+migration_group: aacc
+source:
+  plugin: aacc_screening
+destination:
+  plugin: entity:node
+  node_type: screening
+process:
+  type:
+    plugin: default_value
+    default_value: screening
+  uid:
+    plugin: default_value
+    default_value: 1
+  title: Title
+  'field_legacy_content/value':
+    plugin: linkit_replace
+    source: Content
+  'field_legacy_content/format':
+    plugin: default_value
+    default_value: full_html
+  status:
+    plugin: static_map
+    source: Status
+    map:
+      Published: 1
+    default_value: 0
+  field_oldpath: old_path
+  field_subcontent: subcontent
+  field_meta_tags: metatags
+  field_reviewed: IncDate
+  field_keywords:
+    plugin: migration
+    migration: keyword
+    source: keywords
+  'path/pathauto':
+    plugin: default_value
+    default_value: 0
+  'path/alias': alias
+
+dependencies:
+  enforced:
+    module:
+      - aacc_migrate

@@ -1,0 +1,122 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/block\/9?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/block_content\/basic"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/basic\/content_translation_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "und"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": 9
+        }
+    ],
+    "uuid": [
+        {
+            "value": "d0da3ef0-b356-4082-b08b-cbcb9840eaca"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 9
+        }
+    ],
+    "langcode": [
+        {
+            "value": "und",
+            "lang": "und"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "basic"
+        }
+    ],
+    "info": [
+        {
+            "value": "Footer Branding",
+            "lang": "und"
+        }
+    ],
+    "changed": [
+        {
+            "value": 1494455726
+        }
+    ],
+    "revision_created": [
+        {
+            "value": 1494349744
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "und"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "und"
+        }
+    ],
+    "content_translation_source": [
+        {
+            "value": "und",
+            "lang": "und"
+        }
+    ],
+    "content_translation_outdated": [
+        {
+            "value": false,
+            "lang": "und"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/basic\/content_translation_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "6a5e8b73-34ae-4fa2-a878-6dae8a784245"
+                    }
+                ],
+                "lang": "und"
+            }
+        ]
+    },
+    "content_translation_status": [
+        {
+            "value": true,
+            "lang": "und"
+        }
+    ],
+    "content_translation_created": [
+        {
+            "value": 1494349744,
+            "lang": "und"
+        }
+    ],
+    "body": [
+        {
+            "value": "<p>Program of:<\/p>\r\n\r\n<div class=\"footer-branding\">\r\n<ul>\r\n\t<li><a href=\"https:\/\/www.aacc.org\/\" target=\"_blank\" title=\"American Association for Clinical Chemistry\"><img alt=\"AACC Logo\" src=\"\/sites\/default\/files\/inline-images\/aacc_logo.png\" \/> <\/a><\/li>\r\n<\/ul>\r\n<\/div>\r\n\r\n<div class=\"footer-certifications\">\r\n<ul>\r\n\t<li><a href=\"https:\/\/www.healthonnet.org\/HONcode\/Conduct.html?HONConduct253967\" target=\"_blank\" title=\"HON Code Certified\"><img alt=\"HON Code Certified\" src=\"\/sites\/default\/files\/inline-images\/honcode-239x300.jpg\" \/><\/a><\/li>\r\n\t<li><img alt=\"Board Approved\" src=\"\/sites\/default\/files\/inline-images\/board_approved.png\" \/><\/li>\r\n<\/ul>\r\n<\/div>\r\n",
+            "format": "full_html",
+            "summary": "",
+            "lang": "und"
+        }
+    ]
+}

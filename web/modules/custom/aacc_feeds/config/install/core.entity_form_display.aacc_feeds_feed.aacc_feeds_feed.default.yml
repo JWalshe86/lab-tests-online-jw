@@ -1,0 +1,197 @@
+uuid: aaebf3ed-b0bd-421a-82dc-85411e73e4a7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.aacc_feeds_feed.aacc_feeds_feed.field_client
+    - field.field.aacc_feeds_feed.aacc_feeds_feed.field_condition_links
+    - field.field.aacc_feeds_feed.aacc_feeds_feed.field_condition_sub_content
+    - field.field.aacc_feeds_feed.aacc_feeds_feed.field_feed_content_updates
+    - field.field.aacc_feeds_feed.aacc_feeds_feed.field_feed_details
+    - field.field.aacc_feeds_feed.aacc_feeds_feed.field_log_limit
+    - field.field.aacc_feeds_feed.aacc_feeds_feed.field_notification_interval
+    - field.field.aacc_feeds_feed.aacc_feeds_feed.field_screening_links
+    - field.field.aacc_feeds_feed.aacc_feeds_feed.field_screening_sub_content
+    - field.field.aacc_feeds_feed.aacc_feeds_feed.field_selected_conditions
+    - field.field.aacc_feeds_feed.aacc_feeds_feed.field_selected_screenings
+    - field.field.aacc_feeds_feed.aacc_feeds_feed.field_selected_tests
+    - field.field.aacc_feeds_feed.aacc_feeds_feed.field_test_links
+    - field.field.aacc_feeds_feed.aacc_feeds_feed.field_test_sub_content
+  module:
+    - aacc_feeds
+    - field_group
+third_party_settings:
+  field_group:
+    group_feed_details:
+      children:
+        - name
+        - field_client
+        - field_log_limit
+      parent_name: ''
+      weight: 0
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: 'Feed Details'
+    group_conditions:
+      children:
+        - field_selected_conditions
+        - field_condition_sub_content
+        - field_condition_links
+      parent_name: ''
+      weight: 1
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: Conditions
+    group_screenings:
+      children:
+        - field_selected_screenings
+        - field_screening_sub_content
+        - field_screening_links
+      parent_name: ''
+      weight: 2
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: Screenings
+    group_tests:
+      children:
+        - field_selected_tests
+        - field_test_sub_content
+        - field_test_links
+      parent_name: ''
+      weight: 3
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: Tests
+    group_notifications:
+      children:
+        - field_feed_details
+        - field_feed_content_updates
+        - field_notification_interval
+      parent_name: ''
+      weight: 4
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: Notifications
+id: aacc_feeds_feed.aacc_feeds_feed.default
+targetEntityType: aacc_feeds_feed
+bundle: aacc_feeds_feed
+mode: default
+content:
+  field_client:
+    type: entity_reference_autocomplete
+    weight: -5
+    region: content
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_condition_links:
+    type: options_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_condition_sub_content:
+    type: options_select
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_feed_content_updates:
+    type: boolean_checkbox
+    weight: -3
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_feed_details:
+    type: boolean_checkbox
+    weight: -4
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_log_limit:
+    weight: -4
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_notification_interval:
+    type: options_select
+    weight: -2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_screening_links:
+    type: options_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_screening_sub_content:
+    type: options_select
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_selected_conditions:
+    type: options_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_selected_screenings:
+    type: options_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_selected_tests:
+    type: options_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_test_links:
+    type: options_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_test_sub_content:
+    type: options_select
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: -6
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

@@ -1,0 +1,6 @@
+aacc_reports.content_type_usage:
+  title: 'Content Type Usage'
+  description: 'View usage by content types.'
+  parent: system.admin_reports
+  route_name: aacc_reports.content_type_usage
+  weight: 99

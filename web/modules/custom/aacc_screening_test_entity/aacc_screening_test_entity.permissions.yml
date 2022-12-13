@@ -1,0 +1,22 @@
+add screening test entities:
+  title: 'Create new Screening Test entities'
+
+administer screening test entities:
+  title: 'Administer Screening Test entities'
+  description: 'Allow to access the administration form to configure Screening Test entities.'
+  restrict access: true
+
+delete screening test entities:
+  title: 'Delete Screening Test entities'
+
+edit screening test entities:
+  title: 'Edit Screening Test entities'
+
+access screening test overview:
+  title: 'Access the Screening Test overview page'
+
+view published screening test entities:
+  title: 'View published Screening Test entities'
+
+view unpublished screening test entities:
+  title: 'View unpublished Screening Test entities'

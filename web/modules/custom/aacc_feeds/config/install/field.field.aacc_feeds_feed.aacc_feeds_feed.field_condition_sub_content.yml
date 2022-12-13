@@ -1,0 +1,34 @@
+uuid: af561edf-ca06-434c-958c-e78f84bdd843
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.aacc_feeds_feed.field_condition_sub_content
+    - taxonomy.vocabulary.sub_content_types
+  module:
+    - aacc_feeds
+_core:
+  default_config_hash: ZD680rtBE6T_gEuuzCgSAwz4H-edI9FRAnKHaceYc9g
+id: aacc_feeds_feed.aacc_feeds_feed.field_condition_sub_content
+field_name: field_condition_sub_content
+entity_type: aacc_feeds_feed
+bundle: aacc_feeds_feed
+label: 'Condition Sub-Content'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    target_uuid: 1ee0d9eb-24bf-47e8-ad68-3057c43a8694
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      sub_content_types: sub_content_types
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: condition_sub_content
+field_type: entity_reference

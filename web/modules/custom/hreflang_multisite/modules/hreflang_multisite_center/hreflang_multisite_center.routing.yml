@@ -1,0 +1,7 @@
+hreflang_multisite_center.autocomplete:
+  path: '/hreflang_multisite_center/{countryCode}/{langcode}/{type}'
+  defaults:
+    _controller: '\Drupal\hreflang_multisite_center\Controller\AutocompleteController::handleAutocomplete'
+    _format: json
+  requirements:
+    _access: 'TRUE'

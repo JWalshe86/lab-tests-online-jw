@@ -1,0 +1,14 @@
+
+# External Link menu items definition
+entity.external_link.collection:
+  title: 'External Links'
+  route_name: entity.external_link.collection
+  description: 'List External Link entities'
+  parent: system.admin_structure
+  weight: 100
+
+external_link.admin.structure.settings:
+  title: External Link Settings
+  description: 'Configure External Link entities'
+  route_name: external_link.settings
+  parent: system.admin_structure
