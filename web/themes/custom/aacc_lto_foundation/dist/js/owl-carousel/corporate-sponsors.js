@@ -1,0 +1,1 @@
+!function(o){Drupal.behaviors.CorporateSponsors={attach:function(a,r){o(".owl-carousel.corporate-sponsors-slider").owlCarousel({loop:!0,margin:10,autoplay:!0,autoPlayTimeout:1e3,items:1})}}}(jQuery);

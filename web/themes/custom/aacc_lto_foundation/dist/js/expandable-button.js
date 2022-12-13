@@ -1,0 +1,1 @@
+!function(t){Drupal.behaviors.expandableButton={attach:function(n,a){t(n).find("div.looking-for-buttons").find(".expandable-button").on("click",function(){t(".expandable-button").not(this).parent().removeClass("is-active"),t(this).parent().toggleClass("is-active")})}}}(jQuery);
