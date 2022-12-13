@@ -1,0 +1,25 @@
+{
+  "name": "aacc",
+  "description": "American Association for Clinical Chemistry",
+  "author": "Unleashed Technologies <developers@unleashed-technologies.com>",
+  "license": "UNLICENSED",
+  "main": "web/index.php",
+  "repository": {
+    "url": "git@gitlab.utdev.com:aacc/lab-tests-online.git",
+    "type": "git"
+  },
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation-sites": "~6.3.0",
+    "motion-ui": "~1.2.2",
+    "owl.carousel": "^2.2.1",
+    "jquery-expander": "kswedberg/jquery-expander#^1.7.0"
+  }
+}
