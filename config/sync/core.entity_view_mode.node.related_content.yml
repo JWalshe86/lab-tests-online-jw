@@ -1,0 +1,10 @@
+uuid: 6c7bc7ef-95ff-46b9-87d8-b766c5225bb7
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.related_content
+label: 'Related Content'
+targetEntityType: node
+cache: true

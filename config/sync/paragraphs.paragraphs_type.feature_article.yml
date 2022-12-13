@@ -1,0 +1,9 @@
+uuid: 1d15ccbc-2213-4616-add9-527f683690ce
+langcode: en
+status: true
+dependencies: {  }
+id: feature_article
+label: 'Feature Article'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

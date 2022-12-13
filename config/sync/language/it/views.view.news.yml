@@ -1,0 +1,14 @@
+display:
+  top_news:
+    display_options:
+      use_more_text: 'Vedi tutte le LTO-News'
+  default:
+    display_options:
+      title: LTO-News
+  attachment_2:
+    display_options:
+      title: LTO-News
+  block_3:
+    display_options:
+      title: LTO-News
+      use_more_text: 'Vedi tutte le LTO-News'

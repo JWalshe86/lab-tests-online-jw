@@ -1,0 +1,15 @@
+uuid: 34f3d5cf-7021-461a-a023-ac0a88a28e50
+langcode: en
+status: true
+dependencies: {  }
+name: hero_banner_small
+label: 'Hero Banner - Small'
+effects:
+  7b01071a-d0bf-4983-8a20-4978701f0d48:
+    uuid: 7b01071a-d0bf-4983-8a20-4978701f0d48
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 770
+      height: 270
+      anchor: center-center

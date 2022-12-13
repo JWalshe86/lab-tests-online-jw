@@ -1,0 +1,8 @@
+uuid: 7bee653c-6806-47c3-9b02-4fb13820d0f9
+langcode: en
+status: true
+dependencies: {  }
+id: sidebar_thank_you_global_
+label: 'Sidebar Thank You (global)'
+revision: 0
+description: 'A custom sidebar block for embedding an (optionally linked) image.'

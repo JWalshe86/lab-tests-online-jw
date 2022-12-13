@@ -1,0 +1,22 @@
+uuid: c81e46fa-9210-4801-907b-165db511639d
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.stakeholder
+id: node.stakeholder.status
+field_name: status
+entity_type: node
+bundle: stakeholder
+label: 'Publishing status'
+description: 'A boolean indicating whether the node is published.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,108 @@
+uuid: 473965a8-06de-41dc-bd9b-e868866225fc
+langcode: en
+status: true
+dependencies:
+  config:
+    - announcement_pop_up.announcement_type.standard
+    - field.field.announcement.standard.field_body
+    - field.field.announcement.standard.field_delay
+    - field.field.announcement.standard.field_end_date
+    - field.field.announcement.standard.field_link
+    - field.field.announcement.standard.field_opt_out_text
+    - field.field.announcement.standard.field_start_date
+  module:
+    - aacc_foundation_magellan_field_format
+    - datetime
+    - ds
+    - link
+    - text
+id: announcement.standard.default
+targetEntityType: announcement
+bundle: standard
+mode: default
+content:
+  field_body:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_delay:
+    weight: 7
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_end_date:
+    type: datetime_default
+    weight: 4
+    region: content
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: scheduler
+    third_party_settings:
+      aacc_foundation_magellan_field_format:
+        magellan_target_label: ''
+        magellan_target_clean: true
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+  field_link:
+    weight: 2
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_opt_out_text:
+    weight: 6
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_start_date:
+    weight: 3
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: scheduler
+    third_party_settings:
+      aacc_foundation_magellan_field_format:
+        magellan_target_label: ''
+        magellan_target_clean: true
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: datetime_default
+    region: content
+  name:
+    label: hidden
+    type: string
+    weight: 0
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  langcode: true
+  user_id: true

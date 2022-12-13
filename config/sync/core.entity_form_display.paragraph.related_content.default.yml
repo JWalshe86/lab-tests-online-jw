@@ -1,0 +1,129 @@
+uuid: b14717ab-51b5-46ff-95f8-c17a5150c1c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.related_content.field_articles
+    - field.field.paragraph.related_content.field_basic_pages
+    - field.field.paragraph.related_content.field_elsewhere_on_the_web
+    - field.field.paragraph.related_content.field_label
+    - field.field.paragraph.related_content.field_related_articles
+    - field.field.paragraph.related_content.field_related_conditions
+    - field.field.paragraph.related_content.field_related_media
+    - field.field.paragraph.related_content.field_related_news_items
+    - field.field.paragraph.related_content.field_related_screenings
+    - field.field.paragraph.related_content.field_related_tests
+    - field.field.paragraph.related_content.field_sub_content_type
+    - paragraphs.paragraphs_type.related_content
+  module:
+    - link
+    - paragraphs
+id: paragraph.related_content.default
+targetEntityType: paragraph
+bundle: related_content
+mode: default
+content:
+  field_articles:
+    weight: 4
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_basic_pages:
+    weight: 7
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_elsewhere_on_the_web:
+    weight: 8
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_label:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_related_conditions:
+    weight: 2
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_related_media:
+    weight: 6
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_related_news_items:
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_related_screenings:
+    type: entity_reference_paragraphs
+    weight: 3
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings: {  }
+    region: content
+  field_related_tests:
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_sub_content_type:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  translation:
+    weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_related_articles: true
+  status: true
+  uid: true

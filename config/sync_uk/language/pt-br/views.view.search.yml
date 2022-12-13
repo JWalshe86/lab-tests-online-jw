@@ -1,0 +1,12 @@
+display:
+  default:
+    display_options:
+      filters:
+        type:
+          group_info:
+            description: ''
+      empty:
+        area:
+          content:
+            value: "<div class=\"search-no-results\">\r\n<p>Você não está autorizado à acessar essa página. Clique aqui para voltar à página inicial.</p>\r\n\r\n<ul>\r\n\t<li>Uma vez que alguns testes e condições são conhecidos por vários nomes, tente pesquisar esses outros nomes também (por exemplo, hemograma completo também é conhecido como CBC, doença cardiovascular também é chamada de DCV).</li>\r\n\t<li>Se você estiver procurando por um teste ou medicamento patenteado você não pode encontrá-lo pelo nome comercial no Lab Tests Online. Tente digitar o nome genérico (por exemplo, Warfarina em vez de Coumadin).</li>\r\n\t<li>Se você estiver pesquisando uma frase, coloque aspas em toda a frase (por exemplo, \"equilíbrio ácido-base\").</li>\r\n\t<li>Verifique a ortografia.</li>\r\n</ul>\r\n\r\n<p>Se você ainda não encontrou o que procura, <a href=\"/contact-us\">entre em Contato conosco</a>.</p>\r\n</div>\r\n"
+            format: full_html

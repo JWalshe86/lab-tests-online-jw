@@ -1,0 +1,20 @@
+uuid: 116a4842-8fab-4d3c-9704-51ed58462ce7
+langcode: en
+status: true
+dependencies:
+  module:
+    - announcement_pop_up
+id: announcement.field_delay
+field_name: field_delay
+entity_type: announcement
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

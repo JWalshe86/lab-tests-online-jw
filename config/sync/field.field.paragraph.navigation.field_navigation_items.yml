@@ -1,0 +1,51 @@
+uuid: 191c9979-b9c3-4063-a88a-c07675f9a7c5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_navigation_items
+    - paragraphs.paragraphs_type.navigation
+    - paragraphs.paragraphs_type.section_navigation_item
+  module:
+    - entity_reference_revisions
+id: paragraph.navigation.field_navigation_items
+field_name: field_navigation_items
+entity_type: paragraph
+bundle: navigation
+label: 'Navigation Items'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      section_navigation_item: section_navigation_item
+    target_bundles_drag_drop:
+      accordion:
+        weight: 9
+        enabled: false
+      accordion_item:
+        weight: 10
+        enabled: false
+      expandable:
+        weight: 11
+        enabled: false
+      grid:
+        weight: 12
+        enabled: false
+      navigation:
+        weight: 13
+        enabled: false
+      section_navigation_item:
+        enabled: true
+        weight: 14
+      text_area:
+        weight: 15
+        enabled: false
+      two_column:
+        weight: 16
+        enabled: false
+field_type: entity_reference_revisions

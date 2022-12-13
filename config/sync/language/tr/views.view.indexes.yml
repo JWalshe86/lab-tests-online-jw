@@ -1,0 +1,13 @@
+display:
+  conditions:
+    display_options:
+      title: 'Hastalık ve Rahatsızlıklar İndeksi '
+  tests:
+    display_options:
+      title: 'Test İndeksi '
+  definitions:
+    display_options:
+      title: 'Sözlük Terimleri'
+  screenings:
+    display_options:
+      title: 'Sağlık Tarama Önerileri indeksi'

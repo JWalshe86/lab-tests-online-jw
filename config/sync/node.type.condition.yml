@@ -1,0 +1,29 @@
+uuid: 60f5fd22-3b32-48f1-a402-6ff0943c9a3b
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - scheduler
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+  scheduler:
+    expand_fieldset: when_required
+    fields_display_mode: vertical_tab
+    publish_enable: true
+    publish_past_date: error
+    publish_required: false
+    publish_revision: true
+    publish_touch: false
+    unpublish_enable: true
+    unpublish_required: false
+    unpublish_revision: true
+name: Condition
+type: condition
+description: 'Use <em>conditions</em> for descriptions of a condition or disease and related information.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

@@ -1,0 +1,21 @@
+uuid: 1f775281-4f14-4e48-af66-4de2198fc036
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.logo_block
+    - field.storage.block_content.field_text_below_logo
+  module:
+    - text
+id: block_content.logo_block.field_text_below_logo
+field_name: field_text_below_logo
+entity_type: block_content
+bundle: logo_block
+label: 'Text below Logo'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

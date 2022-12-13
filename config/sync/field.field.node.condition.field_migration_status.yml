@@ -1,0 +1,28 @@
+uuid: b9d0335f-d5dc-4baf-bd0b-c3cf276017de
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_migration_status
+    - node.type.condition
+    - taxonomy.vocabulary.migration_status
+id: node.condition.field_migration_status
+field_name: field_migration_status
+entity_type: node
+bundle: condition
+label: 'Migration Status'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      migration_status: migration_status
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

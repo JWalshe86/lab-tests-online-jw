@@ -1,0 +1,19 @@
+uuid: 181f380c-d720-4468-918e-c9db8e7cedb8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_cap_ack
+    - media.type.video
+id: media.video.field_cap_ack
+field_name: field_cap_ack
+entity_type: media
+bundle: video
+label: Caption/Acknowledgement
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

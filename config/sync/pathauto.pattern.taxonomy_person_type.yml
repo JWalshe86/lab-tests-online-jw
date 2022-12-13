@@ -1,0 +1,23 @@
+uuid: f15166e7-f1bc-41c8-ad27-a27945861b57
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: taxonomy_person_type
+label: 'Taxonomy: Person Type'
+type: 'canonical_entities:taxonomy_term'
+pattern: '/person-types/[term:name]'
+selection_criteria:
+  16fb299e-2f9e-4a84-b1ee-2349b817fdc6:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      person_type: person_type
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: 16fb299e-2f9e-4a84-b1ee-2349b817fdc6
+selection_logic: and
+weight: -5
+relationships: {  }

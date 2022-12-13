@@ -1,0 +1,23 @@
+uuid: 6c11aec4-15ea-40e1-af5b-b3c51426df9b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.screening
+  module:
+    - text
+id: node.screening.body
+field_name: body
+entity_type: node
+bundle: screening
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

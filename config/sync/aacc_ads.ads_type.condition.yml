@@ -1,0 +1,6 @@
+uuid: eb0a2120-4ded-4430-86dc-772cbd1e68f1
+langcode: en
+status: true
+dependencies: {  }
+id: condition
+label: Condition

@@ -1,0 +1,22 @@
+uuid: 1ae972c2-3aa8-43b4-80bf-c1bdea697773
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.looking_for_buttons
+id: paragraph.looking_for_buttons.status
+field_name: status
+entity_type: paragraph
+bundle: looking_for_buttons
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

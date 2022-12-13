@@ -1,0 +1,43 @@
+uuid: 0ea8c0cd-e226-4f26-85af-713439081418
+langcode: en
+status: true
+dependencies:
+  module:
+    - aacc_add_this
+    - block_class
+    - node
+    - system
+  theme:
+    - aacc_lto_foundation
+third_party_settings:
+  block_class:
+    classes: 'share-tools hide-for-print'
+id: addthis
+theme: aacc_lto_foundation
+region: content_top
+weight: -16
+provider: null
+plugin: add_this
+settings:
+  id: add_this
+  label: 'Add This Sharing Tools'
+  provider: aacc_add_this
+  label_display: '0'
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      article: article
+      condition: condition
+      news_item: news_item
+      page: page
+      screening: screening
+      test: test
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: true
+    context_mapping: {  }

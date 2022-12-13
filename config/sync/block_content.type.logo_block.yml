@@ -1,0 +1,8 @@
+uuid: 02660d78-4a43-44d1-9b95-fd828cd53039
+langcode: en
+status: true
+dependencies: {  }
+id: logo_block
+label: 'Logo Block'
+revision: 0
+description: 'Custom header or footer blocks, for displaying logos of partners and producers of the site.'

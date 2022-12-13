@@ -1,0 +1,28 @@
+uuid: cc946b58-65ed-4d14-bb6e-dab305984a3d
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.section_nav_test
+    - field.field.paragraph.navigation.field_navigation_items
+    - field.field.paragraph.navigation.field_sub_content_type
+    - paragraphs.paragraphs_type.navigation
+  module:
+    - entity_reference_revisions
+id: paragraph.navigation.section_nav_test
+targetEntityType: paragraph
+bundle: navigation
+mode: section_nav_test
+content:
+  field_navigation_items:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_sub_content_type: true
+  revision_date: true

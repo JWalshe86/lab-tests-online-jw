@@ -1,0 +1,12 @@
+display:
+  default:
+    display_options:
+      filters:
+        type:
+          group_info:
+            description: ''
+      empty:
+        area:
+          content:
+            value: "<div class=\"search-no-results\">\r\n<p>遇到问题，可参考以下解决方案</p>\r\n\r\n<ul>\r\n\t<li>由于检验和疾病通常有多种名称，可尝试使用其他名称进行搜索（如，全血细胞计数也称为CBC；心血管疾病也称为CVD)</li>\r\n\t<li>您可能无法通过商品名，在检验医学在线找到某一检验或药物，请尝试通用名称代替（如华法林取代香豆素)</li>\r\n\t<li>如果您在搜索一个词组，请输入词组的全部文字</li>\r\n\t<li>检查您的拼写</li>\r\n</ul>\r\n\r\n<p>如果您仍未找到，<a href=\"/contact-us\">请联系我们</a>.</p>\r\n</div>\r\n"
+            format: full_html

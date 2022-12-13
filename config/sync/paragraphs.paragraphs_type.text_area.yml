@@ -1,0 +1,7 @@
+uuid: 7f287aa5-75c3-4362-bb84-b5fa4a4014f8
+langcode: en
+status: true
+dependencies: {  }
+id: text_area
+label: 'Text Area'
+behavior_plugins: {  }

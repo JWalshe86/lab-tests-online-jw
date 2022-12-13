@@ -1,0 +1,8 @@
+uuid: 5a139791-03c4-4ec5-93ba-6dffaee22264
+langcode: en
+status: true
+dependencies: {  }
+id: section_navigation
+label: 'Section Navigation'
+revision: 0
+description: 'This is the block implementation of the Section Navigation paragraph type.'

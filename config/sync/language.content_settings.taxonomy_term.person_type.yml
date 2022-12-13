@@ -1,0 +1,16 @@
+uuid: 0bfb287e-882d-48d9-8b6c-c46f8cff1f22
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.person_type
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+id: taxonomy_term.person_type
+target_entity_type_id: taxonomy_term
+target_bundle: person_type
+default_langcode: site_default
+language_alterable: false

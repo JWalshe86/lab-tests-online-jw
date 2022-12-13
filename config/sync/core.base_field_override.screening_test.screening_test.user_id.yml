@@ -1,0 +1,20 @@
+uuid: 5c96749e-86d6-4547-8053-9af0eb16150e
+langcode: en
+status: true
+dependencies:
+  module:
+    - aacc_screening_test_entity
+id: screening_test.screening_test.user_id
+field_name: user_id
+entity_type: screening_test
+bundle: screening_test
+label: 'Authored by'
+description: 'The user ID of author of the Screening Test entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

@@ -1,0 +1,58 @@
+uuid: 1611a69a-bd24-4a05-af73-e4ecfb37fd6f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.section_navigation_item.field_color
+    - field.field.paragraph.section_navigation_item.field_label
+    - field.field.paragraph.section_navigation_item.field_link
+    - field.field.paragraph.section_navigation_item.field_secondary_label
+    - paragraphs.paragraphs_type.section_navigation_item
+  module:
+    - color_field
+    - link
+id: paragraph.section_navigation_item.default
+targetEntityType: paragraph
+bundle: section_navigation_item
+mode: default
+content:
+  field_color:
+    weight: 3
+    settings:
+      default_colors: '#B12025,#80A29C,#D99E56'
+    third_party_settings: {  }
+    type: color_field_widget_box
+    region: content
+  field_label:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_link:
+    weight: 2
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_secondary_label:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  translation:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

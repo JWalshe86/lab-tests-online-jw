@@ -1,0 +1,15 @@
+uuid: 55955638-f051-490d-a19b-9aabc03c7ea8
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.in_sintesi
+id: paragraph.in_sintesi.default
+targetEntityType: paragraph
+bundle: in_sintesi
+mode: default
+content: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

@@ -1,0 +1,16 @@
+display:
+  collaborating_partners:
+    display_title: Collaborazioni
+    display_options:
+      use_more_text: Espandi
+      title: Collaborazioni
+      block_description: Collaborazioni
+  collaborating_partners_full:
+    display_title: Collaborazioni
+  corporate_sponsors:
+    display_title: 'Sponsor Aziendali'
+    display_options:
+      use_more_text: Espandi
+  default:
+    display_options:
+      use_more_text: Espandi

@@ -1,0 +1,22 @@
+uuid: 6a389bc0-9b6b-443a-b4ae-9d8bd8ca0f2c
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.stakeholder
+id: node.stakeholder.promote
+field_name: promote
+entity_type: node
+bundle: stakeholder
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,16 @@
+uuid: d7b1669d-1de1-4b58-bd91-33eafdeb218a
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.feeds_admin
+  module:
+    - user
+_core:
+  default_config_hash: Le73IQSaKDRSWlUdy1HGM7DwDdiusp-5qGhEFtObywA
+id: user_add_role_action.feeds_admin
+label: 'Add the Feeds Admin role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: feeds_admin

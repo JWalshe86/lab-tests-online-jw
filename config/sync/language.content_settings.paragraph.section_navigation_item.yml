@@ -1,0 +1,16 @@
+uuid: 8b91efe2-6f1e-4cae-b556-9e240d5e0db9
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.section_navigation_item
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: paragraph.section_navigation_item
+target_entity_type_id: paragraph
+target_bundle: section_navigation_item
+default_langcode: site_default
+language_alterable: true

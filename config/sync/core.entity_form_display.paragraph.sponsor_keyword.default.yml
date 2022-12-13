@@ -1,0 +1,34 @@
+uuid: e0998837-b7a7-449e-9de0-e683c8cd4aab
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.sponsor_keyword.field_impressions
+    - field.field.paragraph.sponsor_keyword.field_sponsor_keyword
+    - paragraphs.paragraphs_type.sponsor_keyword
+id: paragraph.sponsor_keyword.default
+targetEntityType: paragraph
+bundle: sponsor_keyword
+mode: default
+content:
+  field_impressions:
+    type: number
+    weight: 1
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_sponsor_keyword:
+    weight: 0
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

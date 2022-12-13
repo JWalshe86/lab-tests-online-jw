@@ -1,0 +1,38 @@
+uuid: 1e48792d-14c5-4295-a8e1-c29df8424cf1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.aacc_feeds_feed.field_client
+  module:
+    - aacc_feeds
+_core:
+  default_config_hash: 6gBnp5P6POPtoeCzILXAiuufGzt0zmuBXIq_AdmSkgM
+id: aacc_feeds_feed.aacc_feeds_feed.field_client
+field_name: field_client
+entity_type: aacc_feeds_feed
+bundle: aacc_feeds_feed
+label: Client
+description: 'Customer account that requests the feed.  Only accounts with the "feed_client" role can be selected.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: false
+    filter:
+      type: role
+      role:
+        feed_client: feed_client
+        administrator: '0'
+        content_manager: '0'
+        rest_web_service: '0'
+        feeds_admin: '0'
+    target_bundles: null
+    sort:
+      field: name
+      direction: ASC
+    auto_create: false
+field_type: entity_reference

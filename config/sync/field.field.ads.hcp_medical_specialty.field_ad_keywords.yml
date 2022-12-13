@@ -1,0 +1,28 @@
+uuid: a395f9a2-d7af-46c5-b8d2-81373a105fca
+langcode: en
+status: true
+dependencies:
+  config:
+    - aacc_ads.ads_type.hcp_medical_specialty
+    - field.storage.ads.field_ad_keywords
+    - taxonomy.vocabulary.keyword
+id: ads.hcp_medical_specialty.field_ad_keywords
+field_name: field_ad_keywords
+entity_type: ads
+bundle: hcp_medical_specialty
+label: Keywords
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      keyword: keyword
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,34 @@
+uuid: 8fcefc9d-2393-4441-857b-030e56540ef2
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.co
+    - image.style.corporate_sponsor_small
+  theme:
+    - aacc_lto_foundation
+id: corporate_sponsor
+label: 'Corporate Sponsor'
+image_style_mappings:
+  -
+    breakpoint_id: aacc_lto_foundation.xlarge
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: co
+  -
+    breakpoint_id: aacc_lto_foundation.large
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: co
+  -
+    breakpoint_id: aacc_lto_foundation.medium
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: co
+  -
+    breakpoint_id: aacc_lto_foundation.small
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: corporate_sponsor_small
+breakpoint_group: aacc_lto_foundation
+fallback_image_style: co

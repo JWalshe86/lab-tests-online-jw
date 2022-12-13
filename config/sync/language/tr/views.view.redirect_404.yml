@@ -1,0 +1,41 @@
+display:
+  default:
+    display_title: 'Ana (master)'
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Süzgeç
+          reset_button_label: Sıfırla
+          exposed_sorts_label: 'Sıralama anahtarı'
+          sort_asc_label: Artan
+          sort_desc_label: Azalan
+      pager:
+        options:
+          expose:
+            items_per_page_label: 'Sayfa başına öğe sayısı'
+            items_per_page_options_all_label: '- Tümü -'
+            offset_label: 'Başlangıç değeri'
+          tags:
+            previous: ‹‹
+            next: ››
+      fields:
+        path:
+          label: Yol
+        count:
+          label: Sayaç
+        timestamp:
+          label: 'Son erişim'
+        langcode:
+          label: Dil
+        redirect_404_operations:
+          label: İşlemler
+      filters:
+        path:
+          expose:
+            label: Yol
+        langcode:
+          expose:
+            label: Dil
+      title: 'Sabit 404 sayfaları'
+  page_1:
+    display_title: Sayfa

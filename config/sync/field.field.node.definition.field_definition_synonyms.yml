@@ -1,0 +1,19 @@
+uuid: f869a90a-c05f-4322-bc29-757f6d603394
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_definition_synonyms
+    - node.type.definition
+id: node.definition.field_definition_synonyms
+field_name: field_definition_synonyms
+entity_type: node
+bundle: definition
+label: 'Definition synonyms'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

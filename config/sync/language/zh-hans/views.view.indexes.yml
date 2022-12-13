@@ -1,0 +1,7 @@
+display:
+  conditions:
+    display_options:
+      title: '疾病列表 '
+  tests:
+    display_options:
+      title: '试验列表 '

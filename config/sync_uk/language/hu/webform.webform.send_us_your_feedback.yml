@@ -1,0 +1,4 @@
+title: 'Küldje el véleményét!'
+elements: |
+  instructions:
+    '#text': "<p>Kérjük ossza meg velünk véleményét a cikkről vagy a Lab Tests Online oldalról általában! Ezzel hozzájárul az oldal színvonalának emeléséhez. Köszönjük.</p>\n"

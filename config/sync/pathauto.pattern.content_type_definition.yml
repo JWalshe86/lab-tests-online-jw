@@ -1,0 +1,22 @@
+uuid: 85470be9-102f-479a-92c4-7ed13965d07b
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: content_type_definition
+label: 'Content Type: Definition'
+type: 'canonical_entities:node'
+pattern: '/glossary/[node:title]'
+selection_criteria:
+  80dd9c49-2aed-4402-b03a-95ef80808571:
+    id: node_type
+    bundles:
+      definition: definition
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 80dd9c49-2aed-4402-b03a-95ef80808571
+selection_logic: and
+weight: -5
+relationships: {  }

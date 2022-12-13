@@ -1,0 +1,29 @@
+uuid: e789c72b-c765-4efd-b506-47e3c1f46481
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:d0da3ef0-b356-4082-b08b-cbcb9840eaca'
+  module:
+    - block_class
+    - block_content
+  theme:
+    - aacc_lto_foundation
+third_party_settings:
+  block_class:
+    classes: footer-branding
+id: footerbranding
+theme: aacc_lto_foundation
+region: footer_section_three
+weight: -21
+provider: null
+plugin: 'block_content:d0da3ef0-b356-4082-b08b-cbcb9840eaca'
+settings:
+  id: 'block_content:d0da3ef0-b356-4082-b08b-cbcb9840eaca'
+  label: 'Footer Branding'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

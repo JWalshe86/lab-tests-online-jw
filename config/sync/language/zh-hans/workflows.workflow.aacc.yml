@@ -1,0 +1,13 @@
+type_settings:
+  states:
+    draft:
+      label: 草案
+    published:
+      label: 发布时间
+    work_in_progress:
+      label: ' 工作正在进行中'
+  transitions:
+    publish:
+      label: ' 发布'
+    work_in_progress:
+      label: ' 工作正在进行中'

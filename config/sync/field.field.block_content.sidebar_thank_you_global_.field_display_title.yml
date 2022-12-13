@@ -1,0 +1,19 @@
+uuid: 87f15712-9d5e-49db-967a-395681ccecc8
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.sidebar_thank_you_global_
+    - field.storage.block_content.field_display_title
+id: block_content.sidebar_thank_you_global_.field_display_title
+field_name: field_display_title
+entity_type: block_content
+bundle: sidebar_thank_you_global_
+label: 'Display Title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

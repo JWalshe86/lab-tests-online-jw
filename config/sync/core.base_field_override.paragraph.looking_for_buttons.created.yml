@@ -1,0 +1,18 @@
+uuid: ef1807f3-87b1-4dc7-9274-7c085b7cf27a
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.looking_for_buttons
+id: paragraph.looking_for_buttons.created
+field_name: created
+entity_type: paragraph
+bundle: looking_for_buttons
+label: 'Authored on'
+description: 'The time that the Paragraph was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

@@ -1,0 +1,21 @@
+uuid: 6415c0fb-9980-48f7-8782-7113aa186461
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: AqMCpBC65yLrfevJX0QeHFyd0dz6jjrCxym2pRuKvyY
+id: authenticated
+label: 'Authenticated user'
+weight: 1
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access shortcuts'
+  - 'access site-wide contact form'
+  - 'exclude from cookieconsent'
+  - 'post comments'
+  - 'search content'
+  - 'skip comment approval'
+  - 'view media'
+  - 'view published screening test entities'

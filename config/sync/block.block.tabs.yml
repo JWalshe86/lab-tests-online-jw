@@ -1,0 +1,25 @@
+uuid: 3871e2d7-0f4a-4946-862d-e81627f141ab
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+  theme:
+    - aacc_lto_foundation
+third_party_settings:
+  block_class:
+    classes: ''
+id: tabs
+theme: aacc_lto_foundation
+region: content
+weight: -20
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

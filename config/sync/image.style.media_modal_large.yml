@@ -1,0 +1,15 @@
+uuid: 4aa01129-1d53-42c2-835b-74396fed0f2e
+langcode: en
+status: true
+dependencies: {  }
+name: media_modal_large
+label: 'Media Modal - large'
+effects:
+  1ea7030d-82a7-4ab8-a9ed-b927f33b0aba:
+    uuid: 1ea7030d-82a7-4ab8-a9ed-b927f33b0aba
+    id: image_scale
+    weight: 1
+    data:
+      width: 800
+      height: null
+      upscale: false

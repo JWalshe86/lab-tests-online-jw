@@ -1,0 +1,18 @@
+uuid: 3a5c0720-e719-4ea8-84c6-2970769f0141
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.stakeholder_type
+id: taxonomy_term.stakeholder_type.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: stakeholder_type
+label: Changed
+description: 'The time that the term was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

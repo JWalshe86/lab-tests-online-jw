@@ -1,0 +1,22 @@
+uuid: 03137a8e-4da7-4f92-b749-672a4fc6d6d7
+langcode: en
+status: true
+dependencies:
+  module:
+    - aacc_feeds
+    - node
+_core:
+  default_config_hash: 8E2nS-ORO450C-8ciip3eKSulG3PmxDz6y02sD0E0E8
+id: aacc_feeds_feed.field_selected_conditions
+field_name: field_selected_conditions
+entity_type: aacc_feeds_feed
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

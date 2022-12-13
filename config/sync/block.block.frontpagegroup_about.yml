@@ -1,0 +1,28 @@
+uuid: f5b05f83-091a-4780-a621-3fa7e0109fe8
+langcode: en
+status: true
+dependencies:
+  config:
+    - blockgroup.block_group_content.front_page_group_about
+  module:
+    - blockgroup
+    - system
+  theme:
+    - aacc_lto_foundation
+id: frontpagegroup_about
+theme: aacc_lto_foundation
+region: content
+weight: -9
+provider: null
+plugin: 'block_group:front_page_group_about'
+settings:
+  id: 'block_group:front_page_group_about'
+  label: 'Front Page Group - About'
+  provider: blockgroup
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

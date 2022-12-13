@@ -1,0 +1,16 @@
+uuid: 525ef20b-d18e-4ca3-9ba4-65ef305770f8
+langcode: en
+status: true
+dependencies:
+  config:
+    - aacc_ads.ads_type.category
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+id: ads.category
+target_entity_type_id: ads
+target_bundle: category
+default_langcode: site_default
+language_alterable: false

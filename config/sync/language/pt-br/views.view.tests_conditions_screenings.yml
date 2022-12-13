@@ -1,0 +1,16 @@
+display:
+  top_conditions:
+    display_title: 'Principais Doenças/Estados Clínicos'
+    display_options:
+      title: 'Principais Doenças/Estados Clínicos'
+      use_more_text: 'Veja todas as Doenças'
+  top_screenings:
+    display_title: 'Principais Rastreios de Saúde'
+    display_options:
+      title: 'Principais Rastreios de Saúde'
+      use_more_text: 'Veja todos os Rastreios de Saúde'
+  top_tests:
+    display_title: 'Principais Testes'
+    display_options:
+      title: 'Principais Testes'
+      use_more_text: 'Veja todos os Testes'

@@ -1,0 +1,10 @@
+uuid: bde5f10e-bcb8-42a1-867d-ad0c64c290fc
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.frontpage_news_teaser_small
+label: 'FrontPage News Teaser (Small)'
+targetEntityType: node
+cache: true

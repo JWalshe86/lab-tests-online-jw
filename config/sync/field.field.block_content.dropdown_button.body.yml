@@ -1,0 +1,23 @@
+uuid: cb0927fa-727f-45d4-9708-ab1ff7af2238
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.dropdown_button
+    - field.storage.block_content.body
+  module:
+    - text
+id: block_content.dropdown_button.body
+field_name: body
+entity_type: block_content
+bundle: dropdown_button
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+field_type: text_with_summary

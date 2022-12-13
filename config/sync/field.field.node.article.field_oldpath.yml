@@ -1,0 +1,19 @@
+uuid: de77639c-db0c-4768-b57c-e7532a9142bc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_oldpath
+    - node.type.article
+id: node.article.field_oldpath
+field_name: field_oldpath
+entity_type: node
+bundle: article
+label: 'Old URL Path'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

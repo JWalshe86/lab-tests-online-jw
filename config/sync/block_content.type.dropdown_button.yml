@@ -1,0 +1,8 @@
+uuid: 63c0940d-1937-46aa-a92e-5b573c0928c3
+langcode: en
+status: true
+dependencies: {  }
+id: dropdown_button
+label: 'Dropdown Button'
+revision: 0
+description: 'A button that implements Foundation''s Drop-down functionality.'

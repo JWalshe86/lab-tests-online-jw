@@ -1,0 +1,20 @@
+uuid: fb94d2c0-23f5-4ede-8a06-65006e8b73c8
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: aacc
+label: AACC
+description: ''
+matchers:
+  b0365bb1-b3b3-436c-86d8-11933a8a6aea:
+    uuid: b0365bb1-b3b3-436c-86d8-11933a8a6aea
+    id: 'entity:node'
+    weight: 0
+    settings:
+      bundles: {  }
+      group_by_bundle: true
+      include_unpublished: false
+      substitution_type: canonical
+      metadata: 'by [node:author] | [node:created:medium] | [node:url:path]'

@@ -1,0 +1,57 @@
+uuid: b7a098e3-7d3d-44e5-9d99-f7c91d61f8d4
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.logo_block
+    - field.field.block_content.logo_block.field_aacc_logo_left_of_text_
+    - field.field.block_content.logo_block.field_partner_logo
+    - field.field.block_content.logo_block.field_text_above_logo
+    - field.field.block_content.logo_block.field_text_below_logo
+  module:
+    - aacc_foundation_magellan_field_format
+    - ds
+    - entity_reference_revisions
+    - text
+id: block_content.logo_block.default
+targetEntityType: block_content
+bundle: logo_block
+mode: default
+content:
+  field_partner_logo:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings:
+      aacc_foundation_magellan_field_format:
+        magellan_target_label: ''
+        magellan_target_clean: true
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    region: content
+  field_text_above_logo:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_text_below_logo:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden:
+  field_aacc_logo_left_of_text_: true
+  langcode: true

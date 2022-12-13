@@ -1,0 +1,16 @@
+uuid: 6e3bdcfe-0949-4e8b-8b96-e73395908118
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.stakeholder_type
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+id: taxonomy_term.stakeholder_type
+target_entity_type_id: taxonomy_term
+target_bundle: stakeholder_type
+default_langcode: site_default
+language_alterable: false

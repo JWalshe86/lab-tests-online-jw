@@ -1,0 +1,21 @@
+uuid: 2436cb85-7443-4517-a5b1-3592bc44950c
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_label
+    - paragraphs.paragraphs_type.fonti
+id: paragraph.fonti.field_label
+field_name: field_label
+entity_type: paragraph
+bundle: fonti
+label: Label
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: Fonti
+default_value_callback: ''
+settings: {  }
+field_type: string

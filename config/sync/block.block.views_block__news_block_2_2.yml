@@ -1,0 +1,34 @@
+uuid: d301079f-6222-4825-a9f9-111c3342d438
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.news
+  module:
+    - block_class
+    - system
+    - views
+  theme:
+    - aacc_lto_foundation
+third_party_settings:
+  block_class:
+    classes: article-listing-block
+id: views_block__news_block_2_2
+theme: aacc_lto_foundation
+region: content
+weight: -14
+provider: null
+plugin: 'views_block:news-block_2'
+settings:
+  id: 'views_block:news-block_2'
+  label: Spotlight
+  provider: views
+  label_display: visible
+  views_label: Spotlight
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: "/health-professionals\r\n/for-health-professionals"
+    negate: false
+    context_mapping: {  }

@@ -1,0 +1,16 @@
+uuid: a5c59603-02e6-4e68-9bed-8476d5c49e2e
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.dropdown_button
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: block_content.dropdown_button
+target_entity_type_id: block_content
+target_bundle: dropdown_button
+default_langcode: site_default
+language_alterable: true

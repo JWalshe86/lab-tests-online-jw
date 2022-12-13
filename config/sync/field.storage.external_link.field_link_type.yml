@@ -1,0 +1,20 @@
+uuid: fd4a046b-791b-4991-9a97-bef3cfa3b9e5
+langcode: en
+status: true
+dependencies:
+  module:
+    - external_link
+    - taxonomy
+id: external_link.field_link_type
+field_name: field_link_type
+entity_type: external_link
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

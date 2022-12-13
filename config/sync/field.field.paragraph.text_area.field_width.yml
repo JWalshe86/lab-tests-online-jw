@@ -1,0 +1,23 @@
+uuid: 107ea459-6841-4f00-94a1-22e150c38ab7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_width
+    - paragraphs.paragraphs_type.text_area
+  module:
+    - options
+id: paragraph.text_area.field_width
+field_name: field_width
+entity_type: paragraph
+bundle: text_area
+label: Width
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    value: 50
+default_value_callback: ''
+settings: {  }
+field_type: list_integer

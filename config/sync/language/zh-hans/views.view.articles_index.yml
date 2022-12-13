@@ -1,0 +1,10 @@
+display:
+  block_articles:
+    display_options:
+      pager:
+        options:
+          tags:
+            previous: '‹ 以前'
+            next: '下一个 ›'
+            first: '«  第一'
+            last: ' 持续 »'

@@ -1,0 +1,16 @@
+display:
+  conditions:
+    display_title: 'Estados fisiológicos'
+    display_options:
+      title: 'Índice de estados fisiológicos'
+  screenings:
+    display_title: 'Revisiones Generales'
+    display_options:
+      title: 'Índice de revisiones generales'
+  tests:
+    display_title: Pruebas
+    display_options:
+      title: 'Índice de pruebas'
+  definitions:
+    display_options:
+      title: Glosario

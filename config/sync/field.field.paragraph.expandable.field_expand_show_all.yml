@@ -1,0 +1,23 @@
+uuid: 93d7ba94-13e0-42a2-b5eb-f701e0c94331
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_expand_show_all
+    - paragraphs.paragraphs_type.expandable
+id: paragraph.expandable.field_expand_show_all
+field_name: field_expand_show_all
+entity_type: paragraph
+bundle: expandable
+label: 'Show All Text'
+description: 'If checked, all text entered will be displayed on the page. There will be no expand/collapse functionality. '
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: '1'
+  off_label: '0'
+field_type: boolean

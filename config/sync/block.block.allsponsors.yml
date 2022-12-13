@@ -1,0 +1,30 @@
+uuid: cfb8ba12-2407-480a-9517-5107437f2ec0
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+    - sponsor_views
+    - system
+  theme:
+    - aacc_lto_foundation
+third_party_settings:
+  block_class:
+    classes: ''
+id: allsponsors
+theme: aacc_lto_foundation
+region: content
+weight: -5
+provider: null
+plugin: sponsor_views_collection
+settings:
+  id: sponsor_views_collection
+  label: 'All Sponsors'
+  provider: sponsor_views
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: /node/52
+    negate: false
+    context_mapping: {  }

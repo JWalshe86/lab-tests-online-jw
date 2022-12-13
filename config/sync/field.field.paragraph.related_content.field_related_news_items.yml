@@ -1,0 +1,28 @@
+uuid: fb2a2486-b2fb-453d-99c3-f48d7b6bfdd3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_related_news_items
+    - node.type.news_item
+    - paragraphs.paragraphs_type.related_content
+id: paragraph.related_content.field_related_news_items
+field_name: field_related_news_items
+entity_type: paragraph
+bundle: related_content
+label: 'In the News'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      news_item: news_item
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

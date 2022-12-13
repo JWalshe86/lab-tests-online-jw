@@ -1,0 +1,10 @@
+uuid: 366dd3cb-1dcb-45bb-8785-92557588ff2e
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.featured_news_teaser_small
+label: 'Featured News Teaser (Small)'
+targetEntityType: node
+cache: true

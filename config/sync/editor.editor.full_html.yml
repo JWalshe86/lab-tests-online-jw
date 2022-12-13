@@ -1,0 +1,88 @@
+uuid: 2b0f1b59-9cf2-4e19-b631-894a24af0f1d
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.full_html
+  module:
+    - ckeditor
+    - editor_file
+third_party_settings:
+  editor_file:
+    status: true
+    scheme: public
+    directory: inline-files
+    extensions: 'txt pdf doc docx'
+_core:
+  default_config_hash: jAq0wv3d__wH6nfnnrzQsHc9a-auq-6DUANg9vjjbfM
+format: full_html
+editor: ckeditor
+settings:
+  toolbar:
+    rows:
+      -
+        -
+          name: Formatting
+          items:
+            - Bold
+            - Italic
+            - Strike
+            - Underline
+            - Superscript
+            - Subscript
+            - '-'
+            - RemoveFormat
+            - JustifyLeft
+            - JustifyCenter
+            - JustifyRight
+            - JustifyBlock
+            - Outdent
+            - Indent
+        -
+          name: Linking
+          items:
+            - DrupalLink
+            - DrupalUnlink
+            - Anchor
+        -
+          name: Lists
+          items:
+            - BulletedList
+            - NumberedList
+        -
+          name: Media
+          items:
+            - Blockquote
+            - DrupalImage
+            - Table
+            - HorizontalRule
+            - DrupalFile
+        -
+          name: 'Block Formatting'
+          items:
+            - Format
+            - Styles
+        -
+          name: Tools
+          items:
+            - Cut
+            - PasteFromWord
+            - SpecialChar
+            - ShowBlocks
+            - Source
+  plugins:
+    drupallink:
+      linkit_enabled: true
+      linkit_profile: aacc
+    stylescombo:
+      styles: "a.button|Button - Red\r\na.button.success|Button - Green Bl\r\na.button.secondary|Button - Light Gry\r\na.button.info|Button - White"
+    language:
+      language_list: un
+image_upload:
+  status: true
+  scheme: public
+  directory: inline-images
+  max_size: ''
+  max_dimensions:
+    width: null
+    height: null

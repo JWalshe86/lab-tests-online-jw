@@ -1,0 +1,16 @@
+uuid: 4fb86824-b599-4f72-ad44-fd17ae65e7c3
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.feed_client
+  module:
+    - user
+_core:
+  default_config_hash: kXZwlfG2Rks_p0eLdwIv3rqkPs9bpqOSagovCZB5Q54
+id: user_add_role_action.feed_client
+label: 'Add the Feed Client role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: feed_client

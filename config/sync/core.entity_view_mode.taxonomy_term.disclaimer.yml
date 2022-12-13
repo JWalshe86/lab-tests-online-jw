@@ -1,0 +1,10 @@
+uuid: 56ae3ebe-e79e-4fe6-95b1-2b9e2119d872
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.disclaimer
+label: Disclaimer
+targetEntityType: taxonomy_term
+cache: true

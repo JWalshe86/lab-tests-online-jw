@@ -1,0 +1,82 @@
+uuid: ecb17147-7d1d-4da3-b883-9c23deb96998
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.call_to_action.field_color
+    - field.field.paragraph.call_to_action.field_label
+    - field.field.paragraph.call_to_action.field_logo_img
+    - field.field.paragraph.call_to_action.field_logo_link
+    - field.field.paragraph.call_to_action.field_secondary_label
+    - image.style.top_news_small_desktop
+    - paragraphs.paragraphs_type.call_to_action
+  module:
+    - aacc_foundation_magellan_field_format
+    - ds
+    - image
+    - link
+id: paragraph.call_to_action.default
+targetEntityType: paragraph
+bundle: call_to_action
+mode: default
+content:
+  field_label:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_logo_img:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: top_news_small_desktop
+      image_link: ''
+    third_party_settings:
+      aacc_foundation_magellan_field_format:
+        magellan_target_label: ''
+        magellan_target_clean: true
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: image
+    region: content
+  field_logo_link:
+    type: link
+    weight: 3
+    region: content
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: true
+      url_plain: true
+      rel: '0'
+      target: '0'
+    third_party_settings:
+      aacc_foundation_magellan_field_format:
+        magellan_target_label: ''
+        magellan_target_clean: true
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+  field_secondary_label:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  field_color: true
+  revision_date: true

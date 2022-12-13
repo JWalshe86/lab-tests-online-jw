@@ -1,0 +1,23 @@
+uuid: b7e3483b-11c4-4042-8e1f-8821a38d30f6
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: taxonomy_disclaimer
+label: 'Taxonomy: Disclaimer'
+type: 'canonical_entities:taxonomy_term'
+pattern: '/disclaimers/[term:name]'
+selection_criteria:
+  1197a596-5cec-47ec-976d-ef669dfe7c2e:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      disclaimer: disclaimer
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: 1197a596-5cec-47ec-976d-ef669dfe7c2e
+selection_logic: and
+weight: -5
+relationships: {  }

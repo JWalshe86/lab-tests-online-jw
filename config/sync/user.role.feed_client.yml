@@ -1,0 +1,15 @@
+uuid: ba1653af-c953-4a32-b120-b0feda4b8a42
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - aacc_feeds
+_core:
+  default_config_hash: Rq-Ke7r0ktziiGUkjROXOrk6fo_JeOZ_ziY2m9L5PV0
+id: feed_client
+label: 'Feed Client'
+weight: 3
+is_admin: false
+permissions:
+  - 'view feed entity'

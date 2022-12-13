@@ -1,0 +1,69 @@
+label: Dosyalar
+display:
+  default:
+    display_title: 'Ana (master)'
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Süzgeç
+          reset_button_label: Sıfırla
+          exposed_sorts_label: 'Sıralama anahtarı'
+          sort_asc_label: Artan
+          sort_desc_label: Azalan
+      pager:
+        options:
+          expose:
+            items_per_page_label: 'Sayfa başına öğe sayısı'
+            items_per_page_options_all_label: '- Tümü -'
+            offset_label: 'Başlangıç değeri'
+      fields:
+        filename:
+          label: İsim
+          separator: ', '
+        filemime:
+          label: 'MIME türü'
+        filesize:
+          label: Boyut
+        status:
+          label: Durum
+          settings:
+            format_custom_false: Geçici
+            format_custom_true: Kalıcı
+        created:
+          label: 'Yüklenme tarihi'
+        count:
+          label: 'Şurada kullanılıyor'
+      filters:
+        filename:
+          expose:
+            label: 'Dosya adı'
+        filemime:
+          expose:
+            label: 'MIME türü'
+        status:
+          expose:
+            label: Durum
+      title: Dosyalar
+  page_1:
+    display_options:
+      menu:
+        title: Dosyalar
+  page_2:
+    display_options:
+      pager:
+        options:
+          expose:
+            items_per_page_label: 'Sayfa başına öğe sayısı'
+            items_per_page_options_all_label: '- Tümü -'
+            offset_label: 'Başlangıç değeri'
+      fields:
+        entity_label:
+          label: Nesne
+        type:
+          label: 'Nesne türü'
+        count:
+          label: 'Kullanım sayısı'
+      arguments:
+        fid:
+          exception:
+            title: Tümü

@@ -1,0 +1,26 @@
+uuid: 552e8c1b-fc11-4b03-b263-bd6dca55adb7
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.news
+  module:
+    - block_class
+    - views
+third_party_settings:
+  block_class:
+    classes: ''
+id: views_block__news_block_2
+theme: null
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:news-block_2'
+settings:
+  id: 'views_block:news-block_2'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility: {  }

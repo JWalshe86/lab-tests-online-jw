@@ -1,0 +1,16 @@
+uuid: 62f5d26a-c76e-4f1e-8ac2-72b9be79685f
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.looking_for_buttons
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: paragraph.looking_for_buttons
+target_entity_type_id: paragraph
+target_bundle: looking_for_buttons
+default_langcode: site_default
+language_alterable: true

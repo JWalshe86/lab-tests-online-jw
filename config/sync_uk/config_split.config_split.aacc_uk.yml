@@ -1,0 +1,30 @@
+uuid: f07b20af-86f5-41a1-b080-747baef29b4c
+langcode: en
+status: true
+dependencies: {  }
+id: aacc_uk
+label: aacc_uk
+folder: ../config/sync_uk
+module: {  }
+theme: {  }
+blacklist:
+  - config_split.config_split.aacc_uk
+  - webform.webform.show_your_support
+graylist:
+  - aacc_lto_foundation.settings
+  - aacc_multisite.config
+  - block.block.aboutlabtestsonline
+  - core.date_format.month_day_year
+  - metatag.metatag_defaults.403
+  - metatag.metatag_defaults.404
+  - metatag.metatag_defaults.front
+  - metatag.metatag_defaults.global
+  - metatag.metatag_defaults.node
+  - metatag.metatag_defaults.taxonomy_term
+  - metatag.metatag_defaults.user
+  - system.site
+  - views.view.search
+  - webform.webform.send_us_your_feedback
+graylist_dependents: true
+graylist_skip_equal: true
+weight: 0

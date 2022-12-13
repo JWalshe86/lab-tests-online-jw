@@ -1,0 +1,10 @@
+display:
+  block_articles:
+    display_options:
+      pager:
+        options:
+          tags:
+            previous: '‹  너무 이른'
+            next: '다음 것 ›'
+            first: '« 먼저'
+            last: '마지막 »'

@@ -1,0 +1,23 @@
+uuid: cfdb7eb3-8a5c-4599-b32a-6db130d85fd5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_expand_show_all
+    - paragraphs.paragraphs_type.accordion
+id: paragraph.accordion.field_expand_show_all
+field_name: field_expand_show_all
+entity_type: paragraph
+bundle: accordion
+label: 'Show All Accordions'
+description: 'If checked, all accordions entered will be displayed on the page. There will be no Show More/Show Less functionality. '
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

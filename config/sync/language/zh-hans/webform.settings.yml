@@ -1,0 +1,49 @@
+settings:
+  default_wizard_complete_label: Complete
+  default_submit_button_label: 提交
+  default_reset_button_label: Reset
+  default_wizard_prev_button_label: '< Previous Page'
+  default_wizard_next_button_label: 'Next Page >'
+  default_wizard_start_label: Start
+  default_wizard_confirmation_label: Complete
+  default_preview_next_button_label: Preview
+  default_preview_label: Preview
+  default_draft_button_label: 'Save Draft'
+  default_confirmation_back_label: 回到表格
+element:
+  default_more_title: More
+test:
+  names: |
+    first_name:
+      - 'John'
+      - 'Paul'
+      - 'Ringo'
+      - 'George'
+    last_name:
+      - 'Lennon'
+      - 'McCartney'
+      - 'Starr'
+      - 'Harrison'
+    address:
+      - '10 Main Street'
+      - '11 Brook Alley Road. APT 1'
+    zip:
+      - '11111'
+      - '12345'
+      - '12345-6789'
+    phone:
+      - '123-456-7890'
+      - '098-765-4321'
+    city:
+      - 'Springfield'
+      - 'Pleasantville'
+      - 'Hill Valley'
+    url:
+      - 'http://example.com'
+      - 'http://test.com'
+    default:
+      - 'Loremipsum'
+      - 'Oratione'
+      - 'Dixisset'
+mail:
+  default_subject: ''

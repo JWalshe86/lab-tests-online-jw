@@ -1,0 +1,29 @@
+uuid: 679abfdb-7f35-4a96-8e6c-6e0c6aba2fbf
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - block_class
+    - system
+  theme:
+    - aacc_lto_foundation
+third_party_settings:
+  block_class:
+    classes: 'top-links hide-for-medium hide-for-print'
+id: toplinks_2
+theme: aacc_lto_foundation
+region: main_navigation
+weight: 0
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'User Top Links'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

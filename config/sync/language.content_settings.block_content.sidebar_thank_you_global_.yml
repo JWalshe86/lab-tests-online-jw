@@ -1,0 +1,11 @@
+uuid: c8726695-3651-4a1e-8483-b501222f6d69
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.sidebar_thank_you_global_
+id: block_content.sidebar_thank_you_global_
+target_entity_type_id: block_content
+target_bundle: sidebar_thank_you_global_
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,13 @@
+display:
+  conditions:
+    display_options:
+      title: 'Indice delle Patologie/Condizioni Cliniche'
+  tests:
+    display_options:
+      title: 'Indice dei Test'
+  screenings:
+    display_options:
+      title: 'Indice degli Screening'
+  definitions:
+    display_options:
+      title: Glossario

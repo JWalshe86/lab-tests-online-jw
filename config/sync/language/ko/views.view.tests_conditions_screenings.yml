@@ -1,0 +1,16 @@
+display:
+  top_conditions:
+    display_title: "상위 질환\r\n"
+    display_options:
+      title: '상위 질환'
+      use_more_text: '모든 질환 보기'
+  top_screenings:
+    display_title: "상위 선별검사 및 정기검진\r\n"
+    display_options:
+      title: "상위 선별검사 및 정기검진\r\n"
+      use_more_text: '모든 선별검사 및 정기검진 보기'
+  top_tests:
+    display_title: '상위 검사'
+    display_options:
+      title: '상위 검사'
+      use_more_text: '모든 검사 보기 '

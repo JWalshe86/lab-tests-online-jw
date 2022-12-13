@@ -1,0 +1,43 @@
+uuid: 682550fe-d96b-44f3-b6e9-5f912d6b2535
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.screening_test.screening_test.field_body
+  module:
+    - aacc_screening_test_entity
+    - text
+id: screening_test.screening_test.default
+targetEntityType: screening_test
+bundle: screening_test
+mode: default
+content:
+  field_body:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  langcode:
+    type: language_select
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  user_id: true

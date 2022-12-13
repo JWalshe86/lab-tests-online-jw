@@ -1,0 +1,11 @@
+uuid: 79edce3a-2875-4b82-a5b1-e28be136a645
+langcode: en
+status: true
+dependencies:
+  config:
+    - entityqueue.entity_queue.champion_partners
+id: entity_subqueue.champion_partners
+target_entity_type_id: entity_subqueue
+target_bundle: champion_partners
+default_langcode: site_default
+language_alterable: false

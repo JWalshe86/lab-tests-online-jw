@@ -1,0 +1,11 @@
+uuid: 05ececf4-db87-4fe6-826e-7c7037962e65
+langcode: en
+status: true
+dependencies:
+  config:
+    - entityqueue.entity_queue.collaborating_partners
+id: entity_subqueue.collaborating_partners
+target_entity_type_id: entity_subqueue
+target_bundle: collaborating_partners
+default_langcode: site_default
+language_alterable: false

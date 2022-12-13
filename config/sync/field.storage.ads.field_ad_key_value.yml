@@ -1,0 +1,21 @@
+uuid: a04cb298-96d1-4b64-b7a1-16222f27b900
+langcode: en
+status: true
+dependencies:
+  module:
+    - aacc_ads
+id: ads.field_ad_key_value
+field_name: field_ad_key_value
+entity_type: ads
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

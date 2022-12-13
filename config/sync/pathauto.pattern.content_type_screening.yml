@@ -1,0 +1,22 @@
+uuid: 8b6faa02-ad0f-4f8a-8f1b-b0d3acc33f26
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: content_type_screening
+label: 'Content Type: Screening'
+type: 'canonical_entities:node'
+pattern: '/screenings/[node:title]'
+selection_criteria:
+  c1d4dab4-22e9-4ab8-aefe-c765b8efa23f:
+    id: node_type
+    bundles:
+      screening: screening
+    negate: false
+    context_mapping:
+      node: node
+    uuid: c1d4dab4-22e9-4ab8-aefe-c765b8efa23f
+selection_logic: and
+weight: -5
+relationships: {  }

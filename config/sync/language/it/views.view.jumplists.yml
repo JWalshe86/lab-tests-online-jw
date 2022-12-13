@@ -1,0 +1,13 @@
+display:
+  jumplist_conditions:
+    display_title: 'Patologie/Condizioni Cliniche '
+    display_options:
+      title: 'Patologie/Condizioni Cliniche '
+  jumplist_screenings:
+    display_title: Screening
+    display_options:
+      title: Screening
+  jumplist_tests:
+    display_title: Test
+    display_options:
+      title: Test

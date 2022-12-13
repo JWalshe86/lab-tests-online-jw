@@ -1,0 +1,16 @@
+uuid: c93f834b-2d7f-4666-91ec-ccd4777419bf
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.expandable_button
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: paragraph.expandable_button
+target_entity_type_id: paragraph
+target_bundle: expandable_button
+default_langcode: site_default
+language_alterable: true

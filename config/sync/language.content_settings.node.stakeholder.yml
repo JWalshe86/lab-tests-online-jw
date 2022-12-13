@@ -1,0 +1,16 @@
+uuid: 313cf85a-9e3d-4b55-8ad1-66bbe55a4cdd
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.stakeholder
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: node.stakeholder
+target_entity_type_id: node
+target_bundle: stakeholder
+default_langcode: site_default
+language_alterable: true

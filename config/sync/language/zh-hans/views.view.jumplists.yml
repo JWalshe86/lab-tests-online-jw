@@ -1,0 +1,13 @@
+display:
+  jumplist_conditions:
+    display_title: 疾病/症状
+    display_options:
+      title: 疾病/症状
+  jumplist_screenings:
+    display_title: 筛查
+    display_options:
+      title: 筛查
+  jumplist_tests:
+    display_title: 试验
+    display_options:
+      title: 试验

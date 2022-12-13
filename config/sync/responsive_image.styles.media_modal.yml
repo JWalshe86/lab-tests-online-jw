@@ -1,0 +1,34 @@
+uuid: e9945714-163f-491c-9cbc-5954b12a4757
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.media_modal_large
+    - image.style.media_modal_small
+  theme:
+    - aacc_lto_foundation
+id: media_modal
+label: 'Media Modal'
+image_style_mappings:
+  -
+    breakpoint_id: aacc_lto_foundation.xlarge
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: media_modal_large
+  -
+    breakpoint_id: aacc_lto_foundation.large
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: media_modal_large
+  -
+    breakpoint_id: aacc_lto_foundation.medium
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: media_modal_large
+  -
+    breakpoint_id: aacc_lto_foundation.small
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: media_modal_small
+breakpoint_group: aacc_lto_foundation
+fallback_image_style: media_modal_large

@@ -1,0 +1,9 @@
+title: Contato
+settings:
+  confirmation_message: 'Sua mensagem foi enviada.'
+handlers:
+  email_confirmation:
+    settings:
+      from_name: padrão
+  email_notification:
+    label: 'Notificação de email'

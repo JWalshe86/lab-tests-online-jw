@@ -1,0 +1,6 @@
+uuid: 224cdd97-0944-4211-a3df-246a8ea46073
+langcode: en
+status: true
+dependencies: {  }
+id: front_page_group_about
+label: 'Front Page Group - About'

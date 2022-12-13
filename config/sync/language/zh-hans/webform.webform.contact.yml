@@ -1,0 +1,14 @@
+title: Contact
+elements: "name:\r\n  '#title': 'Your Name'\r\n  '#type': textfield\r\n  '#required': true\r\n  '#default_value': '[webform-authenticated-user:display-name]'\r\nemail:\r\n  '#title': 'Your Email'\r\n  '#type': email\r\n  '#required': true\r\n  '#default_value': '[webform-authenticated-user:mail]'\r\nsubject:\r\n  '#title': Subject\r\n  '#type': textfield\r\n  '#required': true\r\n  '#test': 'Testing contact webform from [site:name]'\r\nmessage:\r\n  '#title': Message\r\n  '#type': textarea\r\n  '#required': true\r\n  '#test': 'Please ignore this email.'\r\ncontact_recaptcha:\r\n  '#type': captcha\r\n  '#captcha_type': recaptcha/reCAPTCHA\r\nactions:\r\n  '#type': webform_actions\r\n  '#title': 'Submit button(s)'\r\n  '#submit__label': 'Send message'\r\n"
+settings:
+  confirmation_message: 'Your message has been sent.'
+handlers:
+  email_confirmation:
+    settings:
+      from_name: default
+      subject: '[webform_submission:values:subject:value]'
+  email_notification:
+    label: 'Email notification'
+    settings:
+      from_name: '[webform_submission:values:name:value]'
+      subject: '[webform_submission:values:subject:value]'

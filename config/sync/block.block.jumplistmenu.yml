@@ -1,0 +1,24 @@
+uuid: e6f3c97b-70d4-4d4a-ad74-de42b1afd57a
+langcode: en
+status: true
+dependencies:
+  module:
+    - aacc_jumplist_menu
+    - block_class
+  theme:
+    - aacc_lto_foundation
+third_party_settings:
+  block_class:
+    classes: main-menu
+id: jumplistmenu
+theme: aacc_lto_foundation
+region: main_navigation
+weight: 0
+provider: null
+plugin: jumplist_menu
+settings:
+  id: jumplist_menu
+  label: 'Jumplist Menu'
+  provider: aacc_jumplist_menu
+  label_display: '0'
+visibility: {  }

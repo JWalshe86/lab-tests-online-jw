@@ -1,0 +1,20 @@
+uuid: a3d405b3-4d01-46ea-a03e-0b1dfd3a9f5f
+langcode: en
+status: true
+dependencies:
+  module:
+    - aacc_feeds
+    - node
+id: node.field_feed_access_id
+field_name: field_feed_access_id
+entity_type: node
+type: entity_reference
+settings:
+  target_type: aacc_feeds_feed
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

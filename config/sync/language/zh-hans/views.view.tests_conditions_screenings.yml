@@ -1,0 +1,20 @@
+display:
+  top_conditions:
+    display_title: 常见疾病
+    display_options:
+      title: 常见疾病
+      use_more_text: 所有疾病列表
+  top_screenings:
+    display_title: 常见健康筛查
+    display_options:
+      title: 常见健康筛查
+      use_more_text: 所有健康筛查列表
+  top_tests:
+    display_title: 常见检验
+    display_options:
+      title: 常见检验
+      use_more_text: 所有检验列表
+  page_1:
+    display_title: '试验列表 '
+  page_2:
+    display_title: '疾病列表 '

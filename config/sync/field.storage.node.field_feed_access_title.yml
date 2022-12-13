@@ -1,0 +1,20 @@
+uuid: 9893b8e1-1bb2-451e-871f-dae4e3311166
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_feed_access_title
+field_name: field_feed_access_title
+entity_type: node
+type: text
+settings:
+  max_length: 255
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

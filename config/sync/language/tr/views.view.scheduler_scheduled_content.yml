@@ -1,0 +1,56 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Süzgeç
+          reset_button_label: Sıfırla
+          exposed_sorts_label: 'Sıralama anahtarı'
+          sort_asc_label: Artan
+          sort_desc_label: Azalan
+      fields:
+        title:
+          label: Başlık
+        type:
+          separator: ', '
+        name:
+          label: Yazar
+        status:
+          label: Durum
+          settings:
+            format_custom_true: Yayında
+            format_custom_false: 'Yayında değil'
+        operations:
+          label: İşlemler
+      filters:
+        status:
+          expose:
+            label: Durum
+          group_info:
+            group_items:
+              1:
+                title: Yayında
+              2:
+                title: 'Yayında değil'
+        type:
+          expose:
+            label: Tür
+        title:
+          expose:
+            label: Başlık
+        langcode:
+          expose:
+            label: Dil
+    display_title: 'Ana (master)'
+  overview:
+    display_options:
+      tab_options:
+        title: İçerik
+  user_page:
+    display_options:
+      tab_options:
+        title: İçerik
+      arguments:
+        uid:
+          exception:
+            title: Tümü

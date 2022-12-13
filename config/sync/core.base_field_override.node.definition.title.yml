@@ -1,0 +1,18 @@
+uuid: 08710a98-d2fc-4eab-b00e-acd9c0779020
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.definition
+id: node.definition.title
+field_name: title
+entity_type: node
+bundle: definition
+label: Term
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,25 @@
+uuid: 30a712fa-0624-4ed3-b2ff-7fce49a1e50e
+langcode: en
+status: true
+dependencies:
+  config:
+    - aacc_ads.ads_type.condition
+    - field.storage.ads.field_ad_sort_order
+id: ads.condition.field_ad_sort_order
+field_name: field_ad_sort_order
+entity_type: ads
+bundle: condition
+label: 'Sort Order'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

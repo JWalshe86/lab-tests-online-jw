@@ -1,0 +1,139 @@
+uuid: 279f1bcc-4fe8-4d47-bb47-fb96b8d60a60
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.screening.body
+    - field.field.node.screening.field_exclude_from_search
+    - field.field.node.screening.field_keywords
+    - field.field.node.screening.field_legacy_content
+    - field.field.node.screening.field_legacy_istargethcp
+    - field.field.node.screening.field_meta_tags
+    - field.field.node.screening.field_migration_notes
+    - field.field.node.screening.field_migration_status
+    - field.field.node.screening.field_misspellings
+    - field.field.node.screening.field_oldpath
+    - field.field.node.screening.field_reviewed
+    - field.field.node.screening.field_subcontent
+    - node.type.screening
+  module:
+    - aacc_foundation_magellan_field_format
+    - datetime
+    - ds
+    - entity_reference_revisions
+    - field_group
+    - text
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - group_review_information
+        - body
+        - field_reviewed
+        - field_subcontent
+        - revision_date
+  field_group:
+    group_review_information:
+      children:
+        - field_reviewed
+        - revision_date
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: review-info
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Review Information'
+      region: ds_content
+id: node.screening.full
+targetEntityType: node
+bundle: screening
+mode: full
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: ds_content
+  field_reviewed:
+    weight: 2
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: month_day_year
+    third_party_settings:
+      aacc_foundation_magellan_field_format:
+        magellan_target_label: ''
+        magellan_target_clean: true
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: datetime_default
+    region: ds_content
+  field_subcontent:
+    weight: 2
+    label: hidden
+    settings:
+      view_mode: section_nav_test
+      link: ''
+    third_party_settings:
+      aacc_foundation_magellan_field_format:
+        magellan_target_label: label
+        magellan_target_clean: true
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: entity_reference_revisions_entity_view
+    region: ds_content
+  revision_date:
+    weight: 3
+    region: ds_content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  content_moderation_control: true
+  field_exclude_from_search: true
+  field_keywords: true
+  field_legacy_content: true
+  field_legacy_istargethcp: true
+  field_meta_tags: true
+  field_migration_notes: true
+  field_migration_status: true
+  field_misspellings: true
+  field_oldpath: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

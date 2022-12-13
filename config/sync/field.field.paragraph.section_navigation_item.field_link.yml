@@ -1,0 +1,24 @@
+uuid: 777037e6-652e-4b3f-b18d-85b2db99bd31
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_link
+    - paragraphs.paragraphs_type.section_navigation_item
+  module:
+    - link
+id: paragraph.section_navigation_item.field_link
+field_name: field_link
+entity_type: paragraph
+bundle: section_navigation_item
+label: Link
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 5
+  title_predefined: "none|None\r\narrow-1|Chevron\r\narrow-2|Arrow\r\naward|Award\r\nbook|Book\r\ndata|Data\r\ndiploma|Diploma\r\ndocument|Document\r\nfacebook|Facebook\r\nglobe|Globe\r\nglobe-2|Globe 2\r\ngoogle-plus|Google Plus\r\nhealth-chart|Health Chart\r\ninfo|Info\r\nlanguage|Language\r\nmail|Mail\r\nplus-1|Plus in Circle\r\nplus-2|Plus\r\nprint|Printer\r\nsearch|Search\r\nshare|Share\r\ntwitter|Twitter\r\nvideo|Video"
+field_type: link

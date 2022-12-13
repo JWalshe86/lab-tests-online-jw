@@ -1,0 +1,15 @@
+uuid: 74d75e33-4a71-4cfb-af71-5b1c4b89686a
+langcode: en
+status: true
+dependencies: {  }
+name: news_large_banner
+label: 'News Large Banner'
+effects:
+  b9069660-b31b-42e6-9531-699cc77f3672:
+    uuid: b9069660-b31b-42e6-9531-699cc77f3672
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 800
+      height: 490
+      anchor: center-center

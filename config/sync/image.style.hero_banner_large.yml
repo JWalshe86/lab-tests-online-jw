@@ -1,0 +1,15 @@
+uuid: 733c9ed9-28cb-40ea-a586-9c3197adf43f
+langcode: en
+status: true
+dependencies: {  }
+name: hero_banner_large
+label: 'Hero Banner - Large'
+effects:
+  23c6b7e0-083d-43e4-ba14-36efaf612afd:
+    uuid: 23c6b7e0-083d-43e4-ba14-36efaf612afd
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1200
+      height: 400
+      anchor: center-center

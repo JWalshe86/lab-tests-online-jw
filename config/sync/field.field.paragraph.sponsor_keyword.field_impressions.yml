@@ -1,0 +1,23 @@
+uuid: 70837f70-102e-4470-a31d-e82307783251
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_impressions
+    - paragraphs.paragraphs_type.sponsor_keyword
+id: paragraph.sponsor_keyword.field_impressions
+field_name: field_impressions
+entity_type: paragraph
+bundle: sponsor_keyword
+label: Impressions
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -1,0 +1,10 @@
+display:
+  block_articles:
+    display_options:
+      pager:
+        options:
+          tags:
+            previous: '‹ Anterior'
+            next: 'Siguiente ›'
+            first: '« Primero'
+            last: 'Último »'

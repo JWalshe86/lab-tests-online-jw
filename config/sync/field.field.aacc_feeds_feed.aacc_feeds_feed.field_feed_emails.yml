@@ -1,0 +1,20 @@
+uuid: 4418392c-9255-4666-b1f3-90d8b2e6b1a9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.aacc_feeds_feed.field_feed_emails
+  module:
+    - aacc_feeds
+id: aacc_feeds_feed.aacc_feeds_feed.field_feed_emails
+field_name: field_feed_emails
+entity_type: aacc_feeds_feed
+bundle: aacc_feeds_feed
+label: 'Feed Emails'
+description: 'Emails should be entered one per line.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

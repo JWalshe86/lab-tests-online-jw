@@ -1,0 +1,8 @@
+display:
+  collaborating_partners:
+    display_title: 'Együttműködő partnerek'
+    display_options:
+      title: 'Együttműködő partnerek'
+      block_description: 'Együttműködő partnerek'
+  corporate_sponsors:
+    display_title: Támogatók

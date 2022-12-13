@@ -1,0 +1,22 @@
+display:
+  page_1:
+    display_title: Test
+  page_2:
+    display_title: 'Condizioni patologiche'
+  page_3:
+    display_title: Screening
+  top_conditions:
+    display_title: 'Patologie/Condizioni Cliniche in Evidenza'
+    display_options:
+      title: 'Patologie/Condizioni Cliniche in Evidenza'
+      use_more_text: 'Vedi tutte le Patologie/Condizioni Cliniche'
+  top_screenings:
+    display_title: 'Vedi tutti gli Screening'
+    display_options:
+      title: 'Vedi tutti gli Screening'
+      use_more_text: 'Vedi tutti gli Screening'
+  top_tests:
+    display_title: 'Test in Evidenza'
+    display_options:
+      title: 'Test in Evidenza'
+      use_more_text: 'Vedi tutti i Test'

@@ -1,0 +1,30 @@
+uuid: 185d4e46-b8ba-4a0b-a3d7-8123f07a294e
+langcode: en
+status: true
+dependencies:
+  module:
+    - aacc_feeds
+title: 'Daily Cron Job for notifying Feed clients about content changes'
+id: daily_feed_mail_cron_job
+weight: 0
+module: aacc_feeds
+callback: aacc_feeds_daily_feed_mail_cron_job
+scheduler:
+  id: crontab
+  configuration:
+    rules:
+      - '5 23 * * *'
+    catch_up: 0
+launcher:
+  id: serial
+  configuration:
+    timeouts:
+      lock_timeout: 3600
+    launcher:
+      thread: 0
+logger:
+  id: database
+  configuration:
+    method: '3'
+    expire: 1209600
+    retain: 1000

@@ -1,0 +1,43 @@
+title: Contact
+elements: |
+  name:
+    '#title': 'Your Name'
+    '#type': textfield
+    '#required': true
+    '#default_value': '[webform-authenticated-user:display-name]'
+  email:
+    '#title': 'Your Email'
+    '#type': email
+    '#required': true
+    '#default_value': '[webform-authenticated-user:mail]'
+  subject:
+    '#title': Subject
+    '#type': textfield
+    '#required': true
+    '#test': 'Testing contact webform from [site:name]'
+  message:
+    '#title': Message
+    '#type': textarea
+    '#required': true
+    '#test': 'Please ignore this email.'
+  contact_recaptcha:
+    '#type': captcha
+    '#captcha_type': recaptcha/reCAPTCHA
+  actions:
+    '#type': webform_actions
+    '#title': 'Submit button(s)'
+    '#submit__label': 'Send message'
+settings:
+  confirmation_message: 'Your message has been sent.'
+handlers:
+  email_confirmation:
+    settings:
+      from_name: default
+      subject: '[webform_submission:values:subject:value]'
+      body: '[webform_submission:values:message:value]'
+  email_notification:
+    label: 'Email notification'
+    settings:
+      from_name: '[webform_submission:values:name:value]'
+      subject: '[webform_submission:values:subject:value]'
+      body: '[webform_submission:values:message:value]'

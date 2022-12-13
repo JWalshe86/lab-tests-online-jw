@@ -1,0 +1,21 @@
+uuid: df3dda09-49af-49c8-9e59-798d208bf084
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_reviewed
+    - node.type.person
+  module:
+    - datetime
+id: node.person.field_reviewed
+field_name: field_reviewed
+entity_type: node
+bundle: person
+label: 'Date Reviewed'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

@@ -1,0 +1,18 @@
+uuid: 5b76ffd8-ebf7-4e7e-a5d1-e4829de3badd
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.video
+id: media.video.revision_log_message
+field_name: revision_log_message
+entity_type: media
+bundle: video
+label: 'Revision Log'
+description: 'The log entry explaining the changes in this revision.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

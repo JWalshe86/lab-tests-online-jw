@@ -1,0 +1,102 @@
+uuid: 39728ed1-e18a-4040-a3f2-619557e85d58
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_index
+    - field.field.node.article.body
+    - field.field.node.article.field_cover_image
+    - field.field.node.article.field_exclude_from_search
+    - field.field.node.article.field_image_caption
+    - field.field.node.article.field_keywords
+    - field.field.node.article.field_legacy_istargethcp
+    - field.field.node.article.field_meta_tags
+    - field.field.node.article.field_migration_notes
+    - field.field.node.article.field_migration_status
+    - field.field.node.article.field_oldpath
+    - field.field.node.article.field_reviewed
+    - field.field.node.article.field_subcontent
+    - node.type.article
+  module:
+    - ds
+    - text
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - node_title
+        - body
+        - node_link
+    fields:
+      node_link:
+        plugin_id: node_link
+        weight: 2
+        label: hidden
+        formatter: default
+      node_title:
+        plugin_id: node_title
+        weight: 0
+        label: hidden
+        formatter: default
+        settings:
+          link: true
+          wrapper: h2
+          class: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+_core:
+  default_config_hash: ki1ATuEA58FJfC-CyC7MNecYRGndwgO4nrFKaRGkOVA
+id: node.article.search_index
+targetEntityType: node
+bundle: article
+mode: search_index
+content:
+  body:
+    type: text_summary_or_trimmed
+    weight: 1
+    settings:
+      trim_length: 350
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    label: hidden
+    region: ds_content
+hidden:
+  content_moderation_control: true
+  field_cover_image: true
+  field_exclude_from_search: true
+  field_image_caption: true
+  field_keywords: true
+  field_legacy_istargethcp: true
+  field_meta_tags: true
+  field_migration_notes: true
+  field_migration_status: true
+  field_oldpath: true
+  field_reviewed: true
+  field_subcontent: true
+  langcode: true
+  links: true

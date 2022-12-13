@@ -1,0 +1,29 @@
+uuid: a5976988-5491-421a-9443-d7459e61da9e
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:logo_block:e6aec3b8-d22b-4f86-b7a2-789be8ec2bec'
+  module:
+    - block_class
+    - block_content
+  theme:
+    - aacc_lto_foundation
+third_party_settings:
+  block_class:
+    classes: secondary-header-logo
+id: secondaryheaderlogo
+theme: aacc_lto_foundation
+region: header_first
+weight: 0
+provider: null
+plugin: 'block_content:e6aec3b8-d22b-4f86-b7a2-789be8ec2bec'
+settings:
+  id: 'block_content:e6aec3b8-d22b-4f86-b7a2-789be8ec2bec'
+  label: 'Secondary Header Logo'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

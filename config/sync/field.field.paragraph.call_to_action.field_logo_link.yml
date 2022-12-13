@@ -1,0 +1,24 @@
+uuid: b13b70de-e81f-4e78-b4ea-a865cf7f5576
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_logo_link
+    - paragraphs.paragraphs_type.call_to_action
+  module:
+    - link
+id: paragraph.call_to_action.field_logo_link
+field_name: field_logo_link
+entity_type: paragraph
+bundle: call_to_action
+label: 'Logo Link'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+  title_predefined: ''
+field_type: link

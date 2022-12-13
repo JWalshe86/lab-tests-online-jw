@@ -1,0 +1,23 @@
+uuid: 49a74b5a-034c-4bc9-a381-3df7b39a8cdc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_expand_show_all
+    - paragraphs.paragraphs_type.screening_tests
+id: paragraph.screening_tests.field_expand_show_all
+field_name: field_expand_show_all
+entity_type: paragraph
+bundle: screening_tests
+label: 'Show All Screening Tests'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

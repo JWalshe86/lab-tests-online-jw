@@ -1,0 +1,35 @@
+uuid: 3e51acfb-4e5b-45e2-82e9-5fe08e9414e9
+langcode: en
+status: false
+dependencies:
+  content:
+    - 'block_content:section_navigation:724fc9ac-a744-4dde-a178-b6c51266efd6'
+  module:
+    - block_class
+    - block_content
+    - system
+  theme:
+    - aacc_lto_foundation
+third_party_settings:
+  block_class:
+    classes: 'medium-12 large-9 columns learn-more-links hide-for-print'
+id: learnmorelinks
+theme: aacc_lto_foundation
+region: meta_header
+weight: -21
+provider: null
+plugin: 'block_content:724fc9ac-a744-4dde-a178-b6c51266efd6'
+settings:
+  id: 'block_content:724fc9ac-a744-4dde-a178-b6c51266efd6'
+  label: 'Learn More Links'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

@@ -1,0 +1,38 @@
+uuid: 410196f4-05d4-42a0-96fe-8a0352cc0644
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.expandable.field_body
+    - field.field.paragraph.expandable.field_expand_show_all
+    - field.field.paragraph.expandable.field_hide_teaser
+    - field.field.paragraph.expandable.field_label
+    - field.field.paragraph.expandable.field_sub_content_type
+    - paragraphs.paragraphs_type.expandable
+  module:
+    - text
+id: paragraph.expandable.default
+targetEntityType: paragraph
+bundle: expandable
+mode: default
+content:
+  field_body:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_label:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  field_expand_show_all: true
+  field_hide_teaser: true
+  field_sub_content_type: true
+  revision_date: true

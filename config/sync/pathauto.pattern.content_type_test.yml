@@ -1,0 +1,22 @@
+uuid: 096a2ea4-c3be-48ff-b62c-fad70a20bebd
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: content_type_test
+label: 'Content Type: Test'
+type: 'canonical_entities:node'
+pattern: '/tests/[node:title]'
+selection_criteria:
+  1d0ea119-5269-4912-8b26-51aeff847070:
+    id: node_type
+    bundles:
+      test: test
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 1d0ea119-5269-4912-8b26-51aeff847070
+selection_logic: and
+weight: -5
+relationships: {  }

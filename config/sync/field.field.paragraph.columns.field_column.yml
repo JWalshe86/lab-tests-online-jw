@@ -1,0 +1,93 @@
+uuid: 59586dd6-344c-4e18-b293-fac366f8eb3e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_column
+    - paragraphs.paragraphs_type.column
+    - paragraphs.paragraphs_type.columns
+    - paragraphs.paragraphs_type.navigation
+  module:
+    - entity_reference_revisions
+id: paragraph.columns.field_column
+field_name: field_column
+entity_type: paragraph
+bundle: columns
+label: Column
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      column: column
+      navigation: navigation
+    target_bundles_drag_drop:
+      columns:
+        weight: 12
+        enabled: false
+      accordion:
+        weight: 13
+        enabled: false
+      accordion_item:
+        weight: 14
+        enabled: false
+      column:
+        enabled: true
+        weight: 15
+      expandable:
+        weight: 16
+        enabled: false
+      grid:
+        weight: 17
+        enabled: false
+      media_gallery:
+        weight: 18
+        enabled: false
+      navigation:
+        enabled: true
+        weight: 19
+      section_navigation_item:
+        weight: 20
+        enabled: false
+      text_area:
+        weight: 21
+        enabled: false
+      expandable_button:
+        weight: 27
+        enabled: false
+      fonti:
+        weight: 28
+        enabled: false
+      il_campione_da_analizzare:
+        weight: 30
+        enabled: false
+      in_sintesi:
+        weight: 31
+        enabled: false
+      logo:
+        weight: 32
+        enabled: false
+      looking_for_buttons:
+        weight: 33
+        enabled: false
+      reference_range_item:
+        weight: 36
+        enabled: false
+      related_content:
+        weight: 37
+        enabled: false
+      related_screening_item:
+        weight: 38
+        enabled: false
+      screening_tests:
+        weight: 39
+        enabled: false
+      sponsor_keyword:
+        weight: 41
+        enabled: false
+field_type: entity_reference_revisions

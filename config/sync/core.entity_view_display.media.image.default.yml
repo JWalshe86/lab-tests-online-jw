@@ -1,0 +1,91 @@
+uuid: 5305256a-caae-4319-b06c-183de34956d9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.image.field_cap_ack
+    - field.field.media.image.field_image
+    - media.type.image
+  module:
+    - aacc_foundation_magellan_field_format
+    - ds
+    - image
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - name
+        - created
+        - field_image
+        - field_cap_ack
+id: media.image.default
+targetEntityType: media
+bundle: image
+mode: default
+content:
+  created:
+    label: hidden
+    type: timestamp
+    weight: 0
+    settings:
+      date_format: medium
+      custom_date_format: ''
+      timezone: ''
+    third_party_settings: {  }
+    region: ds_content
+  field_cap_ack:
+    weight: 3
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: ds_content
+  field_image:
+    weight: 2
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: ds_content
+  name:
+    type: string
+    weight: 0
+    region: ds_content
+    label: hidden
+    settings:
+      link_to_entity: true
+    third_party_settings:
+      aacc_foundation_magellan_field_format:
+        magellan_target_label: ''
+        magellan_target_clean: true
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+hidden:
+  langcode: true
+  revision_date: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

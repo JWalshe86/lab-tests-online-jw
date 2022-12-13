@@ -1,0 +1,19 @@
+uuid: 93780a64-5622-41bb-aa4f-0426e850a121
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_label
+    - paragraphs.paragraphs_type.media_gallery
+id: paragraph.media_gallery.field_label
+field_name: field_label
+entity_type: paragraph
+bundle: media_gallery
+label: Label
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

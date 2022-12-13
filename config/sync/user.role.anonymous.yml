@@ -1,0 +1,19 @@
+uuid: 4721ebae-19db-46a2-a334-381de5ec4cf4
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: bXx4tlgLz50a33w3ApSuYhYoXbeJntswttI4aHtutkI
+id: anonymous
+label: 'Anonymous user'
+weight: 0
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access site-wide contact form'
+  - 'search content'
+  - 'view media'
+  - 'view published announcement entities'
+  - 'view published screening test entities'
+  - 'view published sitewide alert entities'

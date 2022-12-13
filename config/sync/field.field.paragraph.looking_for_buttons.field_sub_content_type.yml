@@ -1,0 +1,29 @@
+uuid: a3a4bcb5-6e1a-4189-a85a-61055409f64d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_sub_content_type
+    - paragraphs.paragraphs_type.looking_for_buttons
+    - taxonomy.vocabulary.sub_content_types
+id: paragraph.looking_for_buttons.field_sub_content_type
+field_name: field_sub_content_type
+entity_type: paragraph
+bundle: looking_for_buttons
+label: 'Sub-Content Type'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      sub_content_types: sub_content_types
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

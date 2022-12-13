@@ -1,0 +1,35 @@
+uuid: a23224ff-7809-4b49-b3c9-2703bb288227
+langcode: en
+status: false
+dependencies:
+  content:
+    - 'block_content:basic:a2fce93d-2240-49fc-ba90-7c164c61c6f0'
+  module:
+    - block_class
+    - block_content
+    - system
+  theme:
+    - aacc_lto_foundation
+third_party_settings:
+  block_class:
+    classes: block-about
+id: aboutlabtestsonline
+theme: aacc_lto_foundation
+region: meta_header
+weight: -20
+provider: null
+plugin: 'block_content:a2fce93d-2240-49fc-ba90-7c164c61c6f0'
+settings:
+  id: 'block_content:a2fce93d-2240-49fc-ba90-7c164c61c6f0'
+  label: 'About Lab Tests Online-UK'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

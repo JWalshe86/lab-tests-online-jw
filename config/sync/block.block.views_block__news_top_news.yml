@@ -1,0 +1,42 @@
+uuid: 3905f234-6441-4e74-a4f7-56730afb7c57
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.news
+  module:
+    - block_class
+    - ctools
+    - system
+    - views
+  theme:
+    - aacc_lto_foundation
+third_party_settings:
+  block_class:
+    classes: homepage-top-news
+id: views_block__news_top_news
+theme: aacc_lto_foundation
+region: content
+weight: -16
+provider: null
+plugin: 'views_block:news-top_news'
+settings:
+  id: 'views_block:news-top_news'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      page: page
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

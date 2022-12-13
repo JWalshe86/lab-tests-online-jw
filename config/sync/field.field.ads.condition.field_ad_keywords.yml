@@ -1,0 +1,28 @@
+uuid: dfc43ceb-8f31-4848-bfd4-84f9ec47d1af
+langcode: en
+status: true
+dependencies:
+  config:
+    - aacc_ads.ads_type.condition
+    - field.storage.ads.field_ad_keywords
+    - taxonomy.vocabulary.keyword
+id: ads.condition.field_ad_keywords
+field_name: field_ad_keywords
+entity_type: ads
+bundle: condition
+label: Keywords
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      keyword: keyword
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

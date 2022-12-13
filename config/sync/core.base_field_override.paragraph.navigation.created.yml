@@ -1,0 +1,18 @@
+uuid: b2fb37f4-ce07-4fa8-b1fc-76577542f831
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.navigation
+id: paragraph.navigation.created
+field_name: created
+entity_type: paragraph
+bundle: navigation
+label: 'Authored on'
+description: 'The time that the Paragraph was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

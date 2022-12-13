@@ -1,0 +1,19 @@
+uuid: d8261f91-f744-4153-aae4-02f372e4bec1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_label
+    - paragraphs.paragraphs_type.columns
+id: paragraph.columns.field_label
+field_name: field_label
+entity_type: paragraph
+bundle: columns
+label: Label
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

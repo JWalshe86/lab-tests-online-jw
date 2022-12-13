@@ -1,0 +1,13 @@
+display:
+  jumplist_tests:
+    display_options:
+      title: Pruebas
+    display_title: Pruebas
+  jumplist_conditions:
+    display_title: 'Estados fisiológicos y enfermedades'
+    display_options:
+      title: 'Estados fisiológicos y enfermedades'
+  jumplist_screenings:
+    display_options:
+      title: 'Revisión general'
+    display_title: 'Revisión general'

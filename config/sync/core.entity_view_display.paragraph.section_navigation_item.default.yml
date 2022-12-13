@@ -1,0 +1,59 @@
+uuid: a2e36b04-eabe-41e1-8625-f89f7754a31c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.section_navigation_item.field_color
+    - field.field.paragraph.section_navigation_item.field_label
+    - field.field.paragraph.section_navigation_item.field_link
+    - field.field.paragraph.section_navigation_item.field_secondary_label
+    - paragraphs.paragraphs_type.section_navigation_item
+  module:
+    - aacc_foundation_magellan_field_format
+    - ds
+    - linkicon
+id: paragraph.section_navigation_item.default
+targetEntityType: paragraph
+bundle: section_navigation_item
+mode: default
+content:
+  field_link:
+    weight: 0
+    label: hidden
+    settings:
+      linkicon_prefix: icon
+      linkicon_wrapper_class: ''
+      linkicon_style: ''
+      linkicon_color: ''
+      linkicon_maxlength: 60
+      linkicon_global_title: '[paragraph:field_label:value]'
+      linkicon_position: ''
+      linkicon_size: ''
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+      linkicon_link: false
+      linkicon_load: false
+      linkicon_vertical: false
+      linkicon_tooltip: false
+      linkicon_no_text: false
+      linkicon_bundle: ''
+      trim_length: 80
+    third_party_settings:
+      aacc_foundation_magellan_field_format:
+        magellan_target_label: ''
+        magellan_target_clean: true
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: linkicon
+    region: content
+hidden:
+  field_color: true
+  field_label: true
+  field_secondary_label: true

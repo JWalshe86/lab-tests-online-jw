@@ -1,0 +1,8 @@
+display:
+  collaborating_partners:
+    display_title: '협력 파트너'
+    display_options:
+      title: '협력 파트너'
+      block_description: '협력 파트너'
+  corporate_sponsors:
+    display_title: 후원

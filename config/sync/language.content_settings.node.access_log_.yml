@@ -1,0 +1,11 @@
+uuid: 398b1ab7-f9bf-4b42-8afe-b0b283ea9aba
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.access_log_
+id: node.access_log_
+target_entity_type_id: node
+target_bundle: access_log_
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,43 @@
+uuid: 32829d01-363e-4504-b8b1-7fffc909cd68
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_subcontent
+  module:
+    - aacc_foundation_magellan_field_format
+    - block_class
+    - fieldblock
+    - node
+  theme:
+    - aacc_lto_foundation
+third_party_settings:
+  block_class:
+    classes: ''
+id: menu_magellan
+theme: aacc_lto_foundation
+region: content_top
+weight: -15
+provider: null
+plugin: 'fieldblock:node'
+settings:
+  id: 'fieldblock:node'
+  label: 'Choose Topic'
+  provider: fieldblock
+  label_display: visible
+  label_from_field: 0
+  field_name: field_subcontent
+  formatter_id: magellan_link_field_formatter
+  formatter_settings:
+    magellan_label: label
+    magellan_clean: 1
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      condition: condition
+      screening: screening
+      test: test
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

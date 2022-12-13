@@ -1,0 +1,30 @@
+uuid: 2f8c1d8b-310c-4bb7-b121-75a5f72bb47e
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - scheduler
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+  scheduler:
+    expand_fieldset: when_required
+    fields_display_mode: vertical_tab
+    publish_enable: true
+    publish_past_date: error
+    publish_required: false
+    publish_revision: true
+    publish_touch: false
+    unpublish_enable: true
+    unpublish_required: false
+    unpublish_revision: true
+name: Person
+type: person
+description: 'Use <em>persons</em> to provide information about people.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

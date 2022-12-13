@@ -1,0 +1,20 @@
+uuid: 1b60f398-0956-40a7-bad0-8acc3dd6a4e8
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.person_type
+  module:
+    - text
+id: taxonomy_term.person_type.description
+field_name: description
+entity_type: taxonomy_term
+bundle: person_type
+label: Description
+description: 'A description of the term.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

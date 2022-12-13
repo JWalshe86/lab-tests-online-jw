@@ -1,0 +1,32 @@
+uuid: 5623d867-7a6b-45f8-8bea-fdf5ba437720
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.aacc_feeds_feed.field_selected_tests
+    - node.type.test
+  module:
+    - aacc_feeds
+_core:
+  default_config_hash: KU0njcqWIGV14N7OkPumIrTqF_ZAjK9Ep1RY-hDABXE
+id: aacc_feeds_feed.aacc_feeds_feed.field_selected_tests
+field_name: field_selected_tests
+entity_type: aacc_feeds_feed
+bundle: aacc_feeds_feed
+label: 'Selected Tests'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      test: test
+    sort:
+      field: title
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

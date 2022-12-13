@@ -1,0 +1,28 @@
+uuid: bd320c71-1711-44d8-8636-5fc2fd13c5f8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_basic_pages
+    - node.type.page
+    - paragraphs.paragraphs_type.related_content
+id: paragraph.related_content.field_basic_pages
+field_name: field_basic_pages
+entity_type: paragraph
+bundle: related_content
+label: Pages
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      page: page
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,7 @@
+uuid: a763a746-12fc-4f50-906d-716a15044dd3
+langcode: en
+status: true
+dependencies: {  }
+id: navigation
+label: 'Section Navigation'
+behavior_plugins: {  }

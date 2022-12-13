@@ -1,0 +1,97 @@
+uuid: 698c4c19-94ba-4dcc-8f16-8391dd7f38e7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.user.user.field_addr
+    - field.field.user.user.field_aptify_id
+    - field.field.user.user.field_familyname
+    - field.field.user.user.field_givenname
+    - field.field.user.user.field_phone
+    - field.field.user.user.field_user_image
+    - image.style.thumbnail
+  module:
+    - address
+    - image
+    - path
+    - telephone
+    - user
+_core:
+  default_config_hash: qPxPotE1BmSx5cdnlkxLS7g5LFEkfeCFSDJUAq4F5Fk
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  account:
+    weight: -10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  contact:
+    weight: 5
+    region: content
+  field_addr:
+    weight: 34
+    settings:
+      default_country: null
+    third_party_settings: {  }
+    type: address_default
+    region: content
+  field_aptify_id:
+    weight: 31
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_familyname:
+    weight: 33
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_givenname:
+    weight: 32
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_phone:
+    weight: 35
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: telephone_default
+    region: content
+  field_user_image:
+    weight: 36
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  language:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  timezone:
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

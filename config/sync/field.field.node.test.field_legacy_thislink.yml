@@ -1,0 +1,21 @@
+uuid: 216f3dec-5c78-418c-b79d-a8e0d35a90eb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_legacy_thislink
+    - node.type.test
+  module:
+    - text
+id: node.test.field_legacy_thislink
+field_name: field_legacy_thislink
+entity_type: node
+bundle: test
+label: 'Legacy thislink'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

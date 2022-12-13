@@ -1,0 +1,10 @@
+uuid: dad7b6e1-0b99-49a0-84c0-afa032540249
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.teaser_carousel
+label: 'Teaser - Carousel'
+targetEntityType: node
+cache: true

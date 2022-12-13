@@ -1,0 +1,20 @@
+uuid: 8af00061-9585-4974-b52a-a5dec107a857
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.stakeholder
+id: node.stakeholder.menu_link
+field_name: menu_link
+entity_type: node
+bundle: stakeholder
+label: 'Menu link'
+description: 'Computed menu link for the node (only available during node saving).'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

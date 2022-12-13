@@ -1,0 +1,28 @@
+uuid: 6b8e5354-324e-4b50-bcef-422da3aec738
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_keywords
+    - node.type.news_item
+    - taxonomy.vocabulary.keyword
+id: node.news_item.field_keywords
+field_name: field_keywords
+entity_type: node
+bundle: news_item
+label: Keywords
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      keyword: keyword
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

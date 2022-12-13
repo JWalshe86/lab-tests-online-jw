@@ -1,0 +1,104 @@
+uuid: 52b31fe1-36f7-487f-95f0-56af2c5c1bec
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.person.body
+    - field.field.node.person.field_addr
+    - field.field.node.person.field_email
+    - field.field.node.person.field_exclude_from_search
+    - field.field.node.person.field_familyname
+    - field.field.node.person.field_givenname
+    - field.field.node.person.field_keywords
+    - field.field.node.person.field_meta_tags
+    - field.field.node.person.field_migration_notes
+    - field.field.node.person.field_migration_status
+    - field.field.node.person.field_oldpath
+    - field.field.node.person.field_person_image
+    - field.field.node.person.field_person_type
+    - field.field.node.person.field_phone
+    - field.field.node.person.field_reviewed
+    - image.style.large
+    - node.type.person
+  module:
+    - aacc_foundation_magellan_field_format
+    - address
+    - ds
+    - image
+    - telephone
+    - text
+    - user
+id: node.person.default
+targetEntityType: node
+bundle: person
+mode: default
+content:
+  body:
+    type: text_default
+    weight: 1
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_addr:
+    type: address_default
+    weight: 2
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_email:
+    type: email_mailto
+    weight: 4
+    region: content
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+  field_keywords:
+    type: entity_reference_label
+    weight: 5
+    region: content
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+  field_person_image:
+    type: image
+    weight: 0
+    region: content
+    label: inline
+    settings:
+      image_style: large
+      image_link: ''
+    third_party_settings:
+      aacc_foundation_magellan_field_format:
+        magellan_target_label: ''
+        magellan_target_clean: true
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+  field_phone:
+    type: telephone_link
+    weight: 3
+    region: content
+    label: inline
+    settings:
+      title: ''
+    third_party_settings: {  }
+hidden:
+  content_moderation_control: true
+  field_exclude_from_search: true
+  field_familyname: true
+  field_givenname: true
+  field_meta_tags: true
+  field_migration_notes: true
+  field_migration_status: true
+  field_oldpath: true
+  field_person_type: true
+  field_reviewed: true
+  langcode: true
+  links: true

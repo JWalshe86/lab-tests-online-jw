@@ -1,0 +1,20 @@
+uuid: d8b84278-b11c-4533-85a7-fcf3bcf070a5
+langcode: en
+status: true
+dependencies:
+  config:
+    - aacc_ads.ads_type.hcp_profession
+id: ads.hcp_profession.user_id
+field_name: user_id
+entity_type: ads
+bundle: hcp_profession
+label: 'Authored by'
+description: 'The user ID of author of the Ad Key Value entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

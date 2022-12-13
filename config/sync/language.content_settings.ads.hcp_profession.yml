@@ -1,0 +1,16 @@
+uuid: dbc37820-5f14-4cd7-b6a1-101d31a9afd1
+langcode: en
+status: true
+dependencies:
+  config:
+    - aacc_ads.ads_type.hcp_profession
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+id: ads.hcp_profession
+target_entity_type_id: ads
+target_bundle: hcp_profession
+default_langcode: site_default
+language_alterable: false

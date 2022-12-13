@@ -1,0 +1,17 @@
+uuid: b858ef31-cdd2-478e-ad56-b13b1b011b9d
+langcode: en
+status: true
+dependencies:
+  module:
+    - ip2country
+title: 'Default cron handler'
+id: ip2country_cron
+weight: 0
+module: ip2country
+callback: ip2country_cron
+scheduler:
+  id: simple
+launcher:
+  id: serial
+logger:
+  id: database

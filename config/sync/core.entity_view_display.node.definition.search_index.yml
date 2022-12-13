@@ -1,0 +1,113 @@
+uuid: 98e4ea90-b21e-4992-8205-d8f7d4358b16
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_index
+    - field.field.node.definition.body
+    - field.field.node.definition.field_definition_synonyms
+    - field.field.node.definition.field_exclude_from_search
+    - field.field.node.definition.field_field_definition_synonyms
+    - field.field.node.definition.field_legacy_content
+    - field.field.node.definition.field_meta_tags
+    - field.field.node.definition.field_migration_notes
+    - field.field.node.definition.field_migration_status
+    - field.field.node.definition.field_misspellings
+    - field.field.node.definition.field_oldpath
+    - field.field.node.definition.field_reviewed
+    - node.type.definition
+  module:
+    - aacc_foundation_magellan_field_format
+    - ds
+    - smart_trim
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - node_title
+        - body
+        - node_link
+    fields:
+      node_link:
+        plugin_id: node_link
+        weight: 2
+        label: hidden
+        formatter: default
+      node_title:
+        plugin_id: node_title
+        weight: 0
+        label: hidden
+        formatter: default
+        settings:
+          link: true
+          wrapper: h2
+          class: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+id: node.definition.search_index
+targetEntityType: node
+bundle: definition
+mode: search_index
+content:
+  body:
+    label: hidden
+    type: smart_trim
+    weight: 1
+    settings:
+      trim_length: 350
+      trim_type: chars
+      trim_suffix: ...
+      more_link: false
+      more_text: More
+      summary_handler: full
+      trim_options:
+        text: true
+      more_class: more-link
+      wrap_output: false
+      wrap_class: trimmed
+    third_party_settings:
+      aacc_foundation_magellan_field_format:
+        magellan_target_label: ''
+        magellan_target_clean: true
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    region: ds_content
+hidden:
+  content_moderation_control: true
+  field_definition_synonyms: true
+  field_exclude_from_search: true
+  field_field_definition_synonyms: true
+  field_legacy_content: true
+  field_meta_tags: true
+  field_migration_notes: true
+  field_migration_status: true
+  field_misspellings: true
+  field_oldpath: true
+  field_reviewed: true
+  langcode: true
+  links: true
+  revision_date: true

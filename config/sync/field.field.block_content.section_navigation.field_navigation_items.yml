@@ -1,0 +1,54 @@
+uuid: 8c8926c4-1b59-4873-a3a4-d546b52ffd3c
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.section_navigation
+    - field.storage.block_content.field_navigation_items
+    - paragraphs.paragraphs_type.section_navigation_item
+  module:
+    - entity_reference_revisions
+id: block_content.section_navigation.field_navigation_items
+field_name: field_navigation_items
+entity_type: block_content
+bundle: section_navigation
+label: 'Navigation Items'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      section_navigation_item: section_navigation_item
+    target_bundles_drag_drop:
+      accordion:
+        weight: 10
+        enabled: false
+      accordion_item:
+        weight: 11
+        enabled: false
+      expandable:
+        weight: 12
+        enabled: false
+      grid:
+        weight: 13
+        enabled: false
+      media_gallery:
+        weight: 14
+        enabled: false
+      navigation:
+        weight: 15
+        enabled: false
+      section_navigation_item:
+        enabled: true
+        weight: 16
+      text_area:
+        weight: 17
+        enabled: false
+      two_column:
+        weight: 18
+        enabled: false
+field_type: entity_reference_revisions

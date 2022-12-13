@@ -1,0 +1,112 @@
+uuid: e4572473-28bb-4784-8dd3-85d76e897fe3
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.related_content
+    - field.field.node.news_item.body
+    - field.field.node.news_item.field_cover_image
+    - field.field.node.news_item.field_definitions
+    - field.field.node.news_item.field_exclude_from_search
+    - field.field.node.news_item.field_head_date
+    - field.field.node.news_item.field_image_caption
+    - field.field.node.news_item.field_keywords
+    - field.field.node.news_item.field_legacy_content
+    - field.field.node.news_item.field_legacy_istargethcp
+    - field.field.node.news_item.field_legacy_thissite
+    - field.field.node.news_item.field_legacy_website
+    - field.field.node.news_item.field_meta_tags
+    - field.field.node.news_item.field_migration_notes
+    - field.field.node.news_item.field_migration_status
+    - field.field.node.news_item.field_news_type
+    - field.field.node.news_item.field_oldpath
+    - field.field.node.news_item.field_reviewed
+    - field.field.node.news_item.field_subcontent
+    - node.type.news_item
+  module:
+    - aacc_foundation_magellan_field_format
+    - datetime
+    - ds
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - node_title
+        - field_reviewed
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 0
+        label: hidden
+        formatter: default
+        settings:
+          link: true
+          wrapper: ''
+          class: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+id: node.news_item.related_content
+targetEntityType: node
+bundle: news_item
+mode: related_content
+content:
+  field_reviewed:
+    type: datetime_default
+    weight: 1
+    region: ds_content
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: month_day_year
+    third_party_settings:
+      aacc_foundation_magellan_field_format:
+        magellan_target_label: ''
+        magellan_target_clean: true
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+hidden:
+  body: true
+  content_moderation_control: true
+  field_cover_image: true
+  field_definitions: true
+  field_exclude_from_search: true
+  field_head_date: true
+  field_image_caption: true
+  field_keywords: true
+  field_legacy_content: true
+  field_legacy_istargethcp: true
+  field_legacy_thissite: true
+  field_legacy_website: true
+  field_meta_tags: true
+  field_migration_notes: true
+  field_migration_status: true
+  field_news_type: true
+  field_oldpath: true
+  field_subcontent: true
+  langcode: true
+  links: true
+  revision_date: true

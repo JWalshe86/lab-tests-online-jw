@@ -1,0 +1,13 @@
+display:
+  jumplist_conditions:
+    display_title: Hastalıklar
+    display_options:
+      title: Hastalıklar
+  jumplist_screenings:
+    display_title: 'Sağlık Taramaları'
+    display_options:
+      title: 'Sağlık Taramaları'
+  jumplist_tests:
+    display_title: " Testler\r\n"
+    display_options:
+      title: Testler

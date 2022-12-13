@@ -1,0 +1,20 @@
+uuid: bfbab022-aac8-495b-bb06-a6a4d49729b7
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.screening
+  module:
+    - path
+id: node.screening.path
+field_name: path
+entity_type: node
+bundle: screening
+label: 'URL alias'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

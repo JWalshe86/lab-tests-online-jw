@@ -1,0 +1,236 @@
+uuid: 3c528156-61cc-42da-b257-859f3b655701
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.test.body
+    - field.field.node.test.field_cptcode
+    - field.field.node.test.field_exclude_from_search
+    - field.field.node.test.field_formal_name
+    - field.field.node.test.field_icd9code
+    - field.field.node.test.field_keywords
+    - field.field.node.test.field_legacy_commonq
+    - field.field.node.test.field_legacy_content
+    - field.field.node.test.field_legacy_istargethcp
+    - field.field.node.test.field_legacy_links
+    - field.field.node.test.field_legacy_mean
+    - field.field.node.test.field_legacy_othersite
+    - field.field.node.test.field_legacy_thislink
+    - field.field.node.test.field_meshcode
+    - field.field.node.test.field_meta_tags
+    - field.field.node.test.field_migration_notes
+    - field.field.node.test.field_migration_status
+    - field.field.node.test.field_misspellings
+    - field.field.node.test.field_oldpath
+    - field.field.node.test.field_order_your_test
+    - field.field.node.test.field_reviewed
+    - field.field.node.test.field_subcontent
+    - field.field.node.test.field_test_synonyms
+    - node.type.test
+  module:
+    - datetime
+    - ds
+    - entity_reference_revisions
+    - text
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - links
+        - body
+        - field_keywords
+        - field_oldpath
+        - field_reviewed
+        - field_subcontent
+        - field_migration_status
+        - field_migration_notes
+        - field_cptcode
+        - field_icd9code
+        - field_meshcode
+        - field_legacy_thislink
+        - field_legacy_othersite
+        - field_legacy_commonq
+        - field_legacy_links
+        - field_legacy_mean
+        - field_legacy_istargethcp
+        - field_legacy_content
+id: node.test.default
+targetEntityType: node
+bundle: test
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: ds_content
+  field_cptcode:
+    weight: 8
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: ds_content
+  field_icd9code:
+    weight: 9
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: ds_content
+  field_keywords:
+    weight: 2
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: ds_content
+  field_legacy_commonq:
+    weight: 13
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: ds_content
+  field_legacy_content:
+    weight: 17
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: ds_content
+  field_legacy_istargethcp:
+    weight: 16
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: ds_content
+  field_legacy_links:
+    weight: 14
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: ds_content
+  field_legacy_mean:
+    weight: 15
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: ds_content
+  field_legacy_othersite:
+    weight: 12
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: ds_content
+  field_legacy_thislink:
+    weight: 11
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: ds_content
+  field_meshcode:
+    weight: 10
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: ds_content
+  field_migration_notes:
+    weight: 7
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: ds_content
+  field_migration_status:
+    weight: 6
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: ds_content
+  field_oldpath:
+    weight: 3
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: ds_content
+  field_reviewed:
+    weight: 4
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: ds_content
+  field_subcontent:
+    weight: 5
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings:
+      aacc_foundation_magellan_field_format:
+        magellan_target_label: label
+        magellan_target_clean: true
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: entity_reference_revisions_entity_view
+    region: ds_content
+  links:
+    weight: 0
+    region: ds_content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  content_moderation_control: true
+  field_exclude_from_search: true
+  field_formal_name: true
+  field_meta_tags: true
+  field_misspellings: true
+  field_order_your_test: true
+  field_test_synonyms: true
+  langcode: true
+  revision_date: true
+  search_api_excerpt: true

@@ -1,0 +1,9 @@
+uuid: e64a1544-2612-42c0-a34c-b67668f0dd93
+langcode: en
+status: true
+dependencies: {  }
+id: columns_background
+label: 'Columns Background'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

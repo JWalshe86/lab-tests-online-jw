@@ -1,0 +1,8 @@
+uuid: 4f4ccad4-b9c2-49be-bedf-39818954a07c
+langcode: en
+status: true
+dependencies: {  }
+id: new-navigation
+label: 'New Navigation'
+description: 'Replaces the previous view-based menu'
+locked: false

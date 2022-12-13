@@ -1,0 +1,23 @@
+uuid: 93a926af-eb94-4b10-a819-926eff97c0ec
+langcode: en
+status: true
+dependencies:
+  config:
+    - announcement_pop_up.announcement_type.standard
+    - field.storage.announcement.field_delay
+id: announcement.standard.field_delay
+field_name: field_delay
+entity_type: announcement
+bundle: standard
+label: Delay
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: 60
+  prefix: ''
+  suffix: ''
+field_type: integer

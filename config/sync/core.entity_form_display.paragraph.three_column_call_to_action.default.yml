@@ -1,0 +1,39 @@
+uuid: 377f29af-d33b-4667-a552-1c598844677b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.three_column_call_to_action.field_button_link
+    - field.field.paragraph.three_column_call_to_action.field_button_subtext
+    - field.field.paragraph.three_column_call_to_action.field_column_1
+    - field.field.paragraph.three_column_call_to_action.field_column_1_subtext
+    - field.field.paragraph.three_column_call_to_action.field_column_2
+    - field.field.paragraph.three_column_call_to_action.field_column_2_subtext
+    - field.field.paragraph.three_column_call_to_action.field_column_3
+    - field.field.paragraph.three_column_call_to_action.field_column_3_subtext
+    - paragraphs.paragraphs_type.three_column_call_to_action
+  module:
+    - link
+id: paragraph.three_column_call_to_action.default
+targetEntityType: paragraph
+bundle: three_column_call_to_action
+mode: default
+content:
+  field_button_link:
+    weight: 0
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+hidden:
+  created: true
+  field_button_subtext: true
+  field_column_1: true
+  field_column_1_subtext: true
+  field_column_2: true
+  field_column_2_subtext: true
+  field_column_3: true
+  field_column_3_subtext: true
+  status: true

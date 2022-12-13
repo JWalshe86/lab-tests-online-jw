@@ -1,0 +1,21 @@
+uuid: 8a72777a-bf9e-444b-94be-de7d99ef1cf9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_column_2
+    - paragraphs.paragraphs_type.three_column_call_to_action
+  module:
+    - text
+id: paragraph.three_column_call_to_action.field_column_2
+field_name: field_column_2
+entity_type: paragraph
+bundle: three_column_call_to_action
+label: 'Column 2'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

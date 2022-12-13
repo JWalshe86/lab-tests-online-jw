@@ -1,0 +1,22 @@
+uuid: 8ba412be-95fb-42f7-a722-a53a64eecfba
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.screening
+id: node.screening.status
+field_name: status
+entity_type: node
+bundle: screening
+label: 'Publishing status'
+description: 'A boolean indicating whether the node is published.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

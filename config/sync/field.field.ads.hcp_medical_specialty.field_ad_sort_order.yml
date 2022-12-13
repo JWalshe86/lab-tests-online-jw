@@ -1,0 +1,25 @@
+uuid: 0dadcf56-5b03-4cbc-94c3-d2e7831605a8
+langcode: en
+status: true
+dependencies:
+  config:
+    - aacc_ads.ads_type.hcp_medical_specialty
+    - field.storage.ads.field_ad_sort_order
+id: ads.hcp_medical_specialty.field_ad_sort_order
+field_name: field_ad_sort_order
+entity_type: ads
+bundle: hcp_medical_specialty
+label: 'Sort Order'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

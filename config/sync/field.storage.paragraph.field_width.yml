@@ -1,0 +1,27 @@
+uuid: 23b4bcf5-9eff-43ec-b8b2-4fd1c672560f
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_width
+field_name: field_width
+entity_type: paragraph
+type: list_integer
+settings:
+  allowed_values:
+    -
+      value: 50
+      label: '50'
+    -
+      value: 100
+      label: '100'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

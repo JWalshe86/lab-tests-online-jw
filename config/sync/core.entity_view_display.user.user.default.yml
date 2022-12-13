@@ -1,0 +1,57 @@
+uuid: 2b3cf9e6-d07c-4d1b-ba46-ff4cc1a22916
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.user.user.field_addr
+    - field.field.user.user.field_aptify_id
+    - field.field.user.user.field_familyname
+    - field.field.user.user.field_givenname
+    - field.field.user.user.field_phone
+    - field.field.user.user.field_user_image
+  module:
+    - address
+    - image
+    - telephone
+    - user
+_core:
+  default_config_hash: M797HnD2YgcgT8vil3S9uhwkiTTLmE93TiFxYL5kziE
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  field_addr:
+    weight: 9
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: address_default
+    region: content
+  field_phone:
+    weight: 10
+    label: above
+    settings:
+      title: ''
+    third_party_settings: {  }
+    type: telephone_link
+    region: content
+  field_user_image:
+    weight: 11
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  member_for:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_aptify_id: true
+  field_familyname: true
+  field_givenname: true
+  langcode: true

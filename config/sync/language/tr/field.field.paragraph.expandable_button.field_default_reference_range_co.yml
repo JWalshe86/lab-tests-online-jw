@@ -1,0 +1,4 @@
+label: ' Referans aralıklarına mı bakıyorsunuz?'
+default_value:
+  -
+    value: "<p>Referans aralıkları hastanın yaşı, cinsiyeti, numunenin ait olduğu nüfus ve test metodu gibi birçok faktöre bağlıdır ve sayısal test sonuçları farklı laboratuvarlarda farklı anlamlara gelebilir.</p>\r\n<p>\r\nBu nedenlerle testler için referans aralıklarını bu sitede bulamayacaksınız. Test sonuçlarını içeren laboratuvar raporu testleriniz ile ilgili referans aralıklarını içermelidir.\r\n</p><p>\r\nReferans aralıkları ile ilgili daha ayrıntılı bilgi için lütfen <a href=\"http://labtestsonline.org.tr/understanding/features/ref-ranges?start=6\">Referans Aralıkları ve Ne Anlama Geldikleri</a> makalesini okuyunuz.</p>"

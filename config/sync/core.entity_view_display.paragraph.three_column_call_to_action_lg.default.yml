@@ -1,0 +1,38 @@
+uuid: 9b845707-8e04-4ac8-adb4-78ef6c849a77
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.three_column_call_to_action_lg.field_button_link
+    - field.field.paragraph.three_column_call_to_action_lg.field_order_layout
+    - paragraphs.paragraphs_type.three_column_call_to_action_lg
+  module:
+    - link
+    - options
+id: paragraph.three_column_call_to_action_lg.default
+targetEntityType: paragraph
+bundle: three_column_call_to_action_lg
+mode: default
+content:
+  field_button_link:
+    weight: 0
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_order_layout:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+hidden:
+  revision_date: true
+  search_api_excerpt: true

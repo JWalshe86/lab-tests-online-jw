@@ -1,0 +1,77 @@
+uuid: fea7193e-5dce-4e52-b209-4a7a6c11db82
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.expandable_button.field_color
+    - field.field.paragraph.expandable_button.field_default_content
+    - field.field.paragraph.expandable_button.field_default_reference_range_co
+    - field.field.paragraph.expandable_button.field_default_test_result_conten
+    - field.field.paragraph.expandable_button.field_icon
+    - field.field.paragraph.expandable_button.field_label
+    - field.field.paragraph.expandable_button.field_reference_range_items
+    - paragraphs.paragraphs_type.expandable_button
+  module:
+    - color_field
+    - paragraphs
+id: paragraph.expandable_button.default
+targetEntityType: paragraph
+bundle: expandable_button
+mode: default
+content:
+  field_color:
+    weight: 3
+    settings:
+      default_colors: '#B12025,#80A29C,#D99E56'
+    third_party_settings: {  }
+    type: color_field_widget_box
+    region: content
+  field_default_content:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_icon:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_label:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_reference_range_items:
+    weight: 5
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      add_mode: button
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings: {  }
+    type: paragraphs
+    region: content
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    settings: {  }
+    region: content
+    third_party_settings: {  }
+  translation:
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_default_reference_range_co: true
+  field_default_test_result_conten: true
+  status: true
+  uid: true

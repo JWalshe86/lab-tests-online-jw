@@ -1,0 +1,97 @@
+uuid: 6fde1035-ef67-4fcf-9450-8de5d93c12c8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_column
+    - paragraphs.paragraphs_type.column
+    - paragraphs.paragraphs_type.columns_background
+  module:
+    - entity_reference_revisions
+id: paragraph.columns_background.field_column
+field_name: field_column
+entity_type: paragraph
+bundle: columns_background
+label: Column
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      column: column
+    target_bundles_drag_drop:
+      accordion:
+        weight: 24
+        enabled: false
+      accordion_item:
+        weight: 25
+        enabled: false
+      column:
+        enabled: true
+        weight: 26
+      columns:
+        weight: 27
+        enabled: false
+      columns_background:
+        weight: 28
+        enabled: false
+      expandable:
+        weight: 29
+        enabled: false
+      expandable_button:
+        weight: 30
+        enabled: false
+      feature_article:
+        weight: 31
+        enabled: false
+      fonti:
+        weight: 32
+        enabled: false
+      grid:
+        weight: 33
+        enabled: false
+      il_campione_da_analizzare:
+        weight: 34
+        enabled: false
+      in_sintesi:
+        weight: 35
+        enabled: false
+      logo:
+        weight: 36
+        enabled: false
+      looking_for_buttons:
+        weight: 37
+        enabled: false
+      media_gallery:
+        weight: 38
+        enabled: false
+      navigation:
+        weight: 39
+        enabled: false
+      reference_range_item:
+        weight: 40
+        enabled: false
+      related_content:
+        weight: 41
+        enabled: false
+      related_screening_item:
+        weight: 42
+        enabled: false
+      screening_tests:
+        weight: 43
+        enabled: false
+      section_navigation_item:
+        weight: 44
+        enabled: false
+      sponsor_keyword:
+        weight: 45
+        enabled: false
+      text_area:
+        weight: 46
+        enabled: false
+field_type: entity_reference_revisions

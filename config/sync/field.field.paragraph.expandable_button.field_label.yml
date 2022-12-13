@@ -1,0 +1,19 @@
+uuid: 7cd90656-60f6-4005-9c54-d901120bf56e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_label
+    - paragraphs.paragraphs_type.expandable_button
+id: paragraph.expandable_button.field_label
+field_name: field_label
+entity_type: paragraph
+bundle: expandable_button
+label: 'Alternate Button Label'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

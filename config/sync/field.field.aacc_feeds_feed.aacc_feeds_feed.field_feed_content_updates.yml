@@ -1,0 +1,26 @@
+uuid: b00542e8-af4d-49a0-9464-e8ae69354514
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.aacc_feeds_feed.field_feed_content_updates
+  module:
+    - aacc_feeds
+_core:
+  default_config_hash: 0eGNii2UdMEgw9-lzjMWLGjCds4NZ0VsttKZC2smlCg
+id: aacc_feeds_feed.aacc_feeds_feed.field_feed_content_updates
+field_name: field_feed_content_updates
+entity_type: aacc_feeds_feed
+bundle: aacc_feeds_feed
+label: 'Feed Content Updates'
+description: 'Notify client if feed content has updated.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

@@ -1,0 +1,15 @@
+uuid: 21ace8b5-7385-46c6-a0bc-305cd9781b5f
+langcode: en
+status: true
+dependencies: {  }
+name: stakeholder_logo
+label: 'Stakeholder Logo'
+effects:
+  3dc9d542-8062-40fa-9975-4b2a79e85b42:
+    uuid: 3dc9d542-8062-40fa-9975-4b2a79e85b42
+    id: image_scale
+    weight: 2
+    data:
+      width: 125
+      height: null
+      upscale: true

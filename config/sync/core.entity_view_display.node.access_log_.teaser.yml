@@ -1,0 +1,40 @@
+uuid: f3fc830a-66fd-4996-9183-696c1de2d809
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.access_log_.field_access_param_deleted
+    - field.field.node.access_log_.field_access_param_format
+    - field.field.node.access_log_.field_access_param_since
+    - field.field.node.access_log_.field_feed_access_id
+    - field.field.node.access_log_.field_feed_access_title
+    - field.field.node.access_log_.field_feed_access_url
+    - field.field.node.access_log_.field_feed_timestamp
+    - field.field.node.access_log_.field_log_description
+    - field.field.node.access_log_.field_requesting_user
+    - node.type.access_log_
+  module:
+    - user
+id: node.access_log_.teaser
+targetEntityType: node
+bundle: access_log_
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_access_param_deleted: true
+  field_access_param_format: true
+  field_access_param_since: true
+  field_feed_access_id: true
+  field_feed_access_title: true
+  field_feed_access_url: true
+  field_feed_timestamp: true
+  field_log_description: true
+  field_requesting_user: true
+  langcode: true
+  revision_date: true

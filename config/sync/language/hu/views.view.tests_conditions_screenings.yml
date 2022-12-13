@@ -1,0 +1,15 @@
+display:
+  top_conditions:
+    display_title: 'Leggyakoribb állapotok és betegségek'
+    display_options:
+      title: 'Leggyakoribb állapotok és betegségek'
+      use_more_text: 'Összes állapot és betegség'
+  top_tests:
+    display_title: 'Leggyakoribb laboratóriumi vizsgálatok'
+    display_options:
+      title: 'Leggyakoribb laboratóriumi vizsgálatok'
+      use_more_text: 'Összes laboratóriumi vizsgálat'
+  top_screenings:
+    display_title: 'Leggyakoribb szűrővizsgálatok'
+    display_options:
+      title: 'Leggyakoribb szűrővizsgálatok'

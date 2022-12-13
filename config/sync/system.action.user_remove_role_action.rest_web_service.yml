@@ -1,0 +1,14 @@
+uuid: 18adf78f-6c98-4434-82e2-b8b6f0278b3c
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.rest_web_service
+  module:
+    - user
+id: user_remove_role_action.rest_web_service
+label: 'Remove the Rest Web Service role from the selected users'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: rest_web_service

@@ -1,0 +1,66 @@
+title: 请留下您的意见和建议
+elements: |
+  instructions:
+    '#text': "<p>请提供您正在阅读的文章的反馈，或者对检验医学在线的总体印象，这将帮助我们改进网站。谢谢您。</p>\n"
+  find_what_you_are_looking_for:
+    '#title': '找到您需要的资料了吗?'
+  find_information:
+    '#title': 查找是否便捷？
+  helpful:
+    '#title': 这个网页对您是否有帮助？
+  if_no_please_explain_:
+    '#title': 如果不是，请说明：
+  helpful_information:
+    '#title': 以下是您搜索的信息：
+    '#options':
+      'Right amount of information': 信息量恰到好处
+      'Too technical': 太偏向技术
+      'Not enough detail': 不够详细
+  email_comfirmation:
+    '#title': 如果您输入了上述评论，并希望得到回复，请输入完整的电子邮件地址。
+  please_indicate_whether_you_are_a_:
+    '#title': 请说明你是否为
+    '#description': 这样我们就能更好地理解谁在使用我们的网站，让我们知道哪个类别最适合您。
+    '#options':
+      'Patient, Family member or Friend': 病人、家庭成员或朋友
+      'Healthcare Professional': 医疗专业
+      Educator: 教育工作者
+      Student: 学生
+      Journalist: 记者
+    '#empty_option': '- 选择 -'
+    '#other__option_label': 其他
+    '#other__placeholder': 请说明您是谁
+  health_pro:
+    '#title': '如果你是一名医疗专业人士，请说明你是:'
+    '#options':
+      Physician/clinician: 内科医生/临床医生
+      'Nurse or nurse practitioner': 护士或执业护士
+      'Laboratory professional': 实验室专业人士
+      'Physician assistant': 医师助理
+      Pharmacist: 药剂师
+      'Research scientist': 研究员
+      'In healthcare management or administration': 在医疗管理或行政部门
+    '#empty_option': '- 选择 -'
+    '#other__option_label': 其他
+    '#other__placeholder': '你是哪种类型的医护人员?'
+  how_did_you_hear_about_us:
+    '#title': 你从哪里了解到检验医学在线？
+    '#options':
+      'Friend/Colleague/Family Member': 朋友/同事/家庭成员
+      'Search engine': 搜索引擎
+      'Doctor''s office, Hospital or Lab': 医生办公室、医院或实验室
+      'Health fair': 健康讲座
+      'Magazine or newspaper': 杂志或报纸
+      'TV or radio': 电视或广播
+    '#empty_option': '- 选择 -'
+    '#other__option_label': 其他
+    '#other__placeholder': 你从哪里了解到检验医学在线？
+  location:
+    '#title': 您的所在地？
+  disclaimer:
+    '#title': 免责声明
+    '#description': '您在上述评论栏中输入的个人测试数据的任何信息或问题，都将以本网站的<a href="/terms-of-use" target="_blank">使用条款</A>为准。'
+    '#options':
+      'I Agree to the disclaimer': ' 我同意免责声明'
+settings:
+  confirmation_title: 谢谢

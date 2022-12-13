@@ -1,0 +1,106 @@
+uuid: 66836b9e-f606-49ba-9eb0-bd56ed472299
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_buttons
+    - paragraphs.paragraphs_type.buttons
+    - paragraphs.paragraphs_type.navigation
+  module:
+    - entity_reference_revisions
+id: paragraph.buttons.field_buttons
+field_name: field_buttons
+entity_type: paragraph
+bundle: buttons
+label: Buttons
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      navigation: navigation
+    target_bundles_drag_drop:
+      buttons:
+        weight: 27
+        enabled: false
+      accordion:
+        weight: 28
+        enabled: false
+      accordion_item:
+        weight: 29
+        enabled: false
+      call_to_action:
+        weight: 30
+        enabled: false
+      column:
+        weight: 31
+        enabled: false
+      columns:
+        weight: 32
+        enabled: false
+      columns_background:
+        weight: 33
+        enabled: false
+      cta:
+        weight: 34
+        enabled: false
+      expandable:
+        weight: 35
+        enabled: false
+      expandable_button:
+        weight: 36
+        enabled: false
+      feature_article:
+        weight: 37
+        enabled: false
+      fonti:
+        weight: 38
+        enabled: false
+      grid:
+        weight: 39
+        enabled: false
+      il_campione_da_analizzare:
+        weight: 40
+        enabled: false
+      in_sintesi:
+        weight: 41
+        enabled: false
+      logo:
+        weight: 42
+        enabled: false
+      looking_for_buttons:
+        weight: 43
+        enabled: false
+      media_gallery:
+        weight: 44
+        enabled: false
+      navigation:
+        enabled: true
+        weight: 45
+      reference_range_item:
+        weight: 46
+        enabled: false
+      related_content:
+        weight: 47
+        enabled: false
+      related_screening_item:
+        weight: 48
+        enabled: false
+      screening_tests:
+        weight: 49
+        enabled: false
+      section_navigation_item:
+        weight: 50
+        enabled: false
+      sponsor_keyword:
+        weight: 51
+        enabled: false
+      text_area:
+        weight: 52
+        enabled: false
+field_type: entity_reference_revisions

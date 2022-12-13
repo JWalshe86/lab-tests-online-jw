@@ -1,0 +1,21 @@
+uuid: d67aed63-f699-4f7a-82d2-8d5deaba83c4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_default_content
+    - paragraphs.paragraphs_type.expandable_button
+  module:
+    - options
+id: paragraph.expandable_button.field_default_content
+field_name: field_default_content
+entity_type: paragraph
+bundle: expandable_button
+label: 'Default Content'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

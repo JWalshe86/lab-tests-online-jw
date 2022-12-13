@@ -1,0 +1,32 @@
+uuid: 0d0e11cd-9121-48ae-a71b-9e675a7194ca
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.dropdown_button
+    - field.field.block_content.dropdown_button.body
+    - field.field.block_content.dropdown_button.field_button_label
+  module:
+    - text
+id: block_content.dropdown_button.default
+targetEntityType: block_content
+bundle: dropdown_button
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_button_label:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  langcode: true

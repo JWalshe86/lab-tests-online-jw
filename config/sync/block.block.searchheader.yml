@@ -1,0 +1,24 @@
+uuid: e57402ff-d34d-4a92-b986-4f88ea9d1a42
+langcode: en
+status: true
+dependencies:
+  module:
+    - aacc_search
+    - block_class
+  theme:
+    - aacc_lto_foundation
+third_party_settings:
+  block_class:
+    classes: ''
+id: searchheader
+theme: aacc_lto_foundation
+region: search
+weight: 0
+provider: null
+plugin: search_header
+settings:
+  id: search_header
+  label: 'Search Header'
+  provider: aacc_search
+  label_display: '0'
+visibility: {  }

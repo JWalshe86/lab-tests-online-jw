@@ -1,0 +1,7 @@
+uuid: f7cd1ccf-d3ae-4867-80d5-bf0462bb890e
+langcode: en
+status: true
+dependencies: {  }
+id: reference_range_item
+label: 'Reference Range Item'
+behavior_plugins: {  }

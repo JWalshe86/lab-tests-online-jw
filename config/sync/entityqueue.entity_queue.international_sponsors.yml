@@ -1,0 +1,25 @@
+uuid: c9940ccb-1954-43e6-bb38-f5661684de41
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: international_sponsors
+label: 'International Sponsors'
+handler: simple
+handler_configuration: {  }
+entity_settings:
+  target_type: node
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      stakeholder: stakeholder
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+queue_settings:
+  min_size: 0
+  max_size: 0
+  act_as_queue: false
+  reverse_in_admin: false

@@ -1,0 +1,116 @@
+uuid: a0ea7e5b-2e17-4f8c-8987-0d6aa7615cbe
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.modal
+    - field.field.media.image.field_cap_ack
+    - field.field.media.image.field_image
+    - image.style.media_modal_large
+    - media.type.image
+    - responsive_image.styles.media_gallery
+  module:
+    - aacc_foundation_magellan_field_format
+    - ds
+    - image
+    - responsive_image
+third_party_settings:
+  ds:
+    layout:
+      id: ds_2col
+      library: ds/ds_2col
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          left: div
+          right: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      left:
+        - thumbnail
+      right:
+        - field_image
+        - field_cap_ack
+id: media.image.modal
+targetEntityType: media
+bundle: image
+mode: modal
+content:
+  field_cap_ack:
+    type: string
+    weight: 2
+    region: right
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_image:
+    weight: 1
+    label: hidden
+    settings:
+      image_style: media_modal_large
+      image_link: ''
+    third_party_settings:
+      aacc_foundation_magellan_field_format:
+        magellan_target_label: ''
+        magellan_target_clean: true
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: image
+    region: right
+  thumbnail:
+    type: responsive_image
+    weight: 0
+    label: hidden
+    settings:
+      responsive_image_style: media_gallery
+      image_link: ''
+    third_party_settings:
+      aacc_foundation_magellan_field_format:
+        magellan_target_label: ''
+        magellan_target_clean: true
+      ds:
+        ft:
+          id: expert
+          settings:
+            lb: ''
+            prefix: ''
+            lbw-el: ''
+            lbw-cl: ''
+            lbw-at: ''
+            ow-el: ''
+            ow-cl: ''
+            ow-at: ''
+            fis-el: ''
+            fis-cl: ''
+            fis-at: ''
+            fi: true
+            fi-el: div
+            fi-cl: ''
+            fi-at: 'data-open="media-[media:mid]"'
+            suffix: ''
+            lbw: false
+            lb-col: false
+            ow: false
+            ow-def-at: false
+            ow-def-cl: false
+            fis: false
+            fis-def-at: false
+            fi-def-at: false
+    region: left
+hidden:
+  created: true
+  langcode: true
+  name: true
+  uid: true

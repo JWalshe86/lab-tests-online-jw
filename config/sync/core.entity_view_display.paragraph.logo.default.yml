@@ -1,0 +1,71 @@
+uuid: 356f7798-5a0f-4adb-8bca-3f7d8a79eaa7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.logo.field_logo_img
+    - field.field.paragraph.logo.field_logo_link
+    - paragraphs.paragraphs_type.logo
+  module:
+    - aacc_foundation_magellan_field_format
+    - ds
+    - image
+    - link
+id: paragraph.logo.default
+targetEntityType: paragraph
+bundle: logo
+mode: default
+content:
+  field_logo_img:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings:
+      aacc_foundation_magellan_field_format:
+        magellan_target_label: ''
+        magellan_target_clean: false
+      ds:
+        ft:
+          id: expert
+          settings:
+            lb: ''
+            prefix: ''
+            lbw-el: ''
+            lbw-cl: ''
+            lbw-at: ''
+            ow-el: ''
+            ow-cl: ''
+            ow-at: ''
+            fis-el: ''
+            fis-cl: ''
+            fis-at: ''
+            fi: true
+            fi-el: a
+            fi-cl: logo-link
+            fi-at: 'href="[paragraph:field_logo_link:uri]"'
+            suffix: ''
+            lbw: false
+            lb-col: false
+            ow: false
+            ow-def-at: false
+            ow-def-cl: false
+            fis: false
+            fis-def-at: false
+            fi-def-at: false
+    type: image
+    region: content
+  field_logo_link:
+    type: link
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+hidden: {  }

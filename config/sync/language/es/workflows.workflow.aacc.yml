@@ -1,0 +1,13 @@
+type_settings:
+  states:
+    draft:
+      label: Borrador
+    published:
+      label: Publicado
+    work_in_progress:
+      label: 'Trabajo en Progreso'
+  transitions:
+    publish:
+      label: Publicar
+    work_in_progress:
+      label: 'Trabajo en Progreso'

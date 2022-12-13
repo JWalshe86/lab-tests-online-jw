@@ -1,0 +1,25 @@
+uuid: f30aee44-33a3-4cb8-8627-1f91ceefdb6f
+langcode: en
+status: true
+dependencies:
+  config:
+    - aacc_ads.ads_type.hcp_profession
+    - field.storage.ads.field_ad_sort_order
+id: ads.hcp_profession.field_ad_sort_order
+field_name: field_ad_sort_order
+entity_type: ads
+bundle: hcp_profession
+label: 'Sort Order'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -1,0 +1,63 @@
+uuid: db0ffca4-a5aa-40b8-9e29-b3721d81d164
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_related_screenings
+    - paragraphs.paragraphs_type.related_content
+    - paragraphs.paragraphs_type.related_screening_item
+  module:
+    - entity_reference_revisions
+id: paragraph.related_content.field_related_screenings
+field_name: field_related_screenings
+entity_type: paragraph
+bundle: related_content
+label: Screening
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      related_screening_item: related_screening_item
+    target_bundles_drag_drop:
+      related_screening_item:
+        enabled: true
+        weight: 13
+      accordion:
+        weight: 14
+        enabled: false
+      accordion_item:
+        weight: 15
+        enabled: false
+      column:
+        weight: 16
+        enabled: false
+      columns:
+        weight: 17
+        enabled: false
+      expandable:
+        weight: 18
+        enabled: false
+      grid:
+        weight: 19
+        enabled: false
+      media_gallery:
+        weight: 20
+        enabled: false
+      navigation:
+        weight: 21
+        enabled: false
+      related_content:
+        weight: 22
+        enabled: false
+      section_navigation_item:
+        weight: 23
+        enabled: false
+      text_area:
+        weight: 24
+        enabled: false
+field_type: entity_reference_revisions

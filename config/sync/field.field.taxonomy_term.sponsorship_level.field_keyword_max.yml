@@ -1,0 +1,23 @@
+uuid: 334b747c-d826-41a2-bae4-d624d8f362df
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_keyword_max
+    - taxonomy.vocabulary.sponsorship_level
+id: taxonomy_term.sponsorship_level.field_keyword_max
+field_name: field_keyword_max
+entity_type: taxonomy_term
+bundle: sponsorship_level
+label: 'Keyword Limit'
+description: 'The maximum number of keywords allowed for this sponsor.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

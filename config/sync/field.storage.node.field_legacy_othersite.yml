@@ -1,0 +1,19 @@
+uuid: 34e80db9-ab6b-4b5b-9cc2-d9cdc1da0e1b
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_legacy_othersite
+field_name: field_legacy_othersite
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

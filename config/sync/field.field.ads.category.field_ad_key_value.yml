@@ -1,0 +1,19 @@
+uuid: ddf21e93-7e78-47a1-a731-a3de8c0b3064
+langcode: en
+status: true
+dependencies:
+  config:
+    - aacc_ads.ads_type.category
+    - field.storage.ads.field_ad_key_value
+id: ads.category.field_ad_key_value
+field_name: field_ad_key_value
+entity_type: ads
+bundle: category
+label: 'EHS Category key (mcat) Value'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

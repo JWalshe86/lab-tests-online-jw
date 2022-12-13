@@ -1,0 +1,25 @@
+uuid: e05f543c-efd9-453a-9738-cc28c1ef3246
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.section_navigation
+    - field.field.block_content.section_navigation.field_navigation_items
+  module:
+    - entity_reference_revisions
+id: block_content.section_navigation.default
+targetEntityType: block_content
+bundle: section_navigation
+mode: default
+content:
+  field_navigation_items:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

@@ -1,0 +1,4 @@
+display:
+  top_news:
+    display_options:
+      use_more_text: 'Ver todas as Notícias'

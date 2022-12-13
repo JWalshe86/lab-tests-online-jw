@@ -1,0 +1,21 @@
+uuid: 1298e37b-dbc3-4ef3-9e88-64b3b931d15b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_legacy_website
+    - node.type.news_item
+  module:
+    - text
+id: node.news_item.field_legacy_website
+field_name: field_legacy_website
+entity_type: node
+bundle: news_item
+label: 'Legacy WebSite'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

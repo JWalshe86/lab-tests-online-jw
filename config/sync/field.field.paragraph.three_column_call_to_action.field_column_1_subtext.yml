@@ -1,0 +1,19 @@
+uuid: 8e86b9ec-efe0-4ce3-85b8-333524016add
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_column_1_subtext
+    - paragraphs.paragraphs_type.three_column_call_to_action
+id: paragraph.three_column_call_to_action.field_column_1_subtext
+field_name: field_column_1_subtext
+entity_type: paragraph
+bundle: three_column_call_to_action
+label: 'Column 1 Subtext'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

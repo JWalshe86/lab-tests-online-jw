@@ -1,0 +1,30 @@
+uuid: 7b2e62e0-716d-485a-9c6d-a8e3faa28aad
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - scheduler
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+  scheduler:
+    expand_fieldset: when_required
+    fields_display_mode: vertical_tab
+    publish_enable: true
+    publish_past_date: error
+    publish_required: false
+    publish_revision: true
+    publish_touch: false
+    unpublish_enable: true
+    unpublish_required: false
+    unpublish_revision: true
+name: 'News Item'
+type: news_item
+description: 'Use <em>news items</em> for news-specific content items that will be dated and have keywords. This includes news items for LTO Stat.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

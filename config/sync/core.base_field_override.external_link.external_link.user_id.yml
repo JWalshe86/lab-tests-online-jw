@@ -1,0 +1,20 @@
+uuid: a43716b3-20d4-4712-92b6-822b4eeb3e45
+langcode: en
+status: true
+dependencies:
+  module:
+    - external_link
+id: external_link.external_link.user_id
+field_name: user_id
+entity_type: external_link
+bundle: external_link
+label: 'Authored by'
+description: 'The user ID of author of the External Link entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

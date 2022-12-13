@@ -1,0 +1,34 @@
+uuid: 4d3511b6-00f9-438f-98c7-d03ede9d957b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.aacc_feeds_feed.field_test_sub_content
+    - taxonomy.vocabulary.sub_content_types
+  module:
+    - aacc_feeds
+_core:
+  default_config_hash: rlk9SYA74Bl8Rsx32ng9Zsk3JH2Wcne6CuO0mgB94aU
+id: aacc_feeds_feed.aacc_feeds_feed.field_test_sub_content
+field_name: field_test_sub_content
+entity_type: aacc_feeds_feed
+bundle: aacc_feeds_feed
+label: 'Test Sub-Content'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    target_uuid: 9cf2a66b-cc53-4439-a19c-2c709f512e31
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      sub_content_types: sub_content_types
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

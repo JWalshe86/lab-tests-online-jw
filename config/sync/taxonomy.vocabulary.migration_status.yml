@@ -1,0 +1,8 @@
+uuid: 50ba0565-83c5-424d-8320-9ffa7de74003
+langcode: en
+status: true
+dependencies: {  }
+name: 'Migration Status'
+vid: migration_status
+description: ''
+weight: 0

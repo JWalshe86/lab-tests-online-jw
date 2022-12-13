@@ -1,0 +1,2 @@
+register_admin_created:
+  subject: 'Bir yönetici [site:name] sitesinde sizin için bir hesap oluşturdu'

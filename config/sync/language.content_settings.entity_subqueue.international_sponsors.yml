@@ -1,0 +1,11 @@
+uuid: 890611d0-6829-4acc-86eb-075a9236bb07
+langcode: en
+status: true
+dependencies:
+  config:
+    - entityqueue.entity_queue.international_sponsors
+id: entity_subqueue.international_sponsors
+target_entity_type_id: entity_subqueue
+target_bundle: international_sponsors
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,10 @@
+display:
+  conditions:
+    display_options:
+      title: '질환 항목 '
+  tests:
+    display_options:
+      title: '검사 항목 '
+  screenings:
+    display_options:
+      title: '선별검사 및 정기검진 항목'

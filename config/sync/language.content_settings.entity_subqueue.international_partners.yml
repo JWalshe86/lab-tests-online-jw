@@ -1,0 +1,11 @@
+uuid: 04c8d8ec-5d8d-46f9-a5e8-ad2d0f814c46
+langcode: en
+status: true
+dependencies:
+  config:
+    - entityqueue.entity_queue.international_partners
+id: entity_subqueue.international_partners
+target_entity_type_id: entity_subqueue
+target_bundle: international_partners
+default_langcode: site_default
+language_alterable: false

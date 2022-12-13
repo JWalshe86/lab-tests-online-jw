@@ -1,0 +1,78 @@
+uuid: 22312f89-ce65-4f67-9521-fca73b0d02d9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_reference_range_items
+    - paragraphs.paragraphs_type.expandable_button
+    - paragraphs.paragraphs_type.reference_range_item
+  module:
+    - entity_reference_revisions
+id: paragraph.expandable_button.field_reference_range_items
+field_name: field_reference_range_items
+entity_type: paragraph
+bundle: expandable_button
+label: 'Reference Range Items'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      reference_range_item: reference_range_item
+    target_bundles_drag_drop:
+      accordion:
+        weight: 18
+        enabled: false
+      accordion_item:
+        weight: 19
+        enabled: false
+      column:
+        weight: 20
+        enabled: false
+      columns:
+        weight: 21
+        enabled: false
+      expandable:
+        weight: 22
+        enabled: false
+      expandable_button:
+        weight: 23
+        enabled: false
+      grid:
+        weight: 24
+        enabled: false
+      media_gallery:
+        weight: 25
+        enabled: false
+      navigation:
+        weight: 26
+        enabled: false
+      reference_ranges:
+        weight: 27
+        enabled: false
+      reference_range_item:
+        enabled: true
+        weight: 28
+      related_content:
+        weight: 29
+        enabled: false
+      related_screening_item:
+        weight: 30
+        enabled: false
+      screening_tests:
+        weight: 31
+        enabled: false
+      section_navigation_item:
+        weight: 32
+        enabled: false
+      sponsor_keyword:
+        weight: 33
+        enabled: false
+      text_area:
+        weight: 34
+        enabled: false
+field_type: entity_reference_revisions

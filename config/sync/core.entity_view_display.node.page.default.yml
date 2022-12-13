@@ -1,0 +1,122 @@
+uuid: f06e2a96-ec3b-4c65-8622-95fdd3f3c65d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.page.body
+    - field.field.node.page.field_cover_image
+    - field.field.node.page.field_embed_form
+    - field.field.node.page.field_exclude_from_search
+    - field.field.node.page.field_feature_article
+    - field.field.node.page.field_image_caption
+    - field.field.node.page.field_keywords
+    - field.field.node.page.field_legacy_istargethcp
+    - field.field.node.page.field_meta_tags
+    - field.field.node.page.field_migration_notes
+    - field.field.node.page.field_migration_status
+    - field.field.node.page.field_oldpath
+    - field.field.node.page.field_reviewed
+    - field.field.node.page.field_subcontent
+    - node.type.page
+  module:
+    - ds
+    - entity_reference_revisions
+    - image
+    - text
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_2col_stacked_fluid
+      library: ds/ds_2col_stacked_fluid
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          header: div
+          left: div
+          right: div
+          footer: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      header:
+        - field_cover_image
+        - field_image_caption
+      left:
+        - body
+        - links
+        - field_subcontent
+      right:
+        - field_embed_form
+_core:
+  default_config_hash: 0--qcxqN8wAXVvdNYMkjw48ah58Je8FjSyDr3LrifmE
+id: node.page.default
+targetEntityType: node
+bundle: page
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    region: left
+  field_cover_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: header
+  field_embed_form:
+    type: entity_reference_revisions_entity_view
+    weight: 5
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: right
+  field_image_caption:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: header
+  field_subcontent:
+    weight: 4
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: left
+  links:
+    weight: 3
+    region: left
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  content_moderation_control: true
+  field_exclude_from_search: true
+  field_feature_article: true
+  field_keywords: true
+  field_legacy_istargethcp: true
+  field_meta_tags: true
+  field_migration_notes: true
+  field_migration_status: true
+  field_oldpath: true
+  field_reviewed: true
+  langcode: true
+  revision_date: true

@@ -1,0 +1,12 @@
+display:
+  default:
+    display_options:
+      filters:
+        type:
+          group_info:
+            description: ''
+      empty:
+        area:
+          content:
+            value: "<div class=\"search-no-results\">\r\n<p>¿Tiene problemas? Estas son algunas sugerencias útiles para las búsquedas:</p>\r\n\r\n<ul>\r\n\t<li>Algunas pruebas y estados fisiológicos se conocen por diferentes nombres; intente buscar por esos otros nombres también (ej. el infarto agudo de miocardio se denomina también IAM; la aspartato aminotransferasa se conoce como AST).</li>\r\n\t<li>Si está buscando por una prueba o medicamento patentado es posible que no lo encuentre por el nombre comercial. Inténtelo de nuevo con el nombre del genérico correspondiente (ej. ácido acetil salicílico en vez de Aspirina).</li>\r\n\t<li>Si está buscando una frase, póngala entre comillas (ej. \"equilibrio ácido-base\").</li>\r\n\t<li>Revise la ortografía de las palabras.</li>\r\n</ul>\r\n\r\n<p>Si aún no ha podido encontrar lo que está buscando, <a href=\"/contact-us\">contacte con nosotros</a>, por favor.</p>\r\n</div>\r\n"
+            format: full_html

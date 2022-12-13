@@ -1,0 +1,21 @@
+uuid: 604f2f98-165b-4cf8-b636-cffb0b6b763d
+langcode: en
+status: true
+dependencies:
+  module:
+    - announcement_pop_up
+id: announcement.field_opt_out_text
+field_name: field_opt_out_text
+entity_type: announcement
+type: string
+settings:
+  max_length: 50
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

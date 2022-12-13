@@ -1,0 +1,25 @@
+uuid: 93926226-9879-4834-a0ca-02ede005958a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.aacc_feeds_feed.field_test_links
+  module:
+    - aacc_feeds
+    - options
+_core:
+  default_config_hash: JGneMIRKuK8ieh-vMwT8BPgjBYVUN24owBb6ddQs1yk
+id: aacc_feeds_feed.aacc_feeds_feed.field_test_links
+field_name: field_test_links
+entity_type: aacc_feeds_feed
+bundle: aacc_feeds_feed
+label: 'Test Links'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 'JS Callback 1'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

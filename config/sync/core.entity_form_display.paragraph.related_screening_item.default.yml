@@ -1,0 +1,40 @@
+uuid: 1371ce61-9a37-4853-90a0-c3428e25ca02
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.related_screening_item.field_name_of_screening_test
+    - field.field.paragraph.related_screening_item.field_related_screening_group
+    - field.field.paragraph.related_screening_item.field_sub_content_type
+    - paragraphs.paragraphs_type.related_screening_item
+id: paragraph.related_screening_item.default
+targetEntityType: paragraph
+bundle: related_screening_item
+mode: default
+content:
+  field_related_screening_group:
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_sub_content_type:
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  translation:
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_name_of_screening_test: true
+  status: true
+  uid: true

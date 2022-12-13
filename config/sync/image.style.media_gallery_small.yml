@@ -1,0 +1,15 @@
+uuid: 7270df94-aaf3-4618-9aa7-e565e24116dc
+langcode: en
+status: true
+dependencies: {  }
+name: media_gallery_small
+label: 'Media Gallery - small'
+effects:
+  2de4d5bf-6bda-4499-87f0-09802b69338b:
+    uuid: 2de4d5bf-6bda-4499-87f0-09802b69338b
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 370
+      height: 370
+      anchor: center-center

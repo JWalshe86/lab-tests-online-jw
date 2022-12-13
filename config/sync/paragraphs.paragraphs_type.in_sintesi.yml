@@ -1,0 +1,9 @@
+uuid: 5340ff6a-c6ce-416c-a9b1-66be300cf583
+langcode: it
+status: true
+dependencies: {  }
+id: in_sintesi
+label: 'In Sintesi'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

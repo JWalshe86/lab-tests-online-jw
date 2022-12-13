@@ -1,0 +1,19 @@
+uuid: d6a39055-83e1-44a8-b33f-bbaa63d823f3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_cap_ack
+    - media.type.image
+id: media.image.field_cap_ack
+field_name: field_cap_ack
+entity_type: media
+bundle: image
+label: Caption/Acknowledgement
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

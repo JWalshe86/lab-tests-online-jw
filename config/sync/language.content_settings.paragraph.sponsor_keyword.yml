@@ -1,0 +1,16 @@
+uuid: 0ac2412a-9790-405e-9c2d-e88276b70e28
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.sponsor_keyword
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+id: paragraph.sponsor_keyword
+target_entity_type_id: paragraph
+target_bundle: sponsor_keyword
+default_langcode: site_default
+language_alterable: false

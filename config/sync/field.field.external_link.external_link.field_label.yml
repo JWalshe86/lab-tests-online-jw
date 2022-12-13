@@ -1,0 +1,20 @@
+uuid: f4684f44-3a30-4c4f-86ac-84bf8eeee505
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.external_link.field_label
+  module:
+    - external_link
+id: external_link.external_link.field_label
+field_name: field_label
+entity_type: external_link
+bundle: external_link
+label: Label
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

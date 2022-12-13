@@ -1,0 +1,24 @@
+uuid: a4b68fd9-6fdc-40f6-bd61-1787a4f468ee
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_default_test_result_conten
+    - paragraphs.paragraphs_type.expandable_button
+  module:
+    - text
+id: paragraph.expandable_button.field_default_test_result_conten
+field_name: field_default_test_result_conten
+entity_type: paragraph
+bundle: expandable_button
+label: 'Looking for Test Results?'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: "<p>On average it takes 7 working days for the blood test results to come back from the hospital, depending on the exact tests requested. Some specialist test results may take longer, if samples have to be sent to a reference (specialist) laboratory. The X-ray &amp; scan results may take longer. If you are registered to use the online services of your local practice, you may be able to access your results online. Your GP practice will be able to provide specific details.</p>\r\n\r\n<p>If the doctor wants to see you about the result(s), you will be offered an appointment. If you are concerned about your test results, you will need to arrange an appointment with your doctor so that all relevant information including age, ethnicity, health history, signs and symptoms, laboratory and other procedures (radiology, endoscopy, etc.), can be considered.</p>\r\n\r\n<p>Lab Tests Online-UK is an educational website designed to provide patients and carers with information on laboratory tests used in medical care. We are not a laboratory and are unable to comment on an individual's health and treatment.</p>\r\n"
+    format: basic_html
+default_value_callback: ''
+settings: {  }
+field_type: text_long

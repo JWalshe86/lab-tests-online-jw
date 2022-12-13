@@ -1,0 +1,30 @@
+uuid: e31b4cb1-22f1-4bbd-bac1-904842bb3568
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_media_gallery_items
+    - media.type.image
+    - media.type.video
+    - paragraphs.paragraphs_type.media_gallery
+id: paragraph.media_gallery.field_media_gallery_items
+field_name: field_media_gallery_items
+entity_type: paragraph
+bundle: media_gallery
+label: 'Media Gallery Items'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+      video: video
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: image
+field_type: entity_reference

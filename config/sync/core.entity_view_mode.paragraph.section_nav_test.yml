@@ -1,0 +1,10 @@
+uuid: 9c2efd75-dd20-4d8d-9d88-b7b3d5ed5a24
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.section_nav_test
+label: 'Section Nav Test'
+targetEntityType: paragraph
+cache: true

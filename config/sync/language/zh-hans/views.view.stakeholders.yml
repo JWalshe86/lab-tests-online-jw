@@ -1,0 +1,17 @@
+display:
+  collaborating_partners:
+    display_title: 合作伙伴
+    display_options:
+      use_more_text: 查看更多
+      title: 合作伙伴
+      block_description: 合作伙伴
+  collaborating_partners_full:
+    display_title: 合作伙伴
+    display_options:
+      title: 合作伙伴
+  corporate_sponsors:
+    display_title: 赞助商
+  default:
+    display_options:
+      title: 赞助商
+      use_more_text: 查看全部

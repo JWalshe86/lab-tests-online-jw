@@ -1,0 +1,78 @@
+uuid: c5414a9a-cc6e-4ac3-9c19-df5dcebf1860
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_looking_for_buttons
+    - paragraphs.paragraphs_type.expandable_button
+    - paragraphs.paragraphs_type.looking_for_buttons
+  module:
+    - entity_reference_revisions
+id: paragraph.looking_for_buttons.field_looking_for_buttons
+field_name: field_looking_for_buttons
+entity_type: paragraph
+bundle: looking_for_buttons
+label: 'Looking For Buttons'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      expandable_button: expandable_button
+    target_bundles_drag_drop:
+      looking_for_buttons:
+        weight: 18
+        enabled: false
+      accordion:
+        weight: 19
+        enabled: false
+      accordion_item:
+        weight: 20
+        enabled: false
+      column:
+        weight: 21
+        enabled: false
+      columns:
+        weight: 22
+        enabled: false
+      expandable:
+        weight: 23
+        enabled: false
+      expandable_button:
+        enabled: true
+        weight: 24
+      grid:
+        weight: 25
+        enabled: false
+      media_gallery:
+        weight: 26
+        enabled: false
+      navigation:
+        weight: 27
+        enabled: false
+      reference_range_item:
+        weight: 28
+        enabled: false
+      related_content:
+        weight: 29
+        enabled: false
+      related_screening_item:
+        weight: 30
+        enabled: false
+      screening_tests:
+        weight: 31
+        enabled: false
+      section_navigation_item:
+        weight: 32
+        enabled: false
+      sponsor_keyword:
+        weight: 33
+        enabled: false
+      text_area:
+        weight: 34
+        enabled: false
+field_type: entity_reference_revisions

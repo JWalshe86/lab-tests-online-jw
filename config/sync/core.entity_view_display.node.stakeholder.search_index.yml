@@ -1,0 +1,135 @@
+uuid: 4e43dc0a-628d-4d78-a71e-a1a09a1eb96c
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_index
+    - field.field.node.stakeholder.body
+    - field.field.node.stakeholder.field_exclude_from_search
+    - field.field.node.stakeholder.field_links
+    - field.field.node.stakeholder.field_logo
+    - field.field.node.stakeholder.field_meta_tags
+    - field.field.node.stakeholder.field_migration_notes
+    - field.field.node.stakeholder.field_migration_status
+    - field.field.node.stakeholder.field_oldpath
+    - field.field.node.stakeholder.field_reviewed
+    - field.field.node.stakeholder.field_sponsor_imps
+    - field.field.node.stakeholder.field_sponsor_keywords
+    - field.field.node.stakeholder.field_sponsor_level
+    - field.field.node.stakeholder.field_sponsor_type
+    - field.field.node.stakeholder.field_sponsor_users
+    - field.field.node.stakeholder.field_stakeholder_type
+    - image.style.stakeholder_logo
+    - node.type.stakeholder
+  module:
+    - aacc_foundation_magellan_field_format
+    - ds
+    - image
+    - smart_trim
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: layout_onecol
+      library: layout_discovery/onecol
+      disable_css: false
+      entity_classes: all_classes
+      settings: {  }
+    regions:
+      content:
+        - node_title
+        - field_logo
+        - body
+        - node_link
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 0
+        label: hidden
+        formatter: default
+        settings:
+          link: true
+          wrapper: h2
+          class: stakeholder-search-title
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+      node_link:
+        plugin_id: node_link
+        weight: 3
+        label: hidden
+        formatter: default
+id: node.stakeholder.search_index
+targetEntityType: node
+bundle: stakeholder
+mode: search_index
+content:
+  body:
+    label: hidden
+    type: smart_trim
+    weight: 2
+    settings:
+      trim_length: 350
+      trim_type: chars
+      trim_suffix: ...
+      wrap_class: trimmed
+      more_text: More
+      more_class: more-link
+      summary_handler: full
+      wrap_output: false
+      more_link: false
+      trim_options:
+        text: false
+        trim_zero: false
+    third_party_settings:
+      aacc_foundation_magellan_field_format:
+        magellan_target_label: ''
+        magellan_target_clean: true
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    region: content
+  field_logo:
+    weight: 1
+    label: hidden
+    settings:
+      image_style: stakeholder_logo
+      image_link: content
+    third_party_settings:
+      aacc_foundation_magellan_field_format:
+        magellan_target_label: ''
+        magellan_target_clean: false
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: image
+    region: content
+hidden:
+  content_moderation_control: true
+  field_exclude_from_search: true
+  field_links: true
+  field_meta_tags: true
+  field_migration_notes: true
+  field_migration_status: true
+  field_oldpath: true
+  field_reviewed: true
+  field_sponsor_imps: true
+  field_sponsor_keywords: true
+  field_sponsor_level: true
+  field_sponsor_type: true
+  field_sponsor_users: true
+  field_stakeholder_type: true
+  langcode: true
+  links: true
+  revision_date: true

@@ -1,0 +1,89 @@
+uuid: 27e4cebb-ab19-4f7f-9de9-8085c36b9bc9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_subcontent
+    - node.type.news_item
+    - paragraphs.paragraphs_type.accordion
+    - paragraphs.paragraphs_type.columns
+    - paragraphs.paragraphs_type.expandable
+    - paragraphs.paragraphs_type.grid
+    - paragraphs.paragraphs_type.media_gallery
+    - paragraphs.paragraphs_type.navigation
+    - paragraphs.paragraphs_type.related_content
+    - paragraphs.paragraphs_type.text_area
+  module:
+    - entity_reference_revisions
+id: node.news_item.field_subcontent
+field_name: field_subcontent
+entity_type: node
+bundle: news_item
+label: Subcontent
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      accordion: accordion
+      expandable: expandable
+      grid: grid
+      related_content: related_content
+      columns: columns
+      media_gallery: media_gallery
+      navigation: navigation
+      text_area: text_area
+    target_bundles_drag_drop:
+      accordion:
+        enabled: true
+        weight: -25
+      accordion_item:
+        weight: -24
+        enabled: false
+      expandable:
+        enabled: true
+        weight: -23
+      grid:
+        enabled: true
+        weight: -22
+      related_content:
+        enabled: true
+        weight: -21
+      columns:
+        enabled: true
+        weight: -20
+      column:
+        weight: -19
+        enabled: false
+      media_gallery:
+        enabled: true
+        weight: -18
+      navigation:
+        enabled: true
+        weight: -17
+      section_navigation_item:
+        weight: -15
+        enabled: false
+      text_area:
+        enabled: true
+        weight: -14
+      reference_range_item:
+        weight: 25
+        enabled: false
+      reference_ranges:
+        weight: 26
+        enabled: false
+      related_screening_item:
+        weight: 28
+        enabled: false
+      screening_tests:
+        weight: 29
+        enabled: false
+      sponsor_keyword:
+        weight: 31
+        enabled: false
+field_type: entity_reference_revisions

@@ -1,0 +1,20 @@
+uuid: 822099ee-d27b-4d1f-b91f-fe2f80202cd2
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - responsive_image
+_core:
+  default_config_hash: jgkWEqmS5AbUiSR4r6O8ShBZm5-dManQRzofTiuuT3g
+name: max_2600x2600
+label: 'Max 2600x2600'
+effects:
+  9b311dd1-0351-45a1-9500-cd069e4670cb:
+    uuid: 9b311dd1-0351-45a1-9500-cd069e4670cb
+    id: image_scale
+    weight: 3
+    data:
+      width: 2600
+      height: 2600
+      upscale: false

@@ -1,0 +1,15 @@
+uuid: ba5f623e-517f-4b7f-adab-9942a6851b0c
+langcode: en
+status: true
+dependencies: {  }
+name: hero_banner_medium
+label: 'Hero Banner - Medium'
+effects:
+  4ab1369c-85db-4a0c-8fe9-5f4ac0bb44e5:
+    uuid: 4ab1369c-85db-4a0c-8fe9-5f4ac0bb44e5
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 995
+      height: 350
+      anchor: center-center

@@ -1,0 +1,37 @@
+uuid: 6cec8577-5061-4003-bb1d-25ad0514f5de
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.navigation.field_navigation_items
+    - field.field.paragraph.navigation.field_sub_content_type
+    - paragraphs.paragraphs_type.navigation
+  module:
+    - paragraphs
+id: paragraph.navigation.default
+targetEntityType: paragraph
+bundle: navigation
+mode: default
+content:
+  field_navigation_items:
+    type: entity_reference_paragraphs
+    weight: 3
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_sub_content_type:
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

@@ -1,0 +1,22 @@
+uuid: 0188a10c-dedb-42bb-bcb4-635a79994e78
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.definition
+id: node.definition.status
+field_name: status
+entity_type: node
+bundle: definition
+label: 'Publishing status'
+description: 'A boolean indicating whether the node is published.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,28 @@
+uuid: bf8095ae-747b-4df0-8f6f-b6387b7fca38
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.sponsorship_level.field_imp_per_mo
+    - field.field.taxonomy_term.sponsorship_level.field_keyword_max
+    - field.field.taxonomy_term.sponsorship_level.field_weight
+    - taxonomy.vocabulary.sponsorship_level
+  module:
+    - text
+id: taxonomy_term.sponsorship_level.default
+targetEntityType: taxonomy_term
+bundle: sponsorship_level
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_imp_per_mo: true
+  field_keyword_max: true
+  field_weight: true
+  langcode: true

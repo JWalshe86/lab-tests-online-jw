@@ -1,0 +1,10 @@
+uuid: f033f2b0-e573-436e-a322-8f72ec157a08
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.feature_article
+label: 'Feature Article'
+targetEntityType: node
+cache: true

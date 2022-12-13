@@ -1,0 +1,24 @@
+uuid: fb6fde3e-dfba-4875-8931-901da418df34
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_default_reference_range_co
+    - paragraphs.paragraphs_type.expandable_button
+  module:
+    - text
+id: paragraph.expandable_button.field_default_reference_range_co
+field_name: field_default_reference_range_co
+entity_type: paragraph
+bundle: expandable_button
+label: 'Looking for Reference Ranges?'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: "<p>Reference ranges are dependent on many factors, including patient age, sex, sample population, and test method, and numeric test results can have different meanings in different laboratories.</p>\r\n\r\n<p>For these reasons, you will not find reference ranges for the majority of tests described on this web site. The lab report containing your test results should include the relevant reference range for your test(s). Please consult your doctor or the laboratory that performed the test(s) to obtain the reference range if you do not have the lab report.</p>\r\n\r\n<p>For more information on reference ranges, please read <a data-entity-substitution=\"canonical\" data-entity-type=\"node\" data-entity-uuid=\"b92aa857-084d-4b82-8c27-1bbb66785a4a\" href=\"/node/96\">Reference Ranges and What They Mean</a>.</p>\r\n"
+    format: basic_html
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,23 @@
+uuid: 348e0673-129c-4599-a4c8-213807a16aed
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_legacy_istargethcp
+    - node.type.article
+id: node.article.field_legacy_istargethcp
+field_name: field_legacy_istargethcp
+entity_type: node
+bundle: article
+label: 'Target HCP'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,7 @@
+uuid: 2fbe5200-964c-468f-a8cc-d7fc44ade559
+langcode: en
+status: true
+dependencies: {  }
+id: section_navigation_item
+label: 'Section Navigation Item'
+behavior_plugins: {  }

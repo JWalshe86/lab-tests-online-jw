@@ -1,0 +1,13 @@
+type_settings:
+  states:
+    draft:
+      label: Taslak
+    published:
+      label: Yayınlanan
+    work_in_progress:
+      label: 'Devam Ediyor'
+  transitions:
+    publish:
+      label: Yayınla
+    work_in_progress:
+      label: 'Devam Ediyor'

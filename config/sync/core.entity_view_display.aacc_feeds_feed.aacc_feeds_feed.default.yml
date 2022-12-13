@@ -1,0 +1,54 @@
+uuid: c95ff3ce-c770-4536-bf8f-18e11e285a21
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.aacc_feeds_feed.aacc_feeds_feed.field_client
+    - field.field.aacc_feeds_feed.aacc_feeds_feed.field_condition_links
+    - field.field.aacc_feeds_feed.aacc_feeds_feed.field_condition_sub_content
+    - field.field.aacc_feeds_feed.aacc_feeds_feed.field_feed_content_updates
+    - field.field.aacc_feeds_feed.aacc_feeds_feed.field_feed_details
+    - field.field.aacc_feeds_feed.aacc_feeds_feed.field_feed_emails
+    - field.field.aacc_feeds_feed.aacc_feeds_feed.field_log_limit
+    - field.field.aacc_feeds_feed.aacc_feeds_feed.field_notification_interval
+    - field.field.aacc_feeds_feed.aacc_feeds_feed.field_screening_links
+    - field.field.aacc_feeds_feed.aacc_feeds_feed.field_screening_sub_content
+    - field.field.aacc_feeds_feed.aacc_feeds_feed.field_selected_conditions
+    - field.field.aacc_feeds_feed.aacc_feeds_feed.field_selected_screenings
+    - field.field.aacc_feeds_feed.aacc_feeds_feed.field_selected_tests
+    - field.field.aacc_feeds_feed.aacc_feeds_feed.field_test_links
+    - field.field.aacc_feeds_feed.aacc_feeds_feed.field_test_sub_content
+  module:
+    - aacc_feeds
+_core:
+  default_config_hash: 4HuvGb40-9eo59KYpj15yETQu3X9N-dVl26uGsYs7xM
+id: aacc_feeds_feed.aacc_feeds_feed.default
+targetEntityType: aacc_feeds_feed
+bundle: aacc_feeds_feed
+mode: default
+content:
+  name:
+    label: above
+    type: string
+    weight: 0
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  field_client: true
+  field_condition_links: true
+  field_condition_sub_content: true
+  field_feed_content_updates: true
+  field_feed_details: true
+  field_feed_emails: true
+  field_log_limit: true
+  field_notification_interval: true
+  field_screening_links: true
+  field_screening_sub_content: true
+  field_selected_conditions: true
+  field_selected_screenings: true
+  field_selected_tests: true
+  field_test_links: true
+  field_test_sub_content: true
+  search_api_excerpt: true

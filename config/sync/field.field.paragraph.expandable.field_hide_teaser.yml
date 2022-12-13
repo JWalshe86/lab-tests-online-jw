@@ -1,0 +1,23 @@
+uuid: 3c99a610-34fd-4f13-9386-f1b47e8d0152
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_hide_teaser
+    - paragraphs.paragraphs_type.expandable
+id: paragraph.expandable.field_hide_teaser
+field_name: field_hide_teaser
+entity_type: paragraph
+bundle: expandable
+label: 'Hide Teaser'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: '1'
+  off_label: '0'
+field_type: boolean

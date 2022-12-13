@@ -1,0 +1,24 @@
+uuid: 62f14ea3-717d-4bb1-9d0a-7c9584bd9956
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+    - help
+  theme:
+    - aacc_lto_foundation
+third_party_settings:
+  block_class:
+    classes: ''
+id: help
+theme: aacc_lto_foundation
+region: content
+weight: -21
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

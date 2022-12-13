@@ -1,0 +1,25 @@
+uuid: 4f0241af-a21b-42e9-8994-19884ff7d6c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_form
+    - paragraphs.paragraphs_type.embed_form
+  module:
+    - webform
+id: paragraph.embed_form.field_form
+field_name: field_form
+entity_type: paragraph
+bundle: embed_form
+label: Form
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:webform'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: webform

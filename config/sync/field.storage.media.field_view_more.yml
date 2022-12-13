@@ -1,0 +1,21 @@
+uuid: e0690a90-30bb-47e7-81f0-cea67cd64b0b
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.field_view_more
+field_name: field_view_more
+entity_type: media
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

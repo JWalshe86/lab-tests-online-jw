@@ -1,0 +1,21 @@
+uuid: 0908fa1a-ad15-418b-bf7d-09d2417f54ac
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_legacy_commonq
+    - node.type.test
+  module:
+    - text
+id: node.test.field_legacy_commonq
+field_name: field_legacy_commonq
+entity_type: node
+bundle: test
+label: 'Legacy CommonQ'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

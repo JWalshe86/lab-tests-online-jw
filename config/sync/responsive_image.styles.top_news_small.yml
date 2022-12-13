@@ -1,0 +1,35 @@
+uuid: 508d1c0e-5fb7-465f-b905-58b19154c390
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.top_news_mobile
+    - image.style.top_news_small_desktop
+    - image.style.top_news_small_tablet
+  theme:
+    - aacc_lto_foundation
+id: top_news_small
+label: 'Top News Small'
+image_style_mappings:
+  -
+    breakpoint_id: aacc_lto_foundation.xlarge
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: top_news_small_desktop
+  -
+    breakpoint_id: aacc_lto_foundation.large
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: top_news_small_desktop
+  -
+    breakpoint_id: aacc_lto_foundation.medium
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: top_news_small_tablet
+  -
+    breakpoint_id: aacc_lto_foundation.small
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: top_news_mobile
+breakpoint_group: aacc_lto_foundation
+fallback_image_style: top_news_small_desktop

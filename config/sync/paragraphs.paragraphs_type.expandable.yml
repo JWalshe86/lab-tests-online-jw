@@ -1,0 +1,7 @@
+uuid: f640609b-4d0a-44b6-bd7b-84fab96b4a18
+langcode: en
+status: true
+dependencies: {  }
+id: expandable
+label: Expandable
+behavior_plugins: {  }

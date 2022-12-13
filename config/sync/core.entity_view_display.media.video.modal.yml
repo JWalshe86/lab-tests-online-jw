@@ -1,0 +1,117 @@
+uuid: 42c063a0-80a7-45be-82fe-7a68195b78f5
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.modal
+    - field.field.media.video.field_cap_ack
+    - field.field.media.video.field_media_video_embed_field
+    - media.type.video
+    - responsive_image.styles.media_gallery
+  module:
+    - aacc_foundation_magellan_field_format
+    - ds
+    - responsive_image
+    - video_embed_field
+third_party_settings:
+  ds:
+    layout:
+      id: ds_2col
+      library: ds/ds_2col
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          left: div
+          right: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      left:
+        - thumbnail
+      right:
+        - field_media_video_embed_field
+        - field_cap_ack
+id: media.video.modal
+targetEntityType: media
+bundle: video
+mode: modal
+content:
+  field_cap_ack:
+    type: string
+    weight: 2
+    region: right
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_media_video_embed_field:
+    type: video_embed_field_video
+    weight: 1
+    label: hidden
+    settings:
+      responsive: true
+      width: 854
+      height: 480
+      autoplay: false
+    third_party_settings:
+      aacc_foundation_magellan_field_format:
+        magellan_target_label: ''
+        magellan_target_clean: true
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    region: right
+  thumbnail:
+    type: responsive_image
+    weight: 0
+    label: hidden
+    settings:
+      responsive_image_style: media_gallery
+      image_link: ''
+    third_party_settings:
+      aacc_foundation_magellan_field_format:
+        magellan_target_label: ''
+        magellan_target_clean: true
+      ds:
+        ft:
+          id: expert
+          settings:
+            lb: ''
+            prefix: ''
+            lbw-el: ''
+            lbw-cl: ''
+            lbw-at: ''
+            ow-el: ''
+            ow-cl: ''
+            ow-at: ''
+            fis-el: ''
+            fis-cl: ''
+            fis-at: ''
+            fi: true
+            fi-el: div
+            fi-cl: ''
+            fi-at: 'data-open="media-[media:mid]"'
+            suffix: ''
+            lbw: false
+            lb-col: false
+            ow: false
+            ow-def-at: false
+            ow-def-cl: false
+            fis: false
+            fis-def-at: false
+            fi-def-at: false
+    region: left
+hidden:
+  created: true
+  langcode: true
+  name: true
+  uid: true

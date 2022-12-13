@@ -1,0 +1,8 @@
+endpoints:
+  prod: 'https://www.ascls.org/index.php?option=com_ascls&task=Question.remote'
+  dev: 'https://ascls.cloudaccess.host/index.php?option=com_ascls&task=Question.remote'
+use_dev_endpoints: 'FALSE'
+_core:
+  default_config_hash: 7BXnfkPoBBldfuwDOMOWipyCUXgbmJ2BqUy9caI2XhY
+endpoint_prod: 'https://www.ascls.org/index.php?option=com_ascls&task=Question.remote'
+endpoint_dev: 'http://ascls.cloudaccess.host/index.php?option=com_ascls&task=Question.remote'

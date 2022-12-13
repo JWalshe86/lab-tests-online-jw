@@ -1,0 +1,20 @@
+uuid: fdd3d03b-fda3-40e8-83f4-936ad4997637
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.person_type
+  module:
+    - path
+id: taxonomy_term.person_type.path
+field_name: path
+entity_type: taxonomy_term
+bundle: person_type
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

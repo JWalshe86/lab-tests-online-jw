@@ -1,0 +1,319 @@
+uuid: 6d2a889c-3e93-421b-89e2-b1f2b0ad5c00
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - field.storage.node.field_formal_name
+    - field.storage.node.field_keywords
+    - field.storage.node.field_misspellings
+    - field.storage.node.field_test_synonyms
+    - search_api.server.lto_aacc_solr
+  module:
+    - node
+    - search_api
+    - aacc_search
+    - search_api_exclude_entity
+third_party_settings:
+  search_api_solr:
+    highlighter:
+      maxAnalyzedChars: 51200
+      fragmenter: gap
+      usePhraseHighlighter: true
+      highlightMultiTerm: true
+      preserveMulti: false
+      regex:
+        slop: 0.5
+        pattern: blank
+        maxAnalyzedChars: 10000
+      highlight:
+        mergeContiguous: false
+        requireFieldMatch: false
+        snippets: 3
+        fragsize: 0
+      _core:
+        default_config_hash: j9c4shNpXLQZBrA2yLnQaXbdGyjjTszn0GnqK3oJ08Q
+    advanced:
+      index_prefix: ''
+    multilingual:
+      limit_to_content_language: false
+      include_language_independent: true
+    term_modifiers:
+      slop: 10000000
+      fuzzy: 2
+id: main
+name: Main
+description: ''
+read_only: false
+field_settings:
+  aacc_subcontent_entities:
+    label: 'Add Subcontent Entities'
+    property_path: aacc_subcontent_entities
+    type: text
+    boost: !!float 3
+  body:
+    label: Body
+    datasource_id: 'entity:node'
+    property_path: body
+    type: text
+    boost: !!float 3
+    dependencies:
+      config:
+        - field.storage.node.body
+  created:
+    label: 'Authored on'
+    datasource_id: 'entity:node'
+    property_path: created
+    type: date
+    dependencies:
+      module:
+        - node
+  field_formal_name:
+    label: 'Formal Name'
+    datasource_id: 'entity:node'
+    property_path: field_formal_name
+    type: text
+    boost: !!float 3
+    dependencies:
+      config:
+        - field.storage.node.field_formal_name
+  field_keywords:
+    label: Keywords
+    datasource_id: 'entity:node'
+    property_path: field_keywords
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_keywords
+  field_misspellings:
+    label: Misspellings
+    datasource_id: 'entity:node'
+    property_path: field_misspellings
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_misspellings
+  field_test_synonyms:
+    label: Synonyms
+    datasource_id: 'entity:node'
+    property_path: field_test_synonyms
+    type: text
+    boost: !!float 3
+    dependencies:
+      config:
+        - field.storage.node.field_test_synonyms
+  node_grants:
+    label: 'Node access information'
+    property_path: search_api_node_grants
+    type: string
+    indexed_locked: true
+    type_locked: true
+    hidden: true
+  status:
+    label: status
+    datasource_id: 'entity:node'
+    property_path: status
+    type: boolean
+    indexed_locked: true
+    type_locked: true
+    dependencies:
+      module:
+        - node
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: text
+    boost: !!float 5
+    dependencies:
+      module:
+        - node
+  type:
+    label: 'Content type'
+    datasource_id: 'entity:node'
+    property_path: type
+    type: string
+    dependencies:
+      module:
+        - node
+  uid:
+    label: uid
+    datasource_id: 'entity:node'
+    property_path: uid
+    type: integer
+    indexed_locked: true
+    type_locked: true
+    dependencies:
+      module:
+        - node
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: true
+      selected: {  }
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  content_access:
+    weights:
+      preprocess_query: -10
+  entity_status: {  }
+  html_filter:
+    all_fields: false
+    fields:
+      - body
+      - field_keywords
+      - title
+    title: true
+    alt: true
+    tags:
+      b: 2
+      h1: 5
+      h2: 3
+      h3: 2
+      strong: 2
+    weights:
+      preprocess_index: -10
+      preprocess_query: -10
+  ignore_character:
+    all_fields: false
+    fields:
+      - body
+      - field_keywords
+      - title
+      - type
+    ignorable: '[''¿¡!?,.:;]'
+    strip:
+      character_sets:
+        Cc: 0
+        Cf: 0
+        Co: 0
+        Mc: 0
+        Me: 0
+        Mn: 0
+        Pc: Pc
+        Pd: Pd
+        Pe: Pe
+        Pf: Pf
+        Pi: Pi
+        Po: Po
+        Ps: Ps
+        Sc: 0
+        Sk: 0
+        Sm: 0
+        So: 0
+        Zl: 0
+        Zp: 0
+        Zs: 0
+    weights:
+      preprocess_index: -10
+      preprocess_query: -10
+  ignorecase:
+    all_fields: false
+    fields:
+      - body
+      - field_keywords
+      - title
+    weights:
+      preprocess_index: -10
+      preprocess_query: -10
+  rendered_item: {  }
+  search_api_exclude_entity_processor:
+    fields:
+      node:
+        - field_exclude_from_search
+  stemmer:
+    all_fields: false
+    fields:
+      - body
+      - field_keywords
+      - title
+    exceptions:
+      mexican: mexic
+      texan: texa
+    weights:
+      preprocess_index: 0
+      preprocess_query: 0
+  stopwords:
+    all_fields: false
+    fields:
+      - body
+      - field_keywords
+      - title
+    stopwords:
+      - a
+      - an
+      - and
+      - are
+      - as
+      - at
+      - be
+      - but
+      - by
+      - for
+      - if
+      - in
+      - into
+      - is
+      - it
+      - 'no'
+      - not
+      - of
+      - 'on'
+      - or
+      - s
+      - such
+      - t
+      - that
+      - the
+      - their
+      - then
+      - there
+      - these
+      - they
+      - this
+      - to
+      - was
+      - will
+      - with
+    weights:
+      preprocess_index: -5
+      preprocess_query: -2
+  subcontent_entities: {  }
+  tokenizer:
+    all_fields: false
+    fields:
+      - body
+      - field_keywords
+      - title
+    spaces: ''
+    overlap_cjk: 1
+    minimum_word_size: '3'
+    weights:
+      preprocess_index: -6
+      preprocess_query: -6
+  transliteration:
+    all_fields: false
+    fields:
+      - aacc_subcontent_entities
+      - body
+      - field_formal_name
+      - field_keywords
+      - field_misspellings
+      - field_test_synonyms
+      - title
+      - type
+    weights:
+      preprocess_index: -10
+      preprocess_query: -10
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  index_directly: true
+  cron_limit: 50
+  track_changes_in_references: true
+server: lto_aacc_solr

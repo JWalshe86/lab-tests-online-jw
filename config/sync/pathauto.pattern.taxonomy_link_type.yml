@@ -1,0 +1,23 @@
+uuid: 3abf9b55-b9b0-4099-8c15-33d305722826
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: taxonomy_link_type
+label: 'Taxonomy: Link Type'
+type: 'canonical_entities:taxonomy_term'
+pattern: '/link-types/[term:name]'
+selection_criteria:
+  d132b697-ab20-4765-a486-a2477f1d2f1d:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      link_type: link_type
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: d132b697-ab20-4765-a486-a2477f1d2f1d
+selection_logic: and
+weight: -5
+relationships: {  }

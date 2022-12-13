@@ -1,0 +1,30 @@
+uuid: 0ac60a4f-8e1b-4729-92f9-50fe69d5e4f6
+langcode: en
+status: true
+dependencies:
+  module:
+    - aacc_feeds
+title: 'Monthly Cron Job for notifying Feed clients about content changes'
+id: monthly_feed_mail_cron_job
+weight: 0
+module: aacc_feeds
+callback: aacc_feeds_monthly_feed_mail_cron_job
+scheduler:
+  id: crontab
+  configuration:
+    rules:
+      - '5 23 1 * *'
+    catch_up: 0
+launcher:
+  id: serial
+  configuration:
+    timeouts:
+      lock_timeout: 3600
+    launcher:
+      thread: 0
+logger:
+  id: database
+  configuration:
+    method: '3'
+    expire: 1209600
+    retain: 1000

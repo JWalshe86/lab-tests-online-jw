@@ -1,0 +1,8 @@
+settings:
+  default_wizard_prev_button_label: '< Önceki Sayfa'
+  default_wizard_next_button_label: 'Sonraki Sayfa >'
+  default_wizard_start_label: Başlangıç
+  default_wizard_complete_label: Tamam
+  default_preview_next_button_label: Önizleme
+mail:
+  default_subject: ''

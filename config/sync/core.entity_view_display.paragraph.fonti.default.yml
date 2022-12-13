@@ -1,0 +1,36 @@
+uuid: 1e5a060e-f395-477b-ae5b-7e9a956fd225
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.fonti.field_body
+    - field.field.paragraph.fonti.field_expand_show_all
+    - field.field.paragraph.fonti.field_hide_teaser
+    - field.field.paragraph.fonti.field_label
+    - paragraphs.paragraphs_type.fonti
+  module:
+    - text
+id: paragraph.fonti.default
+targetEntityType: paragraph
+bundle: fonti
+mode: default
+content:
+  field_body:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_label:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  field_expand_show_all: true
+  field_hide_teaser: true
+  revision_date: true

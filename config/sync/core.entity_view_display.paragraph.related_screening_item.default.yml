@@ -1,0 +1,26 @@
+uuid: f344a2e6-213f-42db-9807-cd590d5badf3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.related_screening_item.field_name_of_screening_test
+    - field.field.paragraph.related_screening_item.field_related_screening_group
+    - field.field.paragraph.related_screening_item.field_sub_content_type
+    - paragraphs.paragraphs_type.related_screening_item
+id: paragraph.related_screening_item.default
+targetEntityType: paragraph
+bundle: related_screening_item
+mode: default
+content:
+  field_related_screening_group:
+    weight: 0
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden:
+  field_name_of_screening_test: true
+  field_sub_content_type: true
+  revision_date: true

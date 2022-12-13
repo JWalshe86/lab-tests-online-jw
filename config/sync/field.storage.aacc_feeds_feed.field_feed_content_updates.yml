@@ -1,0 +1,20 @@
+uuid: c6f43756-3955-4149-a46d-f7916c6ddb7a
+langcode: en
+status: true
+dependencies:
+  module:
+    - aacc_feeds
+_core:
+  default_config_hash: DvpMciZysNNxkHwrWwJGJnizsHU8u-V_zyoZQe0G53k
+id: aacc_feeds_feed.field_feed_content_updates
+field_name: field_feed_content_updates
+entity_type: aacc_feeds_feed
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

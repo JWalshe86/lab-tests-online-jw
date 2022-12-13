@@ -1,0 +1,10 @@
+uuid: 0a3e2f93-8ef9-4b19-b10b-2483578b09b0
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 1R68Q9_pTgjF4X2uJj92qXgnfcujj7gJvtkUy5tj_uw
+id: account
+label: 'User account menu'
+description: 'Links related to the active user account that appear at the top right of the page on desktop.'
+locked: true

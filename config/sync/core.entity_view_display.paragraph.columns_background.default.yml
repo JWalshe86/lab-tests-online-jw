@@ -1,0 +1,25 @@
+uuid: 318034cd-6b3e-4281-b7db-c868d5cdf152
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.columns_background.field_column
+    - paragraphs.paragraphs_type.columns_background
+  module:
+    - entity_reference_revisions
+id: paragraph.columns_background.default
+targetEntityType: paragraph
+bundle: columns_background
+mode: default
+content:
+  field_column:
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+hidden:
+  revision_date: true

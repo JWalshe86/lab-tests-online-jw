@@ -1,0 +1,21 @@
+uuid: 28d7d219-f6c6-49d6-b97a-db884b8a14ee
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_legacy_mean
+    - node.type.test
+  module:
+    - text
+id: node.test.field_legacy_mean
+field_name: field_legacy_mean
+entity_type: node
+bundle: test
+label: 'Legacy Mean'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

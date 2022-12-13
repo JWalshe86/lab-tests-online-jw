@@ -1,0 +1,21 @@
+uuid: 4f51608e-4b1c-4164-b031-bbe3510f1f42
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.field_cap_ack
+field_name: field_cap_ack
+entity_type: media
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,18 @@
+uuid: 52ffb82e-caf2-4c70-a855-24e719bea665
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.condition
+id: node.condition.created
+field_name: created
+entity_type: node
+bundle: condition
+label: 'Authored on'
+description: 'The time that the node was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

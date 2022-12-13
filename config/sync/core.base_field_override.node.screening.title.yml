@@ -1,0 +1,18 @@
+uuid: 5d08dab1-7f77-4d80-84d8-2d420ddb60f5
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.screening
+id: node.screening.title
+field_name: title
+entity_type: node
+bundle: screening
+label: Title
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

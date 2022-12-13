@@ -1,0 +1,16 @@
+display:
+  top_conditions:
+    display_title: 'Popüler Hastalıklar'
+    display_options:
+      title: 'Popüler Hastalıklar'
+      use_more_text: 'Tüm Hastalıkları görün'
+  top_screenings:
+    display_title: 'Popüler Sağlık Taramaları'
+    display_options:
+      title: 'Popüler Sağlık Taramaları'
+      use_more_text: 'Tüm Sağlık Taramalarını görün'
+  top_tests:
+    display_title: 'Popüler testler'
+    display_options:
+      title: 'Popüler testler'
+      use_more_text: 'Tüm Testleri görün'

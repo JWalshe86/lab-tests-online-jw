@@ -1,0 +1,16 @@
+uuid: ee62a2f0-3f00-41e7-8ade-e3e55e06864e
+langcode: en
+status: true
+dependencies:
+  config:
+    - aacc_ads.ads_type.hcp_medical_specialty
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+id: ads.hcp_medical_specialty
+target_entity_type_id: ads
+target_bundle: hcp_medical_specialty
+default_langcode: site_default
+language_alterable: false

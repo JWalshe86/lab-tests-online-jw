@@ -1,0 +1,36 @@
+uuid: 6e372869-ad3b-41da-a9b8-346a690335db
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.text_area.field_body
+    - field.field.paragraph.text_area.field_label
+    - field.field.paragraph.text_area.field_sub_content_type
+    - field.field.paragraph.text_area.field_width
+    - paragraphs.paragraphs_type.text_area
+  module:
+    - text
+id: paragraph.text_area.default
+targetEntityType: paragraph
+bundle: text_area
+mode: default
+content:
+  field_body:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_label:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  field_sub_content_type: true
+  field_width: true
+  revision_date: true

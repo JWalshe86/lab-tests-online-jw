@@ -1,0 +1,55 @@
+uuid: b62eef69-9b54-4cf7-b749-cc0708cecd18
+langcode: en
+status: true
+dependencies:
+  config:
+    - aacc_ads.ads_type.category
+    - field.field.ads.category.field_ad_key_value
+    - field.field.ads.category.field_ad_keywords
+    - field.field.ads.category.field_ad_sort_order
+id: ads.category.default
+targetEntityType: ads
+bundle: category
+mode: default
+content:
+  field_ad_key_value:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_ad_keywords:
+    weight: 3
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_ad_sort_order:
+    weight: 0
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  langcode:
+    type: language_select
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  user_id: true

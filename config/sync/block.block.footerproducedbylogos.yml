@@ -1,0 +1,29 @@
+uuid: 73a0dedd-603a-4017-90c9-cbc679e6fa79
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:logo_block:9eb5b44b-8cab-480c-9d58-83d31afc674a'
+  module:
+    - block_class
+    - block_content
+  theme:
+    - aacc_lto_foundation
+third_party_settings:
+  block_class:
+    classes: footer-credits
+id: footerproducedbylogos
+theme: aacc_lto_foundation
+region: footer_section_three
+weight: 0
+provider: null
+plugin: 'block_content:9eb5b44b-8cab-480c-9d58-83d31afc674a'
+settings:
+  id: 'block_content:9eb5b44b-8cab-480c-9d58-83d31afc674a'
+  label: 'Footer Produced By Logos'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

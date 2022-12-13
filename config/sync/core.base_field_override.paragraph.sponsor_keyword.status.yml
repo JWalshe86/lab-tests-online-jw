@@ -1,0 +1,22 @@
+uuid: 91c0a55d-b99a-4818-be00-32ea963d666d
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.sponsor_keyword
+id: paragraph.sponsor_keyword.status
+field_name: status
+entity_type: paragraph
+bundle: sponsor_keyword
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

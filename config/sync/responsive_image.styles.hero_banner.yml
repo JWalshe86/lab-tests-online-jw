@@ -1,0 +1,30 @@
+uuid: b91196bf-c1b5-445f-b17d-b40ac6567a9f
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.hero_banner_large
+    - image.style.hero_banner_medium
+    - image.style.hero_banner_small
+  theme:
+    - aacc_lto_foundation
+id: hero_banner
+label: 'Hero Banner'
+image_style_mappings:
+  -
+    breakpoint_id: aacc_lto_foundation.large
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: hero_banner_large
+  -
+    breakpoint_id: aacc_lto_foundation.medium
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: hero_banner_medium
+  -
+    breakpoint_id: aacc_lto_foundation.small
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: hero_banner_small
+breakpoint_group: aacc_lto_foundation
+fallback_image_style: hero_banner_large

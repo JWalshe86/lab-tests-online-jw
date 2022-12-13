@@ -1,0 +1,21 @@
+uuid: ed7f70dc-6eac-44d7-9f10-ba1b07332bfe
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_legacy_content
+    - node.type.definition
+  module:
+    - text
+id: node.definition.field_legacy_content
+field_name: field_legacy_content
+entity_type: node
+bundle: definition
+label: 'Legacy content'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,18 @@
+uuid: 964d22c5-d828-4d8a-9590-b3cb8d35c3e2
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.news_item
+id: node.news_item.changed
+field_name: changed
+entity_type: node
+bundle: news_item
+label: Changed
+description: 'The time that the node was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

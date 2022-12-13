@@ -1,0 +1,13 @@
+uuid: 1a80706c-0089-4780-8cd8-2ad7e9c3f9db
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 2kicQdvATyyopu46qRVU05GXfiAM__sHPaEUa26xegM
+id: '404'
+label: '404 page not found'
+tags:
+  title: 'Page Not Found | Lab Tests Online-UK'
+  canonical_url: '[site:url]'
+  shortlink: '[site:url]'
+  robots: 'noindex, nofollow, noarchive, nosnippet, noodp, noydir, noimageindex, notranslate'

@@ -1,0 +1,21 @@
+uuid: ba5601fd-d322-4f36-a45c-b020e2afb5ec
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_legacy_othersite
+    - node.type.test
+  module:
+    - text
+id: node.test.field_legacy_othersite
+field_name: field_legacy_othersite
+entity_type: node
+bundle: test
+label: 'Legacy othersite'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,63 @@
+uuid: e1ff90a9-b68e-40ca-90fd-7f7a11d73941
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.call_to_action.field_color
+    - field.field.paragraph.call_to_action.field_label
+    - field.field.paragraph.call_to_action.field_logo_img
+    - field.field.paragraph.call_to_action.field_logo_link
+    - field.field.paragraph.call_to_action.field_secondary_label
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.call_to_action
+  module:
+    - color_field
+    - image
+    - link
+id: paragraph.call_to_action.default
+targetEntityType: paragraph
+bundle: call_to_action
+mode: default
+content:
+  field_color:
+    weight: 4
+    settings:
+      default_colors: '#B12025,#80A29C,#D99E56'
+    third_party_settings: {  }
+    type: color_field_widget_box
+    region: content
+  field_label:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_logo_img:
+    weight: 0
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_logo_link:
+    weight: 3
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_secondary_label:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,37 @@
+uuid: 2583bded-87eb-4853-a0dd-0dceeaa175eb
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:dropdown_button:c0bcbdee-88b5-44e7-a67e-1911b52f54fc'
+  module:
+    - block_class
+    - block_content
+    - node
+  theme:
+    - aacc_lto_foundation
+third_party_settings:
+  block_class:
+    classes: ''
+id: whatarescreeningtests
+theme: aacc_lto_foundation
+region: content
+weight: -17
+provider: null
+plugin: 'block_content:c0bcbdee-88b5-44e7-a67e-1911b52f54fc'
+settings:
+  id: 'block_content:c0bcbdee-88b5-44e7-a67e-1911b52f54fc'
+  label: 'What are Screening Tests?'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      screening: screening
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

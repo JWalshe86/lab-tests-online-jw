@@ -1,0 +1,20 @@
+uuid: 5da85387-24b4-48ea-975b-84bc3c95e8c5
+langcode: en
+status: true
+dependencies:
+  module:
+    - aacc_ads
+    - taxonomy
+id: ads.field_ad_keywords
+field_name: field_ad_keywords
+entity_type: ads
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

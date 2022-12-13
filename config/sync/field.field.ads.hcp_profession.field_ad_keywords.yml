@@ -1,0 +1,28 @@
+uuid: 2a6fd41d-eeed-4653-a645-3e8465ff3a55
+langcode: en
+status: true
+dependencies:
+  config:
+    - aacc_ads.ads_type.hcp_profession
+    - field.storage.ads.field_ad_keywords
+    - taxonomy.vocabulary.keyword
+id: ads.hcp_profession.field_ad_keywords
+field_name: field_ad_keywords
+entity_type: ads
+bundle: hcp_profession
+label: Keywords
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      keyword: keyword
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

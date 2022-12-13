@@ -1,0 +1,20 @@
+uuid: f4530010-12e1-48c9-a23f-4b9981cd8f75
+langcode: en
+status: true
+dependencies:
+  theme:
+    - seven
+_core:
+  default_config_hash: CP90rWiyiswoj8ujIoY27a8m_5dHJCds1vUlBFci0Uw
+id: seven_local_actions
+theme: seven
+region: content
+weight: -10
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

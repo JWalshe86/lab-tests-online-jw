@@ -1,0 +1,93 @@
+uuid: 4e0ca639-e9f7-4cd3-b19e-5f738f34f4c0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_subcontent
+    - node.type.screening
+    - paragraphs.paragraphs_type.accordion
+    - paragraphs.paragraphs_type.columns
+    - paragraphs.paragraphs_type.expandable
+    - paragraphs.paragraphs_type.grid
+    - paragraphs.paragraphs_type.media_gallery
+    - paragraphs.paragraphs_type.navigation
+    - paragraphs.paragraphs_type.related_content
+    - paragraphs.paragraphs_type.related_screening_item
+    - paragraphs.paragraphs_type.screening_tests
+    - paragraphs.paragraphs_type.text_area
+  module:
+    - entity_reference_revisions
+id: node.screening.field_subcontent
+field_name: field_subcontent
+entity_type: node
+bundle: screening
+label: Subcontent
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      screening_tests: screening_tests
+      media_gallery: media_gallery
+      related_content: related_content
+      accordion: accordion
+      columns: columns
+      expandable: expandable
+      grid: grid
+      navigation: navigation
+      text_area: text_area
+      related_screening_item: related_screening_item
+    target_bundles_drag_drop:
+      screening_tests:
+        enabled: true
+        weight: -33
+      media_gallery:
+        enabled: true
+        weight: -32
+      related_content:
+        enabled: true
+        weight: -31
+      accordion_item:
+        weight: -30
+        enabled: false
+      accordion:
+        enabled: true
+        weight: -29
+      columns:
+        enabled: true
+        weight: -28
+      expandable:
+        enabled: true
+        weight: -27
+      grid:
+        enabled: true
+        weight: -26
+      navigation:
+        enabled: true
+        weight: -25
+      column:
+        weight: -24
+        enabled: false
+      section_navigation_item:
+        weight: -23
+        enabled: false
+      text_area:
+        enabled: true
+        weight: -22
+      related_screening_item:
+        enabled: true
+        weight: -21
+      reference_ranges:
+        weight: -20
+        enabled: false
+      reference_range_item:
+        weight: -19
+        enabled: false
+      sponsor_keyword:
+        weight: -18
+        enabled: false
+field_type: entity_reference_revisions

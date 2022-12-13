@@ -1,0 +1,21 @@
+uuid: 01f82d7b-2fa6-4e1c-b666-a79929220b83
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_label
+    - paragraphs.paragraphs_type.screening_tests
+id: paragraph.screening_tests.field_label
+field_name: field_label
+entity_type: paragraph
+bundle: screening_tests
+label: 'Section Label'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 'Screening Test'
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,19 @@
+uuid: a975a1be-8770-4f5d-a299-0da09cf98390
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_formal_name
+    - node.type.test
+id: node.test.field_formal_name
+field_name: field_formal_name
+entity_type: node
+bundle: test
+label: 'Formal Name'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

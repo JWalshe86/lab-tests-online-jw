@@ -1,0 +1,18 @@
+uuid: 5a018361-dd80-41c2-95b7-8f7c4ec326b9
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.stakeholder
+id: node.stakeholder.title
+field_name: title
+entity_type: node
+bundle: stakeholder
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

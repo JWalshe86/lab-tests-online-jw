@@ -1,0 +1,30 @@
+uuid: 1fd5ebb0-5dab-4baf-9636-ad0c35f90b54
+langcode: en
+status: true
+dependencies:
+  module:
+    - external_link
+    - file
+    - image
+id: external_link.field_image
+field_name: field_image
+entity_type: external_link
+type: image
+settings:
+  uri_scheme: public
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  target_type: file
+  display_field: false
+  display_default: false
+module: image
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,13 @@
+check:
+  disabled_extensions: false
+  interval_days: 1
+fetch:
+  url: ''
+  max_attempts: 2
+  timeout: 30
+notification:
+  emails:
+    - developers@unleashed-technologies.com
+  threshold: all
+_core:
+  default_config_hash: lF0bNGsQPGsK9MA2sOdRTGjPMAAPxJ-lzH3mrKTrpN8

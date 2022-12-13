@@ -1,0 +1,8 @@
+uuid: 419e7fb2-f58d-49b6-b0d1-53c7038996a4
+langcode: en
+status: true
+dependencies: {  }
+id: scheduler
+label: Scheduler
+locked: false
+pattern: 'Y-m-d H:i'

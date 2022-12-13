@@ -1,0 +1,19 @@
+uuid: 70f41641-d20c-4450-ba93-f38aa4a00a12
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_misspellings
+    - node.type.test
+id: node.test.field_misspellings
+field_name: field_misspellings
+entity_type: node
+bundle: test
+label: Misspellings
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

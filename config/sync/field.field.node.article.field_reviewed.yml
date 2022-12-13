@@ -1,0 +1,21 @@
+uuid: cb7fdc2d-e1f8-471b-b52b-9c885358c479
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_reviewed
+    - node.type.article
+  module:
+    - datetime
+id: node.article.field_reviewed
+field_name: field_reviewed
+entity_type: node
+bundle: article
+label: 'Date Reviewed'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

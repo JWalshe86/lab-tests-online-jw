@@ -1,0 +1,29 @@
+uuid: 255f7c50-5885-43fb-8dca-89638e3d65ac
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:c7099933-6340-4fd0-acc7-6c3117140248'
+  module:
+    - block_class
+    - block_content
+  theme:
+    - aacc_lto_foundation
+third_party_settings:
+  block_class:
+    classes: 'global-sites hide-for-medium'
+id: globalsiteslink_2
+theme: aacc_lto_foundation
+region: main_navigation
+weight: 0
+provider: null
+plugin: 'block_content:c7099933-6340-4fd0-acc7-6c3117140248'
+settings:
+  id: 'block_content:c7099933-6340-4fd0-acc7-6c3117140248'
+  label: 'Global Sites Link'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

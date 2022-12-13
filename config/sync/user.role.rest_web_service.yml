@@ -1,0 +1,11 @@
+uuid: 435b79c7-bb03-47b9-9556-aeac9361983e
+langcode: en
+status: true
+dependencies: {  }
+id: rest_web_service
+label: 'Rest Web Service'
+weight: 4
+is_admin: null
+permissions:
+  - 'restful post hreflang_rest_delete_resource'
+  - 'restful post hreflang_rest_update_resource'

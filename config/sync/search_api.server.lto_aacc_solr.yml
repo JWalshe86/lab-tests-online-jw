@@ -1,0 +1,35 @@
+uuid: 747a05ec-7982-4089-bbd0-62c70f4c2afb
+langcode: en
+status: true
+dependencies:
+  module:
+    - search_api_solr
+id: lto_aacc_solr
+name: 'LTO AACC Solr'
+description: 'The core for each site is overridden in the settings.local.php file. '
+backend: search_api_solr
+backend_config:
+  connector: standard
+  connector_config:
+    scheme: http
+    host: localhost
+    port: 8983
+    path: /
+    core: aacc-lto-us
+    timeout: 5
+    index_timeout: 5
+    optimize_timeout: 10
+    commit_within: 1000
+    solr_version: ''
+    http_method: AUTO
+    skip_schema_check: false
+  retrieve_data: false
+  highlight_data: false
+  site_hash: false
+  domain: generic
+  finalize_timeout: 30
+  server_prefix: ''
+  optimize: false
+  environment: default
+  index_single_documents_fallback_count: 10
+  fallback_multiple: true

@@ -1,0 +1,19 @@
+uuid: 74e70670-3716-46da-8eee-ce53300ce0d0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_oldpath
+    - node.type.screening
+id: node.screening.field_oldpath
+field_name: field_oldpath
+entity_type: node
+bundle: screening
+label: 'Old URL Path'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

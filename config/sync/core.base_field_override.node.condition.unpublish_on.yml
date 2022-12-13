@@ -1,0 +1,18 @@
+uuid: 1213411b-20c2-46c9-a839-9ad08d741564
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.condition
+id: node.condition.unpublish_on
+field_name: unpublish_on
+entity_type: node
+bundle: condition
+label: 'Unpublish on'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: timestamp

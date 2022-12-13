@@ -1,0 +1,42 @@
+uuid: fd1f643e-b133-453e-984f-264bd13a5724
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.looking_for_buttons.field_looking_for_buttons
+    - field.field.paragraph.looking_for_buttons.field_sub_content_type
+    - paragraphs.paragraphs_type.looking_for_buttons
+  module:
+    - paragraphs
+id: paragraph.looking_for_buttons.default
+targetEntityType: paragraph
+bundle: looking_for_buttons
+mode: default
+content:
+  field_looking_for_buttons:
+    type: entity_reference_paragraphs
+    weight: 0
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_sub_content_type:
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  translation:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

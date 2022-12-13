@@ -1,0 +1,21 @@
+uuid: 0515278d-da4f-4fa8-a1ef-404076cb6cde
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_legacy_links
+    - node.type.test
+  module:
+    - text
+id: node.test.field_legacy_links
+field_name: field_legacy_links
+entity_type: node
+bundle: test
+label: 'Legacy Links'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

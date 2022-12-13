@@ -1,0 +1,19 @@
+uuid: abeb7a23-bf13-45f0-90c3-d4da5131a85c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_migration_notes
+    - node.type.condition
+id: node.condition.field_migration_notes
+field_name: field_migration_notes
+entity_type: node
+bundle: condition
+label: 'Migration Notes'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

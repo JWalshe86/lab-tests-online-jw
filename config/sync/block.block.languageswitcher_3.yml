@@ -1,0 +1,24 @@
+uuid: 39d4694b-b085-4e04-9cb9-8687ff0bce8e
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+    - language
+  theme:
+    - aacc_lto_foundation
+third_party_settings:
+  block_class:
+    classes: language-switch-nav
+id: languageswitcher_3
+theme: aacc_lto_foundation
+region: language_nav
+weight: 0
+provider: null
+plugin: 'language_block:language_interface'
+settings:
+  id: 'language_block:language_interface'
+  label: 'Language switcher'
+  provider: language
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,16 @@
+extlink_include: ''
+extlink_exclude: ''
+extlink_alert_text: ''
+extlink_alert: false
+extlink_target: true
+extlink_subdomains: false
+extlink_mailto_class: '0'
+extlink_img_class: false
+extlink_class: '0'
+extlink_css_exclude: .order-your-test-cta-section
+extlink_css_explicit: ''
+extlink_label: '(link is external)'
+extlink_mailto_label: '(link sends email)'
+extlink_target_no_override: false
+extlink_nofollow: false
+extlink_follow_no_override: false

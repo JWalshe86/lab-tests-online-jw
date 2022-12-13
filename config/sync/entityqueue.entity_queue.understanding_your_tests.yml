@@ -1,0 +1,25 @@
+uuid: 9a2b2e97-69d1-41b2-adf4-e5b1c2daded7
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: understanding_your_tests
+label: 'Understanding Your Tests'
+handler: simple
+handler_configuration: {  }
+entity_settings:
+  target_type: node
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      article: article
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+queue_settings:
+  min_size: 0
+  max_size: 0
+  act_as_queue: false
+  reverse_in_admin: false

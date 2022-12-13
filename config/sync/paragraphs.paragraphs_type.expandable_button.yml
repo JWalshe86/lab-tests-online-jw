@@ -1,0 +1,7 @@
+uuid: dd214340-9f5a-4177-a295-a106305bbd13
+langcode: en
+status: true
+dependencies: {  }
+id: expandable_button
+label: 'Expandable Button'
+behavior_plugins: {  }

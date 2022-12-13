@@ -1,0 +1,207 @@
+uuid: 1b54c903-17c7-4768-8e59-08302629a994
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.related_content.field_articles
+    - field.field.paragraph.related_content.field_basic_pages
+    - field.field.paragraph.related_content.field_elsewhere_on_the_web
+    - field.field.paragraph.related_content.field_label
+    - field.field.paragraph.related_content.field_related_articles
+    - field.field.paragraph.related_content.field_related_conditions
+    - field.field.paragraph.related_content.field_related_media
+    - field.field.paragraph.related_content.field_related_news_items
+    - field.field.paragraph.related_content.field_related_screenings
+    - field.field.paragraph.related_content.field_related_tests
+    - field.field.paragraph.related_content.field_sub_content_type
+    - paragraphs.paragraphs_type.related_content
+  module:
+    - aacc_foundation_magellan_field_format
+    - ds
+    - entity_reference_revisions
+    - field_group
+    - link
+third_party_settings:
+  field_group:
+    group_on_this_site:
+      children:
+        - field_related_tests
+        - field_related_conditions
+        - field_related_screenings
+        - field_articles
+        - field_related_news_items
+        - field_related_media
+        - field_basic_pages
+      parent_name: group_column_wrapper
+      weight: 2
+      format_type: html_element
+      format_settings:
+        label: 'On This Site'
+        element: div
+        show_label: true
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: 'columns large-6'
+      label: 'On This Site'
+      region: content
+    group_elsewhere_on_the_web:
+      children:
+        - field_elsewhere_on_the_web
+      parent_name: group_column_wrapper
+      weight: 4
+      format_type: html_element
+      format_settings:
+        label: 'Elsewhere On The Web'
+        element: div
+        show_label: true
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: 'columns large-6'
+      label: 'Elsewhere On The Web'
+      region: content
+    group_column_wrapper:
+      children:
+        - group_on_this_site
+        - group_elsewhere_on_the_web
+      parent_name: ''
+      weight: 1
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: related-content-wrapper
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Column Wrapper'
+      region: content
+id: paragraph.related_content.default
+targetEntityType: paragraph
+bundle: related_content
+mode: default
+content:
+  field_articles:
+    weight: 13
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_basic_pages:
+    weight: 16
+    label: inline
+    settings:
+      link: true
+    third_party_settings:
+      aacc_foundation_magellan_field_format:
+        magellan_target_label: ''
+        magellan_target_clean: true
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: entity_reference_label
+    region: content
+  field_elsewhere_on_the_web:
+    weight: 5
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_label:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_related_conditions:
+    weight: 11
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_related_media:
+    weight: 15
+    label: inline
+    settings:
+      view_mode: related_content
+      link: false
+    third_party_settings:
+      aacc_foundation_magellan_field_format:
+        magellan_target_label: ''
+        magellan_target_clean: true
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_related_news_items:
+    weight: 14
+    label: inline
+    settings:
+      view_mode: related_content
+      link: false
+    third_party_settings:
+      aacc_foundation_magellan_field_format:
+        magellan_target_label: ''
+        magellan_target_clean: true
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_related_screenings:
+    type: entity_reference_revisions_entity_view
+    weight: 12
+    label: inline
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_related_tests:
+    weight: 10
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden:
+  field_related_articles: true
+  field_sub_content_type: true
+  revision_date: true
+  search_api_excerpt: true

@@ -1,0 +1,25 @@
+uuid: f10f29b0-a645-4cb1-9e48-0db7ae1b0ade
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_feed_access_id
+    - node.type.access_log_
+id: node.access_log_.field_feed_access_id
+field_name: field_feed_access_id
+entity_type: node
+bundle: access_log_
+label: 'Feed ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:aacc_feeds_feed'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

@@ -1,0 +1,81 @@
+uuid: b2cd4bf6-70ef-40a6-8e9e-ec1869c66c5b
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_icon
+field_name: field_icon
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: arrow-1
+      label: Chevron
+    -
+      value: arrow-2
+      label: Arrow
+    -
+      value: book
+      label: Book
+    -
+      value: data
+      label: Data
+    -
+      value: diploma
+      label: Diploma
+    -
+      value: document
+      label: Document
+    -
+      value: facebook
+      label: Facebook
+    -
+      value: globe
+      label: Globe
+    -
+      value: globe-2
+      label: 'Globe 2'
+    -
+      value: google-plus
+      label: 'Google Plus'
+    -
+      value: health-chart
+      label: 'Health Chart'
+    -
+      value: info
+      label: Info
+    -
+      value: language
+      label: Language
+    -
+      value: mail
+      label: Mail
+    -
+      value: plus-1
+      label: 'Plus in Circle'
+    -
+      value: plus-2
+      label: Plus
+    -
+      value: print
+      label: Printer
+    -
+      value: search
+      label: Search
+    -
+      value: share
+      label: Share
+    -
+      value: twitter
+      label: Twitter
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

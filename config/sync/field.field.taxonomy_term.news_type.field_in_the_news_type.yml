@@ -1,0 +1,23 @@
+uuid: 6a9d54dc-b4f5-4519-b458-7d16fd00f377
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_in_the_news_type
+    - taxonomy.vocabulary.news_type
+id: taxonomy_term.news_type.field_in_the_news_type
+field_name: field_in_the_news_type
+entity_type: taxonomy_term
+bundle: news_type
+label: 'In The News Type'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

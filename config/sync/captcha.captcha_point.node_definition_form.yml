@@ -1,0 +1,7 @@
+uuid: bac521f5-fc0a-4f45-9101-a70ac768494f
+langcode: en
+status: false
+dependencies: {  }
+formId: node_definition_form
+captchaType: default
+label: node_definition_form

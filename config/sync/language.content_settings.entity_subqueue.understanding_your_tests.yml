@@ -1,0 +1,11 @@
+uuid: c01921af-04f3-45e6-98d3-e0e188268366
+langcode: en
+status: true
+dependencies:
+  config:
+    - entityqueue.entity_queue.understanding_your_tests
+id: entity_subqueue.understanding_your_tests
+target_entity_type_id: entity_subqueue
+target_bundle: understanding_your_tests
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,16 @@
+uuid: 44516a5b-9ca4-4095-9924-5760d692e29d
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.feed_client
+  module:
+    - user
+_core:
+  default_config_hash: 8ZiGsbzmMRO780oVs_8A7RJBEhLBepo6XrRRgF2VwTc
+id: user_remove_role_action.feed_client
+label: 'Remove the Feed Client role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: feed_client

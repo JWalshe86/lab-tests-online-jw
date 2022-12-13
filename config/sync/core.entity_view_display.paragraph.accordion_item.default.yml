@@ -1,0 +1,45 @@
+uuid: 2bacb7cd-e9ad-415c-b7f7-5a60c2a73989
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.accordion_item.field_body
+    - field.field.paragraph.accordion_item.field_label
+    - paragraphs.paragraphs_type.accordion_item
+  module:
+    - aacc_field_formatter
+    - aacc_foundation_magellan_field_format
+    - ds
+    - text
+id: paragraph.accordion_item.default
+targetEntityType: paragraph
+bundle: accordion_item
+mode: default
+content:
+  field_body:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_label:
+    weight: 0
+    label: hidden
+    settings:
+      allowed_html_tags: '<em>'
+      link_to_entity: 0
+    third_party_settings:
+      aacc_foundation_magellan_field_format:
+        magellan_target_label: ''
+        magellan_target_clean: true
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: aacc_string
+    region: content
+hidden: {  }

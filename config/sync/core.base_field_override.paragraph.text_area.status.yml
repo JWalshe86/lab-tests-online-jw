@@ -1,0 +1,22 @@
+uuid: 02e7a2b4-4ab7-4b4a-85d4-8e7593313e6f
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.text_area
+id: paragraph.text_area.status
+field_name: status
+entity_type: paragraph
+bundle: text_area
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

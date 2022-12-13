@@ -1,0 +1,57 @@
+uuid: 1112c329-5c3a-4700-a16d-0729d3112e3c
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.screening.body
+    - field.field.node.screening.field_exclude_from_search
+    - field.field.node.screening.field_keywords
+    - field.field.node.screening.field_legacy_content
+    - field.field.node.screening.field_legacy_istargethcp
+    - field.field.node.screening.field_meta_tags
+    - field.field.node.screening.field_migration_notes
+    - field.field.node.screening.field_migration_status
+    - field.field.node.screening.field_misspellings
+    - field.field.node.screening.field_oldpath
+    - field.field.node.screening.field_reviewed
+    - field.field.node.screening.field_subcontent
+    - node.type.screening
+  module:
+    - text
+    - user
+id: node.screening.teaser
+targetEntityType: node
+bundle: screening
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 1
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  content_moderation_control: true
+  field_exclude_from_search: true
+  field_keywords: true
+  field_legacy_content: true
+  field_legacy_istargethcp: true
+  field_meta_tags: true
+  field_migration_notes: true
+  field_migration_status: true
+  field_misspellings: true
+  field_oldpath: true
+  field_reviewed: true
+  field_screening_group: true
+  field_screening_tests: true
+  field_subcontent: true
+  langcode: true
+  revision_date: true

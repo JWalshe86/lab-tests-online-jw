@@ -1,0 +1,9 @@
+uuid: 1b0eda72-e06a-4301-afde-6f6824096469
+langcode: it
+status: true
+dependencies: {  }
+id: il_campione_da_analizzare
+label: 'Il Campione da Analizzare'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

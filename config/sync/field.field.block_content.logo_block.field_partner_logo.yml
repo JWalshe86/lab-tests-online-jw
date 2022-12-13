@@ -1,0 +1,81 @@
+uuid: ab000903-c442-4503-9bcf-6aa60fbd439c
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.logo_block
+    - field.storage.block_content.field_partner_logo
+    - paragraphs.paragraphs_type.logo
+  module:
+    - entity_reference_revisions
+id: block_content.logo_block.field_partner_logo
+field_name: field_partner_logo
+entity_type: block_content
+bundle: logo_block
+label: Logo
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      logo: logo
+    target_bundles_drag_drop:
+      logo:
+        enabled: true
+        weight: 18
+      accordion:
+        weight: 19
+        enabled: false
+      accordion_item:
+        weight: 20
+        enabled: false
+      column:
+        weight: 21
+        enabled: false
+      columns:
+        weight: 22
+        enabled: false
+      expandable:
+        weight: 23
+        enabled: false
+      expandable_button:
+        weight: 24
+        enabled: false
+      grid:
+        weight: 24
+        enabled: false
+      media_gallery:
+        weight: 25
+        enabled: false
+      navigation:
+        weight: 26
+        enabled: false
+      looking_for_buttons:
+        weight: 27
+        enabled: false
+      reference_range_item:
+        weight: 27
+        enabled: false
+      related_content:
+        weight: 29
+        enabled: false
+      related_screening_item:
+        weight: 30
+        enabled: false
+      screening_tests:
+        weight: 31
+        enabled: false
+      section_navigation_item:
+        weight: 32
+        enabled: false
+      sponsor_keyword:
+        weight: 33
+        enabled: false
+      text_area:
+        weight: 34
+        enabled: false
+field_type: entity_reference_revisions

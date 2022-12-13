@@ -1,0 +1,13 @@
+display:
+  screenings:
+    display_options:
+      title: 'Recomendações de triagem'
+  tests:
+    display_options:
+      title: 'Índice de Testes'
+  conditions:
+    display_options:
+      title: 'Índice de Estados clínicos/Doenças'
+  definitions:
+    display_options:
+      title: 'Termos do Glossário'

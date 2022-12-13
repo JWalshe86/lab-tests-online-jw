@@ -1,0 +1,18 @@
+uuid: 8d59d381-a1d5-481f-a007-02d75d259429
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.news_item
+id: node.news_item.publish_on
+field_name: publish_on
+entity_type: node
+bundle: news_item
+label: 'Publish on'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: timestamp

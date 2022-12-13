@@ -1,0 +1,63 @@
+uuid: 6bf3237d-c94c-40e1-a205-e23f760f10d4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.screening_tests.field_expand_show_all
+    - field.field.paragraph.screening_tests.field_label
+    - field.field.paragraph.screening_tests.field_screening_test_item
+    - field.field.paragraph.screening_tests.field_sub_content_type
+    - paragraphs.paragraphs_type.screening_tests
+  module:
+    - inline_entity_form
+id: paragraph.screening_tests.default
+targetEntityType: paragraph
+bundle: screening_tests
+mode: default
+content:
+  field_expand_show_all:
+    type: boolean_checkbox
+    weight: 4
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_label:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_screening_test_item:
+    weight: 1
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      override_labels: false
+      collapsible: false
+      collapsed: false
+      allow_duplicate: false
+    third_party_settings: {  }
+    type: inline_entity_form_complex
+    region: content
+  field_sub_content_type:
+    type: options_select
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  translation:
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

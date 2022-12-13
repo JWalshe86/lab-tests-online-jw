@@ -1,0 +1,66 @@
+title: 'Envie-nos Seus Comentários'
+elements: |
+  instructions:
+    '#text': "<p>Por favor, forneça seus comentários sobre o artigo que você está lendo, ou sobre o Lab Tests Online em geral. Isso nos ajudará a melhorar o site. Obrigado.</p>\n"
+  find_what_you_are_looking_for:
+    '#title': 'Você encontrou o que estava procurando?'
+  find_information:
+    '#title': 'A procura foi fácil?'
+  helpful:
+    '#title': 'Essa página foi útil?'
+  if_no_please_explain_:
+    '#title': 'Se não, por favor explique:'
+  helpful_information:
+    '#title': 'O nível de informação encontrado foi:'
+    '#options':
+      'Right amount of information': Suficiente
+      'Too technical': 'Técnico demais'
+      'Not enough detail': 'Sem detalhes suficientes'
+  email_comfirmation:
+    '#title': 'Se você inseriu comentários acima e gostaria de uma resposta, insira seu endereço de e-mail completo.'
+  please_indicate_whether_you_are_a_:
+    '#title': 'Indique se você é um:'
+    '#description': 'O que podemos entender melhor quem está usando o nosso site, deixe-nos saber qual categoria melhor descreve você.'
+    '#options':
+      'Patient, Family member or Friend': 'Paciente, familiar ou amigo'
+      'Healthcare Professional': 'Profissional médico'
+      Educator: Educador
+      Student: Aluna
+      Journalist: Jornalista
+    '#empty_option': '- Escolher -'
+    '#other__option_label': Outro
+    '#other__placeholder': 'Indique quem você é.'
+  health_pro:
+    '#title': 'Se você é um profissional de saúde, indique se você é:'
+    '#options':
+      Physician/clinician: 'Médico / clínico'
+      'Nurse or nurse practitioner': Enfermeira
+      'Laboratory professional': Laboratorista
+      'Physician assistant': 'Assistente médico'
+      Pharmacist: Farmacêutico
+      'Research scientist': 'Pesquisa científica'
+      'In healthcare management or administration': 'Na administração ou administração de cuidados de saúde'
+    '#empty_option': '- Escolher -'
+    '#other__option_label': Outro
+    '#other__placeholder': 'Que tipo de profissional de saúde você é?'
+  how_did_you_hear_about_us:
+    '#title': 'Como você soube do Lab Tests Online?'
+    '#options':
+      'Friend/Colleague/Family Member': Amigo/Colega/Familiar
+      'Search engine': 'Mecanismo de busca'
+      'Doctor''s office, Hospital or Lab': 'Consultório médico'
+      'Health fair': 'Feira de saúde'
+      'Magazine or newspaper': 'Revista ou jornal'
+      'TV or radio': 'Televisão ou rádio'
+    '#empty_option': '- Escolher -'
+    '#other__option_label': Outro
+    '#other__placeholder': 'Como você soube do Lab Tests Online?'
+  location:
+    '#title': 'Onde você mora?'
+  disclaimer:
+    '#title': 'Aviso Legal'
+    '#description': 'Todas as informações contidas neste formulário estão sujeitas aos <a href="/termos-de-uso" target="_blank">Termos de Uso</A> deste site.'
+    '#options':
+      'I Agree to the disclaimer': 'Eu concordo com o aviso legal'
+settings:
+  confirmation_title: 'Muito obrigado por sua colaboração.'

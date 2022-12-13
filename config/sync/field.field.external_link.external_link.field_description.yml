@@ -1,0 +1,23 @@
+uuid: bcea9dec-de5a-41bc-987f-d39581556953
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.external_link.field_description
+  module:
+    - external_link
+    - text
+id: external_link.external_link.field_description
+field_name: field_description
+entity_type: external_link
+bundle: external_link
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+field_type: text_with_summary

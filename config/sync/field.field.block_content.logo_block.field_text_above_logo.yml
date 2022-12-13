@@ -1,0 +1,21 @@
+uuid: 52c98d44-a27e-482d-8d4b-56ea821bc269
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.logo_block
+    - field.storage.block_content.field_text_above_logo
+  module:
+    - text
+id: block_content.logo_block.field_text_above_logo
+field_name: field_text_above_logo
+entity_type: block_content
+bundle: logo_block
+label: 'Text above Logo'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

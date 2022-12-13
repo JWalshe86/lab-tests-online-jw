@@ -1,0 +1,51 @@
+uuid: fcfa3765-431c-4b6d-aafe-d356c3ee9142
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.fonti.field_body
+    - field.field.paragraph.fonti.field_expand_show_all
+    - field.field.paragraph.fonti.field_hide_teaser
+    - field.field.paragraph.fonti.field_label
+    - paragraphs.paragraphs_type.fonti
+  module:
+    - text
+id: paragraph.fonti.default
+targetEntityType: paragraph
+bundle: fonti
+mode: default
+content:
+  field_body:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_expand_show_all:
+    weight: 2
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_hide_teaser:
+    weight: 3
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_label:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

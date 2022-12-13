@@ -1,0 +1,126 @@
+uuid: 92ed8ba3-a945-4702-b58a-ddbec7995e05
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_subcontent
+    - node.type.page
+    - paragraphs.paragraphs_type.accordion
+    - paragraphs.paragraphs_type.buttons
+    - paragraphs.paragraphs_type.columns
+    - paragraphs.paragraphs_type.columns_background
+    - paragraphs.paragraphs_type.cta
+    - paragraphs.paragraphs_type.expandable
+    - paragraphs.paragraphs_type.grid
+    - paragraphs.paragraphs_type.media_gallery
+    - paragraphs.paragraphs_type.navigation
+    - paragraphs.paragraphs_type.related_content
+    - paragraphs.paragraphs_type.text_area
+  module:
+    - entity_reference_revisions
+id: node.page.field_subcontent
+field_name: field_subcontent
+entity_type: node
+bundle: page
+label: Subcontent
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      accordion: accordion
+      columns: columns
+      expandable: expandable
+      grid: grid
+      media_gallery: media_gallery
+      related_content: related_content
+      navigation: navigation
+      text_area: text_area
+      columns_background: columns_background
+      buttons: buttons
+      cta: cta
+    target_bundles_drag_drop:
+      accordion:
+        enabled: true
+        weight: -33
+      accordion_item:
+        weight: -32
+        enabled: false
+      columns:
+        enabled: true
+        weight: -31
+      expandable:
+        enabled: true
+        weight: -30
+      column:
+        weight: -29
+        enabled: false
+      grid:
+        enabled: true
+        weight: -28
+      media_gallery:
+        enabled: true
+        weight: -27
+      related_content:
+        enabled: true
+        weight: -26
+      navigation:
+        enabled: true
+        weight: -25
+      section_navigation_item:
+        weight: -24
+        enabled: false
+      text_area:
+        enabled: true
+        weight: -23
+      reference_range_item:
+        weight: -22
+        enabled: false
+      related_screening_item:
+        weight: -20
+        enabled: false
+      screening_tests:
+        weight: -19
+        enabled: false
+      sponsor_keyword:
+        weight: -18
+        enabled: false
+      call_to_action:
+        weight: 27
+        enabled: false
+      columns_background:
+        enabled: true
+        weight: 28
+      expandable_button:
+        weight: 28
+        enabled: false
+      buttons:
+        enabled: true
+        weight: 29
+      feature_article:
+        weight: 29
+        enabled: false
+      fonti:
+        weight: 30
+        enabled: false
+      cta:
+        enabled: true
+        weight: 32
+      il_campione_da_analizzare:
+        weight: 32
+        enabled: false
+      in_sintesi:
+        weight: 33
+        enabled: false
+      logo:
+        weight: 34
+        enabled: false
+      looking_for_buttons:
+        weight: 35
+        enabled: false
+field_type: entity_reference_revisions

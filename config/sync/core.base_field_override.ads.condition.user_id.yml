@@ -1,0 +1,20 @@
+uuid: 515ec9fc-6976-429e-91ee-f529f058d274
+langcode: en
+status: true
+dependencies:
+  config:
+    - aacc_ads.ads_type.condition
+id: ads.condition.user_id
+field_name: user_id
+entity_type: ads
+bundle: condition
+label: 'Authored by'
+description: 'The user ID of author of the Ad Key Value entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

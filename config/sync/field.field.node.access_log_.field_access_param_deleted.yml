@@ -1,0 +1,19 @@
+uuid: 793e0229-2ec2-4782-a539-2e3b60362aa3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_access_param_deleted
+    - node.type.access_log_
+id: node.access_log_.field_access_param_deleted
+field_name: field_access_param_deleted
+entity_type: node
+bundle: access_log_
+label: 'API Parameter ''deleted'' (deprecated)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

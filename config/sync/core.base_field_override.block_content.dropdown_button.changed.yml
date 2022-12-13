@@ -1,0 +1,18 @@
+uuid: 65e743f9-9ab9-4a57-b774-55d74c21dcea
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.dropdown_button
+id: block_content.dropdown_button.changed
+field_name: changed
+entity_type: block_content
+bundle: dropdown_button
+label: Changed
+description: 'The time that the custom block was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

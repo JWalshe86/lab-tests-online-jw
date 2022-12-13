@@ -1,0 +1,24 @@
+uuid: a4af5078-5fe3-4fe4-abd8-9e92f3d4456a
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_body
+    - paragraphs.paragraphs_type.il_campione_da_analizzare
+  module:
+    - text
+id: paragraph.il_campione_da_analizzare.field_body
+field_name: field_body
+entity_type: paragraph
+bundle: il_campione_da_analizzare
+label: Body
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: "<h3>Cosa viene testato?</h3>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<h3>Come viene raccolto il campione per il test?</h3>\r\n\r\n<p>Tramite un prelievo di sangue venoso dal braccio.</p>\r\n\r\n<p><em>NOTA - Se il sottoporsi a queste analisi mediche provoca stati d'ansia o di disagio, si consiglia di leggere uno o più di questi articoli:<br />\r\n<a href=\"/node/81\">Come fare fronte alla paura, al disagio ed all'ansia da test</a>, <a href=\"/node/1114\">Suggerimenti sui test ematici</a>, <a href=\"/node/1112\">Suggerimenti per aiutare i bambini ad affrontare un test medico</a>,<a href=\"/node/1113\">Suggerimenti per aiutare l'anziano ad affrontare un test medico</a>.<br />\r\nUn altro articolo, Seguire il campione: <a href=\"/node/1118\">Breve viaggio nel laboratorio</a>, chiarisce le modalità di prelievo del campione ematico.</em></p>\r\n\r\n<h3>Esiste una preparazione al test che possa assicurare la buona qualità del campione?</h3>\r\n\r\n<p>&nbsp;</p>\r\n"
+    format: full_html
+default_value_callback: ''
+settings: {  }
+field_type: text_long

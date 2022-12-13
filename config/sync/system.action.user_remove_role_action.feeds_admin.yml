@@ -1,0 +1,16 @@
+uuid: 325dddfc-69ba-4ca8-a0be-d71d6fc6c428
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.feeds_admin
+  module:
+    - user
+_core:
+  default_config_hash: IrffZ3oRCHO7QoM7pkx9e-bW0a_gHXUn4yxgftO63i0
+id: user_remove_role_action.feeds_admin
+label: 'Remove the Feeds Admin role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: feeds_admin

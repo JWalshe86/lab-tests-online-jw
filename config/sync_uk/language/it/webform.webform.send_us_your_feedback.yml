@@ -1,0 +1,5 @@
+title: 'Mandaci i tuoi commenti'
+elements: |
+  instructions:
+    '#text': "<p>Please provide your feedback on the article you are reading, or about Lab Tests Online in general. This will help us improve the site. Thank you.</p>\n"
+settings: null

@@ -1,0 +1,23 @@
+uuid: 5819ce98-9fc1-4fbd-a7c3-4f53eb5def0a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.menu_link_content.field_display
+    - system.menu.new-navigation
+  module:
+    - options
+id: menu_link_content.new-navigation.field_display
+field_name: field_display
+entity_type: menu_link_content
+bundle: new-navigation
+label: Display
+description: 'Choose to display the menu item full width, or in a column.'
+required: true
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings: {  }
+field_type: list_integer

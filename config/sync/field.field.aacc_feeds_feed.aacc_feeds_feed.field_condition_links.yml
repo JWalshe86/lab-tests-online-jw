@@ -1,0 +1,25 @@
+uuid: 5e7daebf-dc4d-4d3b-a3e4-bf7adbb1f7ba
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.aacc_feeds_feed.field_condition_links
+  module:
+    - aacc_feeds
+    - options
+_core:
+  default_config_hash: '-rYJRFc2-GDmtLV2okt3Arm3E8vqAcUzNSnU0EW22dU'
+id: aacc_feeds_feed.aacc_feeds_feed.field_condition_links
+field_name: field_condition_links
+entity_type: aacc_feeds_feed
+bundle: aacc_feeds_feed
+label: 'Condition Links'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 'JS Callback 1'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

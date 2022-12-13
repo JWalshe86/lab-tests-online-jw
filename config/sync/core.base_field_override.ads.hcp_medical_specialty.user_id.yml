@@ -1,0 +1,20 @@
+uuid: 5e1f280a-eda5-4ed2-ba92-65931296eef4
+langcode: en
+status: true
+dependencies:
+  config:
+    - aacc_ads.ads_type.hcp_medical_specialty
+id: ads.hcp_medical_specialty.user_id
+field_name: user_id
+entity_type: ads
+bundle: hcp_medical_specialty
+label: 'Authored by'
+description: 'The user ID of author of the Ad Key Value entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

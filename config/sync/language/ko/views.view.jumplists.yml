@@ -1,0 +1,13 @@
+display:
+  jumplist_conditions:
+    display_title: 질환
+    display_options:
+      title: 질환
+  jumplist_tests:
+    display_title: 검사
+    display_options:
+      title: 검사
+  jumplist_screenings:
+    display_title: '선별검사 및 정기검진'
+    display_options:
+      title: '선별검사 및 정기검진'

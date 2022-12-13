@@ -1,0 +1,13 @@
+display:
+  jumplist_conditions:
+    display_title: 'Állapotok és  betegségek'
+    display_options:
+      title: 'Állapotok és  betegségek'
+  jumplist_screenings:
+    display_title: Szűrés
+    display_options:
+      title: Szűrés
+  jumplist_tests:
+    display_title: 'Laboratóriumi vizsgálatok'
+    display_options:
+      title: 'Laboratóriumi vizsgálatok'

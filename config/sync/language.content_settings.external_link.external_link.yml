@@ -1,0 +1,15 @@
+uuid: 5237c70d-24e1-4f3e-a470-ad2959b46649
+langcode: en
+status: true
+dependencies:
+  module:
+    - content_translation
+    - external_link
+third_party_settings:
+  content_translation:
+    enabled: false
+id: external_link.external_link
+target_entity_type_id: external_link
+target_bundle: external_link
+default_langcode: site_default
+language_alterable: false

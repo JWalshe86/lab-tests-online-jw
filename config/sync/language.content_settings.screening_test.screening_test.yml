@@ -1,0 +1,15 @@
+uuid: fa7f15eb-80b7-45ea-a938-21d0d87c45e5
+langcode: en
+status: true
+dependencies:
+  module:
+    - aacc_screening_test_entity
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: screening_test.screening_test
+target_entity_type_id: screening_test
+target_bundle: screening_test
+default_langcode: site_default
+language_alterable: true

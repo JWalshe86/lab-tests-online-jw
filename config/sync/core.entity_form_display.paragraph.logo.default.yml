@@ -1,0 +1,42 @@
+uuid: 83f94576-0a83-4fe9-b39f-54607106516c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.logo.field_logo_img
+    - field.field.paragraph.logo.field_logo_link
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.logo
+  module:
+    - image
+    - link
+id: paragraph.logo.default
+targetEntityType: paragraph
+bundle: logo
+mode: default
+content:
+  field_logo_img:
+    weight: 1
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_logo_link:
+    weight: 0
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  translation:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

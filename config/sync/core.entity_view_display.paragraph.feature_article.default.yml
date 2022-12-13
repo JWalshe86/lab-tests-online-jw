@@ -1,0 +1,46 @@
+uuid: 8c10ffe4-d5f2-474e-b2ed-d3de491cb4db
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.feature_article.field_label
+    - field.field.paragraph.feature_article.field_related_articles
+    - paragraphs.paragraphs_type.feature_article
+  module:
+    - aacc_foundation_magellan_field_format
+    - ds
+id: paragraph.feature_article.default
+targetEntityType: paragraph
+bundle: feature_article
+mode: default
+content:
+  field_label:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_related_articles:
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: feature_article
+      link: false
+    third_party_settings:
+      aacc_foundation_magellan_field_format:
+        magellan_target_label: ''
+        magellan_target_clean: true
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: entity_reference_entity_view
+    region: content
+hidden:
+  revision_date: true

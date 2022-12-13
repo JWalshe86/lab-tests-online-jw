@@ -1,0 +1,23 @@
+uuid: 0005bad2-c01c-440b-be9d-fc35e0d22f86
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_meta_tags
+    - node.type.screening
+  module:
+    - metatag
+id: node.screening.field_meta_tags
+field_name: field_meta_tags
+entity_type: node
+bundle: screening
+label: 'Meta Tags'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 'a:0:{}'
+default_value_callback: ''
+settings: {  }
+field_type: metatag

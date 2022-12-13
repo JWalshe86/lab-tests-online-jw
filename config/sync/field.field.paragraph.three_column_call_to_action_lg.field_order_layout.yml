@@ -1,0 +1,23 @@
+uuid: d792d88b-dcae-4c32-9607-63deb96d2a33
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_order_layout
+    - paragraphs.paragraphs_type.three_column_call_to_action_lg
+  module:
+    - options
+id: paragraph.three_column_call_to_action_lg.field_order_layout
+field_name: field_order_layout
+entity_type: paragraph
+bundle: three_column_call_to_action_lg
+label: Layout
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: large
+default_value_callback: ''
+settings: {  }
+field_type: list_string

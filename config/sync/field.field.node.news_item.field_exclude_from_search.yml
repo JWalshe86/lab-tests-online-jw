@@ -1,0 +1,23 @@
+uuid: f518e578-48e8-4955-ae97-93b346ef4a00
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_exclude_from_search
+    - node.type.news_item
+  module:
+    - search_api_exclude_entity
+id: node.news_item.field_exclude_from_search
+field_name: field_exclude_from_search
+entity_type: node
+bundle: news_item
+label: 'Exclude from Search'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: false
+default_value_callback: ''
+settings: {  }
+field_type: search_api_exclude_entity

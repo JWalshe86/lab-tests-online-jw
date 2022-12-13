@@ -1,0 +1,30 @@
+uuid: 7de62d1a-5c1f-476c-b55b-ca68cd56a959
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+    - system
+    - top_content_views
+  theme:
+    - aacc_lto_foundation
+third_party_settings:
+  block_class:
+    classes: top-content-accordion
+id: topcontent
+theme: aacc_lto_foundation
+region: content
+weight: -12
+provider: null
+plugin: top_content
+settings:
+  id: top_content
+  label: 'Top Content'
+  provider: top_content_views
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

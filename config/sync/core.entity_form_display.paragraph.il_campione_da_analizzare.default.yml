@@ -1,0 +1,35 @@
+uuid: 6410ca3e-baea-4a22-994b-d8f722dba08b
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.il_campione_da_analizzare.field_body
+    - field.field.paragraph.il_campione_da_analizzare.field_label
+    - paragraphs.paragraphs_type.il_campione_da_analizzare
+  module:
+    - text
+id: paragraph.il_campione_da_analizzare.default
+targetEntityType: paragraph
+bundle: il_campione_da_analizzare
+mode: default
+content:
+  field_body:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_label:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

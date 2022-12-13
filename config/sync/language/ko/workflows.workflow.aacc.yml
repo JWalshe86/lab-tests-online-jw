@@ -1,0 +1,13 @@
+type_settings:
+  states:
+    draft:
+      label: 초안
+    published:
+      label: '게시 됨'
+    work_in_progress:
+      label: '진행중인 작업'
+  transitions:
+    publish:
+      label: 게시
+    work_in_progress:
+      label: '진행중인 작업'

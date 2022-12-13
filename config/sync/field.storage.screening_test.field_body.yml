@@ -1,0 +1,19 @@
+uuid: 2a0ea670-00d0-4aab-8b84-845f066489d5
+langcode: en
+status: true
+dependencies:
+  module:
+    - aacc_screening_test_entity
+    - text
+id: screening_test.field_body
+field_name: field_body
+entity_type: screening_test
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

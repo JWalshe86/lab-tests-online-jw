@@ -1,0 +1,21 @@
+display:
+  default:
+    display_options:
+      empty:
+        area:
+          content:
+            value: "<div class=\"search-no-results\">\r\n<p>검색이 되지 않습니까? 검색 사용에 대한 유용한 힌트는 다음과 같습니다.</p>\r\n\r\n<ul>\r\n\t<li>일부 검사 및 조건은 여러 이름으로 알려져 있으므로 다른 이름도 검색하십시오 (예 : 완전한 혈구 수는 CBC라고도하며 심혈관 질환은 CVD라고도 함).</li>\r\n\t<li>검사나 약의 상표명으로는 검색이 되지 않습니다. 대신 범용 이름을 입력하십시오 (예 : Coumadin 대신에 와파린).</li>\r\n\t<li>구문을 검색하는 경우 전체 구문 (예 : \"산 - 염기 균형\")에 인용 부호를 붙이십시오.</li>\r\n\t<li>철자를 확인하십시오.</li>\r\n</ul>\r\n\r\n<p>여전히 원하는 것을 찾을 수 없으면 <a data-entity-substitution=\"canonical\" data-entity-type=\"node\" data-entity-uuid=\"9949b607-7bf6-4378-9513-4056656b9ed2\" href=\"/node/1052\">문의하십시오</a></p>\r\n</div>\r\n"
+            format: full_html
+      pager:
+        options:
+          tags:
+            first: '« 먼저'
+            last: ' 마지막 »'
+      exposed_form:
+        options:
+          submit_button: '검색 재적용'
+      filters:
+        search_api_fulltext:
+          expose:
+            label: 검색
+      title: 검색

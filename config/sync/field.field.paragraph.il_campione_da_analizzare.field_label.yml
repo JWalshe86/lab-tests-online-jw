@@ -1,0 +1,21 @@
+uuid: d82cc59a-ec2e-46f8-b086-f7bc8b03a487
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_label
+    - paragraphs.paragraphs_type.il_campione_da_analizzare
+id: paragraph.il_campione_da_analizzare.field_label
+field_name: field_label
+entity_type: paragraph
+bundle: il_campione_da_analizzare
+label: 'Campione Title'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 'Il Campione da Analizzare'
+default_value_callback: ''
+settings: {  }
+field_type: string

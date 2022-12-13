@@ -1,0 +1,29 @@
+uuid: 69d8bee5-eb73-417e-b3fa-0908de001a6c
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - scheduler
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+  scheduler:
+    expand_fieldset: when_required
+    fields_display_mode: vertical_tab
+    publish_enable: true
+    publish_past_date: error
+    publish_required: false
+    publish_revision: true
+    publish_touch: false
+    unpublish_enable: true
+    unpublish_required: false
+    unpublish_revision: true
+name: Test
+type: test
+description: 'Use <em>tests</em> for medical test descriptions and related information.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

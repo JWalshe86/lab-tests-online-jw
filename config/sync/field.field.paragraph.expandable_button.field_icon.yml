@@ -1,0 +1,23 @@
+uuid: 7f4149fc-dcc8-465c-8886-26f254acd579
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_icon
+    - paragraphs.paragraphs_type.expandable_button
+  module:
+    - options
+id: paragraph.expandable_button.field_icon
+field_name: field_icon
+entity_type: paragraph
+bundle: expandable_button
+label: Icon
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    value: health-chart
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,23 @@
+uuid: 89e4a029-de99-4aad-a6a7-c4c19ca97068
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_legacy_istargethcp
+    - node.type.screening
+id: node.screening.field_legacy_istargethcp
+field_name: field_legacy_istargethcp
+entity_type: node
+bundle: screening
+label: 'Target HCP'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,6 @@
+uuid: 32453714-5314-4906-a24f-8b38e700c66e
+langcode: en
+status: true
+dependencies: {  }
+id: category
+label: Category

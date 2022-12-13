@@ -1,0 +1,12 @@
+display:
+  default:
+    display_options:
+      filters:
+        type:
+          group_info:
+            description: ''
+      empty:
+        area:
+          content:
+            value: "<div class=\"search-no-results\">\r\n<p>Problem mi yaşıyorsunuz? Aramayı kullanmak için yararlı ip uçları:</p>\r\n\r\n<ul>\r\n\t<li>Bazı testler ve hastalıklar farklı isimlere sahip olduğundan diğer adları da araştırmayı deneyin (örneğin alkalen fosfataz ALP olarak da bilinir; Kardiyovasküler Hastalık KVH olarak da isimlendirilir).</li>\r\n\t<li>Tescilli bir test veya ilacı arıyorsanız, Lab Tests Online'da ticaret ünvanıyla bulamazsınız. Jenerik (genel) ismi ile aramayı deneyin. (örneğin Coumadin yerine warfarin).</li>\r\n\t<li>Eğer aradığınız birkaç kelimeden oluşuyorsa tamamını tırnak işareti içine alınız (örneğin \"asit-baz dengesi\").</li>\r\n\t<li>Yazımınızı kontrol ediniz.</li>\r\n</ul>\r\n\r\n<p>Aradığınızı yine bulamadıysanız lütfen <a href=\"/contact-us\">Bize Ulaşın</a>.</p>\r\n</div>\r\n"
+            format: full_html

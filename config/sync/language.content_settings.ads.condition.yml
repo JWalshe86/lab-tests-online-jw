@@ -1,0 +1,16 @@
+uuid: e227050c-38db-407f-8990-113bb0570a1b
+langcode: en
+status: true
+dependencies:
+  config:
+    - aacc_ads.ads_type.condition
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+id: ads.condition
+target_entity_type_id: ads
+target_bundle: condition
+default_langcode: site_default
+language_alterable: false

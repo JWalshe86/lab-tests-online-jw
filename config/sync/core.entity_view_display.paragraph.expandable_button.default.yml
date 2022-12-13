@@ -1,0 +1,63 @@
+uuid: 3b7d4c84-f261-432f-add5-a394f5d0e2d1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.expandable_button.field_color
+    - field.field.paragraph.expandable_button.field_default_content
+    - field.field.paragraph.expandable_button.field_default_reference_range_co
+    - field.field.paragraph.expandable_button.field_default_test_result_conten
+    - field.field.paragraph.expandable_button.field_icon
+    - field.field.paragraph.expandable_button.field_label
+    - field.field.paragraph.expandable_button.field_reference_range_items
+    - paragraphs.paragraphs_type.expandable_button
+  module:
+    - entity_reference_revisions
+    - options
+    - text
+id: paragraph.expandable_button.default
+targetEntityType: paragraph
+bundle: expandable_button
+mode: default
+content:
+  field_default_content:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_default_reference_range_co:
+    weight: 4
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_default_test_result_conten:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_label:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_reference_range_items:
+    weight: 2
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+hidden:
+  field_color: true
+  field_icon: true

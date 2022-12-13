@@ -1,0 +1,131 @@
+uuid: 099b915a-99aa-4ad0-ac01-18007ef29181
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_subcontent
+    - node.type.test
+    - paragraphs.paragraphs_type.accordion
+    - paragraphs.paragraphs_type.columns
+    - paragraphs.paragraphs_type.expandable
+    - paragraphs.paragraphs_type.grid
+    - paragraphs.paragraphs_type.looking_for_buttons
+    - paragraphs.paragraphs_type.media_gallery
+    - paragraphs.paragraphs_type.navigation
+    - paragraphs.paragraphs_type.related_content
+    - paragraphs.paragraphs_type.three_column_call_to_action_lg
+  module:
+    - entity_reference_revisions
+id: node.test.field_subcontent
+field_name: field_subcontent
+entity_type: node
+bundle: test
+label: Subcontent
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      media_gallery: media_gallery
+      related_content: related_content
+      accordion: accordion
+      columns: columns
+      expandable: expandable
+      grid: grid
+      navigation: navigation
+      looking_for_buttons: looking_for_buttons
+      three_column_call_to_action_lg: three_column_call_to_action_lg
+    target_bundles_drag_drop:
+      accordion:
+        enabled: true
+        weight: -30
+      accordion_item:
+        weight: -25
+        enabled: false
+      buttons:
+        weight: 32
+        enabled: false
+      call_to_action:
+        weight: 33
+        enabled: false
+      column:
+        weight: -24
+        enabled: false
+      columns:
+        enabled: true
+        weight: -29
+      columns_background:
+        weight: 36
+        enabled: false
+      cta:
+        weight: 37
+        enabled: false
+      embed_form:
+        weight: 38
+        enabled: false
+      expandable:
+        enabled: true
+        weight: -28
+      expandable_button:
+        weight: 24
+        enabled: false
+      feature_article:
+        weight: 41
+        enabled: false
+      fonti:
+        weight: 26
+        enabled: false
+      grid:
+        enabled: true
+        weight: -27
+      il_campione_da_analizzare:
+        weight: 29
+        enabled: false
+      in_sintesi:
+        weight: 31
+        enabled: false
+      logo:
+        weight: 28
+        enabled: false
+      looking_for_buttons:
+        enabled: true
+        weight: 25
+      media_gallery:
+        enabled: true
+        weight: -33
+      navigation:
+        enabled: true
+        weight: -26
+      reference_range_item:
+        weight: -21
+        enabled: false
+      related_content:
+        enabled: true
+        weight: -31
+      related_screening_item:
+        weight: -20
+        enabled: false
+      screening_tests:
+        weight: -19
+        enabled: false
+      section_navigation_item:
+        weight: -23
+        enabled: false
+      sponsor_keyword:
+        weight: -18
+        enabled: false
+      text_area:
+        weight: -22
+        enabled: false
+      three_column_call_to_action:
+        weight: 57
+        enabled: false
+      three_column_call_to_action_lg:
+        enabled: true
+        weight: 58
+field_type: entity_reference_revisions

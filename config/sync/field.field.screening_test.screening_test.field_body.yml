@@ -1,0 +1,21 @@
+uuid: 203ebfc7-b274-4a08-935d-2099aa1c7943
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.screening_test.field_body
+  module:
+    - aacc_screening_test_entity
+    - text
+id: screening_test.screening_test.field_body
+field_name: field_body
+entity_type: screening_test
+bundle: screening_test
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

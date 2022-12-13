@@ -1,0 +1,19 @@
+uuid: 163b6e6b-7d9a-412b-a80a-9f79a12031f0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_oldpath
+    - node.type.test
+id: node.test.field_oldpath
+field_name: field_oldpath
+entity_type: node
+bundle: test
+label: 'Old URL Path'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

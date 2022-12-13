@@ -1,0 +1,13 @@
+type_settings:
+  states:
+    draft:
+      label: Bozza
+    published:
+      label: Pubblicato
+    work_in_progress:
+      label: 'Lavori in Corso'
+  transitions:
+    publish:
+      label: Pubblicare
+    work_in_progress:
+      label: 'Lavori in Corso'

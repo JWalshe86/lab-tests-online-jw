@@ -1,0 +1,18 @@
+uuid: 8c04f90e-784f-4084-8d43-73e8ec6347d3
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.definition
+id: node.definition.publish_on
+field_name: publish_on
+entity_type: node
+bundle: definition
+label: 'Publish on'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: timestamp

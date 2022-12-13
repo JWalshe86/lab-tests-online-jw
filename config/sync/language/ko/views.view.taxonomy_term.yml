@@ -1,0 +1,28 @@
+label: 'Taxonomy term'
+display:
+  default:
+    display_title: Master
+    display_options:
+      exposed_form:
+        options:
+          submit_button: '검색 재적용'
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      pager:
+        options:
+          expose:
+            items_per_page_label: 'Items per page'
+            items_per_page_options_all_label: '-분류 전체-'
+          tags:
+            previous: ‹‹
+            next: ››
+      arguments:
+        tid:
+          exception:
+            title: '분류 전체'
+  feed_1:
+    display_title: Feed
+  page_1:
+    display_title: Page

@@ -1,0 +1,119 @@
+uuid: 5c165950-577c-4f0c-bbb0-5dd88d61bfe9
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_index
+    - field.field.node.condition.body
+    - field.field.node.condition.field_archived
+    - field.field.node.condition.field_condition_synonyms
+    - field.field.node.condition.field_exclude_from_search
+    - field.field.node.condition.field_keywords
+    - field.field.node.condition.field_legacy_content
+    - field.field.node.condition.field_legacy_istargethcp
+    - field.field.node.condition.field_meta_tags
+    - field.field.node.condition.field_migration_notes
+    - field.field.node.condition.field_migration_status
+    - field.field.node.condition.field_misspellings
+    - field.field.node.condition.field_oldpath
+    - field.field.node.condition.field_reviewed
+    - field.field.node.condition.field_subcontent
+    - node.type.condition
+  module:
+    - aacc_foundation_magellan_field_format
+    - ds
+    - smart_trim
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - node_title
+        - body
+        - node_link
+    fields:
+      node_link:
+        plugin_id: node_link
+        weight: 2
+        label: hidden
+        formatter: default
+      node_title:
+        plugin_id: node_title
+        weight: 0
+        label: hidden
+        formatter: default
+        settings:
+          link: true
+          wrapper: h2
+          class: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+id: node.condition.search_index
+targetEntityType: node
+bundle: condition
+mode: search_index
+content:
+  body:
+    label: hidden
+    type: smart_trim
+    weight: 1
+    settings:
+      trim_length: 350
+      trim_type: chars
+      trim_suffix: ...
+      more_link: false
+      more_text: More
+      summary_handler: full
+      trim_options:
+        text: true
+      more_class: more-link
+      wrap_output: false
+      wrap_class: trimmed
+    third_party_settings:
+      aacc_foundation_magellan_field_format:
+        magellan_target_label: ''
+        magellan_target_clean: true
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    region: ds_content
+hidden:
+  content_moderation_control: true
+  field_archived: true
+  field_condition_synonyms: true
+  field_exclude_from_search: true
+  field_keywords: true
+  field_legacy_content: true
+  field_legacy_istargethcp: true
+  field_meta_tags: true
+  field_migration_notes: true
+  field_migration_status: true
+  field_misspellings: true
+  field_oldpath: true
+  field_reviewed: true
+  field_subcontent: true
+  langcode: true
+  links: true
+  revision_date: true

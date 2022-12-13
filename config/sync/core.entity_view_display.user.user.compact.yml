@@ -1,0 +1,30 @@
+uuid: 9b0c1652-aef4-4f03-8df9-338f934fc92e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.user.compact
+    - field.field.user.user.field_addr
+    - field.field.user.user.field_aptify_id
+    - field.field.user.user.field_familyname
+    - field.field.user.user.field_givenname
+    - field.field.user.user.field_phone
+    - field.field.user.user.field_user_image
+  module:
+    - user
+_core:
+  default_config_hash: CcEUPjFrfIkG2nv5mGa9Qs6QtwLCa0SESWwBu_LdbQg
+id: user.user.compact
+targetEntityType: user
+bundle: user
+mode: compact
+content: {  }
+hidden:
+  field_addr: true
+  field_aptify_id: true
+  field_familyname: true
+  field_givenname: true
+  field_phone: true
+  field_user_image: true
+  langcode: true
+  member_for: true

@@ -1,0 +1,15 @@
+uuid: 037e462b-dcdf-444a-84a1-085a34ee6da7
+langcode: en
+status: true
+dependencies: {  }
+name: co
+label: 'Corporate Sponsor Large'
+effects:
+  67c7197e-bf88-4d51-b3da-5630db04e31d:
+    uuid: 67c7197e-bf88-4d51-b3da-5630db04e31d
+    id: image_scale
+    weight: 1
+    data:
+      width: 210
+      height: null
+      upscale: false

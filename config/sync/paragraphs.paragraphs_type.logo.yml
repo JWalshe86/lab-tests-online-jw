@@ -1,0 +1,7 @@
+uuid: abb7f1ab-bbb1-4234-b860-77b21203e622
+langcode: en
+status: true
+dependencies: {  }
+id: logo
+label: Logo
+behavior_plugins: {  }

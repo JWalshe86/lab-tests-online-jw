@@ -1,0 +1,31 @@
+uuid: 60cb3b5a-4d4a-4fe8-89c9-aa6aaa9280a8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.reference_range_item.field_body
+    - field.field.paragraph.reference_range_item.field_label
+    - paragraphs.paragraphs_type.reference_range_item
+  module:
+    - text
+id: paragraph.reference_range_item.default
+targetEntityType: paragraph
+bundle: reference_range_item
+mode: default
+content:
+  field_body:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_label:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

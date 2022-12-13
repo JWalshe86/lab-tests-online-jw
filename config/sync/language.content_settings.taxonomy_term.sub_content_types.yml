@@ -1,0 +1,13 @@
+uuid: 51c14f12-f30d-42a8-8732-94ae808de701
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.sub_content_types
+_core:
+  default_config_hash: iUFl72ndkKrXIhQFA6iB0vn3MzL5b-M-52NgSDzIAbQ
+id: taxonomy_term.sub_content_types
+target_entity_type_id: taxonomy_term
+target_bundle: sub_content_types
+default_langcode: site_default
+language_alterable: false

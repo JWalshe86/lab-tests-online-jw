@@ -1,0 +1,23 @@
+uuid: a5c65a7e-adfb-4c2c-96d9-d27bb691046c
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.logo_block
+    - field.storage.block_content.field_aacc_logo_left_of_text_
+  module:
+    - options
+id: block_content.logo_block.field_aacc_logo_left_of_text_
+field_name: field_aacc_logo_left_of_text_
+entity_type: block_content
+bundle: logo_block
+label: 'AACC Logo left of text?'
+description: 'The text Below the Logo will often use a small <img src="/themes/custom/aacc_lto_foundation/images/aacc-logo.jpg" alt="aacc-logo"> logo. This image will default to the right of the text. Choose <em>Yes</em> to show the image on the left of the text.'
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings: {  }
+field_type: list_integer

@@ -1,0 +1,16 @@
+uuid: 91cfd92b-24a4-44ee-a596-38452965b8a1
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.definition
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: node.definition
+target_entity_type_id: node
+target_bundle: definition
+default_langcode: site_default
+language_alterable: true

@@ -1,0 +1,18 @@
+uuid: 922bd9e8-883f-47b8-9a1a-1be86031978c
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.sponsorship_level
+id: taxonomy_term.sponsorship_level.name
+field_name: name
+entity_type: taxonomy_term
+bundle: sponsorship_level
+label: Name
+description: 'The term name.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

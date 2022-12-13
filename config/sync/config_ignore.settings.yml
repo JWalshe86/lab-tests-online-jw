@@ -1,0 +1,9 @@
+ignored_config_entities:
+  0: 'xmlsitemap.xmlsitemap.*'
+  2: 'block.block.*'
+  4: 'webform.*'
+  6: ~block.block.frontpagegroup_links_sponsors
+  8: ~block.block.frontpagegroup_about
+  10: 'aacc_webform.blacklist.*'
+_core:
+  default_config_hash: UVH1aJ4b44UM-VdPVN7hNNuuVqfReJxwfVeDQH1Hvsk

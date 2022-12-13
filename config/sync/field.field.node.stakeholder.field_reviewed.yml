@@ -1,0 +1,21 @@
+uuid: 3484c660-2f06-4aa1-9d5e-b7bb7023d24e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_reviewed
+    - node.type.stakeholder
+  module:
+    - datetime
+id: node.stakeholder.field_reviewed
+field_name: field_reviewed
+entity_type: node
+bundle: stakeholder
+label: 'Date Reviewed'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

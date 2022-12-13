@@ -1,0 +1,13 @@
+type_settings:
+  states:
+    draft:
+      label: Vázlat
+    published:
+      label: Közzétett
+    work_in_progress:
+      label: 'Munka Folyamatban'
+  transitions:
+    publish:
+      label: Közzétesz
+    work_in_progress:
+      label: 'Munka Folyamatban'

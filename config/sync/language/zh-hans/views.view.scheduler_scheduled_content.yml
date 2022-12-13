@@ -1,0 +1,73 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filter
+          reset_button_label: Reset
+          exposed_sorts_label: 排序方式
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      fields:
+        title:
+          label: Title
+        type:
+          separator: ', '
+        name:
+          label: Author
+        status:
+          label: Status
+          settings:
+            format_custom_true: Published
+            format_custom_false: Unpublished
+        publish_on:
+          label: 'Publish on'
+        unpublish_on:
+          label: 'Unpublish on'
+        operations:
+          label: Operations
+      filters:
+        status:
+          expose:
+            label: Status
+          group_info:
+            label: 'Published status'
+            group_items:
+              1:
+                title: Published
+              2:
+                title: Unpublished
+        type:
+          expose:
+            label: Type
+        title:
+          expose:
+            label: Title
+        langcode:
+          expose:
+            label: Language
+        publish_on:
+          expose:
+            label: 'Publish on'
+          group_info:
+            label: 'Publish on'
+        unpublish_on:
+          expose:
+            label: 'Unpublish on'
+    display_title: Master
+  overview:
+    display_options:
+      menu:
+        title: Scheduled
+      tab_options:
+        title: Content
+  user_page:
+    display_options:
+      menu:
+        title: Scheduled
+      tab_options:
+        title: Content
+      arguments:
+        uid:
+          exception:
+            title: "\r\n所有"

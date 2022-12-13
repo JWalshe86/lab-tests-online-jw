@@ -1,0 +1,12 @@
+display:
+  default:
+    display_options:
+      filters:
+        type:
+          group_info:
+            description: ''
+      empty:
+        area:
+          content:
+            value: "<div class=\"search-no-results\">\r\n<p>Valami probléma adódott? Íme néhány javaslat a \"Keresés\" használatához:</p>\r\n\r\n<ul>\r\n\t<li>Mivel néhány vizsgálat és állapot több elnevezéssel is rendelkezik, próbáljon rákeresni az egyéb nevekre is (pl. a protrombin időt megtalálja az INR-nél is; a kardiovaszkuláris betegséget CVD-nek is hívják).</li>\r\n\t<li>Ha szabadalmazott nevű vizsgálatot vagy gyógyszert keres, lehet, hogy nem találja a meg a Lab Tests Online oldalán a márkanév alapján. Próbálja meg helyette a generikus nevet használni (pl. warfarin a Marfarin helyett).</li>\r\n\t<li>Ha kifejezést keres, tegye a teljes kifejezést idézőjelek közé (pl. \"sav-bázis egyensúly\").</li>\r\n\t<li>Ellenőrizze a helyesírást.</li>\r\n</ul>\r\n\r\n<p>Amennyiben nem találja amit keresett, <a href=\"/contact-us\">kérjük vegye fel velünk a kapcsolatot</a>.</p>\r\n</div>\r\n"
+            format: full_html

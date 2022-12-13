@@ -1,0 +1,16 @@
+display:
+  top_tests:
+    display_title: "Pruebas más consultadas\r\n"
+    display_options:
+      title: "Pruebas más consultadas\r\n"
+      use_more_text: 'Ver todas las pruebas'
+  top_conditions:
+    display_title: 'Estados fisiológicos/enfermedades más consultados'
+    display_options:
+      title: 'Estados fisiológicos/enfermedades más consultados'
+      use_more_text: 'Ver todos los estados fisiológicos/enfermedades '
+  top_screenings:
+    display_title: 'Las revisiones generales más consultados'
+    display_options:
+      title: 'Las revisiones generales más consultados'
+      use_more_text: 'Ver todas las revisiones generales'

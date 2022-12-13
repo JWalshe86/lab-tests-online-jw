@@ -1,0 +1,30 @@
+uuid: 50bff34e-3717-48f9-87c5-e4c4ae22d4dd
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - scheduler
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+  scheduler:
+    expand_fieldset: when_required
+    fields_display_mode: vertical_tab
+    publish_enable: true
+    publish_past_date: error
+    publish_required: false
+    publish_revision: true
+    publish_touch: false
+    unpublish_enable: true
+    unpublish_required: false
+    unpublish_revision: true
+name: Definition
+type: definition
+description: 'Use <em>definitions</em> for terms or items that will populate the site glossary and, in turn, be referenced by almost all content on the site.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

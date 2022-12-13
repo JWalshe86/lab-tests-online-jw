@@ -1,0 +1,25 @@
+uuid: 423f7af5-ceb6-4b0f-973d-cb7e66e74ee2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.aacc_feeds_feed.field_notification_interval
+  module:
+    - aacc_feeds
+    - options
+_core:
+  default_config_hash: 2OVEkPZ-TRYUzEzgbOWWSbrEvd1qkAWrS5V37L5_j5k
+id: aacc_feeds_feed.aacc_feeds_feed.field_notification_interval
+field_name: field_notification_interval
+entity_type: aacc_feeds_feed
+bundle: aacc_feeds_feed
+label: 'Notification Interval'
+description: 'If the client wishes to be notified of content updates, select how often to notify them.'
+required: false
+translatable: false
+default_value:
+  -
+    value: Weekly
+default_value_callback: ''
+settings: {  }
+field_type: list_string

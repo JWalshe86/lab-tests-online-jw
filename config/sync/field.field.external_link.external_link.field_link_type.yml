@@ -1,0 +1,29 @@
+uuid: 5192be28-d15c-4c8a-95f4-146ac5993eef
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.external_link.field_link_type
+    - taxonomy.vocabulary.link_type
+  module:
+    - external_link
+id: external_link.external_link.field_link_type
+field_name: field_link_type
+entity_type: external_link
+bundle: external_link
+label: 'Link Type'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      link_type: link_type
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

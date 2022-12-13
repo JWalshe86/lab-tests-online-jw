@@ -1,0 +1,15 @@
+uuid: 2d62b123-900b-412a-9a2c-c352ae66d03e
+langcode: en
+status: true
+dependencies: {  }
+name: top_news_large_tablet
+label: 'Top News Large Tablet'
+effects:
+  4f912b87-ad9d-4716-aa45-560984c025e4:
+    uuid: 4f912b87-ad9d-4716-aa45-560984c025e4
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 650
+      height: 700
+      anchor: center-center

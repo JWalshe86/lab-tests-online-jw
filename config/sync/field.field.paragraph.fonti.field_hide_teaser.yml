@@ -1,0 +1,23 @@
+uuid: 53a19735-bf82-4c4e-a03d-c7f02705fa4e
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_hide_teaser
+    - paragraphs.paragraphs_type.fonti
+id: paragraph.fonti.field_hide_teaser
+field_name: field_hide_teaser
+entity_type: paragraph
+bundle: fonti
+label: 'Hide Teaser'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: '1'
+  off_label: '0'
+field_type: boolean

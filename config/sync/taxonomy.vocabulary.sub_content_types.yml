@@ -1,0 +1,8 @@
+uuid: 965fb85e-4591-409e-b5ad-280f9fce0168
+langcode: en
+status: true
+dependencies: {  }
+name: 'Sub-Content Types'
+vid: sub_content_types
+description: 'Used to link Paragraph content with Feeds sub-content to customize Feeds content for Screenings, Conditions, and Tests..'
+weight: 0

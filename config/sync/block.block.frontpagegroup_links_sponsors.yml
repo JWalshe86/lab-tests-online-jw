@@ -1,0 +1,28 @@
+uuid: 64b66cd0-cbd2-412a-8af8-ff83ba4857c4
+langcode: en
+status: true
+dependencies:
+  config:
+    - blockgroup.block_group_content.front_page_group_links_sponsors
+  module:
+    - blockgroup
+    - system
+  theme:
+    - aacc_lto_foundation
+id: frontpagegroup_links_sponsors
+theme: aacc_lto_foundation
+region: content
+weight: -10
+provider: null
+plugin: 'block_group:front_page_group_links_sponsors'
+settings:
+  id: 'block_group:front_page_group_links_sponsors'
+  label: 'Front Page Group - Links/Sponsors'
+  provider: blockgroup
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

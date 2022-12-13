@@ -1,0 +1,21 @@
+uuid: 6924c5fa-a40e-44a5-8b51-0827f93542f6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_legacy_content
+    - node.type.news_item
+  module:
+    - text
+id: node.news_item.field_legacy_content
+field_name: field_legacy_content
+entity_type: node
+bundle: news_item
+label: 'Legacy content'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

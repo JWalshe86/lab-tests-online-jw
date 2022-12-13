@@ -1,0 +1,29 @@
+uuid: ef5b87f0-9e28-48ee-bc05-2b5d41a473e0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_sub_content_type
+    - paragraphs.paragraphs_type.navigation
+    - taxonomy.vocabulary.sub_content_types
+id: paragraph.navigation.field_sub_content_type
+field_name: field_sub_content_type
+entity_type: paragraph
+bundle: navigation
+label: 'Sub-Content Type'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      sub_content_types: sub_content_types
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

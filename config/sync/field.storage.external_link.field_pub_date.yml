@@ -1,0 +1,20 @@
+uuid: 902edf67-7658-4ef7-81ee-b045cdb79c4b
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime
+    - external_link
+id: external_link.field_pub_date
+field_name: field_pub_date
+entity_type: external_link
+type: datetime
+settings:
+  datetime_type: date
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,35 @@
+uuid: 38ff82bf-1ec4-4f21-a64c-39f193455889
+langcode: en
+status: true
+dependencies:
+  module:
+    - aacc_feeds
+    - options
+_core:
+  default_config_hash: iar9zyXDgwP2rzbWORKftiNRbMpG_kx82WcNaO_EcNk
+id: aacc_feeds_feed.field_screening_links
+field_name: field_screening_links
+entity_type: aacc_feeds_feed
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: remove
+      label: 'Remove All Links'
+    -
+      value: external
+      label: 'Include External Links Only'
+    -
+      value: internal
+      label: 'Include Internal Licensed Links Only'
+    -
+      value: all
+      label: 'Include Internal Licensed Links and External Links'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

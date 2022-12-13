@@ -1,0 +1,20 @@
+uuid: 4534b5bc-bfcb-45cc-9821-6e1cca74df76
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_aptify_id
+  module:
+    - user
+id: user.user.field_aptify_id
+field_name: field_aptify_id
+entity_type: user
+bundle: user
+label: 'Aptify ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

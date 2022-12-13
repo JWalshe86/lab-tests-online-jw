@@ -1,0 +1,19 @@
+display:
+  collaborating_partners:
+    display_title: 'İşbirliği Ortakları'
+    display_options:
+      use_more_text: 'Daha fazlası için'
+      title: 'İşbirliği Ortakları'
+      block_description: 'İşbirliği Ortakları'
+  collaborating_partners_full:
+    display_title: 'İşbirliği Ortakları'
+    display_options:
+      title: 'İşbirliği Ortakları'
+  corporate_sponsors:
+    display_title: 'Sponsor Şirketler'
+    display_options:
+      use_more_text: 'Daha fazlası için'
+  sponsors_full:
+    display_title: 'Sponsor Şirketler'
+    display_options:
+      title: 'Sponsor Şirketler'

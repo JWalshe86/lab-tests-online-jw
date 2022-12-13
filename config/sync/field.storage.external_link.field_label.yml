@@ -1,0 +1,21 @@
+uuid: 8ab202ca-1ecf-41f4-9038-9b374d70c34f
+langcode: en
+status: true
+dependencies:
+  module:
+    - external_link
+id: external_link.field_label
+field_name: field_label
+entity_type: external_link
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

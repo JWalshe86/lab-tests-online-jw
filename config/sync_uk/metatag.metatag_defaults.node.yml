@@ -1,0 +1,11 @@
+uuid: 8a51e906-0813-4c86-8d7e-54797a155588
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: ydpmSCtxLjO9xqkBxObkeYx0Bf2dkW-d8bB_6Q1Ggjs
+id: node
+label: Content
+tags:
+  title: '[node:title] | Lab Tests Online-UK'
+  description: '[node:summary]'

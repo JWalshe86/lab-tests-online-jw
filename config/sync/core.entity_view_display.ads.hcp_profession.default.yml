@@ -1,0 +1,58 @@
+uuid: 8d1a0573-d661-4e12-9085-724275f94c4b
+langcode: en
+status: true
+dependencies:
+  config:
+    - aacc_ads.ads_type.hcp_profession
+    - field.field.ads.hcp_profession.field_ad_key_value
+    - field.field.ads.hcp_profession.field_ad_keywords
+    - field.field.ads.hcp_profession.field_ad_sort_order
+  module:
+    - user
+id: ads.hcp_profession.default
+targetEntityType: ads
+bundle: hcp_profession
+mode: default
+content:
+  field_ad_key_value:
+    weight: 3
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_ad_keywords:
+    weight: 1
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_ad_sort_order:
+    weight: 2
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  name:
+    label: above
+    type: string
+    weight: -4
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  user_id:
+    label: hidden
+    type: author
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

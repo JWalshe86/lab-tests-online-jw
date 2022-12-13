@@ -1,0 +1,18 @@
+uuid: f361ded7-e492-446a-8c19-8fc09c41a7cc
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.stakeholder_type
+id: taxonomy_term.stakeholder_type.name
+field_name: name
+entity_type: taxonomy_term
+bundle: stakeholder_type
+label: Name
+description: 'The term name.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

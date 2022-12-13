@@ -1,0 +1,19 @@
+display:
+  collaborating_partners:
+    display_title: 'Parceiros Colaboradores'
+    display_options:
+      use_more_text: 'Ver Todas'
+      title: 'Parceiros Colaboradores'
+      block_description: 'Parceiros Colaboradores'
+  collaborating_partners_full:
+    display_title: 'Parceiros Colaboradores'
+    display_options:
+      title: 'Parceiros Colaboradores'
+  corporate_sponsors:
+    display_title: 'Patrocinador Corporativo'
+    display_options:
+      use_more_text: 'Ver Todas'
+  default:
+    display_options:
+      title: 'Patrocinador Corporativo'
+      use_more_text: 'Ver todas '

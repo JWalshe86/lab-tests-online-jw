@@ -1,0 +1,15 @@
+uuid: 0f960951-ef38-45aa-a515-9978e0d67ecf
+langcode: en
+status: true
+dependencies: {  }
+name: corporate_sponsor_small
+label: 'Corporate Sponsor Small'
+effects:
+  c0ec0fb9-2d4a-4e22-8b86-25df23b02e18:
+    uuid: c0ec0fb9-2d4a-4e22-8b86-25df23b02e18
+    id: image_scale
+    weight: 1
+    data:
+      width: 115
+      height: null
+      upscale: false

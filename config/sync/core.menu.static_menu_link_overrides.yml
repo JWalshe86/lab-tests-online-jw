@@ -1,0 +1,87 @@
+definitions:
+  contact__site_page:
+    enabled: true
+    menu_name: footer
+    parent: ''
+    weight: 0
+    expanded: false
+  user__page:
+    weight: -48
+    enabled: false
+    menu_name: account
+    parent: ''
+    expanded: false
+  user__logout:
+    enabled: false
+    menu_name: account
+    parent: ''
+    expanded: false
+    weight: -47
+  comment__admin:
+    weight: 1
+    menu_name: admin
+    parent: system.admin_content
+    enabled: true
+    expanded: false
+  entity__media__collection:
+    weight: 3
+    menu_name: admin
+    parent: system.admin_content
+    expanded: false
+    enabled: true
+  entity__node_type__edit_form__article:
+    weight: -4
+    menu_name: admin
+    parent: entity.node_type.collection
+    expanded: false
+    enabled: true
+  entity__node_type__edit_form__page:
+    weight: -3
+    menu_name: admin
+    parent: entity.node_type.collection
+    expanded: false
+    enabled: true
+  entity__node_type__edit_form__condition:
+    weight: -1
+    menu_name: admin
+    parent: entity.node_type.collection
+    expanded: false
+    enabled: true
+  entity__node_type__edit_form__news_item:
+    weight: 1
+    menu_name: admin
+    parent: entity.node_type.collection
+    expanded: false
+    enabled: true
+  entity__node_type__edit_form__person:
+    weight: 2
+    menu_name: admin
+    parent: entity.node_type.collection
+    expanded: false
+    enabled: true
+  entity__node_type__edit_form__screening:
+    weight: 3
+    menu_name: admin
+    parent: entity.node_type.collection
+    expanded: false
+    enabled: true
+  entity__node_type__edit_form__stakeholder:
+    weight: 4
+    menu_name: admin
+    parent: entity.node_type.collection
+    expanded: false
+    enabled: true
+  entity__node_type__edit_form__test:
+    weight: 5
+    menu_name: admin
+    parent: entity.node_type.collection
+    expanded: false
+    enabled: true
+  entity__external_link__collection:
+    weight: 2
+    parent: system.admin_content
+    menu_name: admin
+    expanded: false
+    enabled: true
+_core:
+  default_config_hash: pvhQ1P16oZ75v_ttIiQNzMqbsrz8gq1g-kKD6P2XQv8

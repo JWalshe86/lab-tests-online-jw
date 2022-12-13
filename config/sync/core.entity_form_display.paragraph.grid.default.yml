@@ -1,0 +1,51 @@
+uuid: 8c3802c9-f2d9-4cc5-8135-fb32fe7ac14a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.grid.field_label
+    - field.field.paragraph.grid.field_sub_content_type
+    - field.field.paragraph.grid.field_text_areas
+    - paragraphs.paragraphs_type.grid
+  module:
+    - paragraphs
+id: paragraph.grid.default
+targetEntityType: paragraph
+bundle: grid
+mode: default
+content:
+  field_label:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_sub_content_type:
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_text_areas:
+    type: entity_reference_paragraphs
+    weight: 1
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  translation:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

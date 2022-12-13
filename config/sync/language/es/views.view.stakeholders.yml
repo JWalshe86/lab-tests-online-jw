@@ -1,0 +1,23 @@
+display:
+  collaborating_partners:
+    display_title: ' Sociedades colaboradoras'
+    display_options:
+      use_more_text: 'Ver Todo'
+      title: ' Sociedades colaboradoras'
+      block_description: ' Sociedades colaboradoras'
+  collaborating_partners_full:
+    display_title: ' Sociedades colaboradoras'
+    display_options:
+      title: ' Sociedades colaboradoras'
+  corporate_sponsors:
+    display_title: Patrocinadores
+    display_options:
+      use_more_text: 'Ver Todas'
+  sponsors_full:
+    display_title: Patrocinadores
+    display_options:
+      title: Patrocinadores
+  default:
+    display_options:
+      title: Patrocinadores
+      use_more_text: 'Ver Todas'

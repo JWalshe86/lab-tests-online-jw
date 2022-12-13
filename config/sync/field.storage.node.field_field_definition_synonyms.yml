@@ -1,0 +1,21 @@
+uuid: 6093123e-f298-46a5-ab62-214c84e7b63b
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_field_definition_synonyms
+field_name: field_field_definition_synonyms
+entity_type: node
+type: string
+settings:
+  max_length: 340
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

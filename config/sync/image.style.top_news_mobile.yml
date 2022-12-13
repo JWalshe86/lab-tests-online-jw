@@ -1,0 +1,15 @@
+uuid: 506ad1dd-7444-4e67-8e32-f4100803d638
+langcode: en
+status: true
+dependencies: {  }
+name: top_news_mobile
+label: 'Top News Mobile'
+effects:
+  84dc2e45-c09a-4d33-acda-446f2060fa4c:
+    uuid: 84dc2e45-c09a-4d33-acda-446f2060fa4c
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 768
+      height: 445
+      anchor: center-center

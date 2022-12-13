@@ -1,0 +1,25 @@
+uuid: 2a0e4e0f-158f-4848-90ca-fa701261025c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_screening_test_item
+    - paragraphs.paragraphs_type.screening_tests
+id: paragraph.screening_tests.field_screening_test_item
+field_name: field_screening_test_item
+entity_type: paragraph
+bundle: screening_tests
+label: 'Screening Test Item'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:screening_test'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: true
+field_type: entity_reference

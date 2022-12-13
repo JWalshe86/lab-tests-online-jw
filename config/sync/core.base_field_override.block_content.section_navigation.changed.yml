@@ -1,0 +1,18 @@
+uuid: 4c8bd798-e106-4c7f-aa70-fcb0ce457bd8
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.section_navigation
+id: block_content.section_navigation.changed
+field_name: changed
+entity_type: block_content
+bundle: section_navigation
+label: Changed
+description: 'The time that the custom block was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

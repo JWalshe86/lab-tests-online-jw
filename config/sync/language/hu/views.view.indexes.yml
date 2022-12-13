@@ -1,0 +1,13 @@
+display:
+  conditions:
+    display_options:
+      title: 'Állapotok és betegségek'
+  screenings:
+    display_options:
+      title: ' Szűrővizsgálatok'
+  tests:
+    display_options:
+      title: 'Laboratóriumi vizsgálatok'
+  definitions:
+    display_options:
+      title: Fogalomtár

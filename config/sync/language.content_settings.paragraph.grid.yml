@@ -1,0 +1,16 @@
+uuid: 3006a260-26ef-4621-97de-6b5cfe9837e2
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.grid
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: paragraph.grid
+target_entity_type_id: paragraph
+target_bundle: grid
+default_langcode: site_default
+language_alterable: true

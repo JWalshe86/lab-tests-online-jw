@@ -1,0 +1,9 @@
+watchdog: true
+rir: arin
+md5_checksum: false
+update_interval: 302400
+batch_size: 200
+debug: false
+test_type: 0
+test_country: US
+test_ip_address: 179.6.34.163

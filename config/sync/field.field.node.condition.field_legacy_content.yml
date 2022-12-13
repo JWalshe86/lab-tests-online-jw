@@ -1,0 +1,21 @@
+uuid: f0e6314d-ec22-4fed-a93d-b76c6dab677d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_legacy_content
+    - node.type.condition
+  module:
+    - text
+id: node.condition.field_legacy_content
+field_name: field_legacy_content
+entity_type: node
+bundle: condition
+label: 'Legacy content'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

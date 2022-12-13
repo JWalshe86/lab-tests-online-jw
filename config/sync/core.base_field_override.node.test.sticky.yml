@@ -1,0 +1,22 @@
+uuid: 77cf547c-f44d-4d87-bb71-87a410d05217
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.test
+id: node.test.sticky
+field_name: sticky
+entity_type: node
+bundle: test
+label: 'Sticky at top of lists'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

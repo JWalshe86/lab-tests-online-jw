@@ -1,0 +1,9 @@
+uuid: 46c98e00-48d2-4211-8fa1-7c9d62ae9042
+langcode: it
+status: true
+dependencies: {  }
+id: fonti
+label: Fonti
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

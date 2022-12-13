@@ -1,0 +1,19 @@
+uuid: 0f97fb6a-3d16-428e-83a5-b99f3f6b9db3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_condition_synonyms
+    - node.type.condition
+id: node.condition.field_condition_synonyms
+field_name: field_condition_synonyms
+entity_type: node
+bundle: condition
+label: 'Also Known As'
+description: 'List commonly used names'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

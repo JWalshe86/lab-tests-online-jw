@@ -1,0 +1,12 @@
+settings:
+  default_form_submit_label: Enviar
+  default_wizard_prev_button_label: '< Página Anterior'
+  default_wizard_next_button_label: 'Próxima Página >'
+  default_wizard_start_label: Iniciar
+  default_wizard_complete_label: Completo
+  default_preview_next_button_label: Pré-visualizar
+  default_preview_prev_button_label: '< Anterior'
+  default_draft_button_label: 'Salvar rascunho'
+  default_draft_saved_message: 'Submissão salva. Você pode retornar a esse formulário posteriormente e ele irá restaurar os valores atuais.'
+mail:
+  default_subject: ''

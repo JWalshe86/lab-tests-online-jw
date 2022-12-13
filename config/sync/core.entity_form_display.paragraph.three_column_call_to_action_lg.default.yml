@@ -1,0 +1,32 @@
+uuid: f78ef947-3da3-4103-aaf8-f8325be6538e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.three_column_call_to_action_lg.field_button_link
+    - field.field.paragraph.three_column_call_to_action_lg.field_order_layout
+    - paragraphs.paragraphs_type.three_column_call_to_action_lg
+  module:
+    - link
+id: paragraph.three_column_call_to_action_lg.default
+targetEntityType: paragraph
+bundle: three_column_call_to_action_lg
+mode: default
+content:
+  field_button_link:
+    weight: 0
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_order_layout:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,52 @@
+uuid: 925254de-f362-4eb9-ae36-86a766b0eaad
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.dropdown_button
+    - field.field.block_content.dropdown_button.body
+    - field.field.block_content.dropdown_button.field_button_label
+  module:
+    - text
+id: block_content.dropdown_button.default
+targetEntityType: block_content
+bundle: dropdown_button
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 2
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_button_label:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  info:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  translation:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

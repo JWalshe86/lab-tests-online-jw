@@ -1,0 +1,21 @@
+uuid: ff8da4ae-815e-4ef0-8ba5-340c2c3f3578
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_reviewed
+    - node.type.condition
+  module:
+    - datetime
+id: node.condition.field_reviewed
+field_name: field_reviewed
+entity_type: node
+bundle: condition
+label: 'Date Reviewed'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

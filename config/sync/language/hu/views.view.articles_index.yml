@@ -1,0 +1,10 @@
+display:
+  block_articles:
+    display_options:
+      pager:
+        options:
+          tags:
+            previous: '‹ Előző'
+            next: 'Következő ›'
+            first: '« Első'
+            last: 'Utolsó »'

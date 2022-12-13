@@ -1,0 +1,86 @@
+uuid: 3e2dfee5-54fb-4f59-8448-19d2945d9b98
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.three_column_call_to_action.field_button_link
+    - field.field.paragraph.three_column_call_to_action.field_button_subtext
+    - field.field.paragraph.three_column_call_to_action.field_column_1
+    - field.field.paragraph.three_column_call_to_action.field_column_1_subtext
+    - field.field.paragraph.three_column_call_to_action.field_column_2
+    - field.field.paragraph.three_column_call_to_action.field_column_2_subtext
+    - field.field.paragraph.three_column_call_to_action.field_column_3
+    - field.field.paragraph.three_column_call_to_action.field_column_3_subtext
+    - paragraphs.paragraphs_type.three_column_call_to_action
+  module:
+    - link
+    - text
+id: paragraph.three_column_call_to_action.default
+targetEntityType: paragraph
+bundle: three_column_call_to_action
+mode: default
+content:
+  field_button_link:
+    weight: 6
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_button_subtext:
+    weight: 7
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_column_1:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_column_1_subtext:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_column_2:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_column_2_subtext:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_column_3:
+    weight: 4
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_column_3_subtext:
+    weight: 5
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+hidden:
+  revision_date: true
+  search_api_excerpt: true

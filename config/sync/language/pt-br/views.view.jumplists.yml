@@ -1,0 +1,13 @@
+display:
+  jumplist_conditions:
+    display_title: Doenças
+    display_options:
+      title: Doenças
+  jumplist_screenings:
+    display_title: 'Rastreios de Saúde'
+    display_options:
+      title: 'Rastreios de Saúde'
+  jumplist_tests:
+    display_title: Testes
+    display_options:
+      title: Testes

@@ -1,0 +1,32 @@
+uuid: cffc5a71-fb2f-4391-91f4-bffc9d063a78
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.aacc_feeds_feed.field_selected_screenings
+    - node.type.screening
+  module:
+    - aacc_feeds
+_core:
+  default_config_hash: PyIxqq5hRqitmaUhtmR9A-bb-S8IbCoeykf4gSd6E3I
+id: aacc_feeds_feed.aacc_feeds_feed.field_selected_screenings
+field_name: field_selected_screenings
+entity_type: aacc_feeds_feed
+bundle: aacc_feeds_feed
+label: 'Selected Screenings'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      screening: screening
+    sort:
+      field: title
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

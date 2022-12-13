@@ -1,0 +1,22 @@
+uuid: 22e93b9f-2d25-4bef-be20-2b847aab7477
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.person
+id: node.person.status
+field_name: status
+entity_type: node
+bundle: person
+label: 'Publishing status'
+description: 'A boolean indicating whether the node is published.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

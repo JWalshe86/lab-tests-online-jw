@@ -1,0 +1,6 @@
+uuid: 00f6bcec-dc8e-4f95-8f1a-a418c4c0e5bc
+langcode: en
+status: true
+dependencies: {  }
+id: hcp_medical_specialty
+label: 'HCP-Medical Specialty'

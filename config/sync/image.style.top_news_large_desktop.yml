@@ -1,0 +1,15 @@
+uuid: 7cceec31-c68c-400a-ba72-4e7b82d385a1
+langcode: en
+status: true
+dependencies: {  }
+name: top_news_large_desktop
+label: 'Top News Large Desktop'
+effects:
+  a340552c-82de-431f-9c52-5f2e9f7992c5:
+    uuid: a340552c-82de-431f-9c52-5f2e9f7992c5
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 600
+      height: 515
+      anchor: center-center

@@ -1,0 +1,27 @@
+uuid: c13e0465-ee23-4829-b24f-704a39736353
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_default_content
+field_name: field_default_content
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: test_results
+      label: 'Looking for your test Results?'
+    -
+      value: reference_ranges
+      label: 'Looking for Reference Ranges?'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

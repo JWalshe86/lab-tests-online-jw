@@ -1,0 +1,10 @@
+uuid: 258e0f3f-862c-459d-a8fd-59fc994e59fa
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.related_content
+label: 'Related Content'
+targetEntityType: media
+cache: true

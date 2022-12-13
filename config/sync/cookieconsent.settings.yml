@@ -1,0 +1,15 @@
+minified: 1
+headline_text: 'This website uses cookies to ensure you get the best experience on our website.'
+accept_button_text: 'I Accept'
+read_more_button_text: ''
+theme: light-bottom
+path: /
+domain: ''
+expiry: '365'
+target: _self
+_core:
+  default_config_hash: _tr-X8c0EtWB8CElgT53wtsgTQfB_Th-MMGaw7xA6bo
+theme_path: ''
+customise: 1
+cookie_policy: null
+container: ''

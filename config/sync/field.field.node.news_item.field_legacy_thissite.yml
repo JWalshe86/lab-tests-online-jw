@@ -1,0 +1,21 @@
+uuid: 861f2efa-ed30-434a-960e-e5059e0855ee
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_legacy_thissite
+    - node.type.news_item
+  module:
+    - text
+id: node.news_item.field_legacy_thissite
+field_name: field_legacy_thissite
+entity_type: node
+bundle: news_item
+label: 'Legacy ThisSite'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,20 @@
+uuid: db186d0a-c233-4f0a-9cf4-5aa1fe1cdb5a
+langcode: en
+status: true
+dependencies:
+  module:
+    - aacc_screening_test_entity
+    - paragraphs
+id: paragraph.field_screening_test_item
+field_name: field_screening_test_item
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: screening_test
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

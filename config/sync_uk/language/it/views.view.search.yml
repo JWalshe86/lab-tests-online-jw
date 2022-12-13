@@ -1,0 +1,12 @@
+display:
+  default:
+    display_options:
+      filters:
+        type:
+          group_info:
+            description: ''
+      empty:
+        area:
+          content:
+            value: "<div class=\"search-no-results\">\r\n<p>Problemi? Ecco alcuni suggerimenti per la ricerca:</p>\r\n\r\n<ul>\r\n\t<li>Alcuni Test o Patologie/Condizioni Cliniche, possono essere chiamati in modi differenti. Prova cercando nomi alternativi (ad esempio l'Emocromo è noto anche come CBC; le patologie cardiovascolari, come CVD).</li>\r\n\t<li>Su sito non sono presenti nomi commerciali dei farmaci, prova utilizzando il nome generico (ad esempio warfarin invece di Cumadin).</li>\r\n\t<li>Per ricercare frasi esatte, racchiuderle tra virgolette (ad esempio \"equilibrio acido-base\").</li>\r\n\t<li>Controlla l'ortografia.</li>\r\n</ul>\r\n\r\n<p>Se, nonostante le indicazione, non riesci a trovare quello che cerchi, <a href=\"/contact-us\">Contattaci</a>.</p>\r\n</div>\r\n"
+            format: full_html

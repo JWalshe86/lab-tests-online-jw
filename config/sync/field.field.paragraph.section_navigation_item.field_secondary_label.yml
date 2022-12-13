@@ -1,0 +1,19 @@
+uuid: 67671141-d822-4807-867e-004f65f1c1a0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_secondary_label
+    - paragraphs.paragraphs_type.section_navigation_item
+id: paragraph.section_navigation_item.field_secondary_label
+field_name: field_secondary_label
+entity_type: paragraph
+bundle: section_navigation_item
+label: 'Secondary Label'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,22 @@
+uuid: b1aa0c70-7a59-4bbf-8a3e-05c867daa63e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_color
+    - paragraphs.paragraphs_type.call_to_action
+  module:
+    - color_field
+id: paragraph.call_to_action.field_color
+field_name: field_color
+entity_type: paragraph
+bundle: call_to_action
+label: Color
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  opacity: 1
+field_type: color_field_type

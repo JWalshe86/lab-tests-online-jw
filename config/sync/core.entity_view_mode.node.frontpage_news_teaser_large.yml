@@ -1,0 +1,10 @@
+uuid: f92e30fd-34ce-40b6-ba45-0ed41c26ec07
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.frontpage_news_teaser_large
+label: 'FrontPage News Teaser (Large)'
+targetEntityType: node
+cache: true

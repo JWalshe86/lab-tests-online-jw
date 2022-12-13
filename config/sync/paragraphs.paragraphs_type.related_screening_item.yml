@@ -1,0 +1,7 @@
+uuid: 5a72fdeb-9c47-4aa9-a52a-2efb0b982f15
+langcode: en
+status: true
+dependencies: {  }
+id: related_screening_item
+label: 'Related Screening Item'
+behavior_plugins: {  }

@@ -1,0 +1,38 @@
+uuid: 56a6454b-1cad-494e-9990-6aa2cdf1b9d2
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.sidebar_thank_you_global_
+    - field.storage.block_content.field_image
+  module:
+    - image
+id: block_content.sidebar_thank_you_global_.field_image
+field_name: field_image
+entity_type: block_content
+bundle: sidebar_thank_you_global_
+label: Image
+description: '160px x 300px is preferred.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

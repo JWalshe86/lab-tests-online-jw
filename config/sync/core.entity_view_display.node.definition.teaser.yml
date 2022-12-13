@@ -1,0 +1,74 @@
+uuid: 3202c6d1-d463-4d28-8951-4d8566f178df
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.definition.body
+    - field.field.node.definition.field_definition_synonyms
+    - field.field.node.definition.field_exclude_from_search
+    - field.field.node.definition.field_field_definition_synonyms
+    - field.field.node.definition.field_legacy_content
+    - field.field.node.definition.field_meta_tags
+    - field.field.node.definition.field_migration_notes
+    - field.field.node.definition.field_migration_status
+    - field.field.node.definition.field_misspellings
+    - field.field.node.definition.field_oldpath
+    - field.field.node.definition.field_reviewed
+    - node.type.definition
+  module:
+    - ds
+    - text
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - body
+        - links
+id: node.definition.teaser
+targetEntityType: node
+bundle: definition
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: ds_content
+  links:
+    weight: 1
+    region: ds_content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  content_moderation_control: true
+  field_definition_synonyms: true
+  field_exclude_from_search: true
+  field_field_definition_synonyms: true
+  field_legacy_content: true
+  field_meta_tags: true
+  field_migration_notes: true
+  field_migration_status: true
+  field_misspellings: true
+  field_oldpath: true
+  field_reviewed: true
+  field_subcontent: true
+  langcode: true
+  revision_date: true

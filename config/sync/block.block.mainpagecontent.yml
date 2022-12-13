@@ -1,0 +1,24 @@
+uuid: c74b16a2-0f71-4caf-a7de-96dc98c00fa4
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+    - system
+  theme:
+    - aacc_lto_foundation
+third_party_settings:
+  block_class:
+    classes: ''
+id: mainpagecontent
+theme: aacc_lto_foundation
+region: content
+weight: -15
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

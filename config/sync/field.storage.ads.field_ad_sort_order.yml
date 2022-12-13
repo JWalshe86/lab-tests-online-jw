@@ -1,0 +1,20 @@
+uuid: 2bfb0184-e03d-44eb-a19a-d3bde8376880
+langcode: en
+status: true
+dependencies:
+  module:
+    - aacc_ads
+id: ads.field_ad_sort_order
+field_name: field_ad_sort_order
+entity_type: ads
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

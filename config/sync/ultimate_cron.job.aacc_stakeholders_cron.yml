@@ -1,0 +1,30 @@
+uuid: 74fe27c1-2135-40fa-a358-ef9766900e41
+langcode: en
+status: true
+dependencies:
+  module:
+    - aacc_stakeholders
+title: 'Default cron handler'
+id: aacc_stakeholders_cron
+weight: 0
+module: aacc_stakeholders
+callback: aacc_stakeholders_cron
+scheduler:
+  id: crontab
+  configuration:
+    rules:
+      - '0 18 * * *'
+    catch_up: 0
+launcher:
+  id: serial
+  configuration:
+    timeouts:
+      lock_timeout: 3600
+    launcher:
+      thread: 0
+logger:
+  id: database
+  configuration:
+    method: '3'
+    expire: 1209600
+    retain: 1000

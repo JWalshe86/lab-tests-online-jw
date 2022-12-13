@@ -1,0 +1,9 @@
+uuid: 9bb5f999-e44b-4276-99f5-a3484cd68ddb
+langcode: en
+status: true
+dependencies: {  }
+id: related_content
+label: 'Related Content'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

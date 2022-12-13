@@ -1,0 +1,22 @@
+uuid: 83750835-3b68-4fb3-bc48-eed2a1de9b58
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: content_type_condition
+label: 'Content Type: Condition'
+type: 'canonical_entities:node'
+pattern: '/conditions/[node:title]'
+selection_criteria:
+  77440063-189e-4301-a9be-2c4bc46b33f6:
+    id: node_type
+    bundles:
+      condition: condition
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 77440063-189e-4301-a9be-2c4bc46b33f6
+selection_logic: and
+weight: -5
+relationships: {  }

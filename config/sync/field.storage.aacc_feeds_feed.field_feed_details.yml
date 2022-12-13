@@ -1,0 +1,20 @@
+uuid: 51f8c5f3-0268-4585-a913-8e895b8d7d5c
+langcode: en
+status: true
+dependencies:
+  module:
+    - aacc_feeds
+_core:
+  default_config_hash: wJBThi5f7qCrEgWH3QEfTEWrS0VZs5wjMErhGPheOx8
+id: aacc_feeds_feed.field_feed_details
+field_name: field_feed_details
+entity_type: aacc_feeds_feed
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

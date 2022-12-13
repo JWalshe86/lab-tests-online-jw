@@ -1,0 +1,52 @@
+uuid: 5fb947a1-cac5-4192-b3f0-0bd133b4b2e7
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.article
+  module:
+    - node
+_core:
+  default_config_hash: YVL-z_5KOmm6U21QhQdCOOQF_SQLFepLuzghhrpwOZQ
+id: node.article
+targetEntityType: node
+bundle: article
+types:
+  - 'schema:Article'
+fieldMappings:
+  title:
+    properties:
+      - 'schema:name'
+  created:
+    properties:
+      - 'schema:dateCreated'
+    datatype_callback:
+      callable: 'Drupal\rdf\CommonDataConverter::dateIso8601Value'
+  changed:
+    properties:
+      - 'schema:dateModified'
+    datatype_callback:
+      callable: 'Drupal\rdf\CommonDataConverter::dateIso8601Value'
+  body:
+    properties:
+      - 'schema:text'
+  uid:
+    properties:
+      - 'schema:author'
+  comment:
+    properties:
+      - 'schema:comment'
+    mapping_type: rel
+  comment_count:
+    properties:
+      - 'schema:interactionCount'
+    datatype_callback:
+      callable: 'Drupal\rdf\SchemaOrgDataConverter::interactionCount'
+      arguments:
+        interaction_type: UserComments
+  field_image:
+    properties:
+      - 'schema:image'
+  field_tags:
+    properties:
+      - 'schema:about'
