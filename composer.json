@@ -90,6 +90,7 @@
         "drupal/xmlsitemap": "1.1.0",
         "drupal/zurb_foundation": "6.0.0-alpha6",
         "drush/drush": "10.6.1",
+        "symfony/intl": "^5.4",
         "zaporylie/composer-drupal-optimizations": "1.2.0"
     },
     "require-dev": {
