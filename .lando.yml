@@ -4,3 +4,5 @@ config:
   flavor: drupal
   build:
     - composer install
+  conf:
+    php: php.ini
