@@ -153,6 +153,9 @@
             },
             "drupal/webform": {
               "3252331: Block source entity caching": "https://git.drupalcode.org/issue/webform-3252331/-/commit/99767c6f71806194ba92184856df8da2baed9964.patch"
+            },
+            "drupal/fieldblock": {
+                "3164381: Can't access block node settings": "https://www.drupal.org/files/issues/2022-08-02/core-version-requirement-3164381-19.patch"
             }
           }
     }
