@@ -1,0 +1,40 @@
+diff --git a/core/lib/Drupal/Core/Cron.php b/core/lib/Drupal/Core/Cron.php
+index a18bf5b5a2..ac08cec9fe 100644
+--- a/core/lib/Drupal/Core/Cron.php
++++ b/core/lib/Drupal/Core/Cron.php
+@@ -177,7 +177,35 @@ protected function processQueues() {
+         $lease_time = isset($info['cron']['time']) ?: NULL;
+         while (time() < $end && ($item = $queue->claimItem($lease_time))) {
+           try {
++            \Drupal::logger('aacc_debug')->debug("Queue starting: $queue_name");
++
+             $queue_worker->processItem($item->data);
++
++            // Add the entity ids specific for radioactivity.
++            $nids = [];
++            switch ($queue_name) {
++              case 'radioactivity_decay':
++                if (isset($item->data['entity_ids'])) {
++                  $nids = $item->data['entity_ids'];
++                }
++                break;
++
++              case 'radioactivity_incidents':
++                if (isset($item->data['entity_type']) && $item->data['entity_type'] === 'node') {
++                  foreach ($item->data['incidents'] as $key => $row) {
++                    $nids[] = [
++                      'nid' => $key,
++                      'total_incidents' => count($row),
++                    ];
++                  }
++                }
++                break;
++            }
++
++            $nids_string = print_r($nids, TRUE);
++            $log_msg = "Queue finished: $queue_name <p>Node IDs<pre>$nids_string</pre></p>";
++            \Drupal::logger('aacc_debug')->debug($log_msg);
++
+             $queue->deleteItem($item);
+           }
+           catch (RequeueException $e) {

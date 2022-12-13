@@ -1,0 +1,16 @@
+diff --git a/core/lib/Drupal/Core/Entity/Plugin/Validation/Constraint/EntityChangedConstraintValidator.php b/core/lib/Drupal/Core/Entity/Plugin/Validation/Constraint/EntityChangedConstraintValidator.php
+index 28d81ba6e4..3fa303a675 100644
+--- a/core/lib/Drupal/Core/Entity/Plugin/Validation/Constraint/EntityChangedConstraintValidator.php
++++ b/core/lib/Drupal/Core/Entity/Plugin/Validation/Constraint/EntityChangedConstraintValidator.php
+@@ -30,7 +30,10 @@ public function validate($entity, Constraint $constraint) {
+             // translations is not sufficient since other translations may have
+             // been edited and saved in the meanwhile. Therefore, compare the
+             // changed timestamps of each entity translation individually.
+-            if ($saved_entity->getTranslation($langcode)->getChangedTime() > $entity->getTranslation($langcode)->getChangedTime()) {
++            $previousTime = $saved_entity->getTranslation($langcode)->getChangedTime();
++            $currentTime = $entity->getTranslation($langcode)->getChangedTime();
++            if ($previousTime > $currentTime) {
++              \Drupal::logger('core')->warning('Edit of entity {id} failed: language {langcode} was last updated at {previous_time} but you are trying to save a copy based on {current_time}', ['id' => $entity->id(), 'langcode' => $langcode, 'previous_time' => date('c', $previousTime), 'current_time' => date('c', $currentTime)]);
+               $this->context->addViolation($constraint->message);
+               break;
+             }

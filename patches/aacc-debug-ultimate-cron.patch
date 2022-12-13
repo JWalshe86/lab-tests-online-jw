@@ -1,0 +1,19 @@
+diff --git a/src/Plugin/ultimate_cron/Launcher/SerialLauncher.php b/src/Plugin/ultimate_cron/Launcher/SerialLauncher.php
+index 7c1beee..7c374c0 100644
+--- a/src/Plugin/ultimate_cron/Launcher/SerialLauncher.php
++++ b/src/Plugin/ultimate_cron/Launcher/SerialLauncher.php
+@@ -209,10 +209,14 @@ class SerialLauncher extends LauncherBase implements PluginCleanupInterface {
+       $init_message = t('Launched manually');
+     }
+ 
++    \Drupal::logger('aacc_debug')->debug(sprintf('Starting Cron: %s', $job->getCallback()));
++
+     // Run job.
+     $job_launch = $job->run($init_message);
+     \Drupal::moduleHandler()->invokeAll('cron_post_launch', array($this));
+ 
++    \Drupal::logger('aacc_debug')->debug(sprintf('Finished Cron: %s', $job->getCallback()));
++
+     return $job_launch;
+   }
+ 

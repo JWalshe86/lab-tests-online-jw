@@ -1,0 +1,25 @@
+diff --git a/src/Plugin/migrate/source/DisqusComment.php b/src/Plugin/migrate/source/DisqusComment.php
+index 8f76bf8..613e8bf 100644
+--- a/src/Plugin/migrate/source/DisqusComment.php
++++ b/src/Plugin/migrate/source/DisqusComment.php
+@@ -5,7 +5,7 @@ namespace Drupal\disqus\Plugin\migrate\source;
+ use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+ use Drupal\migrate\Plugin\migrate\source\SourcePluginBase;
+ use Drupal\migrate\Row;
+-use Drupal\migrate\Entity\MigrationInterface;
++use Drupal\migrate\Plugin\MigrationInterface;
+ use Psr\Log\LoggerInterface;
+ use Drupal\Core\Config\ConfigFactoryInterface;
+ use Drupal\Core\Entity\Query\QueryFactory;
+@@ -146,9 +146,9 @@ class DisqusComment extends SourcePluginBase implements ContainerFactoryPluginIn
+         $posts = $disqus->forums->listPosts(array('forum' => $this->config->get('disqus_domain')));
+       }
+       catch (\Exception $exception) {
+-        drupal_set_message(t('There was an error loading the forum details. Please check you API keys and try again.', 'error'));
++        drupal_set_message(t('There was an error loading the forum details. Please check you API keys and try again.'), 'error');
+         $this->logger->error('Error loading the Disqus PHP API. Check your forum name.', array());
+-        return FALSE;
++        return new \ArrayIterator([]);
+       }
+ 
+       $items = array();
