@@ -5,14 +5,10 @@ dependencies:
   config:
     - views.view.news
   module:
-    - block_class
     - system
     - views
   theme:
     - aacc_lto_foundation
-third_party_settings:
-  block_class:
-    classes: ''
 id: views_block__news_block_1
 theme: aacc_lto_foundation
 region: content

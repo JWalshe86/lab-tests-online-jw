@@ -6,14 +6,10 @@ dependencies:
     - field.storage.node.field_subcontent
   module:
     - aacc_foundation_magellan_field_format
-    - block_class
     - fieldblock
     - node
   theme:
     - aacc_lto_foundation
-third_party_settings:
-  block_class:
-    classes: ''
 id: menu_magellan
 theme: aacc_lto_foundation
 region: content_top
@@ -25,7 +21,7 @@ settings:
   label: 'Choose Topic'
   provider: fieldblock
   label_display: visible
-  label_from_field: 0
+  label_from_field: false
   field_name: field_subcontent
   formatter_id: magellan_link_field_formatter
   formatter_settings:

@@ -4,12 +4,8 @@ status: true
 dependencies:
   module:
     - aacc_search
-    - block_class
   theme:
     - aacc_lto_foundation
-third_party_settings:
-  block_class:
-    classes: ''
 id: searchheader
 theme: aacc_lto_foundation
 region: search

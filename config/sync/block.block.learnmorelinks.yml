@@ -1,6 +1,6 @@
 uuid: 3e51acfb-4e5b-45e2-82e9-5fe08e9414e9
 langcode: en
-status: false
+status: true
 dependencies:
   content:
     - 'block_content:section_navigation:724fc9ac-a744-4dde-a178-b6c51266efd6'
@@ -15,8 +15,8 @@ third_party_settings:
     classes: 'medium-12 large-9 columns learn-more-links hide-for-print'
 id: learnmorelinks
 theme: aacc_lto_foundation
-region: meta_header
-weight: -21
+region: front_page_group_links_sponsors
+weight: -18
 provider: null
 plugin: 'block_content:724fc9ac-a744-4dde-a178-b6c51266efd6'
 settings:

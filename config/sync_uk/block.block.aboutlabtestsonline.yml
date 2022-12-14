@@ -1,6 +1,6 @@
 uuid: a23224ff-7809-4b49-b3c9-2703bb288227
 langcode: en
-status: false
+status: true
 dependencies:
   content:
     - 'block_content:basic:a2fce93d-2240-49fc-ba90-7c164c61c6f0'
@@ -15,8 +15,8 @@ third_party_settings:
     classes: block-about
 id: aboutlabtestsonline
 theme: aacc_lto_foundation
-region: meta_header
-weight: -20
+region: front_page_group_about
+weight: -18
 provider: null
 plugin: 'block_content:a2fce93d-2240-49fc-ba90-7c164c61c6f0'
 settings:

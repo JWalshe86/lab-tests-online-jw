@@ -5,14 +5,10 @@ dependencies:
   config:
     - views.view.articles_index
   module:
-    - block_class
     - system
     - views
   theme:
     - aacc_lto_foundation
-third_party_settings:
-  block_class:
-    classes: ''
 id: views_block__articles_index_block_understanding_your_tests
 theme: aacc_lto_foundation
 region: content

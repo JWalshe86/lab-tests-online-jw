@@ -3,14 +3,10 @@ langcode: en
 status: true
 dependencies:
   module:
-    - block_class
     - sponsor_views
     - system
   theme:
     - aacc_lto_foundation
-third_party_settings:
-  block_class:
-    classes: ''
 id: allsponsors
 theme: aacc_lto_foundation
 region: content

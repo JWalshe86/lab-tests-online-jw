@@ -26,3 +26,5 @@ _core:
   default_config_hash: o1Lgj8FSHbxxBeB7nWl-QtfAb_UCG7wFxLXti23jFkE
 browser_traces_sample_rate: null
 auto_session_tracking: false
+send_client_reports: false
+seckit_set_report_uri: false

@@ -2,13 +2,8 @@ uuid: fcb274c2-01e7-46fd-bc43-c61d7d9e4655
 langcode: en
 status: true
 dependencies:
-  module:
-    - block_class
   theme:
     - aacc_lto_foundation
-third_party_settings:
-  block_class:
-    classes: ''
 id: primaryadminactions
 theme: aacc_lto_foundation
 region: content
