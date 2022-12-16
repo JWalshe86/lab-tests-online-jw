@@ -26,6 +26,8 @@ volumes:
     {}
   db:
     {}
+  search:
+    {}
 
 services:
 
