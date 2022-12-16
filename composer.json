@@ -126,9 +126,6 @@
             "allowed-packages": [
                 "amazeeio/drupal_integrations"
             ],
-            "file-mapping": {
-                "[web-root]/sites/default/all.settings.php": "assets/all.settings.php"
-            },
             "locations": {
                 "web-root": "web/"
             }
