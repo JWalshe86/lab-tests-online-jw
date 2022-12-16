@@ -50,6 +50,7 @@
         "drupal/entity_reference_revisions": "1.9.0",
         "drupal/entityqueue": "1.2.0",
         "drupal/extlink": "1.6.0",
+        "drupal/fastly": "^3.14",
         "drupal/field_group": "3.2.0",
         "drupal/fieldblock": "dev-2.x",
         "drupal/google_tag": "1.4.0",
