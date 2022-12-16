@@ -30,10 +30,10 @@ environments:
       - nginx:
         - 'www.labtestsonline.org.uk':
               tls-acme: 'true'
-              insecure: Allow
+              insecure: Redirect
         - 'labtestsonline.org.uk':
               tls-acme: 'true'
-              insecure: Allow
+              insecure: Redirect
     cronjobs:
       - name: drush cron
         schedule: "*/15 * * * *"
