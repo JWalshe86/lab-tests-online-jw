@@ -1,11 +1,14 @@
 uuid: null
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - ctools
+    - webform
 id: primary
 label: Primary
 weight: 0
-container_id: GTM-P5VH9HX
+container_id: GTM-W4N9KG6
 data_layer: dataLayer
 include_classes: false
 whitelist_classes: |-
@@ -29,16 +32,32 @@ path_list: |-
   /user/*/edit*
   /user/*/cancel*
 role_toggle: 'exclude listed'
-role_list:
-  anonymous: '0'
-  authenticated: '0'
-  administrator: '0'
-  content_manager: '0'
-  feed_client: '0'
-  feeds_admin: '0'
-  rest_web_service: '0'
+role_list: {  }
 status_toggle: 'exclude listed'
 status_list: |-
   403
   404
-conditions: {  }
+conditions:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles: {  }
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+  'entity_bundle:taxonomy_term':
+    id: 'entity_bundle:taxonomy_term'
+    bundles: {  }
+    negate: false
+    context_mapping:
+      taxonomy_term: '@taxonomy_term.taxonomy_term_route_context:taxonomy_term'
+  'entity_bundle:webform_submission':
+    id: 'entity_bundle:webform_submission'
+    bundles: {  }
+    negate: false
+    context_mapping:
+      webform_submission: '@webform.webform_submission_route_context:webform_submission'
+  webform:
+    id: webform
+    webforms: {  }
+    negate: false
+    context_mapping: {  }
