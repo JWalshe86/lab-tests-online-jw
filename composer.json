@@ -21,7 +21,6 @@
         "composer/installers": "2.0.1",
         "cweagans/composer-patches": "1.7.1",
         "drupal/address": "^1.11",
-        "drupal/addtoany": "^1.21",
         "drupal/admin_toolbar": "3.0.3",
         "drupal/anchor_link": "1.7.0",
         "drupal/backup_migrate": "^5.0",
