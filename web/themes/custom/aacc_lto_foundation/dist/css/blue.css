@@ -6226,11 +6226,15 @@ h3 {
   .bottom-bar {
     padding: 2rem 0; } }
 
-.footer-branding p,
+.footer-branding h2, .footer-branding p,
+.footer-certifications h2,
 .footer-certifications p,
+.footer-social h2,
 .footer-social p,
+.mobile-app-block h2,
 .mobile-app-block p {
   color: #231f20;
+  font-size: 1.1875rem;
   font-weight: 700;
   margin-bottom: 0; }
 

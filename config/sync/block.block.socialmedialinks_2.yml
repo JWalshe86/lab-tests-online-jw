@@ -3,20 +3,24 @@ langcode: en
 status: true
 dependencies:
   module:
+    - block_class
     - social_media_links
   theme:
     - aacc_lto_foundation
+third_party_settings:
+  block_class:
+    classes: 'footer-block footer-social'
 id: socialmedialinks_2
 theme: aacc_lto_foundation
 region: footer_section_one
-weight: -19
+weight: -18
 provider: null
 plugin: social_media_links_block
 settings:
   id: social_media_links_block
   label: 'Find Us On Social Media:'
   provider: social_media_links
-  label_display: '0'
+  label_display: visible
   platforms:
     amazon:
       value: ''
@@ -44,7 +48,7 @@ settings:
       weight: '-5'
     facebook:
       value: Labtestsonlineuk
-      description: Facebook
+      description: 'Find us on Facebook'
       weight: '-4'
     flickr:
       value: ''
@@ -120,7 +124,7 @@ settings:
       weight: '14'
     twitter:
       value: LabtestsUK
-      description: Twitter
+      description: 'Find us on X'
       weight: '15'
     vkontakte:
       value: ''

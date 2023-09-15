@@ -59,8 +59,9 @@
 .footer-certifications,
 .footer-social,
 .mobile-app-block {
-  p {
+  h2, p {
     color: $black-off;
+    font-size: 1.1875rem;
     font-weight: 700;
     margin-bottom: 0;
   }
