@@ -1,6 +1,6 @@
 uuid: 3e1a3650-a425-48ee-84f6-8b3ffbb339ef
 langcode: en
-status: true
+status: false
 dependencies:
   content:
     - 'block_content:basic:f509fe42-7d36-4a6f-9b8b-e89a9a5217c7'
@@ -15,7 +15,7 @@ third_party_settings:
 id: socialmedialinks
 theme: aacc_lto_foundation
 region: footer_section_one
-weight: -18
+weight: -17
 provider: null
 plugin: 'block_content:f509fe42-7d36-4a6f-9b8b-e89a9a5217c7'
 settings:
