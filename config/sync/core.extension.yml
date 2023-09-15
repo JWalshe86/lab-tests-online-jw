@@ -24,6 +24,7 @@ module:
   anchor_link: 0
   announcement_pop_up: 0
   automated_cron: 0
+  backup_migrate: 0
   better_exposed_filters: 0
   block: 0
   block_class: 0
@@ -87,6 +88,7 @@ module:
   jquery_ui_slider: 0
   jquery_ui_touch_punch: 0
   label_as_formatted: 0
+  lagoon_logs: 0
   language: 0
   layout_discovery: 0
   link: 0
