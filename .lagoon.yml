@@ -9,7 +9,7 @@ tasks:
         command: |
           if tables=$(drush sqlq 'show tables;') && [ -z "$tables" ] && [[ "$LAGOON_GIT_BRANCH" != "live" ]]; then
               # no drupal installed, sync DB from dev branch
-              drush -y sql-sync @lagoon.live @self
+              drush -y sql-sync @lagoon.lab-tests-online-live @self
           fi
         service: cli
         shell: bash
@@ -17,7 +17,7 @@ tasks:
         name: IF on a new PR environment (not on Dev/Test/Live), sync files from LIVE branch
         command: |
           if tables=$(drush sqlq 'show tables;') && [ -z "$tables" ]; then
-              drush -y rsync @lagoon.live:%files @self:%files
+              drush -y rsync @lagoon.lab-tests-online-live:%files @self:%files
           fi
         service: cli
         shell: bash
