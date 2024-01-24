@@ -3,26 +3,40 @@ docker-compose-yaml: docker-compose.yml
 project: lab-tests-online
 
 tasks:
-#   pre-rollout:
-#     - run:
-#         name: drush sql-dump
-#         command: mkdir -p /app/web/sites/default/files/private/ && drush sql-dump --ordered-dump --gzip --result-file=/app/web/sites/default/files/private/pre-deploy-dump.sql.gz || true
-#         service: cli
-
-post-rollout:
-  # Enable once config sync has been setup.
-  - run:
-      name: drush cim
-      command: drush -y cim
-      service: cli
-  - run:
-      name: drush updb
-      command: drush -y updb
-      service: cli
-  - run:
-      name: drush cr
-      command: drush -y cr
-      service: cli
+  post-rollout:
+    - run:
+        name: IF no Drupal installed and we are not LIVE branch, sync from DEV branch
+        command: |
+          if tables=$(drush sqlq 'show tables;') && [ -z "$tables" ] && [[ "$LAGOON_GIT_BRANCH" != "live" ]]; then
+              # no drupal installed, sync DB from dev branch
+              drush -y sql-sync @lagoon.dev @self
+          fi
+        service: cli
+        shell: bash
+    - run:
+        name: IF on a new PR environment (not on Dev/Test/Live), sync files from LIVE branch
+        command: |
+          if tables=$(drush sqlq 'show tables;') && [ -z "$tables" ]; then
+              drush -y rsync @lagoon.live:%files @self:%files
+          fi
+        service: cli
+        shell: bash
+    - run:
+        name: drush cr
+        command: drush cr
+        service: cli
+    - run:
+        name: drush cim
+        command: drush -y cim
+        service: cli
+    - run:
+        name: drush updb
+        command: drush -y updb
+        service: cli
+    - run:
+        name: drush cr
+        command: drush -y cr
+        service: cli
 
 environments:
   live:
