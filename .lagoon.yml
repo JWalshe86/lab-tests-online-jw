@@ -9,7 +9,7 @@ tasks:
         command: |
           if tables=$(drush sqlq 'show tables;') && [ -z "$tables" ] && [[ "$LAGOON_GIT_BRANCH" != "live" ]]; then
               # no drupal installed, sync DB from dev branch
-              drush -y sql-sync @lagoon.dev @self
+              drush -y sql-sync @lagoon.live @self
           fi
         service: cli
         shell: bash
