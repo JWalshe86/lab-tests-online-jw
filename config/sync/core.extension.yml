@@ -67,8 +67,6 @@ module:
   entity_reference_revisions: 0
   entityqueue: 0
   external_link: 0
-  fastly: 0
-  fastlypurger: 0
   field: 0
   field_group: 0
   field_ui: 0
@@ -80,7 +78,6 @@ module:
   help: 0
   history: 0
   honeypot: 0
-  http_cache_control: 0
   image: 0
   improved_multi_select: 0
   inline_entity_form: 0
@@ -119,12 +116,6 @@ module:
   path_alias: 0
   pathauto: 0
   profile_switcher: 0
-  purge: 0
-  purge_drush: 0
-  purge_processor_cron: 0
-  purge_processor_lateruntime: 0
-  purge_queuer_coretags: 0
-  purge_ui: 0
   rdf: 0
   recaptcha: 0
   redirect: 0

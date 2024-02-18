@@ -1,5 +1,0 @@
-purgers:
-  -
-    order_index: 2
-    instance_id: bab4243201
-    plugin_id: fastly
